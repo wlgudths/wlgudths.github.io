@@ -12,27 +12,27 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "체교과 공대생"
-title_separator          : "-"
-subtitle                 : "Athleticneer" # site tagline that appears below site title in masthead
+title                    : "지지형"
+title_separator          : "|"
+subtitle                 : "" # site tagline that appears below site title in masthead
 name                     : "Jee-Hyung Son"
-description              : "공부한 것을 기록하는 "
+description              : # 설명
 url                      : "https://wlgudths.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "https://github.com/wlgudths/wlgudths.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "wlgudths/comments" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "체교과 공대생" # overrides the website title displayed in the masthead, use " " for no title
+logo                     : # "/assets/images/site_profile.jpeg"
+masthead_title           : "지지형" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "utterances" # (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : #"wlgudths-github-io" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -41,8 +41,8 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : "github-light" # (default), "github-dark"
+    issue_term           : "pathname" # (default)
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
     category_name        : # Full text name of the category
@@ -104,9 +104,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "지지형 (Jee-Hyung Son)"
-  avatar           : "image/profile/1.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "체육교육과를 졸업하고 **CV Engineer**가 되고싶은 지지형입니다."
+  name             : "지지형"
+  avatar           : "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "" # 나에 대한 설명 적기
   location         : "Republic of Korea"
   email            :
   links:
@@ -220,7 +220,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -290,3 +290,4 @@ defaults:
       comments: # true
       share: true
       related: true
+      sidebar_main: true
