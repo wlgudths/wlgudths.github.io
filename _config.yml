@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "지지형"
   avatar           : "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "From Physical education  to Computer vision" # 나에 대한 설명 적기
+  bio              : "From Physical education to Computer vision" # 나에 대한 설명 적기
   location         : "Republic of Korea"
   email            :
   links:
