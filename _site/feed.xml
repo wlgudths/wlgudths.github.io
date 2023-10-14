@@ -1,2 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-06T18:20:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">댓글 테스트</title><link href="http://localhost:4000/coding%20test/BOJ-1234/" rel="alternate" type="text/html" title="댓글 테스트" /><published>2023-10-03T00:00:00+09:00</published><updated>2023-10-03T00:00:00+09:00</updated><id>http://localhost:4000/coding%20test/BOJ-1234</id><content type="html" xml:base="http://localhost:4000/coding%20test/BOJ-1234/"><![CDATA[<h1 id="백준">백준</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-15T01:50:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 이산수학(Discrete Mathmatics)</title><link href="http://localhost:4000/math/MATH-01/" rel="alternate" type="text/html" title="[이산수학] 이산수학(Discrete Mathmatics)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-15T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-01</id><content type="html" xml:base="http://localhost:4000/math/MATH-01/"><![CDATA[<h2 id="이산수학이란">이산수학이란?</h2>
+
+<blockquote>
+  <p><strong>이산수학(discrete mathematics)</strong>은 이산적인 수학 구조에 대해 연구하는 학문으로, 연속되지 않는 공간을 다룬다. 유한 수학 또는 전산 수학이라고 한다.</p>
+</blockquote>
+
+<ul>
+  <li>이산수학에서는 실수, 미적분학같이 연속적인(continuous) 성질이 있는 대상이 아니라<br />
+주로 정수, 그래프, 논리 연산같이 서로 구분되는 값을 가지는 대상으로 연구한다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>예시<br />
+<img src="/assets/images/Math/dm/dm_example_1.png" width="200" height="200" /> <img src="/assets/images/Math/dm/dm_example_2.png" width="200" height="100" /> <img src="/assets/images/Math/dm/dm_example_3.jpeg" width="200" height="200" /></li>
+</ul>
+
+<h2 id="이산수학을-왜-배울까">이산수학을 왜 배울까?</h2>
+<p>컴퓨터는 0과 1의 조합으로 데이터를 저장하기 때문에 이산 수학을 배움으로써 컴퓨터 안에서 벌어지는 일들을 이해할 수 있다.</p>
+
+<hr />
+
+<p>출처 <a href="https://en.wikipedia.org/wiki/Discrete_mathematics">https://en.wikipedia.org/wiki/Discrete_mathematics</a></p>]]></content><author><name>지지형</name></author><category term="Math" /><summary type="html"><![CDATA[이산수학이란?]]></summary></entry><entry><title type="html">댓글 테스트</title><link href="http://localhost:4000/coding%20test/BOJ-1234/" rel="alternate" type="text/html" title="댓글 테스트" /><published>2023-10-03T00:00:00+09:00</published><updated>2023-10-03T00:00:00+09:00</updated><id>http://localhost:4000/coding%20test/BOJ-1234</id><content type="html" xml:base="http://localhost:4000/coding%20test/BOJ-1234/"><![CDATA[<h1 id="백준">백준</h1>
 <p>댓글 테스트용 포스팅</p>]]></content><author><name>지지형</name></author><category term="Coding Test" /><summary type="html"><![CDATA[백준 댓글 테스트용 포스팅]]></summary></entry></feed>
