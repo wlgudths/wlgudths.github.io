@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-16T00:27:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 이산수학(Discrete Mathmatics)</title><link href="http://localhost:4000/math/MATH-01/" rel="alternate" type="text/html" title="[이산수학] 이산수학(Discrete Mathmatics)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-01</id><content type="html" xml:base="http://localhost:4000/math/MATH-01/"><![CDATA[<h2 id="이산수학이란">이산수학이란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-16T02:07:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">[백준] 1543 : 문서검색 (파이썬)</title><link href="http://localhost:4000/coding%20test/BOJ-1543/" rel="alternate" type="text/html" title="[백준] 1543 : 문서검색 (파이썬)" /><published>2023-10-16T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/coding%20test/BOJ-1543</id><content type="html" xml:base="http://localhost:4000/coding%20test/BOJ-1543/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p>⚪️ <strong>실버 5</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<p><img src="/assets/images/Coding_test/Boj/BOJ_1543_1.png" /></p>
+
+<h1 id="-입력-및-출력">🤖 입력 및 출력</h1>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_1543_2.png" /></p>
+
+<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
+
+<ul>
+  <li>문자열</li>
+  <li>브루트포스 알고리즘</li>
+</ul>
+
+<h1 id="-아이디어">🧐 아이디어</h1>
+
+<blockquote>
+  <p>문제를 읽자마자 <strong>replace</strong> 함수가 딱 떠올랐다.</p>
+</blockquote>
+
+<h1 id="-내-풀이">📝 내 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
+</span><span class="n">words</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># 문서
+</span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># 검색하고 싶은 단어
+</span>
+<span class="n">change</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s">'*'</span><span class="p">)</span> <span class="c1"># 중복되지 않게 단어 &gt; "*" 변환
+</span>
+<span class="c1"># 출력
+</span><span class="k">print</span><span class="p">(</span><span class="n">change</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'*'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
+
+<blockquote>
+  <p><strong>replace</strong> 함수를 통해 단어를 숫자 혹은 특수문자로 바꿔 준 후 바꾼 문자를 <strong>count</strong> 해주면 되는 간단한 문제였다.</p>
+</blockquote>]]></content><author><name>지지형</name></author><category term="Coding Test" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5]]></summary></entry><entry><title type="html">[이산수학] 이산수학(Discrete Mathmatics)</title><link href="http://localhost:4000/math/MATH-01/" rel="alternate" type="text/html" title="[이산수학] 이산수학(Discrete Mathmatics)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-01</id><content type="html" xml:base="http://localhost:4000/math/MATH-01/"><![CDATA[<h2 id="이산수학이란">이산수학이란?</h2>
 
 <blockquote>
   <p><strong>이산수학(discrete mathematics)</strong>은 이산적인 수학 구조에 대해 연구하는 학문으로, 연속되지 않는 공간을 다룬다. 유한 수학 또는 전산 수학이라고 한다.</p>
