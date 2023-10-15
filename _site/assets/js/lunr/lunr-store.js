@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "/math/MATH-01/",
         "teaser": null
+      },{
+        "title": "[이산수학] 집합(Set)",
+        "excerpt":"집합(Set)이란? 집합(Set)은 어떤 명확한 조건을 서로 만족시키는 서로 다른 대상들의 모임 여러 원소들의 모임 중복된 원소를 가지지 않음 집합은 대문자 $A$,$B$,$C$ $\\cdots$ 로 표기 원소는 소문자 $a$,$b$,$c$ $\\cdots$ 로 표기 원소 a가 A의 원소임을 a $\\in$ A 와 같이 표기 a가 A의 원소가 아니면 a $\\notin$ A 와 같이 표기...","categories": ["Math"],
+        "tags": [],
+        "url": "/math/MATH-02/",
+        "teaser": null
       }]
