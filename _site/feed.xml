@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-15T20:38:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 이산수학(Discrete Mathmatics)</title><link href="http://localhost:4000/math/MATH-01/" rel="alternate" type="text/html" title="[이산수학] 이산수학(Discrete Mathmatics)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-15T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-01</id><content type="html" xml:base="http://localhost:4000/math/MATH-01/"><![CDATA[<h2 id="이산수학이란">이산수학이란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-16T00:27:44+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜챃아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 이산수학(Discrete Mathmatics)</title><link href="http://localhost:4000/math/MATH-01/" rel="alternate" type="text/html" title="[이산수학] 이산수학(Discrete Mathmatics)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-01</id><content type="html" xml:base="http://localhost:4000/math/MATH-01/"><![CDATA[<h2 id="이산수학이란">이산수학이란?</h2>
 
 <blockquote>
   <p><strong>이산수학(discrete mathematics)</strong>은 이산적인 수학 구조에 대해 연구하는 학문으로, 연속되지 않는 공간을 다룬다. 유한 수학 또는 전산 수학이라고 한다.</p>
@@ -13,7 +13,7 @@
 
 <ul>
   <li>예시<br />
-<img src="/assets/images/Math/dm/dm_example_1_1.png" width="200" height="200" /> <img src="/assets/images/Math/dm/dm_example_1_2.png" width="200" height="100" /> <img src="/assets/images/Math/dm/dm_example_1_3.jpeg" width="200" height="200" /></li>
+<img src="/assets/images/Math/dm/dm_example_1_1.png" width="200" height="200" /> <img src="/assets/images/Math/dm/dm_example_1_2.png" width="200" height="100" /> <img src="/assets/images/Math/dm/dm_example_1_3.jpeg" width="400" height="200" /></li>
 </ul>
 
 <h2 id="이산수학을-왜-배울까">이산수학을 왜 배울까?</h2>
@@ -21,7 +21,7 @@
 
 <hr />
 <h1 id="참조">참조</h1>
-<p><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">https://en.wikipedia.org/wiki/Discrete_mathematics</a></p>]]></content><author><name>지지형</name></author><category term="Math" /><summary type="html"><![CDATA[이산수학이란?]]></summary></entry><entry><title type="html">[이산수학] 집합(Set)</title><link href="http://localhost:4000/math/MATH-02/" rel="alternate" type="text/html" title="[이산수학] 집합(Set)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-15T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-02</id><content type="html" xml:base="http://localhost:4000/math/MATH-02/"><![CDATA[<h1 id="집합set이란">집합(Set)이란?</h1>
+<p><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">https://en.wikipedia.org/wiki/Discrete_mathematics</a></p>]]></content><author><name>지지형</name></author><category term="Math" /><summary type="html"><![CDATA[이산수학이란?]]></summary></entry><entry><title type="html">[이산수학] 집합(Set)</title><link href="http://localhost:4000/math/MATH-02/" rel="alternate" type="text/html" title="[이산수학] 집합(Set)" /><published>2023-10-15T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/math/MATH-02</id><content type="html" xml:base="http://localhost:4000/math/MATH-02/"><![CDATA[<h1 id="집합set이란">집합(Set)이란?</h1>
 
 <blockquote>
   <p>집합(Set)은 어떤 명확한 조건을 서로 만족시키는 서로 다른 대상들의 모임</p>
@@ -146,8 +146,7 @@ A $\cap$ B 로 표기</p>
 
 <h2 id="3-차집합-difference">3. 차집합 (Difference)</h2>
 <blockquote>
-  <p>두 집합 A, B 에서 B의 원소 중 A에 속하지 않는 원소만으로 이루어진 집합을<br />
-B $\setminus$ A 라고 한다.</p>
+  <p>두 집합 A, B 에서 B의 원소 중 A에 속하지 않는 원소만으로 이루어진 집합을 B $\setminus$ A 라고 한다.</p>
 </blockquote>
 
 <ul>
