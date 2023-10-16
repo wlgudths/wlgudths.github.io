@@ -116,6 +116,12 @@
       }
     }
   }
+}
+
+.pagination_prev_next {
+  @include clearfix();
+  float: left;
+  width: 100%;
 
   /* next/previous buttons */
   &--pager {
