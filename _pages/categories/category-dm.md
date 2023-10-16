@@ -1,12 +1,12 @@
 ---
-title: "Conding-Test"
+title: "이산수학 정리"
 layout: archive
-permalink: categories/coding-test
+permalink: categories/dm
 author_profile: true
 sidebar_main: true
 ---
 
 
 
-{% assign posts = site.categories.coding-test %}
+{% assign posts = site.categories.['Discrete Mathematics'] %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

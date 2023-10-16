@@ -8,11 +8,11 @@
             📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
       </li>
       <li>
-        <span class="nav__sub-title">Math</span>
+        <span class="nav__sub-title">Computer Science</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Math" %}
-                        <li><a href="/categories/math" class="">Math ({{category[1].size}})</a></li>
+                    {% if category[0] == "Discrete Mathematics" %}
+                        <li><a href="/categories/dm" class="">Discrete Mathematics ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -20,31 +20,24 @@
         <span class="nav__sub-title">Coding Test</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Coding Test" %}
-                        <li><a href="/categories/coding-test" class="">Coding Test ({{category[1].size}})</a></li>
+                    {% if category[0] == "Algorithm" %}
+                        <li><a href="/categories/algorithm" class="">알고리즘 구현 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
-            <!-- <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Programmers" %}
-                        <li><a href="/categories/programmers" class="">프로그래머스 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul> -->
-            <!-- <ul>
+
+            <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "BOJ" %}
                         <li><a href="/categories/boj" class="">백준 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
-            </ul> -->
+            </ul>
 
-        <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "CS" %}
-                        <li><a href="/categories/cs" class="">CS ({{category[1].size}})</a></li>
+                    {% if category[0] == "Programmers" %}
+                        <li><a href="/categories/programmers" class="">프로그래머스 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
