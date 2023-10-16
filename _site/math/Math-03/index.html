@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이산수학] 집합(Set) | 느려도 괜챃아</title>
-<meta name="description" content="집합(Set)이란?">
+<!-- begin _includes/seo.html --><title>[이산수학] 논리와 명제 (Logic &amp; Proposition) | 느려도 괜챃아</title>
+<meta name="description" content="명제 (Proposition)    논리학적으로 뜻이 분명한 문장을 말한다.">
 
 
   <meta name="author" content="지지형">
@@ -22,19 +22,19 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜챃아">
-<meta property="og:title" content="[이산수학] 집합(Set)">
-<meta property="og:url" content="http://localhost:4000/math/Math-02/">
+<meta property="og:title" content="[이산수학] 논리와 명제 (Logic &amp; Proposition)">
+<meta property="og:url" content="http://localhost:4000/math/Math-03/">
 
 
-  <meta property="og:description" content="집합(Set)이란?">
-
-
-
+  <meta property="og:description" content="명제 (Proposition)    논리학적으로 뜻이 분명한 문장을 말한다.">
 
 
 
 
-  <meta property="article:published_time" content="2023-10-15T00:00:00+09:00">
+
+
+
+  <meta property="article:published_time" content="2023-10-16T00:00:00+09:00">
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/math/Math-02/">
+<link rel="canonical" href="http://localhost:4000/math/Math-03/">
 
 
 
@@ -356,16 +356,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이산수학] 집합(Set)">
-    <meta itemprop="description" content="집합(Set)이란?">
-    <meta itemprop="datePublished" content="2023-10-15T00:00:00+09:00">
+    <meta itemprop="headline" content="[이산수학] 논리와 명제 (Logic &amp; Proposition)">
+    <meta itemprop="description" content="명제 (Proposition)  논리학적으로 뜻이 분명한 문장을 말한다.">
+    <meta itemprop="datePublished" content="2023-10-16T00:00:00+09:00">
     <meta itemprop="dateModified" content="2023-10-16T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/math/Math-02/" class="u-url" itemprop="url">[이산수학] 집합(Set)
+            <a href="http://localhost:4000/math/Math-03/" class="u-url" itemprop="url">[이산수학] 논리와 명제 (Logic &amp; Proposition)
 </a>
           </h1>
           
@@ -382,7 +382,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          2 분 소요
         
       </span>
     
@@ -396,256 +396,365 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 집합(Set)</h4></header>
-              <ul class="toc__menu"><li><a href="#집합set이란">집합(Set)이란?</a></li><li><a href="#집합의-표현">집합의 표현</a><ul><li><a href="#1-원소-나열법">1. 원소 나열법</a></li><li><a href="#2-조건-제시법">2. 조건 제시법</a></li><li><a href="#3-벤-다이어그램">3. 벤 다이어그램</a></li></ul></li><li><a href="#집합의-종류">집합의 종류</a><ul><li><a href="#1-유한--무한-집합">1. 유한 / 무한 집합</a></li><li><a href="#2-전체-집합-universal-set">2. 전체 집합 (Universal Set)</a></li><li><a href="#3-공집합-empty-set">3. 공집합 (Empty Set)</a></li><li><a href="#4-부분집합-subset">4. 부분집합 (subset)</a></li><li><a href="#5-진부분집합-proper-subset">5. 진부분집합 (proper subset)</a></li><li><a href="#6-여집합-complementary-set">6. 여집합 (complementary set)</a></li></ul></li><li><a href="#집합의-연산">집합의 연산</a><ul><li><a href="#1-합집합-union">1. 합집합 (Union)</a></li><li><a href="#2-교집합-intersection">2. 교집합 (Intersection)</a></li><li><a href="#3-차집합-difference">3. 차집합 (Difference)</a></li><li><a href="#4-곱집합-product-set">4. 곱집합 (Product Set)</a></li><li><a href="#5-서로소-disjoint">5. 서로소 (disjoint)</a></li></ul></li><li><a href="#집합의-법칙">집합의 법칙</a><ul><li><a href="#1-항등법칙">1. 항등법칙</a></li><li><a href="#2-지배법칙">2. 지배법칙</a></li><li><a href="#3-멱등법칙">3. 멱등법칙</a></li><li><a href="#4-교환법칙">4. 교환법칙</a></li><li><a href="#5-결합법칙">5. 결합법칙</a></li><li><a href="#6-분배법칙">6. 분배법칙</a></li><li><a href="#7-이중-여집합">7. 이중 여집합</a></li><li><a href="#8-여집합의-법칙">8. 여집합의 법칙</a></li><li><a href="#9-드로므간의-법칙">9. 드로므간의 법칙</a></li><li><a href="#10-흡수법칙">10. 흡수법칙</a></li></ul></li><li><a href="#참조">참조</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 논리와 명제 (Logic & Proposition)</h4></header>
+              <ul class="toc__menu"><li><a href="#명제-proposition">명제 (Proposition)</a><ul><li><a href="#명제-예시">명제 예시</a></li><li><a href="#진리값-truth-value">진리값 (Truth value)</a></li><li><a href="#진리표-truth-table">진리표 (Truth table)</a></li><li><a href="#명제함수">명제함수</a><ul><li><a href="#명제함수-예시">명제함수 예시</a></li><li><a href="#한정자">한정자</a><ul><li><a href="#전체한정자-universal-quantifier">전체한정자 (Universal Quantifier)</a></li><li><a href="#존재한정자-existential-quantifier">존재한정자 (existential quantifier)</a></li></ul></li></ul></li><li><a href="#논리연산자logical-operator">논리연산자(logical operator)</a><ul><li><a href="#종류">종류</a><ul><li><a href="#1-부정-negation">1. 부정 (Negation)</a></li><li><a href="#2-논리곱-conjunction">2. 논리곱 (Conjunction)</a></li><li><a href="#3-논리합-disjunction">3. 논리합 (Disjunction)</a></li><li><a href="#4-배타적-논리합-exclusive-or">4. 배타적 논리합 (Exclusive OR)</a></li></ul></li></ul></li></ul></li><li><a href="#참조">참조</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="집합set이란">집합(Set)이란?</h1>
-
+        <h1 id="명제-proposition">명제 (Proposition)</h1>
 <blockquote>
-  <p>집합(Set)은 어떤 명확한 조건을 서로 만족시키는 서로 다른 대상들의 모임</p>
+  <p>논리학적으로 뜻이 분명한 문장을 말한다.</p>
 </blockquote>
 
 <ul>
-  <li>여러 원소들의 모임</li>
-  <li>중복된 원소를 가지지 않음</li>
-  <li>집합은 대문자 $A$,$B$,$C$ $\cdots$ 로 표기</li>
-  <li>원소는 소문자 $a$,$b$,$c$ $\cdots$ 로 표기</li>
-  <li>원소 a가 A의 원소임을 a $\in$ A 와 같이 표기</li>
-  <li>a가 A의 원소가 아니면 a $\notin$ A 와 같이 표기</li>
-  <li>원소가 0개일 경우, 공집합($\emptyset$)으로 표기</li>
+  <li>즉, <strong>참(True)</strong> 혹은 <strong>거짓(False)</strong> 으로 구분할 수 있는 문장이나 수식이다.</li>
+  <li>명제는 통상 영문 소문자 $p$, $q$, $r$, $\cdots$ 등으로 표기</li>
 </ul>
 
-<hr />
-
-<h1 id="집합의-표현">집합의 표현</h1>
-
-<h2 id="1-원소-나열법">1. 원소 나열법</h2>
-<blockquote>
-  <p>집합의 원소를 나열하여 집합을 표현하는 방법<br />
-중괄호 { } 속에 “ , “ 구별하여 나열한다.</p>
-</blockquote>
-
-<ul>
-  <li>{1, 2, 3}</li>
-  <li>{빨간색, 파란색, 보라색}</li>
-</ul>
-
-<h2 id="2-조건-제시법">2. 조건 제시법</h2>
-<blockquote>
-  <p>조건을 제시하여 집합을 표현하는 방법
-<br /></p>
-</blockquote>
-
+<h2 id="명제-예시">명제 예시</h2>
 <ol>
-  <li>중괄호 { } 속에 수직선 $\mid$ , 쌍점 : 을 써서 구역을 나눈 후</li>
-  <li>왼쪽구역 : 집합을 나타내는식</li>
-  <li>오른쪽 구역 : 원소를 만족시킬 조건</li>
+  <li>손흥민이 태어난 년도는 2000년이다.
+    <ul>
+      <li>손흥민이 태어난 년도는 1992년이므로 거짓인 명제이다.</li>
+    </ul>
+  </li>
+  <li>1 + 2 = 3
+    <ul>
+      <li>산수에 원리에 따라 객관적으로 참, 거짓을 판달할 수 있으므로 명제이며 참이다.</li>
+    </ul>
+  </li>
+  <li>커피는 달달하다.
+    <ul>
+      <li>참 또는 거짓을 판단할 수 없으므로 명제가 아니다.</li>
+    </ul>
+  </li>
 </ol>
 
+<h2 id="진리값-truth-value">진리값 (Truth value)</h2>
+<blockquote>
+  <p>참, 거짓을 가르키는 값을 진리값(truth value)라고 한다.</p>
+</blockquote>
+
 <ul>
-  <li>{2n $\mid$ n은 정수} $\rightarrow$ 모든 짝수의 집합</li>
+  <li>프로그래밍 언어에서는 조건이 참인지 거짓인지 표현하는 논리 연산에 사용한다.<br />
+참 $\rightarrow$ 1, 거짓 $\rightarrow$ 0</li>
 </ul>
 
-<h2 id="3-벤-다이어그램">3. 벤 다이어그램</h2>
+<h2 id="진리표-truth-table">진리표 (Truth table)</h2>
 <blockquote>
-  <p>집합 사이의 관계를 표시하기 위헤 도형으로 표기한 것</p>
+  <p>모든 명제 및 그 조합에 대한 입출력 결과를 기록한 표</p>
 </blockquote>
 
-<p><img src="/assets/images/Math/dm/dm_example_2_1.png" width="200" height="200" /></p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">명제 $P$</th>
+      <th style="text-align: center">명제 $Q$</th>
+      <th style="text-align: right">$P$ $\land$ $Q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">참</td>
+      <td style="text-align: center">참</td>
+      <td style="text-align: right">참</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">참</td>
+      <td style="text-align: center">거짓</td>
+      <td style="text-align: right">거짓</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">거짓</td>
+      <td style="text-align: center">참</td>
+      <td style="text-align: right">거짓</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">거짓</td>
+      <td style="text-align: center">거짓</td>
+      <td style="text-align: right">거짓</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><br /></p>
-
-<h1 id="집합의-종류">집합의 종류</h1>
-<h2 id="1-유한--무한-집합">1. 유한 / 무한 집합</h2>
+<h2 id="명제함수">명제함수</h2>
 <blockquote>
-  <p>유한개 원소로 이루어진 집합 $\rightarrow$ {1, 2, 3}<br />
-무한개 원소로 이루어진 집합 $\rightarrow$ 자연수</p>
+  <p>명제변수 $x$ 를 포함하여 진리값을 판별할 수 있는 문장이나 수식</p>
 </blockquote>
 
-<h2 id="2-전체-집합-universal-set">2. 전체 집합 (Universal Set)</h2>
+<h3 id="명제함수-예시">명제함수 예시</h3>
 <blockquote>
-  <p>모든 대상을 (자기 자신까지도) 원소로 포함하는 집합<br />
-보통 알파벳 U로 표기</p>
-</blockquote>
-
-<h2 id="3-공집합-empty-set">3. 공집합 (Empty Set)</h2>
-<blockquote>
-  <p>원소가 하나도 없는 집합<br />
-기호 $\phi$ 로 표기</p>
-</blockquote>
-
-<h2 id="4-부분집합-subset">4. 부분집합 (subset)</h2>
-<blockquote>
-  <p>집합 A의 모든 원소가 집합 B에 포함되는 집합<br />
-A $\subseteq$ B 로 표기</p>
-</blockquote>
-
-<h2 id="5-진부분집합-proper-subset">5. 진부분집합 (proper subset)</h2>
-<blockquote>
-  <p>부분 집합 중 자기 자신은 원소로 갖지 않는 집합<br />
-A $\subseteq$ B 이고, A $\ne$ B 일때, 진부분집합이라고 한다.<br />
-A $\subset$ B 로 표기</p>
-</blockquote>
-
-<h2 id="6-여집합-complementary-set">6. 여집합 (complementary set)</h2>
-<blockquote>
-  <p>전체 집합 U 에는 속하나 A에 속하지 않는 집합<br />
-$A^c$ 로 표기</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_2.png" width="200" height="200" /></p>
-
-<h1 id="집합의-연산">집합의 연산</h1>
-<h2 id="1-합집합-union">1. 합집합 (Union)</h2>
-<blockquote>
-  <p>둘 또는 더 많은 집합의 원소를 한 군데 합쳐놓은 집합<br />
-A $\cup$ B 로 표기</p>
+  <p>$P(x)$ = $x$ &gt; 2  이라는 명제 함수라고 하면 명제변수 $x$의 값에 따라 $P(x)$ 의 진리값을 판별할 수 있다.</p>
 </blockquote>
 
 <ul>
-  <li>A $\cup$ B = {x : x $\in$ A 또는 x $\in$ B}</li>
-  <li>x가 A $\cup$ B 에 속할 필요충분조건은 x $\in$ A 또는 x $\in$ B 이다.</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_3.png" width="200" height="200" /></p>
-
-<h2 id="2-교집합-intersection">2. 교집합 (Intersection)</h2>
-<blockquote>
-  <p>둘 또는 더 많은 집합이 공통으로 포함하는 원소로 이루어진 집합<br />
-A $\cap$ B 로 표기</p>
-</blockquote>
-
-<ul>
-  <li>A $\cap$ B = {x : x $\in$ A and x $\in$ B}</li>
-  <li>x $\in$ A $\cap$ B  일 필요충분조건은 x x $\in$ A 또한 x $\in$ B 이다.</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_4.png" width="200" height="200" /></p>
-
-<h2 id="3-차집합-difference">3. 차집합 (Difference)</h2>
-<blockquote>
-  <p>두 집합 A, B 에서 B의 원소 중 A에 속하지 않는 원소만으로 이루어진 집합을 B $\setminus$ A 라고 한다.</p>
-</blockquote>
-
-<ul>
-  <li>집합 B 에 대한 A 의 차집합은 B - A 또는 B $\setminus$ A 로 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_5.png" width="200" height="200" /></p>
-
-<h2 id="4-곱집합-product-set">4. 곱집합 (Product Set)</h2>
-<blockquote>
-  <ol>
-    <li>곱집합 (Product Set) 또는 카티션 곱 (Cartesian Product) 라고 한다.
-      <ul>
-        <li>두 집합 A,B 의 원소들로 만들어지는 모든 순서상 (a,b) 들의 집합</li>
-        <li>a $\in$ A 이고, b $\in$ B 인 모든 순서쌍 (a,b) 들의 집합</li>
-        <li>A $\times$ B 로 표기</li>
-        <li>A $\times$ B = {(a,b) $\mid$ a $\in$ A and b $\in$ B}</li>
-      </ul>
-    </li>
-    <li>카티션 곱의 길이(크기) $\rightarrow$ 가능한 모든 순서쌍의 개수
-      <ul>
-        <li>$\mid$ A $\times$ B $\mid$ 로 표기</li>
-        <li>$\mid$ A $\times$ B $\mid$ = $\mid$ A $\mid$  $\cdot$ $\mid$ B $\mid$</li>
-      </ul>
-    </li>
-  </ol>
-</blockquote>
-
-<ul>
-  <li>A = {x, y, z}, B = {1, 2, 3}
+  <li>변수에 특정 값을 할당하는 방법
     <ul>
-      <li>A $\times$ B = {(x,1), (x,2), (x,3), (y,1), (y,2), (y,3), (z,1), (z,2), (z,3)}</li>
-      <li>$\mid$ A $\times$ B $\mid$ = 3 $\cdot$ 3 = 9<br />
-<br />
-<img src="/assets/images/Math/dm/dm_example_2_6.png" width="200" height="200" /></li>
+      <li>$x$ = 3이라면 $P(x)$는 참인 명제가 되고, $x$ = 1이라면 $P(x)$는 거짓인 명제가 된다.</li>
+    </ul>
+  </li>
+  <li>변수의 범위를 제한하는 방법
+    <ul>
+      <li>$x$ $\ge$ 3이라면, $P(x)$는 참이 된다.</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="5-서로소-disjoint">5. 서로소 (disjoint)</h2>
+<h3 id="한정자">한정자</h3>
 <blockquote>
-  <p>두 집합의 교집합이 공집합이면 두 집합을 서로소 (disjoint)라고 한다.</p>
+  <p>명제함수에서 변수의 범위를 제한하는 연산자이다.</p>
+</blockquote>
+
+<h4 id="전체한정자-universal-quantifier">전체한정자 (Universal Quantifier)</h4>
+<blockquote>
+  <p>모든 것에 대하여 <strong>(for all)</strong></p>
 </blockquote>
 
 <ul>
-  <li>A $\cap$ B = $\emptyset$</li>
+  <li>$\forall xP(x)$ : 모든 $x$에 대하여 $P(x)$
+    <ul>
+      <li>모든 $x$에 대하여 참일 경우 참인 명제이다.</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\forall$</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="존재한정자-existential-quantifier">존재한정자 (existential quantifier)</h4>
+<blockquote>
+  <p>존재한다 <strong>(there exist)</strong></p>
+</blockquote>
+
+<ul>
+  <li>$\exists xP(x)$ : 어떤 $x$에 대하여 $P(x)$
+    <ul>
+      <li>참이되는 $x$가 하나라도 있을 경우 참인 명제이다.</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\exists$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="논리연산자logical-operator">논리연산자(logical operator)</h2>
+<blockquote>
+  <p>여러 명제를 결합할 때 사용</p>
+</blockquote>
+
+<h3 id="종류">종류</h3>
+<h4 id="1-부정-negation">1. 부정 (Negation)</h4>
+<blockquote>
+  <p>명제 $p$에 대하여 $p$의 진리값을 반대로 갖는 명제</p>
+</blockquote>
+
+<ul>
+  <li>언어
+    <ul>
+      <li>$not$</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\lnot$</li>
+      <li>$\sim$</li>
+    </ul>
+  </li>
+  <li>
+    <p>진리표 (truth table)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">$p$</th>
+          <th style="text-align: center">$\lnot p$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="2-논리곱-conjunction">2. 논리곱 (Conjunction)</h4>
+<blockquote>
+  <p>명제 $p$, $q$에 대하여 $p$와 $q$가 모두 참일 경우에만 참, 반대일 경우 거짓이 되는 명제</p>
+</blockquote>
+
+<ul>
+  <li>언어
+    <ul>
+      <li>$and$</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\land$</li>
+    </ul>
+  </li>
+  <li>
+    <p>진리표 (truth table)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">$p$</th>
+          <th style="text-align: center">$q$</th>
+          <th style="text-align: center">$p$ $\land$ $p$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="3-논리합-disjunction">3. 논리합 (Disjunction)</h4>
+<blockquote>
+  <p>명제 $p$, $q$에 대하여 $p$와 $q$가 모두 거짓일 경우에만 거짓, 그렇지 않을 경우 참이 되는 명제</p>
+</blockquote>
+
+<ul>
+  <li>언어
+    <ul>
+      <li>$or$</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\lor$</li>
+    </ul>
+  </li>
+  <li>
+    <p>진리표 (truth table)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">$p$</th>
+          <th style="text-align: center">$q$</th>
+          <th style="text-align: center">$p$ $\lor$ $p$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="4-배타적-논리합-exclusive-or">4. 배타적 논리합 (Exclusive OR)</h4>
+<blockquote>
+  <p>명제 $p$, $q$에 대하여 $p$와 $q$ 중 하나만 참일 때 참이되고, 그렇지 않으면 거짓이 되는 명제</p>
+</blockquote>
+
+<ul>
+  <li>언어
+    <ul>
+      <li>$X OR$</li>
+    </ul>
+  </li>
+  <li>기호
+    <ul>
+      <li>$\oplus$</li>
+      <li>$\sim$</li>
+    </ul>
+  </li>
+  <li>
+    <p>진리표 (truth table)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">$p$</th>
+          <th style="text-align: center">$q$</th>
+          <th style="text-align: center">$p$ $\oplus$ $p$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">T</td>
+          <td style="text-align: center">T</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+          <td style="text-align: center">F</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
 
 <hr />
-
-<h1 id="집합의-법칙">집합의 법칙</h1>
-<h2 id="1-항등법칙">1. 항등법칙</h2>
-<ul>
-  <li>A $\cap$ $\emptyset$ = A</li>
-  <li>A $\cup$ U = A</li>
-</ul>
-
-<h2 id="2-지배법칙">2. 지배법칙</h2>
-<ul>
-  <li>A $\cup$ U = U</li>
-  <li>A $\cap$ $\emptyset$ = $\emptyset$</li>
-</ul>
-
-<h2 id="3-멱등법칙">3. 멱등법칙</h2>
-<ul>
-  <li>A $\cup$ A = A</li>
-  <li>A $\cap$ A = A</li>
-</ul>
-
-<h2 id="4-교환법칙">4. 교환법칙</h2>
-<ul>
-  <li>A $\cup$ B = B $\cup$ A</li>
-  <li>A $\cap$ B = B $\cap$ A</li>
-</ul>
-
-<h2 id="5-결합법칙">5. 결합법칙</h2>
-<ul>
-  <li>A $\cup$ (B $\cup$ C) = (A $\cup$ B) $\cup$ C</li>
-  <li>A $\cap$ (B $\cap$ C) = (A $\cap$ B) $\cap$ C</li>
-</ul>
-
-<h2 id="6-분배법칙">6. 분배법칙</h2>
-<ul>
-  <li>A $\cup$ (B $\cap$ C) = (A $\cup$ B) $\cap$ (A $\cup$ C)</li>
-  <li>A $\cap$ (B $\cup$ C) = (A $\cap$ B) $\cup$ (A $\cap$ C)</li>
-</ul>
-
-<h2 id="7-이중-여집합">7. 이중 여집합</h2>
-<ul>
-  <li>$(A^c)^c$ = $A$</li>
-</ul>
-
-<h2 id="8-여집합의-법칙">8. 여집합의 법칙</h2>
-<ul>
-  <li>$A$ $\cup$ $A^c$ = U</li>
-  <li>$A$ $\cap$ $A^c$ = $\phi$</li>
-  <li>$\emptyset^c$ = U</li>
-  <li>$U^c$ = $\emptyset$</li>
-</ul>
-
-<h2 id="9-드로므간의-법칙">9. 드로므간의 법칙</h2>
-<ul>
-  <li>(A $\cup$ B)$^c$ = A$^c$ $\cap$ B$^c$</li>
-  <li>(A $\cap$ B)$^c$ = A$^c$ $\cup$ B$^c$</li>
-</ul>
-
-<h2 id="10-흡수법칙">10. 흡수법칙</h2>
-<ul>
-  <li>A $\cup$ (A $\cap$ B) = A</li>
-  <li>A $\cap$ (A $\cup$ B) = A</li>
-</ul>
-
-<hr />
-
 <h1 id="참조">참조</h1>
-<p><a href="https://ko.wikipedia.org/wiki/%EC%A7%91%ED%95%A9">https://ko.wikipedia.org/wiki/%EC%A7%91%ED%95%A9</a><br />
-<a href="https://mathbang.net/1#gsc.tab=0">https://mathbang.net/1#gsc.tab=0</a><br />
-<a href="http://www.ktword.co.kr/test/view/view.php?nav=2&amp;no=3902&amp;sh=%EC%A7%91%ED%95%A9">http://www.ktword.co.kr/test/view/view.php?nav=2&amp;no=3902&amp;sh=%EC%A7%91%ED%95%A9</a></p>
+<p><a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C">https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C</a><br />
+<a href="https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92">https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92</a><br />
+<a href="http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EB%85%BC%EB%A6%AC%EC%99%80-%EB%AA%85%EC%A0%9C-logic-propositions.html">http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EB%85%BC%EB%A6%AC%EC%99%80-%EB%AA%85%EC%A0%9C-logic-propositions.html</a><br />
+<a href="https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%AC%ED%91%9C">https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%AC%ED%91%9C</a></p>
 
         
       </section>
@@ -681,12 +790,11 @@ A $\cap$ B 로 표기</p>
       
   <nav class="pagination">
     
-      <a href="/math/Math-01/" class="pagination--pager" title="[이산수학] 이산수학(Discrete Mathmatics)
+      <a href="/coding%20test/BOJ-2798/" class="pagination--pager" title="[백준] 2798 : 블랙잭 (파이썬)
 ">이전</a>
     
     
-      <a href="/coding%20test/BOJ-1543/" class="pagination--pager" title="[백준] 1543 : 문서검색 (파이썬)
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -700,50 +808,6 @@ A $\cap$ B 로 표기</p>
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/math/Math-03/" rel="permalink">[이산수학] 논리와 명제 (Logic &amp; Proposition)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">명제 (Proposition)
-
-  논리학적으로 뜻이 분명한 문장을 말한다.
-
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -827,6 +891,47 @@ A $\cap$ B 로 표기</p>
 
   ⚪️ 실버 5
 
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/math/Math-02/" rel="permalink">[이산수학] 집합(Set)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">집합(Set)이란?
 
 </p>
   </article>
