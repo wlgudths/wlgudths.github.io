@@ -28,4 +28,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-03/",
         "teaser": null
+      },{
+        "title": "[백준] 1065 : 한수 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/1065 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 브루트포스 알고리즘 🧐 아이디어 문제에서 정의한 한수의 뜻을 이해하는데 많은 시간이 걸렸다. 문제의 포인트는 이 두가지를 잘 파악하는데 있다고 생각한다. 1. 한수의 정의 어떤 양의 정수 X의 각 자리가 등차수열을 이루면 그 수를...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-1065/",
+        "teaser": null
       }]
