@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2023-10-16T00:00:00+09:00">
+  <meta property="article:modified_time" content="2023-10-19T00:00:00+09:00">
 
 
 
@@ -289,7 +289,7 @@
   <label for="ac-toc">토글 메뉴</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">6</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">8</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
       </li>
       <li>
         <span class="nav__sub-title">Computer Science</span>
@@ -317,7 +317,7 @@
                     
                 
                     
-                        <li><a href="/categories/boj" class="">백준 (3)</a></li>
+                        <li><a href="/categories/boj" class="">백준 (5)</a></li>
                     
                 
             </ul>
@@ -352,7 +352,7 @@
     <meta itemprop="headline" content="[이산수학] 논리와 명제 (Logic &amp; Proposition)">
     <meta itemprop="description" content="명제 (Proposition)  논리학적으로 뜻이 분명한 문장을 말한다.">
     <meta itemprop="datePublished" content="2023-10-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-10-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-10-19T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -390,7 +390,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 논리와 명제 (Logic & Proposition)</h4></header>
-              <ul class="toc__menu"><li><a href="#명제-proposition">명제 (Proposition)</a><ul><li><a href="#명제-예시">명제 예시</a></li><li><a href="#진리값-truth-value">진리값 (Truth value)</a></li><li><a href="#진리표-truth-table">진리표 (Truth table)</a></li><li><a href="#명제함수">명제함수</a><ul><li><a href="#명제함수-예시">명제함수 예시</a></li><li><a href="#한정자">한정자</a><ul><li><a href="#전체한정자-universal-quantifier">전체한정자 (Universal Quantifier)</a></li><li><a href="#존재한정자-existential-quantifier">존재한정자 (existential quantifier)</a></li></ul></li></ul></li><li><a href="#논리연산자logical-operator">논리연산자(logical operator)</a><ul><li><a href="#종류">종류</a><ul><li><a href="#1-부정-negation">1. 부정 (Negation)</a></li><li><a href="#2-논리곱-conjunction">2. 논리곱 (Conjunction)</a></li><li><a href="#3-논리합-disjunction">3. 논리합 (Disjunction)</a></li><li><a href="#4-배타적-논리합-exclusive-or">4. 배타적 논리합 (Exclusive OR)</a></li></ul></li></ul></li></ul></li><li><a href="#참조">참조</a></li></ul>
+              <ul class="toc__menu"><li><a href="#명제-proposition">명제 (Proposition)</a><ul><li><a href="#명제-예시">명제 예시</a></li><li><a href="#진리값-truth-value">진리값 (Truth value)</a></li><li><a href="#진리표-truth-table">진리표 (Truth table)</a></li><li><a href="#명제함수">명제함수</a><ul><li><a href="#명제함수-예시">명제함수 예시</a></li><li><a href="#한정자">한정자</a><ul><li><a href="#전체한정자-universal-quantifier">전체한정자 (Universal Quantifier)</a></li><li><a href="#존재한정자-existential-quantifier">존재한정자 (existential quantifier)</a></li></ul></li></ul></li><li><a href="#논리연산자logical-operator">논리연산자(logical operator)</a><ul><li><a href="#종류">종류</a><ul><li><a href="#1-부정-negation">1. 부정 (Negation)</a></li><li><a href="#2-논리곱-conjunction">2. 논리곱 (Conjunction)</a></li><li><a href="#3-논리합-disjunction">3. 논리합 (Disjunction)</a></li><li><a href="#4-배타적-논리합-exclusive-or">4. 배타적 논리합 (Exclusive OR)</a></li></ul></li><li><a href="#조건명제-conditional-proposition">조건명제 (Conditional Proposition)</a><ul><li><a href="#조건-명제-진리표">조건 명제 진리표</a></li><li><a href="#역-converse">역 (converse)</a></li><li><a href="#이-inverse">이 (inverse)</a></li><li><a href="#대우-contrapositive">대우 (contrapositive)</a></li><li><a href="#역-이-대우-진리표">역, 이, 대우 진리표</a></li></ul></li></ul></li></ul></li><li><a href="#참조">참조</a></li></ul>
 
             </nav>
           </aside>
@@ -743,6 +743,120 @@
 </ul>
 
 <hr />
+
+<h3 id="조건명제-conditional-proposition">조건명제 (Conditional Proposition)</h3>
+
+<blockquote>
+  <p>$p \rightarrow q$</p>
+  <ul>
+    <li>$p$이면 $q$이다. ( $if$  $p$  $then$   $q$ )</li>
+    <li>$p$를 가설(hypothesis), 전제(premise) $q$를 결론(conclusion), 결과(consequence)</li>
+  </ul>
+</blockquote>
+
+<h4 id="조건-명제-진리표">조건 명제 진리표</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p$</th>
+      <th style="text-align: center">$q$</th>
+      <th style="text-align: center">$p \rightarrow q$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h4 id="역-converse">역 (converse)</h4>
+<blockquote>
+  <p>$p \rightarrow q$ 에 대하여 $q \rightarrow p$ 가설과 결론이 바뀐 것이다.</p>
+</blockquote>
+
+<h4 id="이-inverse">이 (inverse)</h4>
+<blockquote>
+  <p>$p \rightarrow q$ 에 대하여 $\lnot p \rightarrow \lnot q$ 가설과 결론을 각각 부정한 것이다.</p>
+</blockquote>
+
+<h4 id="대우-contrapositive">대우 (contrapositive)</h4>
+<blockquote>
+  <p>$p \rightarrow q$ 에 대하여 $\lnot q \rightarrow \lnot p$ 가설과 결론이 바뀐 동시에 부정한 것이다.</p>
+</blockquote>
+
+<h4 id="역-이-대우-진리표">역, 이, 대우 진리표</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p$</th>
+      <th style="text-align: center">$q$</th>
+      <th style="text-align: center">$p \rightarrow q$</th>
+      <th style="text-align: center">$q \rightarrow p$</th>
+      <th style="text-align: center">$\lnot p \rightarrow \lnot q$</th>
+      <th style="text-align: center">$\lnot q \rightarrow \lnot p$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<p><br /></p>
+
 <h1 id="참조">참조</h1>
 <p><a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C">https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C</a><br />
 <a href="https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92">https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92</a><br />
@@ -774,7 +888,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-16">October 16, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-19">October 19, 2023</time></p>
 
       </footer>
 
@@ -827,6 +941,94 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-2309/" rel="permalink">[백준] 2309 : 일곱 난쟁이 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  🟤 브론즈 1
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-2231/" rel="permalink">[백준] 2231 : 분해합 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  🟤 브론즈 2
+
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -910,91 +1112,6 @@
 
   🟤 브론즈 2
 
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/boj/BOJ-1543/" rel="permalink">[백준] 1543 : 문서검색 (파이썬)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
-
-  ⚪️ 실버 5
-
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/discrete%20mathematics/DM-02/" rel="permalink">[이산수학] 집합(Set)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">집합(Set)이란?
 
 </p>
   </article>
