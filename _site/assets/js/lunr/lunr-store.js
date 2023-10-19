@@ -46,4 +46,10 @@ var store = [{
         "tags": [],
         "url": "/boj/BOJ-2309/",
         "teaser": null
+      },{
+        "title": "[이산수학] 증명(Proofs)",
+        "excerpt":"증명(Proofs)이란? 특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다. 증명관련 용어 정리 (Theorem) 정리란 공리와 정의를 통해 참(True)으로 증명된 명제이다. 피타고라스의 정리 (Pythagorean theorem) 정의 (Definition) 용어 또는 기호의 의미를 확실하게 규정한 문장이나 식, 용어의 뜻에 대한 약속 삼각형 : 세 개의 선분으로 둘러싸인 다각형 공리...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-04/",
+        "teaser": null
       }]
