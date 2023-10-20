@@ -52,4 +52,16 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-04/",
         "teaser": null
+      },{
+        "title": "[백준] 4673 : 셀프 넘버 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/4673 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 구현 브루트포스 알고리즘 🧐 아이디어 10,000 보다 작거나 같은 셀프 넘버 를 출력하는 문제이다. 생성자 : 양의 정수 $n$ 에 대해서 $n$ 과 $n$ 의 각 자리수를 더하는 함수라고 정의해보면 $d(75) = 75...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-4673/",
+        "teaser": null
+      },{
+        "title": "[백준] 7568 : 덩치 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/7568 🤖 예제 입력 및 출력 📑 알고리즘 분류 구현 브루트포스 알고리즘 🧐 아이디어 처음에 다양한 정렬을 해보며 시도하였지만, 풀수가 없었다. 하지만 문제를 다시 살펴보니 문제 안에 답이 있었다. N명의 집단에서 각 사람의 덩치 등수는 자신보다 더 “큰 덩치”의 사람의 수로 정해진다. 즉,...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-7568/",
+        "teaser": null
       }]
