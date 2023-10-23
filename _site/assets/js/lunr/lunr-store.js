@@ -64,4 +64,10 @@ var store = [{
         "tags": [],
         "url": "/boj/BOJ-7568/",
         "teaser": null
+      },{
+        "title": "[이산수학] 관계(Relation)",
+        "excerpt":"관계(Relation)란? 객체들 간의 연관성을 표현하는 구조이다. 집합론에서는 곱집합의 부분집합이다. 다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것. 이항관계 (binary relations) 집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \\times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다. $a \\in...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-05/",
+        "teaser": null
       }]
