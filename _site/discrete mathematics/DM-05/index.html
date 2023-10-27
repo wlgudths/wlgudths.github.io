@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>[이산수학] 관계(Relation) | 느려도 괜찮아</title>
-<meta name="description" content="관계(Relation)란?    객체들 간의 연관성을 표현하는 구조이다.        집합론에서는 곱집합의 부분집합이다.     다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.      이항관계 (binary relations)    집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.        $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$      순서쌍(ordered pair)    어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.      순서쌍 예시                                             $A = {(x             1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 떄, 관계 $R$ 을 순서쌍으로 나타내시오.                                                                                             $R = {((a,b)               a \times b 는 홀수, a \in A, b \in A)}$                                                     $R = {(1,1), (1,3), (3,1), (3,3)}$                           곱집합(cartesian product)    이산수학 04.집합 참고   정의역(Domain : $dom(R)$)    집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.                                                $dom(R)$ = ${a             a \in R}$                                      공역, 공번역(Codomain : $codom(R$))    집합 $A 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                                $codom(R) = {b             b \in R}$                                      치역(Range : $ran(R)$)    집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                                $ran(R) = {b             (a,b) \in R} \subseteq B$                                      역관계(Inverse relation)    집합 $A$ 에서 $B$로의 이황관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$        예시 ($A = {1,3}, B = {2,4}$)                $R = {(1,2), (1,4), (3,2), (3,4)}$         $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$                  관계의 표현 방법  화살표 도표    두 집합 원소 사이의 관계를 화살표로 나타내는 방법     좌표 도표    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법     방향 그래프    하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프        루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표        관계 행렬    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법        $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.        관계의 성질  반사성(Reflexive Relation)    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계   반사성 예시          대각원소들이 모두 1인 관계행렬 $\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 0 &amp; 0 &amp; 1 &amp; 0 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$           모든 원소에 대해 루프       대칭성(symmetric relation)    집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계   대칭성 예시    $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.   $\begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 1 1 &amp; 0 &amp; 1 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$     방향그래프 (양방향 화살표)    반대칭성(antisymmetric)    집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계   반대칭성 예시    $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.   [\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0  1 &amp; 0 &amp; 0 &amp; 0  1 &amp; 1 &amp; 0 &amp; 0  1 &amp; 1 &amp; 1 &amp; 0  \end{bmatrix}]  추이성(Transitive)    집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계   추이성 예시  $\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1  0 &amp; 1 &amp; 1 &amp; 1  0 &amp; 0 &amp; 1 &amp; 1  0 &amp; 0 &amp; 0 &amp; 1  \end{bmatrix}$  동치와 분할  동치관계(equivalence)    반사성, 대칭성, 추이성을 가지는 관계   분할(partition)    공집합이 아닌 임의의 집합 $S$의 부분집합 원소인 집합 $P = {A_1, A_2, A_3, \cdots, A_n}$가   부분 순서 관계    반사관계, 반대칭관계, 추이관계가 성립하는 관계   참조 http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99) https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%AD https://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
+<meta name="description" content="관계(Relation)란?    객체들 간의 연관성을 표현하는 구조이다.        집합론에서는 곱집합의 부분집합이다.     다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.      이항관계 (binary relations)    집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.      $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$   순서쌍(ordered pair)    어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.      순서쌍 예시 $A = {(x | 1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 때, 관계 $R$ 을 순서쌍으로 나타내시오.    $R = {((a,b)|a \times b 는 홀수, a \in A, b \in A)}$   $R = {(1,1), (1,3), (3,1), (3,3)}$   곱집합(cartesian product)    이산수학 04.집합 참고   정의역(Domain : $dom(R)$)    집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.                  $dom(R)$ = ${a       a \in R }$           공역, 공번역(Codomain : $codom(R$))    집합 $A 에서 집합 $B$로 가는 이항관계 $R$ 에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                                $codom(R) = {b             b \in R}$                                      치역(Range : $ran(R)$)    집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                                $ran(R) = {b             (a,b) \in R} \subseteq B$                                      역관계(Inverse relation)    집합 $A$ 에서 $B$로의 이항관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$        예시 ($A = {1,3}, B = {2,4}$)                $R$ = ${(1,2), (1,4), (3,2), (3,4)}$         $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$                  관계의 표현 방법  화살표 도표    두 집합 원소 사이의 관계를 화살표로 나타내는 방법     좌표 도표    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법     방향 그래프    하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프        루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표        관계 행렬    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법        $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.        관계의 성질  반사성(Reflexive Relation)    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계   반사성 예시          대각원소들이 모두 1인 관계행렬 $\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 0 &amp; 0 &amp; 1 &amp; 0 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$           모든 원소에 대해 루프       대칭성(symmetric relation)    집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계   대칭성 예시    $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.   $\begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 1 1 &amp; 0 &amp; 1 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$     방향그래프 (양방향 화살표)    반대칭성(antisymmetric)    집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계   반대칭성 예시    $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.   [\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0  1 &amp; 0 &amp; 0 &amp; 0  1 &amp; 1 &amp; 0 &amp; 0  1 &amp; 1 &amp; 1 &amp; 0  \end{bmatrix}]  추이성(Transitive)    집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계   추이성 예시  $\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1  0 &amp; 1 &amp; 1 &amp; 1  0 &amp; 0 &amp; 1 &amp; 1  0 &amp; 0 &amp; 0 &amp; 1  \end{bmatrix}$  참조 http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99) https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%AD https://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
 
 
   <meta name="author" content="지지형">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-05/">
 
 
-  <meta property="og:description" content="관계(Relation)란?    객체들 간의 연관성을 표현하는 구조이다.        집합론에서는 곱집합의 부분집합이다.     다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.      이항관계 (binary relations)    집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.        $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$      순서쌍(ordered pair)    어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.      순서쌍 예시                                             $A = {(x             1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 떄, 관계 $R$ 을 순서쌍으로 나타내시오.                                                                                             $R = {((a,b)               a \times b 는 홀수, a \in A, b \in A)}$                                                     $R = {(1,1), (1,3), (3,1), (3,3)}$                           곱집합(cartesian product)    이산수학 04.집합 참고   정의역(Domain : $dom(R)$)    집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.                                                $dom(R)$ = ${a             a \in R}$                                      공역, 공번역(Codomain : $codom(R$))    집합 $A 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                                $codom(R) = {b             b \in R}$                                      치역(Range : $ran(R)$)    집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                                $ran(R) = {b             (a,b) \in R} \subseteq B$                                      역관계(Inverse relation)    집합 $A$ 에서 $B$로의 이황관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$        예시 ($A = {1,3}, B = {2,4}$)                $R = {(1,2), (1,4), (3,2), (3,4)}$         $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$                  관계의 표현 방법  화살표 도표    두 집합 원소 사이의 관계를 화살표로 나타내는 방법     좌표 도표    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법     방향 그래프    하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프        루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표        관계 행렬    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법        $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.        관계의 성질  반사성(Reflexive Relation)    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계   반사성 예시          대각원소들이 모두 1인 관계행렬 $\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 0 &amp; 0 &amp; 1 &amp; 0 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$           모든 원소에 대해 루프       대칭성(symmetric relation)    집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계   대칭성 예시    $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.   $\begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 1 1 &amp; 0 &amp; 1 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$     방향그래프 (양방향 화살표)    반대칭성(antisymmetric)    집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계   반대칭성 예시    $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.   [\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0  1 &amp; 0 &amp; 0 &amp; 0  1 &amp; 1 &amp; 0 &amp; 0  1 &amp; 1 &amp; 1 &amp; 0  \end{bmatrix}]  추이성(Transitive)    집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계   추이성 예시  $\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1  0 &amp; 1 &amp; 1 &amp; 1  0 &amp; 0 &amp; 1 &amp; 1  0 &amp; 0 &amp; 0 &amp; 1  \end{bmatrix}$  동치와 분할  동치관계(equivalence)    반사성, 대칭성, 추이성을 가지는 관계   분할(partition)    공집합이 아닌 임의의 집합 $S$의 부분집합 원소인 집합 $P = {A_1, A_2, A_3, \cdots, A_n}$가   부분 순서 관계    반사관계, 반대칭관계, 추이관계가 성립하는 관계   참조 http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99) https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%AD https://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
+  <meta property="og:description" content="관계(Relation)란?    객체들 간의 연관성을 표현하는 구조이다.        집합론에서는 곱집합의 부분집합이다.     다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.      이항관계 (binary relations)    집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.      $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$   순서쌍(ordered pair)    어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.      순서쌍 예시 $A = {(x | 1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 때, 관계 $R$ 을 순서쌍으로 나타내시오.    $R = {((a,b)|a \times b 는 홀수, a \in A, b \in A)}$   $R = {(1,1), (1,3), (3,1), (3,3)}$   곱집합(cartesian product)    이산수학 04.집합 참고   정의역(Domain : $dom(R)$)    집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.                  $dom(R)$ = ${a       a \in R }$           공역, 공번역(Codomain : $codom(R$))    집합 $A 에서 집합 $B$로 가는 이항관계 $R$ 에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                                $codom(R) = {b             b \in R}$                                      치역(Range : $ran(R)$)    집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                                $ran(R) = {b             (a,b) \in R} \subseteq B$                                      역관계(Inverse relation)    집합 $A$ 에서 $B$로의 이항관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$        예시 ($A = {1,3}, B = {2,4}$)                $R$ = ${(1,2), (1,4), (3,2), (3,4)}$         $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$                  관계의 표현 방법  화살표 도표    두 집합 원소 사이의 관계를 화살표로 나타내는 방법     좌표 도표    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법     방향 그래프    하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프        루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표        관계 행렬    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법        $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.        관계의 성질  반사성(Reflexive Relation)    집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계   반사성 예시          대각원소들이 모두 1인 관계행렬 $\begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 0 &amp; 0 &amp; 1 &amp; 0 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$           모든 원소에 대해 루프       대칭성(symmetric relation)    집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계   대칭성 예시    $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.   $\begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 1 1 &amp; 0 &amp; 1 &amp; 0 0 &amp; 1 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$     방향그래프 (양방향 화살표)    반대칭성(antisymmetric)    집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계   반대칭성 예시    $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.   [\begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0  1 &amp; 0 &amp; 0 &amp; 0  1 &amp; 1 &amp; 0 &amp; 0  1 &amp; 1 &amp; 1 &amp; 0  \end{bmatrix}]  추이성(Transitive)    집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계   추이성 예시  $\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1  0 &amp; 1 &amp; 1 &amp; 1  0 &amp; 0 &amp; 1 &amp; 1  0 &amp; 0 &amp; 0 &amp; 1  \end{bmatrix}$  참조 http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99) https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%AD https://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2023-10-22T00:00:00+09:00">
+  <meta property="article:modified_time" content="2023-10-27T00:00:00+09:00">
 
 
 
@@ -289,7 +289,7 @@
   <label for="ac-toc">토글 메뉴</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">12</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">13</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
       </li>
       <li>
         <span class="nav__sub-title">Computer Science</span>
@@ -301,10 +301,14 @@
                 
                     
                 
+                    
+                
             </ul>
 
         <span class="nav__sub-title">Coding Test</span>
             <ul>
+                
+                    
                 
                     
                 
@@ -320,18 +324,26 @@
                         <li><a href="/categories/boj" class="">백준 (7)</a></li>
                     
                 
+                    
+                
             </ul>
 
             <ul>
                 
                     
                 
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (1)</a></li>
                     
                 
             </ul>
 
         <span class="nav__sub-title">Python</span>
             <ul>
+                
+                    
                 
                     
                 
@@ -350,9 +362,9 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="[이산수학] 관계(Relation)">
-    <meta itemprop="description" content="관계(Relation)란?  객체들 간의 연관성을 표현하는 구조이다.      집합론에서는 곱집합의 부분집합이다.    다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.  이항관계 (binary relations)  집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.      $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$  순서쌍(ordered pair)  어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.  순서쌍 예시                                        $A = {(x            1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 떄, 관계 $R$ 을 순서쌍으로 나타내시오.                                                                                  $R = {((a,b)              a \times b 는 홀수, a \in A, b \in A)}$                                                $R = {(1,1), (1,3), (3,1), (3,3)}$                    곱집합(cartesian product)  이산수학 04.집합 참고정의역(Domain : $dom(R)$)  집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.                                          $dom(R)$ = ${a            a \in R}$                              공역, 공번역(Codomain : $codom(R$))  집합 $A 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                          $codom(R) = {b            b \in R}$                              치역(Range : $ran(R)$)  집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                          $ran(R) = {b            (a,b) \in R} \subseteq B$                              역관계(Inverse relation)  집합 $A$ 에서 $B$로의 이황관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$      예시 ($A = {1,3}, B = {2,4}$)              $R = {(1,2), (1,4), (3,2), (3,4)}$        $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$            관계의 표현 방법화살표 도표  두 집합 원소 사이의 관계를 화살표로 나타내는 방법좌표 도표  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법방향 그래프  하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프      루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표  관계 행렬  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법      $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.  관계의 성질반사성(Reflexive Relation)  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계반사성 예시      대각원소들이 모두 1인 관계행렬$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 00 &amp; 1 &amp; 0 &amp; 00 &amp; 0 &amp; 1 &amp; 00 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}$        모든 원소에 대해 루프  대칭성(symmetric relation)  집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계대칭성 예시  $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.$\begin{bmatrix}0 &amp; 1 &amp; 0 &amp; 11 &amp; 0 &amp; 1 &amp; 00 &amp; 1 &amp; 0 &amp; 01 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}$  방향그래프 (양방향 화살표)반대칭성(antisymmetric)  집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계반대칭성 예시  $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.[\begin{bmatrix}0 &amp; 0 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 0 1 &amp; 1 &amp; 0 &amp; 0 1 &amp; 1 &amp; 1 &amp; 0 \end{bmatrix}]추이성(Transitive)  집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계추이성 예시$\begin{bmatrix}1 &amp; 1 &amp; 1 &amp; 1 0 &amp; 1 &amp; 1 &amp; 1 0 &amp; 0 &amp; 1 &amp; 1 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$동치와 분할동치관계(equivalence)  반사성, 대칭성, 추이성을 가지는 관계분할(partition)  공집합이 아닌 임의의 집합 $S$의 부분집합 원소인 집합 $P = {A_1, A_2, A_3, \cdots, A_n}$가부분 순서 관계  반사관계, 반대칭관계, 추이관계가 성립하는 관계참조http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.htmlhttps://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99)https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%ADhttps://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
+    <meta itemprop="description" content="관계(Relation)란?  객체들 간의 연관성을 표현하는 구조이다.      집합론에서는 곱집합의 부분집합이다.    다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.  이항관계 (binary relations)  집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.  $a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$순서쌍(ordered pair)  어떠한 원소 $a \in A, b \in B$ 와 같이 순서를 가진 쌍을 순서쌍이라고 한다. $a$ 를 첫 번째, $b$ 를 두 번째 원소라고 한다.  순서쌍 예시$A = {(x | 1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 때,관계 $R$ 을 순서쌍으로 나타내시오.  $R = {((a,b)|a \times b 는 홀수, a \in A, b \in A)}$  $R = {(1,1), (1,3), (3,1), (3,3)}$곱집합(cartesian product)  이산수학 04.집합 참고정의역(Domain : $dom(R)$)  집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 첫 번째 원소가 포함되어있는 집합.            $dom(R)$ = ${a      a \in R }$      공역, 공번역(Codomain : $codom(R$))  집합 $A 에서 집합 $B$로 가는 이항관계 $R$ 에 속한 순서쌍의 두 번째 원소가 포함되어있는 집합.                                          $codom(R) = {b            b \in R}$                              치역(Range : $ran(R)$)  집합 $A 에서 집합 $B$로 가는 관계 $R$에 속한 순서쌍의 두 번째 원소들을 모아놓은 집합있는 집합.                                          $ran(R) = {b            (a,b) \in R} \subseteq B$                              역관계(Inverse relation)  집합 $A$ 에서 $B$로의 이항관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$      예시 ($A = {1,3}, B = {2,4}$)              $R$ = ${(1,2), (1,4), (3,2), (3,4)}$        $R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$            관계의 표현 방법화살표 도표  두 집합 원소 사이의 관계를 화살표로 나타내는 방법좌표 도표  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 집합 $A$ (정의역)의 원소들을 $x$ 축에, 집합 $B$ (공역)의 원소들을  $y$축에 표시하여 관계 $R$을 나타내는 방법방향 그래프  하나의 집합 $A$에서 집합 $A$로 가는 관계 $R$을 꼭짓점과 화살표를 이용해 나타낸 그래프      루프(loop) : 특정 원소에서 시작해서 그 원소로 끝나는 화살표  관계 행렬  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 관계를 행렬로 표현한 방법      $A$의 원소들을 행에 배치, $B$의 원소들을 열에 배치한 후 관계가 있으면 1, 없으면 0으로 행렬의 원소를 나타낸다.  관계의 성질반사성(Reflexive Relation)  집합 $A$ 에서 집합 $B$로 가는 관계 $R$이 있을 때, 모든 $a \in A$ 에 대해 $(a,a) \in R$ 인 관계반사성 예시      대각원소들이 모두 1인 관계행렬$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 00 &amp; 1 &amp; 0 &amp; 00 &amp; 0 &amp; 1 &amp; 00 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}$        모든 원소에 대해 루프  대칭성(symmetric relation)  집합 $A$ 에 대한 관계 $R$ 이 있을 때, 어떤 $a,b \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$인 관계대칭성 예시  $M_r = [m_{ij}]$ 에서 $m_{ij} = m_{ji}$ 이다.$\begin{bmatrix}0 &amp; 1 &amp; 0 &amp; 11 &amp; 0 &amp; 1 &amp; 00 &amp; 1 &amp; 0 &amp; 01 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}$  방향그래프 (양방향 화살표)반대칭성(antisymmetric)  집합 $A$ 에 대한 관계 $R$ 이 있을 떄, 어떤 $(a,b) \in A$ 에 대해 $(a,b) \in R$ 이면 $(b,a) \in R$ 이고, $a = b$ 인 관계반대칭성 예시  $M_r = [m_{ij}]$ 에서 $i \ne j $ 일 때, $m_{ij} = 0$ 또는 $m_{ji} = 0$ 이다.[\begin{bmatrix}0 &amp; 0 &amp; 0 &amp; 0 1 &amp; 0 &amp; 0 &amp; 0 1 &amp; 1 &amp; 0 &amp; 0 1 &amp; 1 &amp; 1 &amp; 0 \end{bmatrix}]추이성(Transitive)  집합 $A$에 대한 관계 $R$이 있을 때, 어떤 $a,b,c \in A$에 대해 $(a,b) \in R$ 이고 $(b,c) \in R$ 이면 $(a,c) \in R$ 인 관계추이성 예시$\begin{bmatrix}1 &amp; 1 &amp; 1 &amp; 1 0 &amp; 1 &amp; 1 &amp; 1 0 &amp; 0 &amp; 1 &amp; 1 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$참조http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.htmlhttps://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99)https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9D%98%EC%97%ADhttps://johngrib.github.io/wiki/relations/#%EB%8C%80%EC%B9%AD-%EB%B0%98%EB%8C%80%EC%B9%AD-%EA%B4%80%EA%B3%84">
     <meta itemprop="datePublished" content="2023-10-20T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-10-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-10-27T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -390,7 +402,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 관계(Relation)</h4></header>
-              <ul class="toc__menu"><li><a href="#관계relation란">관계(Relation)란?</a><ul><li><a href="#이항관계-binary-relations">이항관계 (binary relations)</a><ul><li><a href="#순서쌍ordered-pair">순서쌍(ordered pair)</a></li><li><a href="#곱집합cartesian-product">곱집합(cartesian product)</a></li><li><a href="#정의역domain--domr">정의역(Domain : $dom(R)$)</a></li><li><a href="#공역-공번역codomain--codomr">공역, 공번역(Codomain : $codom(R$))</a></li><li><a href="#치역range--ranr">치역(Range : $ran(R)$)</a></li></ul></li><li><a href="#역관계inverse-relation">역관계(Inverse relation)</a></li></ul></li><li><a href="#관계의-표현-방법">관계의 표현 방법</a><ul><li><a href="#화살표-도표">화살표 도표</a></li><li><a href="#좌표-도표">좌표 도표</a></li><li><a href="#방향-그래프">방향 그래프</a></li><li><a href="#관계-행렬">관계 행렬</a></li></ul></li><li><a href="#관계의-성질">관계의 성질</a><ul><li><a href="#반사성reflexive-relation">반사성(Reflexive Relation)</a><ul><li><a href="#반사성-예시">반사성 예시</a></li></ul></li><li><a href="#대칭성symmetric-relation">대칭성(symmetric relation)</a><ul><li><a href="#대칭성-예시">대칭성 예시</a></li></ul></li><li><a href="#반대칭성antisymmetric">반대칭성(antisymmetric)</a><ul><li><a href="#반대칭성-예시">반대칭성 예시</a></li></ul></li><li><a href="#추이성transitive">추이성(Transitive)</a><ul><li><a href="#추이성-예시">추이성 예시</a></li></ul></li></ul></li><li><a href="#동치와-분할">동치와 분할</a><ul><li><a href="#동치관계equivalence">동치관계(equivalence)</a></li><li><a href="#분할partition">분할(partition)</a></li></ul></li><li><a href="#부분-순서-관계">부분 순서 관계</a></li><li><a href="#참조">참조</a></li></ul>
+              <ul class="toc__menu"><li><a href="#관계relation란">관계(Relation)란?</a><ul><li><a href="#이항관계-binary-relations">이항관계 (binary relations)</a><ul><li><a href="#순서쌍ordered-pair">순서쌍(ordered pair)</a></li><li><a href="#곱집합cartesian-product">곱집합(cartesian product)</a></li><li><a href="#정의역domain--domr">정의역(Domain : $dom(R)$)</a></li><li><a href="#공역-공번역codomain--codomr">공역, 공번역(Codomain : $codom(R$))</a></li><li><a href="#치역range--ranr">치역(Range : $ran(R)$)</a></li></ul></li><li><a href="#역관계inverse-relation">역관계(Inverse relation)</a></li></ul></li><li><a href="#관계의-표현-방법">관계의 표현 방법</a><ul><li><a href="#화살표-도표">화살표 도표</a></li><li><a href="#좌표-도표">좌표 도표</a></li><li><a href="#방향-그래프">방향 그래프</a></li><li><a href="#관계-행렬">관계 행렬</a></li></ul></li><li><a href="#관계의-성질">관계의 성질</a><ul><li><a href="#반사성reflexive-relation">반사성(Reflexive Relation)</a><ul><li><a href="#반사성-예시">반사성 예시</a></li></ul></li><li><a href="#대칭성symmetric-relation">대칭성(symmetric relation)</a><ul><li><a href="#대칭성-예시">대칭성 예시</a></li></ul></li><li><a href="#반대칭성antisymmetric">반대칭성(antisymmetric)</a><ul><li><a href="#반대칭성-예시">반대칭성 예시</a></li></ul></li><li><a href="#추이성transitive">추이성(Transitive)</a><ul><li><a href="#추이성-예시">추이성 예시</a></li></ul></li></ul></li><li><a href="#참조">참조</a></li></ul>
 
             </nav>
           </aside>
@@ -407,10 +419,11 @@
 <h2 id="이항관계-binary-relations">이항관계 (binary relations)</h2>
 <blockquote>
   <p>집합 $A$ 와 $B$ 가 있을 때, $A$ 와 $B$ 의 곱집합 ($A \times B$)의 부분집합 $R$ 을 $A$ 에서 $B$ 로 가는 관계라고 한다.</p>
-  <ul>
-    <li>$a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 $<em>{a}\mathrm{R}</em>{b}$</li>
-  </ul>
 </blockquote>
+
+<ul>
+  <li>$a \in A$ 고, $b \in B$ 일 때, $(a ,b) \in A \times B$ 이면 ${a}\mathrm{R}{b}$</li>
+</ul>
 
 <h3 id="순서쌍ordered-pair">순서쌍(ordered pair)</h3>
 <blockquote>
@@ -419,33 +432,11 @@
 
 <ul>
   <li>순서쌍 예시
-    <blockquote>
-      <table>
-        <tbody>
-          <tr>
-            <td>$A = {(x</td>
-            <td>1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 떄, 관계 $R$ 을 순서쌍으로 나타내시오.</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </blockquote>
-    <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$R = {((a,b)</td>
-              <td>a \times b 는 홀수, a \in A, b \in A)}$</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>$R = {(1,1), (1,3), (3,1), (3,3)}$</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+$A = {(x | 1 \le x  \le 3 , x는 정수)}$ $A$ 에서 $A$ 로 가는 관계 $R$ 은 다음과 같을 때,<br />
+관계 $R$ 을 순서쌍으로 나타내시오.<br />
+<br />
+  $R = {((a,b)|a \times b 는 홀수, a \in A, b \in A)}$<br />
+  $R = {(1,1), (1,3), (3,1), (3,3)}$</li>
 </ul>
 
 <h3 id="곱집합cartesian-product">곱집합(cartesian product)</h3>
@@ -456,23 +447,20 @@
 <h3 id="정의역domain--domr">정의역(Domain : $dom(R)$)</h3>
 <blockquote>
   <p>집합 $A$ 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 <u>첫 번째 원소가 포함되어</u>있는 집합.</p>
-  <ul>
-    <li>
-      <table>
-        <tbody>
-          <tr>
-            <td>$dom(R)$ = ${a</td>
-            <td>a \in R}$</td>
-          </tr>
-        </tbody>
-      </table>
-    </li>
-  </ul>
 </blockquote>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$dom(R)$ = ${a</td>
+      <td>a \in R }$</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="공역-공번역codomain--codomr">공역, 공번역(Codomain : $codom(R$))</h3>
 <blockquote>
-  <p>집합 $A 에서 집합 $B$로 가는 이항관계 $R$에 속한 순서쌍의 <u>두 번째 원소가 포함되어</u>있는 집합.</p>
+  <p>집합 $A 에서 집합 $B$로 가는 이항관계 $R$ 에 속한 순서쌍의 <u>두 번째 원소가 포함되어</u>있는 집합.</p>
   <ul>
     <li>
       <table>
@@ -506,11 +494,11 @@
 
 <h2 id="역관계inverse-relation">역관계(Inverse relation)</h2>
 <blockquote>
-  <p>집합 $A$ 에서 $B$로의 이황관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$</p>
+  <p>집합 $A$ 에서 $B$로의 이항관계 $R$ 의 역관계 $R^{-1} = {(b,a)\in B \times A | (a,b) \in R }$</p>
   <ul>
     <li>예시 ($A = {1,3}, B = {2,4}$)
       <ul>
-        <li>$R = {(1,2), (1,4), (3,2), (3,4)}$</li>
+        <li>$R$ = ${(1,2), (1,4), (3,2), (3,4)}$</li>
         <li>$R^{-1} = {(2,1), (4,1), (2,3), (4,3)}$</li>
       </ul>
     </li>
@@ -631,23 +619,6 @@ $\begin{bmatrix}<br />
 0 &amp; 0 &amp; 0 &amp; 1 <br />
 \end{bmatrix}$</p>
 
-<h1 id="동치와-분할">동치와 분할</h1>
-
-<h2 id="동치관계equivalence">동치관계(equivalence)</h2>
-<blockquote>
-  <p>반사성, 대칭성, 추이성을 가지는 관계</p>
-</blockquote>
-
-<h2 id="분할partition">분할(partition)</h2>
-<blockquote>
-  <p>공집합이 아닌 임의의 집합 $S$의 부분집합 원소인 집합 $P = {A_1, A_2, A_3, \cdots, A_n}$가</p>
-</blockquote>
-
-<h1 id="부분-순서-관계">부분 순서 관계</h1>
-<blockquote>
-  <p>반사관계, 반대칭관계, 추이관계가 성립하는 관계</p>
-</blockquote>
-
 <h1 id="참조">참조</h1>
 <p><a href="http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html">http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EA%B4%80%EA%B3%84.html</a><br />
 <a href="https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99)">https://ko.wikipedia.org/wiki/%EA%B4%80%EA%B3%84_(%EC%88%98%ED%95%99)</a><br />
@@ -679,7 +650,7 @@ $\begin{bmatrix}<br />
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-22">October 22, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-27">October 27, 2023</time></p>
 
       </footer>
 
@@ -716,7 +687,8 @@ $\begin{bmatrix}<br />
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" class="pagination--pager" title="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)
+">다음</a>
     
   </nav>
  -->
@@ -731,6 +703,57 @@ $\begin{bmatrix}<br />
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" rel="permalink">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  Lv.01
+
+
+✏️ 문제
+
+  https://school.programmers.co.kr/learn/courses/30/lessons/12906
+
+
+✒️ 문제 설명
+배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다.
+이때, 배...</p>
+  </article>
+</div>
+
         
           
 
@@ -919,50 +942,6 @@ $\begin{bmatrix}<br />
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/boj/BOJ-2309/" rel="permalink">[백준] 2309 : 일곱 난쟁이 (파이썬)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
-
-  🟤 브론즈 1
-
-
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -1042,6 +1021,23 @@ $\begin{bmatrix}<br />
 
 
 
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
 
 
   </body>

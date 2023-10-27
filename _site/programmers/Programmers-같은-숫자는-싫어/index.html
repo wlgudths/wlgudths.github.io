@@ -1,0 +1,882 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬) | 느려도 괜찮아</title>
+<meta name="description" content="🔎 난이도    Lv.01   ✏️ 문제    https://school.programmers.co.kr/learn/courses/30/lessons/12906   ✒️ 문제 설명 배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다. 이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. 단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다.     arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다.   arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다.   배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.    🙅‍♂️ 제한사항    배열 arr의 크기 : 1,000,000 이하의 자연수   배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수   🤖 입출력 예                 arr       answer                       [1, 1, 3, 3, 0, 1 ,1]       [1, 3, 0, 1]                 [4, 4, 4, 3, 3]       [4, 3]           🤖 입출력 예 설명    입출력 예 # 1,2 문제의 예시와 같습니다.     🧐 아이디어 단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다. example = [1,1,6,6,2,2,3,3,3,4,5,5]  set_example = set(example) print(set_example) # {1, 2, 3, 4, 5, 6}   순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다.    📝 내 풀이 def solution(arr):     answer = [arr[0]] # arr의 첫 번째 원소     for i in range(1,len(arr)): # 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복)         if arr[i] != arr[i-1]: # arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ...             answer.append(arr[i]) # 같지 않다면 answer 리스트에 원소 추가     return answer    😳 다른 풀이 def diff_solution(arr):     answer = []     for i in arr:         if answer[-1:] != [i]:             answer.append(i)     return answer   answer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)">
+<meta property="og:url" content="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/">
+
+
+  <meta property="og:description" content="🔎 난이도    Lv.01   ✏️ 문제    https://school.programmers.co.kr/learn/courses/30/lessons/12906   ✒️ 문제 설명 배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다. 이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. 단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다.     arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다.   arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다.   배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.    🙅‍♂️ 제한사항    배열 arr의 크기 : 1,000,000 이하의 자연수   배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수   🤖 입출력 예                 arr       answer                       [1, 1, 3, 3, 0, 1 ,1]       [1, 3, 0, 1]                 [4, 4, 4, 3, 3]       [4, 3]           🤖 입출력 예 설명    입출력 예 # 1,2 문제의 예시와 같습니다.     🧐 아이디어 단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다. example = [1,1,6,6,2,2,3,3,3,4,5,5]  set_example = set(example) print(set_example) # {1, 2, 3, 4, 5, 6}   순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다.    📝 내 풀이 def solution(arr):     answer = [arr[0]] # arr의 첫 번째 원소     for i in range(1,len(arr)): # 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복)         if arr[i] != arr[i-1]: # arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ...             answer.append(arr[i]) # 같지 않다면 answer 리스트에 원소 추가     return answer    😳 다른 풀이 def diff_solution(arr):     answer = []     for i in arr:         if answer[-1:] != [i]:             answer.append(i)     return answer   answer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-10-27T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-10-27T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">13</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (5)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (7)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (1)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)">
+    <meta itemprop="description" content="🔎 난이도  Lv.01✏️ 문제  https://school.programmers.co.kr/learn/courses/30/lessons/12906✒️ 문제 설명배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다.이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다.단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다.  arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다.  arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다.배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.🙅‍♂️ 제한사항  배열 arr의 크기 : 1,000,000 이하의 자연수  배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수🤖 입출력 예            arr      answer                  [1, 1, 3, 3, 0, 1 ,1]      [1, 3, 0, 1]              [4, 4, 4, 3, 3]      [4, 3]      🤖 입출력 예 설명  입출력 예 # 1,2 문제의 예시와 같습니다.🧐 아이디어단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다.example = [1,1,6,6,2,2,3,3,3,4,5,5]set_example = set(example)print(set_example)# {1, 2, 3, 4, 5, 6}순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다.📝 내 풀이def solution(arr):    answer = [arr[0]] # arr의 첫 번째 원소    for i in range(1,len(arr)): # 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복)        if arr[i] != arr[i-1]: # arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ...            answer.append(arr[i]) # 같지 않다면 answer 리스트에 원소 추가    return answer😳 다른 풀이def diff_solution(arr):    answer = []    for i in arr:        if answer[-1:] != [i]:            answer.append(i)    return answeranswer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.">
+    <meta itemprop="datePublished" content="2023-10-27T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-10-27T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" class="u-url" itemprop="url">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#-난이도">🔎 난이도</a></li><li><a href="#️-문제">✏️ 문제</a></li><li><a href="#️-문제-설명">✒️ 문제 설명</a></li><li><a href="#️-제한사항">🙅‍♂️ 제한사항</a></li><li><a href="#-입출력-예">🤖 입출력 예</a></li><li><a href="#-입출력-예-설명">🤖 입출력 예 설명</a></li><li><a href="#-아이디어">🧐 아이디어</a></li><li><a href="#-내-풀이">📝 내 풀이</a></li><li><a href="#-다른-풀이">😳 다른 풀이</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p><strong>Lv.01</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<blockquote>
+  <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
+</blockquote>
+
+<h1 id="️-문제-설명">✒️ 문제 설명</h1>
+<p>배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다.<br />
+이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다.<br />
+단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다.</p>
+
+<ul>
+  <li>arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다.</li>
+  <li>arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다.</li>
+</ul>
+
+<p>배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.</p>
+
+<p><br /></p>
+
+<h1 id="️-제한사항">🙅‍♂️ 제한사항</h1>
+<ul>
+  <li>배열 arr의 크기 : 1,000,000 이하의 자연수</li>
+  <li>배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수</li>
+</ul>
+
+<h1 id="-입출력-예">🤖 입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>arr</th>
+      <th>answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1, 1, 3, 3, 0, 1 ,1]</td>
+      <td>[1, 3, 0, 1]</td>
+    </tr>
+    <tr>
+      <td>[4, 4, 4, 3, 3]</td>
+      <td>[4, 3]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-입출력-예-설명">🤖 입출력 예 설명</h1>
+<ul>
+  <li>입출력 예 # 1,2 문제의 예시와 같습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-아이디어">🧐 아이디어</h1>
+<p>단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">example</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="n">set_example</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">set_example</span><span class="p">)</span>
+<span class="c1"># {1, 2, 3, 4, 5, 6}
+</span></code></pre></div></div>
+
+<p>순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다.</p>
+
+<p><br /></p>
+
+<h1 id="-내-풀이">📝 내 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># arr의 첫 번째 원소
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span> <span class="c1"># 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복)
+</span>        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ...
+</span>            <span class="n">answer</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># 같지 않다면 answer 리스트에 원소 추가
+</span>    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h1 id="-다른-풀이">😳 다른 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">diff_solution</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">!=</span> <span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">answer</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p>answer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#programmers" class="page__taxonomy-item p-category" rel="tag">Programmers</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-27">October 27, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-05/" class="pagination--pager" title="[이산수학] 관계(Relation)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-05/" rel="permalink">[이산수학] 관계(Relation)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">관계(Relation)란?
+
+  객체들 간의 연관성을 표현하는 구조이다.
+  
+    집합론에서는 곱집합의 부분집합이다.
+    다른 두 집합에 속하는 서로 다른 두 원소의 관계를 나타낸 것.
+  
+
+
+이항관계 (binary relations)
+
+  집합 $A$ 와 $B$ 가 있을...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-7568/" rel="permalink">[백준] 7568 : 덩치 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  ⚪️ 실버 5
+
+
+✏️ 문제
+
+  https://www.acmicpc.net/problem/7568
+
+
+
+
+
+
+🤖 예제 입력 및 출력
+
+
+
+
+
+📑 알고리즘 분류
+
+
+  구현
+  브루트포스 알고리즘
+
+
+
+
+🧐 아이디어
+
+
+  처음에 다양한 정렬을 해보며 시도하였지만,...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-4673/" rel="permalink">[백준] 4673 : 셀프 넘버 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  ⚪️ 실버 5
+
+
+✏️ 문제
+
+  https://www.acmicpc.net/problem/4673
+
+
+
+
+
+
+🤖 예제 입력 및 출력
+
+
+
+
+
+📑 알고리즘 분류
+
+
+  수학
+  구현
+  브루트포스 알고리즘
+
+
+
+
+🧐 아이디어
+
+
+  10,000 보다 작거나 같은 셀...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-04/" rel="permalink">[이산수학] 증명(Proofs)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">증명(Proofs)이란?
+
+  특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.
+
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
