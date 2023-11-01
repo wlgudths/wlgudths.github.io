@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-01T21:56:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)</title><link href="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)" /><published>2023-10-27T00:00:00+09:00</published><updated>2023-10-27T00:00:00+09:00</updated><id>http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80%20%EC%88%AB%EC%9E%90%EB%8A%94%20%EC%8B%AB%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-02T00:34:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 1057 : 토너먼트 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1057/" rel="alternate" type="text/html" title="[백준] 1057 : 토너먼트 (파이썬)" /><published>2023-11-01T00:00:00+09:00</published><updated>2023-11-01T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1057</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1057/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p>⚪️ <strong>실버 4</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<blockquote>
+  <p><a href="https://www.acmicpc.net/problem/1057">https://www.acmicpc.net/problem/1057</a></p>
+</blockquote>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_1057_1.png" />
+<br /></p>
+
+<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_1057_2.png" /></p>
+
+<p><br /></p>
+
+<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
+
+<ul>
+  <li>수학</li>
+  <li>브루트포스 알고리즘</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-아이디어">🧐 아이디어</h1>
+<p><br /></p>
+
+<p><img src="/assets/images/Coding_test/boj/BOJ_1057_3.jpeg" width="700" /></p>
+
+<p><br /></p>
+
+<p>고민하다 처음 생각한 아이디어이다.</p>
+
+<ul>
+  <li>0으로 이루어진 대진표 리스트와 김지민과 임한수의 인덱스를 1로 표시한다.</li>
+  <li>대진표는 n // 2</li>
+  <li>step을 2로 둔 for문을 통해 김지민과 임한수가 대결했을 경우의 리스트 합이 2가 나올 것이다.</li>
+</ul>
+
+<p>이러한 아이디어를 뼈대로 잡고 코드를 작성했다.</p>
+
+<p><br /></p>
+
+<h1 id="-내-풀이">📝 내 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># 입력
+</span><span class="n">n</span><span class="p">,</span> <span class="n">kim</span><span class="p">,</span> <span class="n">lim</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="c1"># 출력값
+</span><span class="nb">round</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># 인덱스
+</span><span class="n">kim</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="n">lim</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 서로 대결하지 않을 경우
+</span>    <span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">round</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="c1"># 대진표 생성
+</span>
+        <span class="n">table</span><span class="p">[</span><span class="n">kim</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="n">lim</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span> <span class="c1"># 김, 임 대진 자리 표시
+</span>
+        <span class="c1"># 출력 (김지민과 임한수가 만났을 경우 break)
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
+                <span class="k">break</span>
+    
+        <span class="c1"># n이 홀수 일 경우
+</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
+
+        <span class="n">kim</span> <span class="o">//=</span> <span class="mi">2</span>
+        <span class="n">lim</span> <span class="o">//=</span> <span class="mi">2</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
+
+<blockquote>
+  <p>생각한 아이디어를 충실히(?) 이행하며, 코드를 짜다보니 많이 복잡해졌다.<br />
+while문이 한 번 돌 때마다 round(정답), 대진표, 인덱스 표시를 갱신 한다. <br />
+for 문을 통해 김지민과 임한수가 대결 유무를 판단한다.<br />
+대결을 했을 경우 탈출, 대결하지 않았을 경우 n과 kim.lim 를 // 2를 해준다.</p>
+</blockquote>
+
+<h1 id="-다른-사람-풀이">😳 다른 사람 풀이</h1>
+
+<blockquote>
+  <p>사실 이 문제는 수학적으로 해결이 가능한 문제였다. 필자는 n 길이의 리스트에 직접 김지민과 임한수의 위치를 표시하며 n,김지민,임한수의 2로 나누며 문제를 해결했다.</p>
+</blockquote>
+
+<blockquote>
+  <p>이 문제의 핵심은 김지민과 임한수의 인덱스가 8,9 라고 할 때, 예시의 식을 이용하는 것이었다.</p>
+</blockquote>
+
+<ul>
+  <li>김지민 : 8 $\rightarrow$ 4 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 1</li>
+  <li>임한수 : 9 $\rightarrow$ 5 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
+</span><span class="n">n</span><span class="p">,</span> <span class="n">kim</span> <span class="p">,</span><span class="n">lim</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+
+<span class="c1"># 출력
+</span><span class="nb">round</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">kim</span> <span class="o">!=</span> <span class="n">lim</span><span class="p">:</span>
+  
+    <span class="n">kim</span> <span class="o">-=</span> <span class="n">kim</span> <span class="o">//</span> <span class="mi">2</span>
+  
+    <span class="n">lim</span> <span class="o">-=</span> <span class="n">lim</span> <span class="o">//</span> <span class="mi">2</span>
+  
+    <span class="nb">round</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/1057 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 브루트포스 알고리즘 🧐 아이디어 고민하다 처음 생각한 아이디어이다. 0으로 이루어진 대진표 리스트와 김지민과 임한수의 인덱스를 1로 표시한다. 대진표는 n // 2 step을 2로 둔 for문을 통해 김지민과 임한수가 대결했을 경우의 리스트 합이 2가 나올 것이다. 이러한 아이디어를 뼈대로 잡고 코드를 작성했다. 📝 내 풀이 # 입력 n, kim, lim = map(int, input().split()) # 출력값 round = 0 # 인덱스 kim -= 1 lim -= 1 if n &lt; 2: # 서로 대결하지 않을 경우 print(-1) else: while n != 1: round += 1 table = [0] * n # 대진표 생성 table[kim], table[lim] = 1,1 # 김, 임 대진 자리 표시 # 출력 (김지민과 임한수가 만났을 경우 break) for i in range(0, n, 2): if sum(table[i : i + 2]) == 2: print(round) break # n이 홀수 일 경우 if n % 2 == 1: n = n // 2 + 1 else: n //= 2 kim //= 2 lim //= 2 😳 풀이 리뷰 생각한 아이디어를 충실히(?) 이행하며, 코드를 짜다보니 많이 복잡해졌다. while문이 한 번 돌 때마다 round(정답), 대진표, 인덱스 표시를 갱신 한다. for 문을 통해 김지민과 임한수가 대결 유무를 판단한다. 대결을 했을 경우 탈출, 대결하지 않았을 경우 n과 kim.lim 를 // 2를 해준다. 😳 다른 사람 풀이 사실 이 문제는 수학적으로 해결이 가능한 문제였다. 필자는 n 길이의 리스트에 직접 김지민과 임한수의 위치를 표시하며 n,김지민,임한수의 2로 나누며 문제를 해결했다. 이 문제의 핵심은 김지민과 임한수의 인덱스가 8,9 라고 할 때, 예시의 식을 이용하는 것이었다. 김지민 : 8 $\rightarrow$ 4 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 1 임한수 : 9 $\rightarrow$ 5 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1 # 입력 n, kim ,lim = map(int, input().split()) # 출력 round = 0 while kim != lim: kim -= kim // 2 lim -= lim // 2 round += 1 print(round)]]></summary></entry><entry><title type="html">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)</title><link href="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)" /><published>2023-10-27T00:00:00+09:00</published><updated>2023-10-27T00:00:00+09:00</updated><id>http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80%20%EC%88%AB%EC%9E%90%EB%8A%94%20%EC%8B%AB%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p><strong>Lv.01</strong></p>
 </blockquote>
@@ -1071,29 +1194,28 @@ while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 
 <blockquote>
   <p>내 풀이와 비교하면 더욱 간결하고 깔끔한 코드로 나타냈다.<br />
 오히려 함수를 정의해서 깔끔하게 구현하겠다는 나의 생각을 깨버렸다 ☹️.</p>
-</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry><entry><title type="html">[백준] 1543 : 문서검색 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1543/" rel="alternate" type="text/html" title="[백준] 1543 : 문서검색 (파이썬)" /><published>2023-10-16T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1543</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1543/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry><entry><title type="html">[백준] 2798 : 블랙잭 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2798/" rel="alternate" type="text/html" title="[백준] 2798 : 블랙잭 (파이썬)" /><published>2023-10-16T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2798</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2798/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
-  <p>⚪️ <strong>실버 5</strong></p>
+  <p>🟤 <strong>브론즈 2</strong></p>
 </blockquote>
 
 <h1 id="️-문제">✏️ 문제</h1>
 <blockquote>
-  <p><a href="https://www.acmicpc.net/problem/1543">https://www.acmicpc.net/problem/1543</a></p>
+  <p><a href="https://www.acmicpc.net/problem/2798">https://www.acmicpc.net/problem/2798</a></p>
 </blockquote>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1543_1.png" />
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2798_1.png" />
 <br /></p>
 
 <h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1543_2.png" /></p>
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2798_2.png" /></p>
 
 <p><br /></p>
 
 <h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
 
 <ul>
-  <li>문자열</li>
   <li>브루트포스 알고리즘</li>
 </ul>
 
@@ -1102,485 +1224,28 @@ while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 
 <h1 id="-아이디어">🧐 아이디어</h1>
 
 <blockquote>
-  <p>문제를 읽자마자 <strong>replace</strong> 함수가 딱 떠올랐다.</p>
+  <p>N개의 카드 중 <strong>중복 없이</strong> 3장의 카드를 뽑은 후 M보다 작거나 같은 숫자들을 담는다 !</p>
 </blockquote>
 
 <p><br /></p>
 
 <h1 id="-내-풀이">📝 내 풀이</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">words</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># 문서
-</span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># 검색하고 싶은 단어
+</span><span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span> <span class="c1"># 카드의 개수, M
+</span><span class="n">cards</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span> <span class="c1"># 카드의 숫자들
 </span>
-<span class="n">change</span> <span class="o">=</span> <span class="n">words</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="s">'*'</span><span class="p">)</span> <span class="c1"># 중복되지 않게 단어 &gt; "*" 변환
-</span>
+<span class="c1"># 카드의 합들을 담을 리스트
+</span><span class="n">basket</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># 중복없이 3장의 카드 뽑기
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+      <span class="n">nums</span> <span class="o">=</span> <span class="n">card</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">cards</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">cards</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="c1"># 중복없이 뽑은 3장의 카드 합
+</span>      <span class="k">if</span> <span class="n">nums</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span> <span class="c1"># 카드의 합이 M 보다 작거나 같을 경우 리스트에 담는다.
+</span>        <span class="n">basket</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
 <span class="c1"># 출력
-</span><span class="k">print</span><span class="p">(</span><span class="n">change</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">'*'</span><span class="p">))</span>
-</code></pre></div></div>
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5]]></summary></entry><entry><title type="html">[이산수학] 논리와 명제 (Logic &amp;amp; Proposition)</title><link href="http://localhost:4000/discrete%20mathematics/DM-03/" rel="alternate" type="text/html" title="[이산수학] 논리와 명제 (Logic &amp;amp; Proposition)" /><published>2023-10-16T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-03</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-03/"><![CDATA[<h1 id="명제-proposition">명제 (Proposition)</h1>
-<blockquote>
-  <p>논리학적으로 뜻이 분명한 문장을 말한다.</p>
-</blockquote>
-
-<ul>
-  <li>즉, <strong>참(True)</strong> 혹은 <strong>거짓(False)</strong> 으로 구분할 수 있는 문장이나 수식이다.</li>
-  <li>명제는 통상 영문 소문자 $p$, $q$, $r$, $\cdots$ 등으로 표기</li>
-</ul>
-
-<h2 id="명제-예시">명제 예시</h2>
-<ol>
-  <li>손흥민이 태어난 년도는 2000년이다.
-    <ul>
-      <li>손흥민이 태어난 년도는 1992년이므로 거짓인 명제이다.</li>
-    </ul>
-  </li>
-  <li>1 + 2 = 3
-    <ul>
-      <li>산수에 원리에 따라 객관적으로 참, 거짓을 판달할 수 있으므로 명제이며 참이다.</li>
-    </ul>
-  </li>
-  <li>커피는 달달하다.
-    <ul>
-      <li>참 또는 거짓을 판단할 수 없으므로 명제가 아니다.</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="진리값-truth-value">진리값 (Truth value)</h2>
-<blockquote>
-  <p>참, 거짓을 가르키는 값을 진리값(truth value)라고 한다.</p>
-</blockquote>
-
-<ul>
-  <li>프로그래밍 언어에서는 조건이 참인지 거짓인지 표현하는 논리 연산에 사용한다.<br />
-참 $\rightarrow$ 1, 거짓 $\rightarrow$ 0</li>
-</ul>
-
-<h2 id="진리표-truth-table">진리표 (Truth table)</h2>
-<blockquote>
-  <p>모든 명제 및 그 조합에 대한 입출력 결과를 기록한 표</p>
-</blockquote>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">명제 $P$</th>
-      <th style="text-align: center">명제 $Q$</th>
-      <th style="text-align: right">$P$ $\land$ $Q$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">참</td>
-      <td style="text-align: center">참</td>
-      <td style="text-align: right">참</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">참</td>
-      <td style="text-align: center">거짓</td>
-      <td style="text-align: right">거짓</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">거짓</td>
-      <td style="text-align: center">참</td>
-      <td style="text-align: right">거짓</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">거짓</td>
-      <td style="text-align: center">거짓</td>
-      <td style="text-align: right">거짓</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="명제함수">명제함수</h2>
-<blockquote>
-  <p>명제변수 $x$ 를 포함하여 진리값을 판별할 수 있는 문장이나 수식</p>
-</blockquote>
-
-<h3 id="명제함수-예시">명제함수 예시</h3>
-<blockquote>
-  <p>$P(x)$ = $x$ &gt; 2  이라는 명제 함수라고 하면 명제변수 $x$의 값에 따라 $P(x)$ 의 진리값을 판별할 수 있다.</p>
-</blockquote>
-
-<ul>
-  <li>변수에 특정 값을 할당하는 방법
-    <ul>
-      <li>$x$ = 3이라면 $P(x)$는 참인 명제가 되고, $x$ = 1이라면 $P(x)$는 거짓인 명제가 된다.</li>
-    </ul>
-  </li>
-  <li>변수의 범위를 제한하는 방법
-    <ul>
-      <li>$x$ $\ge$ 3이라면, $P(x)$는 참이 된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="한정자">한정자</h3>
-<blockquote>
-  <p>명제함수에서 변수의 범위를 제한하는 연산자이다.</p>
-</blockquote>
-
-<h4 id="전체한정자-universal-quantifier">전체한정자 (Universal Quantifier)</h4>
-<blockquote>
-  <p>모든 것에 대하여 <strong>(for all)</strong></p>
-</blockquote>
-
-<ul>
-  <li>$\forall xP(x)$ : 모든 $x$에 대하여 $P(x)$
-    <ul>
-      <li>모든 $x$에 대하여 참일 경우 참인 명제이다.</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\forall$</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="존재한정자-existential-quantifier">존재한정자 (existential quantifier)</h4>
-<blockquote>
-  <p>존재한다 <strong>(there exist)</strong></p>
-</blockquote>
-
-<ul>
-  <li>$\exists xP(x)$ : 어떤 $x$에 대하여 $P(x)$
-    <ul>
-      <li>참이되는 $x$가 하나라도 있을 경우 참인 명제이다.</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\exists$</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="논리연산자logical-operator">논리연산자(logical operator)</h2>
-<blockquote>
-  <p>여러 명제를 결합할 때 사용</p>
-</blockquote>
-
-<h3 id="종류">종류</h3>
-<h4 id="1-부정-negation">1. 부정 (Negation)</h4>
-<blockquote>
-  <p>명제 $p$에 대하여 $p$의 진리값을 반대로 갖는 명제</p>
-</blockquote>
-
-<ul>
-  <li>언어
-    <ul>
-      <li>$not$</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\lnot$</li>
-      <li>$\sim$</li>
-    </ul>
-  </li>
-  <li>
-    <p>진리표 (truth table)</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">$p$</th>
-          <th style="text-align: center">$\lnot p$</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<h4 id="2-논리곱-conjunction">2. 논리곱 (Conjunction)</h4>
-<blockquote>
-  <p>명제 $p$, $q$에 대하여 $p$와 $q$가 모두 참일 경우에만 참, 반대일 경우 거짓이 되는 명제</p>
-</blockquote>
-
-<ul>
-  <li>언어
-    <ul>
-      <li>$and$</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\land$</li>
-    </ul>
-  </li>
-  <li>
-    <p>진리표 (truth table)</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">$p$</th>
-          <th style="text-align: center">$q$</th>
-          <th style="text-align: center">$p$ $\land$ $p$</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<h4 id="3-논리합-disjunction">3. 논리합 (Disjunction)</h4>
-<blockquote>
-  <p>명제 $p$, $q$에 대하여 $p$와 $q$가 모두 거짓일 경우에만 거짓, 그렇지 않을 경우 참이 되는 명제</p>
-</blockquote>
-
-<ul>
-  <li>언어
-    <ul>
-      <li>$or$</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\lor$</li>
-    </ul>
-  </li>
-  <li>
-    <p>진리표 (truth table)</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">$p$</th>
-          <th style="text-align: center">$q$</th>
-          <th style="text-align: center">$p$ $\lor$ $p$</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<h4 id="4-배타적-논리합-exclusive-or">4. 배타적 논리합 (Exclusive OR)</h4>
-<blockquote>
-  <p>명제 $p$, $q$에 대하여 $p$와 $q$ 중 하나만 참일 때 참이되고, 그렇지 않으면 거짓이 되는 명제</p>
-</blockquote>
-
-<ul>
-  <li>언어
-    <ul>
-      <li>$X OR$</li>
-    </ul>
-  </li>
-  <li>기호
-    <ul>
-      <li>$\oplus$</li>
-      <li>$\sim$</li>
-    </ul>
-  </li>
-  <li>
-    <p>진리표 (truth table)</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">$p$</th>
-          <th style="text-align: center">$q$</th>
-          <th style="text-align: center">$p$ $\oplus$ $p$</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">T</td>
-          <td style="text-align: center">T</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-          <td style="text-align: center">F</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="조건명제-conditional-proposition">조건명제 (Conditional Proposition)</h3>
-
-<blockquote>
-  <p>$p \rightarrow q$</p>
-  <ul>
-    <li>$p$이면 $q$이다. ( $if$  $p$  $then$   $q$ )</li>
-    <li>$p$를 가설(hypothesis), 전제(premise) $q$를 결론(conclusion), 결과(consequence)</li>
-  </ul>
-</blockquote>
-
-<h4 id="조건-명제-진리표">조건 명제 진리표</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">$p$</th>
-      <th style="text-align: center">$q$</th>
-      <th style="text-align: center">$p \rightarrow q$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h4 id="역-converse">역 (converse)</h4>
-<blockquote>
-  <p>$p \rightarrow q$ 에 대하여 $q \rightarrow p$ 가설과 결론이 바뀐 것이다.</p>
-</blockquote>
-
-<h4 id="이-inverse">이 (inverse)</h4>
-<blockquote>
-  <p>$p \rightarrow q$ 에 대하여 $\lnot p \rightarrow \lnot q$ 가설과 결론을 각각 부정한 것이다.</p>
-</blockquote>
-
-<h4 id="대우-contrapositive">대우 (contrapositive)</h4>
-<blockquote>
-  <p>$p \rightarrow q$ 에 대하여 $\lnot q \rightarrow \lnot p$ 가설과 결론이 바뀐 동시에 부정한 것이다.</p>
-</blockquote>
-
-<h4 id="역-이-대우-진리표">역, 이, 대우 진리표</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">$p$</th>
-      <th style="text-align: center">$q$</th>
-      <th style="text-align: center">$p \rightarrow q$</th>
-      <th style="text-align: center">$q \rightarrow p$</th>
-      <th style="text-align: center">$\lnot p \rightarrow \lnot q$</th>
-      <th style="text-align: center">$\lnot q \rightarrow \lnot p$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-<p><br /></p>
-
-<h1 id="참조">참조</h1>
-<p><a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C">https://ko.wikipedia.org/wiki/%EB%AA%85%EC%A0%9C</a><br />
-<a href="https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92">https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92</a><br />
-<a href="http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EB%85%BC%EB%A6%AC%EC%99%80-%EB%AA%85%EC%A0%9C-logic-propositions.html">http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EB%85%BC%EB%A6%AC%EC%99%80-%EB%AA%85%EC%A0%9C-logic-propositions.html</a><br />
-<a href="https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%AC%ED%91%9C">https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%AC%ED%91%9C</a></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[명제 (Proposition) 논리학적으로 뜻이 분명한 문장을 말한다.]]></summary></entry></feed>
+</span><span class="k">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">basket</span><span class="p">))</span> <span class="c1"># 리스트 원소 중 가장 큰 값 출력
+</span></code></pre></div></div>
+<p><br /></p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry></feed>

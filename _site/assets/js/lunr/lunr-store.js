@@ -76,4 +76,10 @@ var store = [{
         "tags": [],
         "url": "/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/",
         "teaser": null
+      },{
+        "title": "[백준] 1057 : 토너먼트 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/1057 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 브루트포스 알고리즘 🧐 아이디어 고민하다 처음 생각한 아이디어이다. 0으로 이루어진 대진표 리스트와 김지민과 임한수의 인덱스를 1로 표시한다. 대진표는 n // 2 step을 2로 둔 for문을 통해 김지민과 임한수가 대결했을 경우의 리스트 합이 2가...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-1057/",
+        "teaser": null
       }]
