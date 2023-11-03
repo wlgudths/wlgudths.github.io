@@ -82,4 +82,10 @@ var store = [{
         "tags": [],
         "url": "/boj/BOJ-1057/",
         "teaser": null
+      },{
+        "title": "[프로그래머스] Lv.01 : 삼총사 (파이썬)",
+        "excerpt":"🔎 난이도 Lv.01 ✏️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/131705 ✒️ 문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 $-2, 3, 0, 2, -5$ 일 때, 첫 번째, 세...","categories": ["Programmers"],
+        "tags": [],
+        "url": "/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/",
+        "teaser": null
       }]

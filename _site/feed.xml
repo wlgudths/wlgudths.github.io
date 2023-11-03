@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-02T00:34:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 1057 : 토너먼트 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1057/" rel="alternate" type="text/html" title="[백준] 1057 : 토너먼트 (파이썬)" /><published>2023-11-01T00:00:00+09:00</published><updated>2023-11-01T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1057</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1057/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-04T02:19:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[프로그래머스] Lv.01 : 삼총사 (파이썬)</title><link href="http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스] Lv.01 : 삼총사 (파이썬)" /><published>2023-11-04T00:00:00+09:00</published><updated>2023-11-04T00:00:00+09:00</updated><id>http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p><strong>Lv.01</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<blockquote>
+  <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131705">https://school.programmers.co.kr/learn/courses/30/lessons/131705</a></p>
+</blockquote>
+
+<h1 id="️-문제-설명">✒️ 문제 설명</h1>
+<p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다.<br />
+이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다.<br />
+예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 $-2, 3, 0, 2, -5$ 일 때,<br />
+첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 $0$ 이므로 세 학생은 삼총사입니다.<br />
+또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 $0$ 이므로 세 학생도 삼총사입니다.<br />
+따라서 이 경우 한국 중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
+
+<p>한국중학교 학생들의 번호를 나타내는 정수 배열 $number$ 가 매개변수로 주어질 때,<br />
+학생들 중 삼총사를 만들 수 있는 방법의 수를 $return$ 하도록 $solution$ 함수를 완성하세요.</p>
+
+<p><br /></p>
+
+<h1 id="️-제한사항">🙅‍♂️ 제한사항</h1>
+<ul>
+  <li>
+    <p>$3$ $\le$ $number$ 의 길이 $\le$ $13$</p>
+  </li>
+  <li>
+    <p>$-1000$ $\le$ $number$ 의 각 원소 $\le$ $1000$</p>
+  </li>
+  <li>
+    <p>서로 다른 학생의 정수 번호가 같을 수 있습니다.</p>
+  </li>
+</ul>
+
+<h1 id="-입출력-예">🤖 입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">number</th>
+      <th style="text-align: center">result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">[-2, 3, 0, 2, -5]</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[-3, -2, -1, 0, 1, 2, 3]</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[-1, 1, -1, 1]</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="-입출력-예-설명">🤖 입출력 예 설명</h1>
+<ul>
+  <li>입출력 예 # 1
+    <ul>
+      <li>문제의 예시와 같습니다.</li>
+    </ul>
+  </li>
+  <li>입출력 예 # 2
+    <ul>
+      <li>학생들의 정수 번호 쌍 (-3, 0, 3), (-2, 0, 2), (-1, 0, 1), (-2, -1, 3), (-3, 1, 2) 이 삼총사가 될 수 있으므로, 5를 return 합니다.</li>
+    </ul>
+  </li>
+  <li>입출력 예 # 3
+    <ul>
+      <li>삼총사가 될 수 있는 방법이 없습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-아이디어">🧐 아이디어</h1>
+<blockquote>
+  <p>number 리스트에서 3개의 원소를 뽑아 합이 0이되는 경우를 찾아 개수를 세는 문제였다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="-내-풀이">📝 내 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="c1"># 출력 및 정답
+</span>    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># 3중 반복문을 통해 number 원소 3개씩 뽑기
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span>
+                <span class="c1"># 원소 3개의 합이 0이라면, 즉, 삼총사라면 정답 += 1
+</span>                <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">number</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">number</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">answer</span>
+
+</code></pre></div></div>
+<p><br /></p>
+
+<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
+<p>처음에는 DFS로 구현하여 풀었지만, 코드도 직관적이지 못하였고, 다시 보니 이해하기도 어려웠다.<br />
+그래서 삼중 반복문을 통해 원소 3개를 뽑는 것을 구현하였다.<br />
+삼중 반복문보다 더욱 간단하게 푸는 법은 itertools의 combinations 라이브러리를 활용하는 방법이 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+</code></pre></div></div>]]></content><author><name>지지형</name></author><category term="Programmers" /><summary type="html"><![CDATA[🔎 난이도 Lv.01 ✏️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/131705 ✒️ 문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 $-2, 3, 0, 2, -5$ 일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 $0$ 이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 $0$ 이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국 중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다. 한국중학교 학생들의 번호를 나타내는 정수 배열 $number$ 가 매개변수로 주어질 때, 학생들 중 삼총사를 만들 수 있는 방법의 수를 $return$ 하도록 $solution$ 함수를 완성하세요. 🙅‍♂️ 제한사항 $3$ $\le$ $number$ 의 길이 $\le$ $13$ $-1000$ $\le$ $number$ 의 각 원소 $\le$ $1000$ 서로 다른 학생의 정수 번호가 같을 수 있습니다. 🤖 입출력 예 number result [-2, 3, 0, 2, -5] 2 [-3, -2, -1, 0, 1, 2, 3] 5 [-1, 1, -1, 1] 0 🤖 입출력 예 설명 입출력 예 # 1 문제의 예시와 같습니다. 입출력 예 # 2 학생들의 정수 번호 쌍 (-3, 0, 3), (-2, 0, 2), (-1, 0, 1), (-2, -1, 3), (-3, 1, 2) 이 삼총사가 될 수 있으므로, 5를 return 합니다. 입출력 예 # 3 삼총사가 될 수 있는 방법이 없습니다. 🧐 아이디어 number 리스트에서 3개의 원소를 뽑아 합이 0이되는 경우를 찾아 개수를 세는 문제였다. 📝 내 풀이 def solution(number): # 출력 및 정답 answer = 0 # 3중 반복문을 통해 number 원소 3개씩 뽑기 for i in range(0, len(number)-2): for j in range(i+1, len(number)-1): for k in range(j+1, len(number)): # 원소 3개의 합이 0이라면, 즉, 삼총사라면 정답 += 1 if (number[i] + number[j] + number[k]) == 0: answer += 1 return answer 😳 풀이 리뷰 처음에는 DFS로 구현하여 풀었지만, 코드도 직관적이지 못하였고, 다시 보니 이해하기도 어려웠다. 그래서 삼중 반복문을 통해 원소 3개를 뽑는 것을 구현하였다. 삼중 반복문보다 더욱 간단하게 푸는 법은 itertools의 combinations 라이브러리를 활용하는 방법이 있다. from itertools import combinations]]></summary></entry><entry><title type="html">[백준] 1057 : 토너먼트 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1057/" rel="alternate" type="text/html" title="[백준] 1057 : 토너먼트 (파이썬)" /><published>2023-11-01T00:00:00+09:00</published><updated>2023-11-01T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1057</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1057/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 4</strong></p>
 </blockquote>
@@ -564,22 +676,22 @@ for 문을 통해 김지민과 임한수가 대결 유무를 판단한다.<br />
   <li>True로 이루어진 10001개의 셀프넘버 리스트</li>
   <li>반복문을 통해 생성자가 있을 경우 False 처리를 해주는 함수 정의.</li>
   <li>셀프넘버 리스트 True로 남아있는 원소(셀프넘버)의 인덱스를 출력해줌으로써 문제를 해결하였다.</li>
-</ol>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/4673 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 구현 브루트포스 알고리즘 🧐 아이디어 10,000 보다 작거나 같은 셀프 넘버 를 출력하는 문제이다. 생성자 : 양의 정수 $n$ 에 대해서 $n$ 과 $n$ 의 각 자리수를 더하는 함수라고 정의해보면 $d(75) = 75 + 7 + 5 = 87$ $75$ 는 $d(75) = 87$ 의 생성자이다. 셀프넘버 : 위의 경우처럼 생성자가 있는 것이 아니라 생성자가 없을 경우 셀프 넘버라고 한다. 각 자리수를 더하여 $31$ 을 만들 수 있는 숫자는 없기에, $31$ 은 셀프 넘버이다. 📝 내 풀이 # 생성자 함수 def d(n): if n &lt; 10: # 한 자리 수일 경우 return n + n else: return n + sum(map(int, str(n))) # n과 각 자리수의 합 더하기 self_num = [True] * 10001 # 셀프넘버 리스트 for i in range(1,len(self_num)): # 1 ~ 10000 if d(i) &lt;= 10000: # 10000보다 작거나 같을 경우 self_num[d(i)] = False # 생성자일 경우 False 처리 (셀프넘버가 아닐 경우) # 출력 for i in range(1,len(self_num)): if self_num[i] == True: print(i) # 셀프넘버(True)일 경우 출력 😳 풀이 리뷰 위 아이디어에서 정리한 개념을 이해 한 후 인덱스를 통해 문제를 풀어야겠다고 생각했다. True로 이루어진 10001개의 셀프넘버 리스트 반복문을 통해 생성자가 있을 경우 False 처리를 해주는 함수 정의. 셀프넘버 리스트 True로 남아있는 원소(셀프넘버)의 인덱스를 출력해줌으로써 문제를 해결하였다.]]></summary></entry><entry><title type="html">[백준] 2309 : 일곱 난쟁이 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2309/" rel="alternate" type="text/html" title="[백준] 2309 : 일곱 난쟁이 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2309</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2309/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+</ol>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/4673 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 구현 브루트포스 알고리즘 🧐 아이디어 10,000 보다 작거나 같은 셀프 넘버 를 출력하는 문제이다. 생성자 : 양의 정수 $n$ 에 대해서 $n$ 과 $n$ 의 각 자리수를 더하는 함수라고 정의해보면 $d(75) = 75 + 7 + 5 = 87$ $75$ 는 $d(75) = 87$ 의 생성자이다. 셀프넘버 : 위의 경우처럼 생성자가 있는 것이 아니라 생성자가 없을 경우 셀프 넘버라고 한다. 각 자리수를 더하여 $31$ 을 만들 수 있는 숫자는 없기에, $31$ 은 셀프 넘버이다. 📝 내 풀이 # 생성자 함수 def d(n): if n &lt; 10: # 한 자리 수일 경우 return n + n else: return n + sum(map(int, str(n))) # n과 각 자리수의 합 더하기 self_num = [True] * 10001 # 셀프넘버 리스트 for i in range(1,len(self_num)): # 1 ~ 10000 if d(i) &lt;= 10000: # 10000보다 작거나 같을 경우 self_num[d(i)] = False # 생성자일 경우 False 처리 (셀프넘버가 아닐 경우) # 출력 for i in range(1,len(self_num)): if self_num[i] == True: print(i) # 셀프넘버(True)일 경우 출력 😳 풀이 리뷰 위 아이디어에서 정리한 개념을 이해 한 후 인덱스를 통해 문제를 풀어야겠다고 생각했다. True로 이루어진 10001개의 셀프넘버 리스트 반복문을 통해 생성자가 있을 경우 False 처리를 해주는 함수 정의. 셀프넘버 리스트 True로 남아있는 원소(셀프넘버)의 인덱스를 출력해줌으로써 문제를 해결하였다.]]></summary></entry><entry><title type="html">[백준] 2231 : 분해합 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2231/" rel="alternate" type="text/html" title="[백준] 2231 : 분해합 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2231</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2231/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
-  <p>🟤 <strong>브론즈 1</strong></p>
+  <p>🟤 <strong>브론즈 2</strong></p>
 </blockquote>
 
 <h1 id="️-문제">✏️ 문제</h1>
 <blockquote>
-  <p><a href="https://www.acmicpc.net/problem/2309">https://www.acmicpc.net/problem/2309</a></p>
+  <p><a href="https://www.acmicpc.net/problem/2231">https://www.acmicpc.net/problem/2231</a></p>
 </blockquote>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_1.png" />
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2231_1.png" />
 <br /></p>
 
 <h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_2.png" /></p>
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2231_2.png" /></p>
 
 <p><br /></p>
 
@@ -587,94 +699,104 @@ for 문을 통해 김지민과 임한수가 대결 유무를 판단한다.<br />
 
 <ul>
   <li>브루트포스 알고리즘</li>
-  <li>정렬</li>
 </ul>
 
 <p><br /></p>
 
 <h1 id="-아이디어">🧐 아이디어</h1>
 <blockquote>
-  <p>문제를 보자마자 순열과 조합이 떠올랐다.</p>
+  <p>이 문제의 핵심은 분해합과 생성자에 대한 이해, N의 가장 작은 생성자 출력! 이라고 할 수 있다.</p>
   <ul>
-    <li>순열과 조합은 서로 다른 n개에서 r개를 고르는 경우의 수이다. 간단하게 순열은 순서를 고려한 것, 조합은 순서를 고려하지 않는다.
+    <li>분해합 : 자연수 N과 N을 이루는 각 자리수의 합
       <ul>
-        <li>자세한 설명은 <a href="[wlgudths](https://wlgudths.github.io/)">이산수학파트에서 업로드 예정</a></li>
+        <li>N = 123, N을 이루는 각 자리수 1, 2, 3 의 합이다. (123 + 1 + 2 + 3)</li>
+      </ul>
+    </li>
+    <li>생성자 : 자연수 M의 분해합이 N인 경우, M은 생성자이다.
+      <ul>
+        <li>M = 120, N = 123 M의 분해합은 (120 + 1 + 2 + 0) = 123 = N 이다.<br />
+즉, 120은 123의 생성자이다.</li>
+      </ul>
+    </li>
+    <li>어떠한 자연수의 생성자가 없을 수도 있고, 여러 개일 수도 있다.
+      <ul>
+        <li>출력 : 생성자가 없을 경우 <strong>0</strong> / 생성자가 여러 개일 경우 <strong>가장 작은 생성자</strong></li>
       </ul>
     </li>
   </ul>
 </blockquote>
 
 <blockquote>
-  <p>9명의 난쟁이 중에 7명을 뽑아 키의 총합이 100이되면 <u>진짜 난쟁이 7명</u>을 찾을 수 있다.<br />
-하지만 for문을 7번 쓸 수도 없고 매우 복잡해질 것이다.<br />
-난쟁이 9명 중에서 진짜 난쟁이를 찾는 것보다 <u>가짜 난쟁이 2명</u>을 찾는 것이 더 효율적일 것이다.<br />
-가짜 난쟁이 2명의 합은 9명의 합 - 100을 하면 구할 수 있다.</p>
+  <p>문제에서 요구한 개념들을 이해한 후에는 각 자리수를 더하는 과정을 코드로 구현하는 것이 포인트라고 생각한다.</p>
 </blockquote>
 
 <p><br /></p>
 
 <h1 id="-첫-풀이">📝 첫 풀이</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
 
-<span class="c1"># 총합 - 100
-</span><span class="n">fake</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
+<span class="c1"># 생성자를 받을 리스트
+</span><span class="n">ans_lst</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="c1"># 9명의 난쟁이 중 가짜 난쟁이 뽑기
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">==</span> <span class="n">fake</span><span class="p">:</span>
-            <span class="n">fake_1</span><span class="p">,</span> <span class="n">fake_2</span> <span class="o">=</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-            <span class="k">break</span>
+<span class="c1"># 정답 비교용
+</span><span class="n">num</span> <span class="o">=</span> <span class="n">n</span>
 
+<span class="k">while</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># n이 0이 될 때까지 반복
+</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># 각 자리수의 합을 위한 리스트
+</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># 각 자리 수 반복 
+</span>        <span class="n">lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># 리스트에 각 자리수 담기
+</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">==</span> <span class="n">num</span><span class="p">:</span> <span class="c1"># 각 자리수의 합이 생성자일 경우 
+</span>        <span class="n">ans_lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># 결과값(생성자)을 담을 리스트에 담기
+</span>    
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># n에서 1씩 줄여가며 반복
+</span>
 
-<span class="c1"># 오름차순 정렬
-</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans_lst</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 결과 리스트에 원소가 있을 경우 가장 작은 생성자 출력
+</span>    <span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">ans_lst</span><span class="p">))</span>
 
-<span class="c1"># 출력
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">fake_1</span> <span class="o">!=</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">fake_2</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span> <span class="c1"># 가짜 난쟁이를 제외하고 print
-</span>        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># 원소가 들어있지않으면 0을 출력
+</span>    <span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
-
 <p><br /></p>
 
 <h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-<blockquote>
-  <p>fake라는 변수에 가짜 난쟁이의 합을 담고, 이중반복문을 통해 36가지 가짜 난쟁이 조합의 합이 fake와 같을 경우 반복문을 탈출 한 후 정렬, 출력하였다.</p>
-</blockquote>
+<p>물론 정답이 인정된 코드지만, 다시봐도 복잡하고 가독성이 떨어진다…<br />
+while문을 통해 자연수 N을 하나씩 줄여가며 각 자리수를 더하고 num과 같은 지 비교하였다.<br />
+while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 통해 가장 작은 숫자를 출력하고, 원소가 없을 경우 생성자가 없기 때문에 0을 출력하게 하였다.<br />
+문제에서는 가장 작은 생성자를 출력하거나 없을 경우 0을 출력하는 것이다. 위 코드에서는 가장 큰 숫자인 N에서 1씩 빼며 반복하기에 가장 큰 생성자가 먼저 담기는 문제가 생겼다.</p>
+
+<p><br /></p>
 
 <h1 id="-두-번째-풀이">📝 두 번째 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
+</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> 
 
-<span class="c1"># 입력
-</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
+<span class="c1"># 결과를 담을 변수
+</span><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="c1"># 의심 난쟁이 두 명씩 뽑기
-</span><span class="n">fake_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">dwarf</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># 1 ~ n 까지
+</span>    <span class="n">num</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span> <span class="c1"># i의 분해합
+</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># 생성자의 분해합과 N이 같을 경우
+</span>        <span class="n">ans</span> <span class="o">=</span> <span class="n">i</span> <span class="c1"># 결과에 생성자 i를 담고 반복문 종료!
+</span>        <span class="k">break</span>
 
-<span class="c1"># 가짜 난쟁이 키의 합
-</span><span class="n">fake_num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
-
-<span class="c1"># 가짜 난쟁이 찾아내기
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fake_lst</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">fake_num</span><span class="p">:</span>
-        <span class="n">fake</span> <span class="o">=</span> <span class="n">i</span>
-        <span class="k">break</span>
-
-<span class="c1"># 오름차순 정렬
-</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
-
-<span class="c1"># 가짜 난쟁이를 제외한 진짜 난쟁이들 출력
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fake</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1"># for문을 1부터 n까지 돌며 생성자를 찾게되면 가장 작은 생성자를 찾게 된다.
+# 만약 n까지 돌고 나서 생성자가 없을 경우 결과는 그래로 0을 출력하게 된다.
+</span>
+<span class="c1"># 결과 출력
+</span><span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h1 id="-풀이-리뷰-1">😳 풀이 리뷰</h1>
-<blockquote>
-  <p>첫 번째 풀이와 방식은 비슷하지만, itertools 모듈의 combinations를 활용하여 36가지의 의심 난쟁이들을 fake_lst에 담았다. 이후 첫 번째 풀이와 같다.</p>
-</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 1]]></summary></entry><entry><title type="html">[이산수학] 증명(Proofs)</title><link href="http://localhost:4000/discrete%20mathematics/DM-04/" rel="alternate" type="text/html" title="[이산수학] 증명(Proofs)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-04</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-04/"><![CDATA[<h1 id="증명proofs이란">증명(Proofs)이란?</h1>
+
+<p>첫 번째 풀이 이후, 문제가 요구하는 사항에 맞춰 코드를 개선하였다.<br />
+각 자리수의 합을 구할 때 리스트를 만들고 append시키며 복잡헀던 것이 map, sum을 통해 간략화 했다.<br />
+이후 1 ~ N까지 반복문을 돌며 생성자를 생성하고 분해합과 같을 때 반복문을 탈출하도록 하였다.</p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry><entry><title type="html">[이산수학] 증명(Proofs)</title><link href="http://localhost:4000/discrete%20mathematics/DM-04/" rel="alternate" type="text/html" title="[이산수학] 증명(Proofs)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-04</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-04/"><![CDATA[<h1 id="증명proofs이란">증명(Proofs)이란?</h1>
 <blockquote>
   <p>특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.</p>
 </blockquote>
@@ -930,22 +1052,22 @@ $p \rightarrow q$ 가 참이 되는 것을 간접적으로 보여주는 증명 �
 <a href="http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EC%A6%9D%EB%AA%85.html#%EC%A6%9D%EB%AA%85%EA%B4%80%EB%A0%A8-%EC%9A%A9%EC%96%B4">http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EC%A6%9D%EB%AA%85.html#%EC%A6%9D%EB%AA%85%EA%B4%80%EB%A0%A8-%EC%9A%A9%EC%96%B4</a><br />
 <a href="https://mathbang.net/121#gsc.tab=0">https://mathbang.net/121#gsc.tab=0</a>
 <a href="https://ko.wikipedia.org/wiki/%EA%B3%B5%EB%A6%AC">https://ko.wikipedia.org/wiki/%EA%B3%B5%EB%A6%AC</a>
-<a href="https://m.blog.naver.com/junhyuk7272/221961339600">https://m.blog.naver.com/junhyuk7272/221961339600</a></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[증명(Proofs)이란? 특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.]]></summary></entry><entry><title type="html">[백준] 2231 : 분해합 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2231/" rel="alternate" type="text/html" title="[백준] 2231 : 분해합 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2231</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2231/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<a href="https://m.blog.naver.com/junhyuk7272/221961339600">https://m.blog.naver.com/junhyuk7272/221961339600</a></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[증명(Proofs)이란? 특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.]]></summary></entry><entry><title type="html">[백준] 2309 : 일곱 난쟁이 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2309/" rel="alternate" type="text/html" title="[백준] 2309 : 일곱 난쟁이 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2309</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2309/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
-  <p>🟤 <strong>브론즈 2</strong></p>
+  <p>🟤 <strong>브론즈 1</strong></p>
 </blockquote>
 
 <h1 id="️-문제">✏️ 문제</h1>
 <blockquote>
-  <p><a href="https://www.acmicpc.net/problem/2231">https://www.acmicpc.net/problem/2231</a></p>
+  <p><a href="https://www.acmicpc.net/problem/2309">https://www.acmicpc.net/problem/2309</a></p>
 </blockquote>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2231_1.png" />
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_1.png" />
 <br /></p>
 
 <h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
 
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2231_2.png" /></p>
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_2.png" /></p>
 
 <p><br /></p>
 
@@ -953,104 +1075,94 @@ $p \rightarrow q$ 가 참이 되는 것을 간접적으로 보여주는 증명 �
 
 <ul>
   <li>브루트포스 알고리즘</li>
+  <li>정렬</li>
 </ul>
 
 <p><br /></p>
 
 <h1 id="-아이디어">🧐 아이디어</h1>
 <blockquote>
-  <p>이 문제의 핵심은 분해합과 생성자에 대한 이해, N의 가장 작은 생성자 출력! 이라고 할 수 있다.</p>
+  <p>문제를 보자마자 순열과 조합이 떠올랐다.</p>
   <ul>
-    <li>분해합 : 자연수 N과 N을 이루는 각 자리수의 합
+    <li>순열과 조합은 서로 다른 n개에서 r개를 고르는 경우의 수이다. 간단하게 순열은 순서를 고려한 것, 조합은 순서를 고려하지 않는다.
       <ul>
-        <li>N = 123, N을 이루는 각 자리수 1, 2, 3 의 합이다. (123 + 1 + 2 + 3)</li>
-      </ul>
-    </li>
-    <li>생성자 : 자연수 M의 분해합이 N인 경우, M은 생성자이다.
-      <ul>
-        <li>M = 120, N = 123 M의 분해합은 (120 + 1 + 2 + 0) = 123 = N 이다.<br />
-즉, 120은 123의 생성자이다.</li>
-      </ul>
-    </li>
-    <li>어떠한 자연수의 생성자가 없을 수도 있고, 여러 개일 수도 있다.
-      <ul>
-        <li>출력 : 생성자가 없을 경우 <strong>0</strong> / 생성자가 여러 개일 경우 <strong>가장 작은 생성자</strong></li>
+        <li>자세한 설명은 <a href="[wlgudths](https://wlgudths.github.io/)">이산수학파트에서 업로드 예정</a></li>
       </ul>
     </li>
   </ul>
 </blockquote>
 
 <blockquote>
-  <p>문제에서 요구한 개념들을 이해한 후에는 각 자리수를 더하는 과정을 코드로 구현하는 것이 포인트라고 생각한다.</p>
+  <p>9명의 난쟁이 중에 7명을 뽑아 키의 총합이 100이되면 <u>진짜 난쟁이 7명</u>을 찾을 수 있다.<br />
+하지만 for문을 7번 쓸 수도 없고 매우 복잡해질 것이다.<br />
+난쟁이 9명 중에서 진짜 난쟁이를 찾는 것보다 <u>가짜 난쟁이 2명</u>을 찾는 것이 더 효율적일 것이다.<br />
+가짜 난쟁이 2명의 합은 9명의 합 - 100을 하면 구할 수 있다.</p>
 </blockquote>
 
 <p><br /></p>
 
 <h1 id="-첫-풀이">📝 첫 풀이</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
 
-<span class="c1"># 생성자를 받을 리스트
-</span><span class="n">ans_lst</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># 총합 - 100
+</span><span class="n">fake</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
 
-<span class="c1"># 정답 비교용
-</span><span class="n">num</span> <span class="o">=</span> <span class="n">n</span>
+<span class="c1"># 9명의 난쟁이 중 가짜 난쟁이 뽑기
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">==</span> <span class="n">fake</span><span class="p">:</span>
+            <span class="n">fake_1</span><span class="p">,</span> <span class="n">fake_2</span> <span class="o">=</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">break</span>
 
-<span class="k">while</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># n이 0이 될 때까지 반복
-</span>
-    <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># 각 자리수의 합을 위한 리스트
-</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># 각 자리 수 반복 
-</span>        <span class="n">lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="c1"># 리스트에 각 자리수 담기
-</span>
-    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">==</span> <span class="n">num</span><span class="p">:</span> <span class="c1"># 각 자리수의 합이 생성자일 경우 
-</span>        <span class="n">ans_lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># 결과값(생성자)을 담을 리스트에 담기
-</span>    
-    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># n에서 1씩 줄여가며 반복
-</span>
 
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans_lst</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 결과 리스트에 원소가 있을 경우 가장 작은 생성자 출력
-</span>    <span class="k">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">ans_lst</span><span class="p">))</span>
+<span class="c1"># 오름차순 정렬
+</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
 
-<span class="k">else</span><span class="p">:</span> <span class="c1"># 원소가 들어있지않으면 0을 출력
-</span>    <span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 출력
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fake_1</span> <span class="o">!=</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">fake_2</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span> <span class="c1"># 가짜 난쟁이를 제외하고 print
+</span>        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div></div>
+
 <p><br /></p>
 
 <h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-<p>물론 정답이 인정된 코드지만, 다시봐도 복잡하고 가독성이 떨어진다…<br />
-while문을 통해 자연수 N을 하나씩 줄여가며 각 자리수를 더하고 num과 같은 지 비교하였다.<br />
-while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 통해 가장 작은 숫자를 출력하고, 원소가 없을 경우 생성자가 없기 때문에 0을 출력하게 하였다.<br />
-문제에서는 가장 작은 생성자를 출력하거나 없을 경우 0을 출력하는 것이다. 위 코드에서는 가장 큰 숫자인 N에서 1씩 빼며 반복하기에 가장 큰 생성자가 먼저 담기는 문제가 생겼다.</p>
-
-<p><br /></p>
+<blockquote>
+  <p>fake라는 변수에 가짜 난쟁이의 합을 담고, 이중반복문을 통해 36가지 가짜 난쟁이 조합의 합이 fake와 같을 경우 반복문을 탈출 한 후 정렬, 출력하였다.</p>
+</blockquote>
 
 <h1 id="-두-번째-풀이">📝 두 번째 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
 
-<span class="c1"># 결과를 담을 변수
-</span><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># 입력
+</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># 1 ~ n 까지
-</span>    <span class="n">num</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span> <span class="c1"># i의 분해합
-</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># 생성자의 분해합과 N이 같을 경우
-</span>        <span class="n">ans</span> <span class="o">=</span> <span class="n">i</span> <span class="c1"># 결과에 생성자 i를 담고 반복문 종료!
-</span>        <span class="k">break</span>
+<span class="c1"># 의심 난쟁이 두 명씩 뽑기
+</span><span class="n">fake_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">dwarf</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="c1"># for문을 1부터 n까지 돌며 생성자를 찾게되면 가장 작은 생성자를 찾게 된다.
-# 만약 n까지 돌고 나서 생성자가 없을 경우 결과는 그래로 0을 출력하게 된다.
-</span>
-<span class="c1"># 결과 출력
-</span><span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="c1"># 가짜 난쟁이 키의 합
+</span><span class="n">fake_num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
+
+<span class="c1"># 가짜 난쟁이 찾아내기
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fake_lst</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">fake_num</span><span class="p">:</span>
+        <span class="n">fake</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">break</span>
+
+<span class="c1"># 오름차순 정렬
+</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="c1"># 가짜 난쟁이를 제외한 진짜 난쟁이들 출력
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fake</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h1 id="-풀이-리뷰-1">😳 풀이 리뷰</h1>
-
-<p>첫 번째 풀이 이후, 문제가 요구하는 사항에 맞춰 코드를 개선하였다.<br />
-각 자리수의 합을 구할 때 리스트를 만들고 append시키며 복잡헀던 것이 map, sum을 통해 간략화 했다.<br />
-이후 1 ~ N까지 반복문을 돌며 생성자를 생성하고 분해합과 같을 때 반복문을 탈출하도록 하였다.</p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry><entry><title type="html">[백준] 1065 : 한수 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1065/" rel="alternate" type="text/html" title="[백준] 1065 : 한수 (파이썬)" /><published>2023-10-17T00:00:00+09:00</published><updated>2023-10-18T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1065</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1065/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p>첫 번째 풀이와 방식은 비슷하지만, itertools 모듈의 combinations를 활용하여 36가지의 의심 난쟁이들을 fake_lst에 담았다. 이후 첫 번째 풀이와 같다.</p>
+</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 1]]></summary></entry><entry><title type="html">[백준] 1065 : 한수 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1065/" rel="alternate" type="text/html" title="[백준] 1065 : 한수 (파이썬)" /><published>2023-10-17T00:00:00+09:00</published><updated>2023-10-18T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1065</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1065/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 4</strong></p>
 </blockquote>
@@ -1194,58 +1306,4 @@ while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 
 <blockquote>
   <p>내 풀이와 비교하면 더욱 간결하고 깔끔한 코드로 나타냈다.<br />
 오히려 함수를 정의해서 깔끔하게 구현하겠다는 나의 생각을 깨버렸다 ☹️.</p>
-</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry><entry><title type="html">[백준] 2798 : 블랙잭 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2798/" rel="alternate" type="text/html" title="[백준] 2798 : 블랙잭 (파이썬)" /><published>2023-10-16T00:00:00+09:00</published><updated>2023-10-16T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2798</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2798/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p>🟤 <strong>브론즈 2</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/2798">https://www.acmicpc.net/problem/2798</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2798_1.png" />
-<br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2798_2.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
-
-<ul>
-  <li>브루트포스 알고리즘</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-
-<blockquote>
-  <p>N개의 카드 중 <strong>중복 없이</strong> 3장의 카드를 뽑은 후 M보다 작거나 같은 숫자들을 담는다 !</p>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span> <span class="c1"># 카드의 개수, M
-</span><span class="n">cards</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span> <span class="c1"># 카드의 숫자들
-</span>
-<span class="c1"># 카드의 합들을 담을 리스트
-</span><span class="n">basket</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># 중복없이 3장의 카드 뽑기
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-      <span class="n">nums</span> <span class="o">=</span> <span class="n">card</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">cards</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">cards</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="c1"># 중복없이 뽑은 3장의 카드 합
-</span>      <span class="k">if</span> <span class="n">nums</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span> <span class="c1"># 카드의 합이 M 보다 작거나 같을 경우 리스트에 담는다.
-</span>        <span class="n">basket</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-
-<span class="c1"># 출력
-</span><span class="k">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">basket</span><span class="p">))</span> <span class="c1"># 리스트 원소 중 가장 큰 값 출력
-</span></code></pre></div></div>
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry></feed>
+</blockquote>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry></feed>
