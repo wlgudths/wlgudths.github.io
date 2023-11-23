@@ -94,4 +94,10 @@ var store = [{
         "tags": [],
         "url": "/boj/BOJ-1436/",
         "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 01_행렬의 개념",
+        "excerpt":"행렬 (Matrix) 행렬은 연립일차방적식을 풀기 위해 사용되는 수의 구조이다. 2차원 배열 형태인 행렬은 두 개 이상의 집합을 구성하는 원소 간의 관계를 표현하기에 적합하다. 행렬은 데이터 연산 구조, 네트워크 모델, 선형 모델등과 같은 수학적 모델을 표현하는데 활용된다. 인공지능 관련해서 Python의 라이브러리 numpy를 활용할 때 행렬에 대한 지식이 필수적이라 느껴 정리했습니다. 행렬의...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-06/",
+        "teaser": null
       }]

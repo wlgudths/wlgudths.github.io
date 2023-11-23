@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-23T21:23:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 1436 : 영화감독 숌 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1436/" rel="alternate" type="text/html" title="[백준] 1436 : 영화감독 숌 (파이썬)" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1436</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1436/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-23T23:52:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 행렬(Matrix) : 01_행렬의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-06/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 01_행렬의 개념" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-06</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-06/"><![CDATA[<h1 id="행렬-matrix">행렬 (Matrix)</h1>
+
+<ul>
+  <li>
+    <p>행렬은 연립일차방적식을 풀기 위해 사용되는 수의 구조이다.</p>
+  </li>
+  <li>
+    <p>2차원 배열 형태인 행렬은 두 개 이상의 집합을 구성하는 원소 간의 관계를 표현하기에 적합하다.</p>
+  </li>
+  <li>
+    <p>행렬은 데이터 연산 구조, 네트워크 모델, 선형 모델등과 같은 수학적 모델을 표현하는데 활용된다.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>인공지능 관련해서 Python의 라이브러리 numpy를 활용할 때 행렬에 대한 지식이 필수적이라 느껴 정리했습니다.</p>
+</blockquote>
+
+<h1 id="행렬의-개념">행렬의 개념</h1>
+
+<h2 id="정의">정의</h2>
+<blockquote>
+  <p>하나 이상의 원소를 1차원 또는 2차원의 형태로 나열한 배열<br />
+$m$ 행 $n$ 열로 나열한 실수의 2차원 배열 ($m &gt; 0, n &gt; 0$)</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$A = [a_{ij}] \quad (1 \le i \le m, \quad 1 \le j \le n)$</p>
+  </li>
+  <li>
+    <p>$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h2 id="행렬의-표현">행렬의 표현</h2>
+
+<ul>
+  <li>
+    <p>행렬 (matrix : $A = [a_{ij}]$)</p>
+  </li>
+  <li>가로줄 : 행 (row)
+    <ul>
+      <li>행 크기 : 한 행을 이루는 원소의 개수</li>
+    </ul>
+  </li>
+  <li>세로줄 : 열(column)
+    <ul>
+      <li>열 크기 : 한 열을 이루는 원소의 개수</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>영어 대문자 : $A, B, C \cdots$</li>
+  <li>원소 표기 : $[a_{ij}]$</li>
+</ol>
+
+<ul>
+  <li>행렬의 크기를 이용하여 나타내기
+    <ul>
+      <li>행 : $m$행, $\quad$열 : $n$열 $\rightarrow$ $m \times n $ 행렬</li>
+    </ul>
+  </li>
+  <li>행렬의 위치를 이용하여 나타내기
+    <ul>
+      <li>행 번호($i$), 열번호($j$)</li>
+      <li>$a_{ij}$ 는 $i$행 $j$열에 위치한 원소를 의미한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+<p><br /></p>
+
+<p>$A = \begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 \\<br />
+5 &amp; 6 &amp; 7 &amp; 8 \\<br />
+8 &amp; 7 &amp; 6 &amp; 5 \\<br />
+4 &amp; 3 &amp; 2 &amp; 1
+\end{bmatrix}$</p>
+
+<ul>
+  <li>
+    <p>위 행렬 A는 행 4개와 열 4개로 구성된 행렬이다.</p>
+  </li>
+  <li>
+    <p>크기가 4행 4열인 행렬 또는 $4 \times 4$ (4 - by - 4)로 표현할 수 있다.</p>
+  </li>
+  <li>
+    <p>행렬 A의 1행은 $\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \end{bmatrix}$ 이다.</p>
+  </li>
+  <li>
+    <p>행렬 A의 1열은 $\begin{bmatrix}1 \\   5 \\   8 \\   4\end{bmatrix}$ 이다.</p>
+  </li>
+  <li>
+    <p>원소표기법을 이용하면 행렬 $A$의 $a_{11}$ 은 $1$ 이고, $a_{44}$ 도 1이다.</p>
+    <ul>
+      <li>행렬 $A$ 에서 $a_{11}$ 과 $a_{44}$는 $1$이라는 동일한 값을 가지나, 서로 다른 원소로 구분된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="기본적인-행렬">기본적인 행렬</h1>
+
+<h2 id="영행렬-zero-matrix--o">영행렬 (zero matrix : $O$)</h2>
+
+<h3 id="정의-1">정의</h3>
+
+<blockquote>
+  <p>$m \times n$ 행렬 $A = [a_{ij}]$가 있을 때 모든 $i, j$ 에 대하여 $a_{ij} = 0$ 인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$O =$
+$\begin{bmatrix}
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+\end{bmatrix}$</li>
+</ul>
+
+<h2 id="n차-정사각행렬n-square-matrix">$n$차 정사각행렬(n-square matrix)</h2>
+
+<h3 id="정의-2">정의</h3>
+
+<blockquote>
+  <p>$m \times n$ 행렬 $A = [a_{ij}]$ 가 있을 때 $m = n$인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$A =$
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="주대각-원소-main-diagonal-element">주대각 원소 (main diagonal element)</h3>
+<blockquote>
+  <p>정사각형 행렬에서 행렬의 원소 $a_{ij}$ 중 $i = j$ 인 원소를 <strong>주대각 원소(main diagonal element)</strong>라고 한다.</p>
+</blockquote>
+
+<h4 id="예시-1">예시</h4>
+
+<ul>
+  <li>
+    <p>$A =$ 
+$\begin{bmatrix}
+1 &amp; 3 &amp; 5 &amp; 7 \\<br />
+5 &amp; 2 &amp; 7 &amp; 8 \\<br />
+8 &amp; 7 &amp; 3 &amp; 5 \\<br />
+4 &amp; 3 &amp; 2 &amp; 4
+\end{bmatrix}$</p>
+
+    <ul>
+      <li>행렬 $A$ 의 원소 $a_{11}, a_{22}, a_{33}, a_{44}$ 에 해당하는 $1, 2, 3, 4$는 행렬 $A$ 의 <strong>주대각 원소</strong>이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="단위행렬-unit-matrix--i--항등행렬">단위행렬 (unit matrix : $I$ ), 항등행렬</h2>
+
+<h3 id="정의-3">정의</h3>
+
+<blockquote>
+  <p>주대각 원소만 $1$ 이고 나머지 원소는 모두 $0$ 인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>단위행렬은 정사각행렬인 경우에만 존재하며 행렬의 곱셈에서 항등원 역할을 하기때문에 항등행렬이라고 말한다.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>$I =$
+$\begin{bmatrix}
+1 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+0 &amp; 1 &amp; \cdots &amp; 0 \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+0 &amp; 0 &amp; \cdots &amp; 1
+\end{bmatrix}$</li>
+</ul>
+
+<hr />
+
+<h1 id="참고-문헌">참고 문헌</h1>
+<ul>
+  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p201 ~ p204</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬 (Matrix)]]></summary></entry><entry><title type="html">[백준] 1436 : 영화감독 숌 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1436/" rel="alternate" type="text/html" title="[백준] 1436 : 영화감독 숌 (파이썬)" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1436</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1436/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 5</strong></p>
 </blockquote>
@@ -869,263 +1067,7 @@ while문을 빠져 나온 후 정답리스트에 원소가 있을 경우 min을 
 
 <p>첫 번째 풀이 이후, 문제가 요구하는 사항에 맞춰 코드를 개선하였다.<br />
 각 자리수의 합을 구할 때 리스트를 만들고 append시키며 복잡헀던 것이 map, sum을 통해 간략화 했다.<br />
-이후 1 ~ N까지 반복문을 돌며 생성자를 생성하고 분해합과 같을 때 반복문을 탈출하도록 하였다.</p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry><entry><title type="html">[이산수학] 증명(Proofs)</title><link href="http://localhost:4000/discrete%20mathematics/DM-04/" rel="alternate" type="text/html" title="[이산수학] 증명(Proofs)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-04</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-04/"><![CDATA[<h1 id="증명proofs이란">증명(Proofs)이란?</h1>
-<blockquote>
-  <p>특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.</p>
-</blockquote>
-
-<hr />
-
-<h1 id="증명관련-용어">증명관련 용어</h1>
-<h2 id="정리-theorem">정리 (Theorem)</h2>
-<blockquote>
-  <p>정리란 공리와 정의를 통해 참(True)으로 증명된 명제이다.</p>
-  <ul>
-    <li>피타고라스의 정리 (Pythagorean theorem)</li>
-  </ul>
-</blockquote>
-
-<h2 id="정의-definition">정의 (Definition)</h2>
-<blockquote>
-  <p>용어 또는 기호의 의미를 확실하게 규정한 문장이나 식, 용어의 뜻에 대한 약속</p>
-  <ul>
-    <li>삼각형 : 세 개의 선분으로 둘러싸인 다각형</li>
-  </ul>
-</blockquote>
-
-<h2 id="공리-axiom">공리 (Axiom)</h2>
-<blockquote>
-  <p>증명이 불필요한 명제</p>
-  <ul>
-    <li>페아노의 공리 : 어떤 자연수에 대해서도, 그 수의 ‘다음’ 자연수(따름수)가 존재한다.
-      <ul>
-        <li>자연수 N에 대하여, N + 1 이 존재한다.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<h2 id="가설-conjecture">가설 (Conjecture)</h2>
-<blockquote>
-  <p>증명되지는 않았지만 참으로 믿어지는 명제</p>
-</blockquote>
-
-<h2 id="이론-theory">이론 (Theory)</h2>
-<blockquote>
-  <p>공리(axiom)로부터 증명이 가능한 모든 정리(theorem)의 집합</p>
-</blockquote>
-
-<hr />
-
-<h1 id="방법론">방법론</h1>
-
-<h2 id="연역법deduction">연역법(deduction)</h2>
-<blockquote>
-  <p>주어진 사실(facts)들과 공리(axioms)들에 입각하여 추론(inference)을 통하여 새로운 사실을 도출하는 것</p>
-</blockquote>
-
-<ul>
-  <li>예시(일반적)
-    <ul>
-      <li>모든 사람은 죽는다. 소크라테스는 사람이다. 그러므로 소크라테스는 죽는다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="귀납법induction">귀납법(induction)</h2>
-<blockquote>
-  <p>관찰과 실험에 기반한 가설을 귀납 추론을 통하여 일반적인 규칙을 입증하는 것</p>
-</blockquote>
-
-<ul>
-  <li>예시(일반적)
-    <ul>
-      <li>A새는 난다. B새도 난다. C새도 난다. 그러므로 모든 새는 날 수있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="수학적-귀납법">수학적 귀납법</h2>
-<blockquote>
-  <p>명제 $p_1, p_2, p_3, \cdots, p_n$ 이 참이라고 할 때, $p_n+1$의 경우에도 성립함을 보이면 된다.</p>
-</blockquote>
-
-<h3 id="수학적-귀납법-예시">수학적 귀납법 예시</h3>
-<blockquote>
-  <p>가우스 식</p>
-  <ul>
-    <li>$1 + 2 + 3 \cdots + n = \frac{n \times (n+1)}{2}$
-      <ol>
-        <li>$P(n) = \frac{n \times (n+1)}{2}$</li>
-        <li>$P(1) = \frac{1 \times (1+1)}{2} = 1 \rightarrow True$ <br /></li>
-        <li>귀납 가정 : $P(k) = \frac{k \times (k+1)}{2}$ ($n$이 $k$일 경우도 성립) <br /></li>
-        <li>귀납 단계 : $P(k+1) = \frac{(k+1) \times (k+2)}{2}$  <br />
-          <ul>
-            <li>$P(k+1) = P(k) + (k+1)$  <br /><br />
-   $= \frac{k \times (k+1)}{2} + (k+1)$  <br /><br />
-   $= \frac{k^2 + k + 2k + 2}{2}$  <br /><br />
-   $= \frac{k^2 + 3k + 2}{2}$  <br /><br />
-   $= \frac{(k+1)(k+2)}{2}$</li>
-          </ul>
-        </li>
-      </ol>
-    </li>
-  </ul>
-</blockquote>
-
-<h1 id="다양한-증명법">다양한 증명법</h1>
-
-<h2 id="1직접-증명법-direct-proof">1.직접 증명법 (Direct Proof)</h2>
-<blockquote>
-  <p>주어진 명제를 참이라고 가정하고, 정리와 공리를 이용해서 명제가 참이 됨을 증명하는 방법이다.<br />
-명제 $p \rightarrow q$ 의 직접증명은 논리적으로 $p$의 진리값이 참일 때 $q$도 참임을 보이는 증명 방법이다.</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-<blockquote>
-  <p>두 홀수의 곱이 홀수임을 증명하라</p>
-  <ul>
-    <li>$p$ : 두 수 $a,b$은 홀수이다.</li>
-    <li>$q$ : $a$ 와 $b$ 의 곱은 홀수이다.</li>
-    <li>$p \rightarrow q$ : 두 홀수 $a,b$ 의 곱은 홀수이다.</li>
-    <li>증명
-      <ul>
-        <li>두 정수 $k$ 와 $j$ 가 있을 때, 홀수 $a,b$ 는 각각 $a = 2k + 1, b = 2j + 1$ 로 표현할 수 있다.</li>
-        <li>$a \times b = (2k + 1) \times (2j + 1) = 4kj + 2k + 2j + 1 = 2(2kj + k + j) + 1$</li>
-        <li>$k$ 와 $j$ 는 정수이므로 $2kj + k + j$ 은 정수가되어 $2(2kj + k + j)$ 는 반드시 짝수가 되고, $2(2kj + k + j) + 1$ 은 반드시 홀수가 된다.</li>
-        <li>따라서 두 홀수 $a,b$의 곱은 홀수이다 라는 명제는 참이 된다.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<h2 id="2반례-증명법-proof-by-counter-example">2.반례 증명법 (Proof by Counter-example)</h2>
-<blockquote>
-  <p>$P(x)$ 가 명제함수라고 할 때, $\forall P(x)$ 중 단 하나의 값이라도 $P(x)$를 거짓으로 만드는 반례(counterexample)찾아서 명제가 거짓임을 증명하는 방법이다.</p>
-</blockquote>
-
-<h3 id="예시-1">예시</h3>
-<blockquote>
-  <p>모든 실수 $x$ 에 대하여 $x^2 &gt; 0$이 성립하는가?</p>
-</blockquote>
-
-<ul>
-  <li>증명
-    <ul>
-      <li>$x = 0$ 이면 $x^2 = 0$ 이 되어, $x^2 &gt; 0$ 을 만족하지 않는다.</li>
-      <li>따라서, 명제는 거짓이 되고, 반례는 $x = 0$이 된다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="3모순-증명법-proof-by-contradiction">3.모순 증명법 (Proof by Contradiction)</h2>
-<blockquote>
-  <p>주어진 명제를 부정하면 모순(contradiction)이 된다는 것을 입증하는 방법이다.<br />
-즉, 모순 증명법은 결론을 거짓이라고 가정할 경우, 모순이 도출되도록 하는 증명법이다.</p>
-</blockquote>
-
-<h3 id="예시-2">예시</h3>
-<blockquote>
-  <p>$\sqrt{2}$ 는 무리수이다.</p>
-</blockquote>
-
-<ul>
-  <li>증명
-    <ul>
-      <li>$p : \sqrt{2}$ 이다.</li>
-      <li>$\lnot p$ : $\sqrt{2}$ 는 무리수가 아니다. = $\sqrt{2}$ 는 유리수이다.</li>
-      <li>유리수의 정의에 의하여 어떤 서로소인 정수 $a,b$가 존재하여 $\sqrt{2}$ = ${a}\over{b}$ 이다.</li>
-      <li>양변에 $b$ 를 곱한 후 제곱을 하면 $2b^2 = a^2$ 이 된다.</li>
-      <li>$a^2$ 이 2의 배수이므로 $a$ 는 짝수이다.</li>
-      <li>$a$ 를 2로 나눈 몫을 $k$ 라고 하면, $a = 2k$ 가 되고 $2b^2 = a^2$ 에 대입하면 $2b^2 = 4k^2$ 이므로 $b^2 = 2k^2$이 되어 $b$ 도 2의 배수가 된다.</li>
-      <li>$a$ 와 $b$ 는 서로소 이므로 둘이 동시에 2의 배수인 것은 가정에 모순이다.</li>
-      <li>$\therefore$ $\sqrt{2}$ 는 무리수이다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="4대우-증명법-contrapositive-proof">4.대우 증명법 (Contrapositive Proof)</h2>
-<blockquote>
-  <p>$p \rightarrow q$ 와 $\lnot p \rightarrow \lnot q$ 가 대우 관계 논리적 동치가 됨을 이용하여<br />
-$p \rightarrow q$ 가 참이 되는 것을 간접적으로 보여주는 증명 방법이다.</p>
-</blockquote>
-
-<h3 id="예시-3">예시</h3>
-<blockquote>
-  <p>$3n + 2$ 가 홀수이면 $n$ 은 홀수이다.</p>
-</blockquote>
-
-<ul>
-  <li>증명
-    <ul>
-      <li>$p : 3n + 2 = 2k + 1$</li>
-      <li>$q : n = 2k’ + 1$</li>
-      <li>대우 관계를 이용하여 $n$ 이 짝수이면 $3n + 2$ 도 짝수이다.</li>
-      <li>$n = 2k$이면 $3n + 2 = 3(2k) + 2 = 2(3k + 1)$</li>
-      <li>따라서, $n$ 이 짝수이면 $3n + 2$ 도 짝수이고, 대우관계에 의해 $3n + 2$ 가 홀수이면 $n$ 은 홀수이다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="5동치-증명법-필요충분조건-증명법-if-and-only-if-proof">5.동치 증명법, 필요충분조건 증명법 (if and only if proof)</h2>
-<blockquote>
-  <p>$p \leftrightarrow q$ 를 증명하기 위해 $p \rightarrow q$ 와 $q \rightarrow p$ 두 가지를 증명하는 방법이다.</p>
-</blockquote>
-
-<h3 id="예시-4">예시</h3>
-<blockquote>
-  <p>$n$ 이 홀수이면 $n^2$ 은 홀수이다. ($p$ : $n$ 이 홀수이다. , $q$ : $n^2$ 은 홀수이다.)</p>
-</blockquote>
-
-<ul>
-  <li>증명
-    <ul>
-      <li>$p \rightarrow q$ : $n$ 이 홀수이면 $n^2$ 은 홀수이다.
-        <ul>
-          <li>$n = 2k + 1$, $n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$ 이므로 $n^2$ 은 홀수이다.</li>
-        </ul>
-      </li>
-      <li>$q \rightarrow p$ : $n^2$ 이 홀수이면 $n$ 은 홀수이다. (직접 증명이 어렵기 때문에 대우증명을 이용하여 증명)</li>
-      <li>$\lnot q \rightarrow \lnot p$ : $n$ 이 짝수이면, $n^2$ 은 짝수이다.
-        <ul>
-          <li>$n = 2k$ 이면 $n^2 = 4k^2 = 2(2k^2)$ 이므로 $n^2$ 은 짝수이다.</li>
-        </ul>
-      </li>
-      <li>$p \rightarrow q$ 는 직접증명법에 의해 참이고, $q \rightarrow p$ 는 대우증명법에 의해 참이므로<br />
-  $\therefore q \leftrightarrow p$는  참이다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="6존재-증명법-existence-proof">6.존재 증명법 (Existence Proof)</h2>
-<blockquote>
-  <p>$P(x)$ 라는 명제함수에서 $P(x)$ 가 참인 $x$ 가 적어도 하나가 존재한다는 것을 보이는 증명 방법이다.</p>
-</blockquote>
-
-<h3 id="예시-5">예시</h3>
-<blockquote>
-  <p>$x^2 + y^2 = z^2$ 인 정수 $x,y,z$ 가 존재함을 보여라</p>
-</blockquote>
-
-<ul>
-  <li>증명
-    <ul>
-      <li>$x = 3, y = 4, z = 5$ 라고 할 때, $3^2 + 4^2 = 9 + 16 = 25 = 5^2$</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<p><br />
-<br /></p>
-
-<h1 id="참조">참조</h1>
-<p><a href="https://ko.wikipedia.org/wiki/%EC%A6%9D%EB%AA%85_(%EC%88%98%ED%95%99)">https://ko.wikipedia.org/wiki/%EC%A6%9D%EB%AA%85_(%EC%88%98%ED%95%99)</a><br />
-<a href="http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EC%A6%9D%EB%AA%85.html#%EC%A6%9D%EB%AA%85%EA%B4%80%EB%A0%A8-%EC%9A%A9%EC%96%B4">http://bigdata.dongguk.ac.kr/lectures/disc_math/_book/%EC%A6%9D%EB%AA%85.html#%EC%A6%9D%EB%AA%85%EA%B4%80%EB%A0%A8-%EC%9A%A9%EC%96%B4</a><br />
-<a href="https://mathbang.net/121#gsc.tab=0">https://mathbang.net/121#gsc.tab=0</a>
-<a href="https://ko.wikipedia.org/wiki/%EA%B3%B5%EB%A6%AC">https://ko.wikipedia.org/wiki/%EA%B3%B5%EB%A6%AC</a>
-<a href="https://m.blog.naver.com/junhyuk7272/221961339600">https://m.blog.naver.com/junhyuk7272/221961339600</a></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[증명(Proofs)이란? 특정한 공리(Axiom)들을 가정하고, 그 가정 하에서 어떤 명제가 참이라는 것을 보여주는 것이다.]]></summary></entry><entry><title type="html">[백준] 2309 : 일곱 난쟁이 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2309/" rel="alternate" type="text/html" title="[백준] 2309 : 일곱 난쟁이 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2309</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2309/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+이후 1 ~ N까지 반복문을 돌며 생성자를 생성하고 분해합과 같을 때 반복문을 탈출하도록 하였다.</p>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟤 브론즈 2]]></summary></entry><entry><title type="html">[백준] 2309 : 일곱 난쟁이 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2309/" rel="alternate" type="text/html" title="[백준] 2309 : 일곱 난쟁이 (파이썬)" /><published>2023-10-19T00:00:00+09:00</published><updated>2023-10-19T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2309</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2309/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>🟤 <strong>브론즈 1</strong></p>
 </blockquote>

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[백준] 2309 : 일곱 난쟁이 (파이썬) | 느려도 괜찮아</title>
-<meta name="description" content="🔎 난이도    🟤 브론즈 1">
+<!-- begin _includes/seo.html --><title>[이산수학] 행렬(Matrix) : 01_행렬의 개념 | 느려도 괜찮아</title>
+<meta name="description" content="행렬 (Matrix)">
 
 
   <meta name="author" content="지지형">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
-<meta property="og:title" content="[백준] 2309 : 일곱 난쟁이 (파이썬)">
-<meta property="og:url" content="http://localhost:4000/boj/BOJ-2309/">
+<meta property="og:title" content="[이산수학] 행렬(Matrix) : 01_행렬의 개념">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-06/">
 
 
-  <meta property="og:description" content="🔎 난이도    🟤 브론즈 1">
-
-
-
+  <meta property="og:description" content="행렬 (Matrix)">
 
 
 
 
-  <meta property="article:published_time" content="2023-10-19T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-10-19T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-11-23T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-11-23T00:00:00+09:00">
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/boj/BOJ-2309/">
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-06/">
 
 
 
@@ -99,6 +99,31 @@
 <!-- end custom head snippets -->
 
 
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
     
   </head>
 
@@ -336,16 +361,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[백준] 2309 : 일곱 난쟁이 (파이썬)">
-    <meta itemprop="description" content="🔎 난이도  🟤 브론즈 1">
-    <meta itemprop="datePublished" content="2023-10-19T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-10-19T00:00:00+09:00">
+    <meta itemprop="headline" content="[이산수학] 행렬(Matrix) : 01_행렬의 개념">
+    <meta itemprop="description" content="행렬 (Matrix)">
+    <meta itemprop="datePublished" content="2023-11-23T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-11-23T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/boj/BOJ-2309/" class="u-url" itemprop="url">[백준] 2309 : 일곱 난쟁이 (파이썬)
+            <a href="http://localhost:4000/discrete%20mathematics/DM-06/" class="u-url" itemprop="url">[이산수학] 행렬(Matrix) : 01_행렬의 개념
 </a>
           </h1>
           
@@ -362,7 +387,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
     
@@ -374,125 +399,214 @@
 
       <section class="page__content e-content" itemprop="text">
         
-          <aside class="sidebar__right ">
+          <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#-난이도">🔎 난이도</a></li><li><a href="#️-문제">✏️ 문제</a></li><li><a href="#-예제-입력-및-출력">🤖 예제 입력 및 출력</a></li><li><a href="#-알고리즘-분류">📑 알고리즘 분류</a></li><li><a href="#-아이디어">🧐 아이디어</a></li><li><a href="#-첫-풀이">📝 첫 풀이</a></li><li><a href="#-풀이-리뷰">😳 풀이 리뷰</a></li><li><a href="#-두-번째-풀이">📝 두 번째 풀이</a></li><li><a href="#-풀이-리뷰-1">😳 풀이 리뷰</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 행렬의 개념</h4></header>
+              <ul class="toc__menu"><li><a href="#행렬-matrix">행렬 (Matrix)</a></li><li><a href="#행렬의-개념">행렬의 개념</a><ul><li><a href="#정의">정의</a></li><li><a href="#행렬의-표현">행렬의 표현</a><ul><li><a href="#예시">예시</a></li></ul></li></ul></li><li><a href="#기본적인-행렬">기본적인 행렬</a><ul><li><a href="#영행렬-zero-matrix--o">영행렬 (zero matrix : $O$)</a><ul><li><a href="#정의-1">정의</a></li></ul></li><li><a href="#n차-정사각행렬n-square-matrix">$n$차 정사각행렬(n-square matrix)</a><ul><li><a href="#정의-2">정의</a></li><li><a href="#주대각-원소-main-diagonal-element">주대각 원소 (main diagonal element)</a><ul><li><a href="#예시-1">예시</a></li></ul></li></ul></li><li><a href="#단위행렬-unit-matrix--i--항등행렬">단위행렬 (unit matrix : $I$ ), 항등행렬</a><ul><li><a href="#정의-3">정의</a></li></ul></li></ul></li><li><a href="#참고-문헌">참고 문헌</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p>🟤 <strong>브론즈 1</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/2309">https://www.acmicpc.net/problem/2309</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_1.png" />
-<br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2309_2.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
+        <h1 id="행렬-matrix">행렬 (Matrix)</h1>
 
 <ul>
-  <li>브루트포스 알고리즘</li>
-  <li>정렬</li>
+  <li>
+    <p>행렬은 연립일차방적식을 풀기 위해 사용되는 수의 구조이다.</p>
+  </li>
+  <li>
+    <p>2차원 배열 형태인 행렬은 두 개 이상의 집합을 구성하는 원소 간의 관계를 표현하기에 적합하다.</p>
+  </li>
+  <li>
+    <p>행렬은 데이터 연산 구조, 네트워크 모델, 선형 모델등과 같은 수학적 모델을 표현하는데 활용된다.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>인공지능 관련해서 Python의 라이브러리 numpy를 활용할 때 행렬에 대한 지식이 필수적이라 느껴 정리했습니다.</p>
+</blockquote>
+
+<h1 id="행렬의-개념">행렬의 개념</h1>
+
+<h2 id="정의">정의</h2>
+<blockquote>
+  <p>하나 이상의 원소를 1차원 또는 2차원의 형태로 나열한 배열<br />
+$m$ 행 $n$ 열로 나열한 실수의 2차원 배열 ($m &gt; 0, n &gt; 0$)</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$A = [a_{ij}] \quad (1 \le i \le m, \quad 1 \le j \le n)$</p>
+  </li>
+  <li>
+    <p>$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h2 id="행렬의-표현">행렬의 표현</h2>
+
+<ul>
+  <li>
+    <p>행렬 (matrix : $A = [a_{ij}]$)</p>
+  </li>
+  <li>가로줄 : 행 (row)
+    <ul>
+      <li>행 크기 : 한 행을 이루는 원소의 개수</li>
+    </ul>
+  </li>
+  <li>세로줄 : 열(column)
+    <ul>
+      <li>열 크기 : 한 열을 이루는 원소의 개수</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>영어 대문자 : $A, B, C \cdots$</li>
+  <li>원소 표기 : $[a_{ij}]$</li>
+</ol>
+
+<ul>
+  <li>행렬의 크기를 이용하여 나타내기
+    <ul>
+      <li>행 : $m$행, $\quad$열 : $n$열 $\rightarrow$ $m \times n $ 행렬</li>
+    </ul>
+  </li>
+  <li>행렬의 위치를 이용하여 나타내기
+    <ul>
+      <li>행 번호($i$), 열번호($j$)</li>
+      <li>$a_{ij}$ 는 $i$행 $j$열에 위치한 원소를 의미한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+<p><br /></p>
+
+<p>$A = \begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 \\<br />
+5 &amp; 6 &amp; 7 &amp; 8 \\<br />
+8 &amp; 7 &amp; 6 &amp; 5 \\<br />
+4 &amp; 3 &amp; 2 &amp; 1
+\end{bmatrix}$</p>
+
+<ul>
+  <li>
+    <p>위 행렬 A는 행 4개와 열 4개로 구성된 행렬이다.</p>
+  </li>
+  <li>
+    <p>크기가 4행 4열인 행렬 또는 $4 \times 4$ (4 - by - 4)로 표현할 수 있다.</p>
+  </li>
+  <li>
+    <p>행렬 A의 1행은 $\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \end{bmatrix}$ 이다.</p>
+  </li>
+  <li>
+    <p>행렬 A의 1열은 $\begin{bmatrix}1 \\   5 \\   8 \\   4\end{bmatrix}$ 이다.</p>
+  </li>
+  <li>
+    <p>원소표기법을 이용하면 행렬 $A$의 $a_{11}$ 은 $1$ 이고, $a_{44}$ 도 1이다.</p>
+    <ul>
+      <li>행렬 $A$ 에서 $a_{11}$ 과 $a_{44}$는 $1$이라는 동일한 값을 가지나, 서로 다른 원소로 구분된다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="기본적인-행렬">기본적인 행렬</h1>
+
+<h2 id="영행렬-zero-matrix--o">영행렬 (zero matrix : $O$)</h2>
+
+<h3 id="정의-1">정의</h3>
+
+<blockquote>
+  <p>$m \times n$ 행렬 $A = [a_{ij}]$가 있을 때 모든 $i, j$ 에 대하여 $a_{ij} = 0$ 인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$O =$
+$\begin{bmatrix}
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+0 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+\end{bmatrix}$</li>
+</ul>
+
+<h2 id="n차-정사각행렬n-square-matrix">$n$차 정사각행렬(n-square matrix)</h2>
+
+<h3 id="정의-2">정의</h3>
+
+<blockquote>
+  <p>$m \times n$ 행렬 $A = [a_{ij}]$ 가 있을 때 $m = n$인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$A =$
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="주대각-원소-main-diagonal-element">주대각 원소 (main diagonal element)</h3>
+<blockquote>
+  <p>정사각형 행렬에서 행렬의 원소 $a_{ij}$ 중 $i = j$ 인 원소를 <strong>주대각 원소(main diagonal element)</strong>라고 한다.</p>
+</blockquote>
+
+<h4 id="예시-1">예시</h4>
+
+<ul>
+  <li>
+    <p>$A =$ 
+$\begin{bmatrix}
+1 &amp; 3 &amp; 5 &amp; 7 \\<br />
+5 &amp; 2 &amp; 7 &amp; 8 \\<br />
+8 &amp; 7 &amp; 3 &amp; 5 \\<br />
+4 &amp; 3 &amp; 2 &amp; 4
+\end{bmatrix}$</p>
+
+    <ul>
+      <li>행렬 $A$ 의 원소 $a_{11}, a_{22}, a_{33}, a_{44}$ 에 해당하는 $1, 2, 3, 4$는 행렬 $A$ 의 <strong>주대각 원소</strong>이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="단위행렬-unit-matrix--i--항등행렬">단위행렬 (unit matrix : $I$ ), 항등행렬</h2>
+
+<h3 id="정의-3">정의</h3>
+
+<blockquote>
+  <p>주대각 원소만 $1$ 이고 나머지 원소는 모두 $0$ 인 행렬</p>
+</blockquote>
+
+<ul>
+  <li>단위행렬은 정사각행렬인 경우에만 존재하며 행렬의 곱셈에서 항등원 역할을 하기때문에 항등행렬이라고 말한다.</li>
 </ul>
 
 <p><br /></p>
 
-<h1 id="-아이디어">🧐 아이디어</h1>
-<blockquote>
-  <p>문제를 보자마자 순열과 조합이 떠올랐다.</p>
-  <ul>
-    <li>순열과 조합은 서로 다른 n개에서 r개를 고르는 경우의 수이다. 간단하게 순열은 순서를 고려한 것, 조합은 순서를 고려하지 않는다.
-      <ul>
-        <li>자세한 설명은 <a href="[wlgudths](https://wlgudths.github.io/)">이산수학파트에서 업로드 예정</a></li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
+<ul>
+  <li>$I =$
+$\begin{bmatrix}
+1 &amp; 0 &amp; \cdots &amp; 0 \\<br />
+0 &amp; 1 &amp; \cdots &amp; 0 \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+0 &amp; 0 &amp; \cdots &amp; 1
+\end{bmatrix}$</li>
+</ul>
 
-<blockquote>
-  <p>9명의 난쟁이 중에 7명을 뽑아 키의 총합이 100이되면 <u>진짜 난쟁이 7명</u>을 찾을 수 있다.<br />
-하지만 for문을 7번 쓸 수도 없고 매우 복잡해질 것이다.<br />
-난쟁이 9명 중에서 진짜 난쟁이를 찾는 것보다 <u>가짜 난쟁이 2명</u>을 찾는 것이 더 효율적일 것이다.<br />
-가짜 난쟁이 2명의 합은 9명의 합 - 100을 하면 구할 수 있다.</p>
-</blockquote>
+<hr />
 
-<p><br /></p>
+<h1 id="참고-문헌">참고 문헌</h1>
+<ul>
+  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p201 ~ p204</li>
+</ul>
 
-<h1 id="-첫-풀이">📝 첫 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
-
-<span class="c1"># 총합 - 100
-</span><span class="n">fake</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
-
-<span class="c1"># 9명의 난쟁이 중 가짜 난쟁이 뽑기
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">==</span> <span class="n">fake</span><span class="p">:</span>
-            <span class="n">fake_1</span><span class="p">,</span> <span class="n">fake_2</span> <span class="o">=</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dwarf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-            <span class="k">break</span>
-
-
-<span class="c1"># 오름차순 정렬
-</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
-
-<span class="c1"># 출력
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">fake_1</span> <span class="o">!=</span> <span class="n">i</span> <span class="ow">and</span> <span class="n">fake_2</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span> <span class="c1"># 가짜 난쟁이를 제외하고 print
-</span>        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-<blockquote>
-  <p>fake라는 변수에 가짜 난쟁이의 합을 담고, 이중반복문을 통해 36가지 가짜 난쟁이 조합의 합이 fake와 같을 경우 반복문을 탈출 한 후 정렬, 출력하였다.</p>
-</blockquote>
-
-<h1 id="-두-번째-풀이">📝 두 번째 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
-
-<span class="c1"># 입력
-</span><span class="n">dwarf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)]</span>
-
-<span class="c1"># 의심 난쟁이 두 명씩 뽑기
-</span><span class="n">fake_lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">dwarf</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-
-<span class="c1"># 가짜 난쟁이 키의 합
-</span><span class="n">fake_num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dwarf</span><span class="p">)</span> <span class="o">-</span> <span class="mi">100</span>
-
-<span class="c1"># 가짜 난쟁이 찾아내기
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fake_lst</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">fake_num</span><span class="p">:</span>
-        <span class="n">fake</span> <span class="o">=</span> <span class="n">i</span>
-        <span class="k">break</span>
-
-<span class="c1"># 오름차순 정렬
-</span><span class="n">dwarf</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
-
-<span class="c1"># 가짜 난쟁이를 제외한 진짜 난쟁이들 출력
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dwarf</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fake</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h1 id="-풀이-리뷰-1">😳 풀이 리뷰</h1>
-<blockquote>
-  <p>첫 번째 풀이와 방식은 비슷하지만, itertools 모듈의 combinations를 활용하여 36가지의 의심 난쟁이들을 fake_lst에 담았다. 이후 첫 번째 풀이와 같다.</p>
-</blockquote>
 
         
       </section>
@@ -511,7 +625,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#boj" class="page__taxonomy-item p-category" rel="tag">BOJ</a>
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
     
     </span>
   </p>
@@ -519,7 +633,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-19">October 19, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-11-23">November 23, 2023</time></p>
 
       </footer>
 
@@ -528,14 +642,6 @@
       
 
 
-
-  
-
-  
-
-  
-
-  
 
   
   	
@@ -547,10 +653,10 @@
 
   <nav class="pagination_prev_next">
     
-      <a href="/boj/BOJ-2231/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[백준] 2231 : 분해합 (파이썬)</a>
+      <a href="/discrete%20mathematics/DM-05/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 관계(Relation)</a>
     
     
-      <a href="/boj/BOJ-4673/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[백준] 4673 : 셀프 넘버 (파이썬)</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     
   </nav>
 
@@ -560,12 +666,11 @@
 <!-- 
   <nav class="pagination">
     
-      <a href="/boj/BOJ-2231/" class="pagination--pager" title="[백준] 2231 : 분해합 (파이썬)
+      <a href="/boj/BOJ-1436/" class="pagination--pager" title="[백준] 1436 : 영화감독 숌 (파이썬)
 ">이전</a>
     
     
-      <a href="/discrete%20mathematics/DM-04/" class="pagination--pager" title="[이산수학] 증명(Proofs)
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
  -->
@@ -580,47 +685,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/discrete%20mathematics/DM-06/" rel="permalink">[이산수학] 행렬(Matrix) : 01_행렬의 개념
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">행렬 (Matrix)
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -790,6 +854,57 @@
 
 
 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" rel="permalink">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  Lv.01
+
+
+✏️ 문제
+
+  https://school.programmers.co.kr/learn/courses/30/lessons/12906
+
+
+✒️ 문제 설명
+배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다.
+이때, 배...</p>
   </article>
 </div>
 
