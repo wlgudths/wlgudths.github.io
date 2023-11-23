@@ -88,4 +88,10 @@ var store = [{
         "tags": [],
         "url": "/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/",
         "teaser": null
+      },{
+        "title": "[백준] 1436 : 영화감독 숌 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/1436 🤖 예제 입력 및 출력 📑 알고리즘 분류 브루트포스 알고리즘 🧐 아이디어 처음에 규칙이 있을거라 생각했다. 666 ${\\rightarrow}$ 1666 ${\\rightarrow}$ … ${\\rightarrow}$ 6660 ${\\rightarrow}$ 6661 ${\\rightarrow}$ 6662 ${\\rightarrow}$ … ${\\rightarrow}$ 6669 ${\\rightarrow}$ 7666 ${\\rightarrow}$ … 위와 같이 666 의 뒤로 0 ~...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-1436/",
+        "teaser": null
       }]

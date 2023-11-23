@@ -61,6 +61,10 @@
 <lastmod>2023-11-04T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/boj/BOJ-1436/</loc>
+<lastmod>2023-11-23T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -95,5 +99,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 </urlset>
