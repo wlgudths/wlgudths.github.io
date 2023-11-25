@@ -100,4 +100,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-06/",
         "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 02_행렬의 연산",
+        "excerpt":"행렬의 연산 행렬에서 가능한 연산은 덧셈, 곱셈, 스칼라곱, 곱셈이 있다. 행렬의 덧셈과 뺄셈 행렬의 덧셈과 뺄셈이 가능하려면 두 행렬의 크기가 같아야 한다. 두 행렬 $A$ 와 $B$ 는 덧셈과 뺄셈이 가능하다. $A = 4 \\times 4$ $B = 4 \\times 4$ 정의 두 행렬 크기가 $m \\times n$인 두 행렬...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-07/",
+        "teaser": null
       }]
