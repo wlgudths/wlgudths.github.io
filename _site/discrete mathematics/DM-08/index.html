@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이산수학] 집합(Set) | 느려도 괜찮아</title>
-<meta name="description" content="집합(Set)이란?">
+<!-- begin _includes/seo.html --><title>[이산수학] 행렬(Matrix) : 03_행렬의 종류 | 느려도 괜찮아</title>
+<meta name="description" content="행렬의 종류">
 
 
   <meta name="author" content="지지형">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
-<meta property="og:title" content="[이산수학] 집합(Set)">
-<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-02/">
+<meta property="og:title" content="[이산수학] 행렬(Matrix) : 03_행렬의 종류">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-08/">
 
 
-  <meta property="og:description" content="집합(Set)이란?">
-
-
-
+  <meta property="og:description" content="행렬의 종류">
 
 
 
 
-  <meta property="article:published_time" content="2023-10-15T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-10-16T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-11-27T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-11-27T00:00:00+09:00">
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-02/">
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-08/">
 
 
 
@@ -361,16 +361,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이산수학] 집합(Set)">
-    <meta itemprop="description" content="집합(Set)이란?">
-    <meta itemprop="datePublished" content="2023-10-15T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-10-16T00:00:00+09:00">
+    <meta itemprop="headline" content="[이산수학] 행렬(Matrix) : 03_행렬의 종류">
+    <meta itemprop="description" content="행렬의 종류">
+    <meta itemprop="datePublished" content="2023-11-27T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-11-27T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/discrete%20mathematics/DM-02/" class="u-url" itemprop="url">[이산수학] 집합(Set)
+            <a href="http://localhost:4000/discrete%20mathematics/DM-08/" class="u-url" itemprop="url">[이산수학] 행렬(Matrix) : 03_행렬의 종류
 </a>
           </h1>
           
@@ -387,7 +387,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          5 분 소요
         
       </span>
     
@@ -401,256 +401,367 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 집합(Set)</h4></header>
-              <ul class="toc__menu"><li><a href="#집합set이란">집합(Set)이란?</a></li><li><a href="#집합의-표현">집합의 표현</a><ul><li><a href="#1-원소-나열법">1. 원소 나열법</a></li><li><a href="#2-조건-제시법">2. 조건 제시법</a></li><li><a href="#3-벤-다이어그램">3. 벤 다이어그램</a></li></ul></li><li><a href="#집합의-종류">집합의 종류</a><ul><li><a href="#1-유한--무한-집합">1. 유한 / 무한 집합</a></li><li><a href="#2-전체-집합-universal-set">2. 전체 집합 (Universal Set)</a></li><li><a href="#3-공집합-empty-set">3. 공집합 (Empty Set)</a></li><li><a href="#4-부분집합-subset">4. 부분집합 (subset)</a></li><li><a href="#5-진부분집합-proper-subset">5. 진부분집합 (proper subset)</a></li><li><a href="#6-여집합-complementary-set">6. 여집합 (complementary set)</a></li></ul></li><li><a href="#집합의-연산">집합의 연산</a><ul><li><a href="#1-합집합-union">1. 합집합 (Union)</a></li><li><a href="#2-교집합-intersection">2. 교집합 (Intersection)</a></li><li><a href="#3-차집합-difference">3. 차집합 (Difference)</a></li><li><a href="#4-곱집합-product-set">4. 곱집합 (Product Set)</a></li><li><a href="#5-서로소-disjoint">5. 서로소 (disjoint)</a></li></ul></li><li><a href="#집합의-법칙">집합의 법칙</a><ul><li><a href="#1-항등법칙">1. 항등법칙</a></li><li><a href="#2-지배법칙">2. 지배법칙</a></li><li><a href="#3-멱등법칙">3. 멱등법칙</a></li><li><a href="#4-교환법칙">4. 교환법칙</a></li><li><a href="#5-결합법칙">5. 결합법칙</a></li><li><a href="#6-분배법칙">6. 분배법칙</a></li><li><a href="#7-이중-여집합">7. 이중 여집합</a></li><li><a href="#8-여집합의-법칙">8. 여집합의 법칙</a></li><li><a href="#9-드로므간의-법칙">9. 드로므간의 법칙</a></li><li><a href="#10-흡수법칙">10. 흡수법칙</a></li></ul></li><li><a href="#참조">참조</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 행렬의 종류</h4></header>
+              <ul class="toc__menu"><li><a href="#행렬의-종류">행렬의 종류</a></li><li><a href="#대각행렬-diagonal-matrix">대각행렬 (diagonal matrix)</a><ul><li><a href="#정의">정의</a><ul><li><a href="#예시">예시</a></li></ul></li></ul></li><li><a href="#전치행렬-transpose-matrix--at">전치행렬 (transpose matrix : $A^T$)</a><ul><li><a href="#정의-1">정의</a></li><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#대칭행렬-symmetric-matrix">대칭행렬 (symmetric matrix)</a><ul><li><a href="#정의-2">정의</a></li><li><a href="#예시-2">예시</a></li></ul></li><li><a href="#부울행렬-boolean-matrix">부울행렬 (Boolean matrix)</a><ul><li><a href="#정의-3">정의</a></li><li><a href="#부울행렬-연산자">부울행렬 연산자</a><ul><li><a href="#합-연산">합 연산</a><ul><li><a href="#예시-3">예시</a></li></ul></li><li><a href="#교차-연산">교차 연산</a><ul><li><a href="#예시-4">예시</a></li></ul></li><li><a href="#부울곱-연산">부울곱 연산</a><ul><li><a href="#예시-5">예시</a></li></ul></li></ul></li><li><a href="#부울행렬-연산의-특징">부울행렬 연산의 특징</a></li></ul></li><li><a href="#참고-문헌">참고 문헌</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="집합set이란">집합(Set)이란?</h1>
-
-<blockquote>
-  <p>집합(Set)은 어떤 명확한 조건을 서로 만족시키는 서로 다른 대상들의 모임</p>
-</blockquote>
+        <h1 id="행렬의-종류">행렬의 종류</h1>
 
 <ul>
-  <li>여러 원소들의 모임</li>
-  <li>중복된 원소를 가지지 않음</li>
-  <li>집합은 대문자 $A$,$B$,$C$ $\cdots$ 로 표기</li>
-  <li>원소는 소문자 $a$,$b$,$c$ $\cdots$ 로 표기</li>
-  <li>원소 a가 A의 원소임을 a $\in$ A 와 같이 표기</li>
-  <li>a가 A의 원소가 아니면 a $\notin$ A 와 같이 표기</li>
-  <li>원소가 0개일 경우, 공집합($\emptyset$)으로 표기</li>
+  <li>행렬의 형태 혹은 구성 원소에 따라 다양한 종류의 행렬로 나눌 수 있다.</li>
 </ul>
 
-<hr />
-
-<h1 id="집합의-표현">집합의 표현</h1>
-
-<h2 id="1-원소-나열법">1. 원소 나열법</h2>
-<blockquote>
-  <p>집합의 원소를 나열하여 집합을 표현하는 방법<br />
-중괄호 { } 속에 “ , “ 구별하여 나열한다.</p>
-</blockquote>
-
-<ul>
-  <li>{1, 2, 3}</li>
-  <li>{빨간색, 파란색, 보라색}</li>
-</ul>
-
-<h2 id="2-조건-제시법">2. 조건 제시법</h2>
-<blockquote>
-  <p>조건을 제시하여 집합을 표현하는 방법
+<p><br />
 <br /></p>
+
+<h1 id="대각행렬-diagonal-matrix">대각행렬 (diagonal matrix)</h1>
+
+<h2 id="정의">정의</h2>
+<blockquote>
+  <p>$n$ 차 정사각행렬에서 주대각 원소 $a_{11}, a_{22}, \cdots, a_{nn}$ 을 제외한 나머지 원소가 모두 0 인 행렬</p>
 </blockquote>
 
-<ol>
-  <li>중괄호 { } 속에 수직선 $\mid$ , 쌍점 : 을 써서 구역을 나눈 후</li>
-  <li>왼쪽구역 : 집합을 나타내는식</li>
-  <li>오른쪽 구역 : 원소를 만족시킬 조건</li>
-</ol>
-
 <ul>
-  <li>{2n $\mid$ n은 정수} $\rightarrow$ 모든 짝수의 집합</li>
+  <li>$A =$
+$\begin{bmatrix}
+a_{11} &amp; 0 &amp; \cdots &amp; 0 \\<br />
+0 &amp; a_{22} &amp; \cdots &amp; 0 \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+0 &amp; 0 &amp; \cdots &amp; a_{nn}
+\end{bmatrix}$</li>
 </ul>
 
-<h2 id="3-벤-다이어그램">3. 벤 다이어그램</h2>
-<blockquote>
-  <p>집합 사이의 관계를 표시하기 위헤 도형으로 표기한 것</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_1.png" width="200" height="200" /></p>
-
-<p><br /></p>
-
-<h1 id="집합의-종류">집합의 종류</h1>
-<h2 id="1-유한--무한-집합">1. 유한 / 무한 집합</h2>
-<blockquote>
-  <p>유한개 원소로 이루어진 집합 $\rightarrow$ {1, 2, 3}<br />
-무한개 원소로 이루어진 집합 $\rightarrow$ 자연수</p>
-</blockquote>
-
-<h2 id="2-전체-집합-universal-set">2. 전체 집합 (Universal Set)</h2>
-<blockquote>
-  <p>모든 대상을 (자기 자신까지도) 원소로 포함하는 집합<br />
-보통 알파벳 U로 표기</p>
-</blockquote>
-
-<h2 id="3-공집합-empty-set">3. 공집합 (Empty Set)</h2>
-<blockquote>
-  <p>원소가 하나도 없는 집합<br />
-기호 $\emptyset$ 로 표기</p>
-</blockquote>
-
-<h2 id="4-부분집합-subset">4. 부분집합 (subset)</h2>
-<blockquote>
-  <p>집합 A의 모든 원소가 집합 B에 포함되는 집합<br />
-A $\subseteq$ B 로 표기</p>
-</blockquote>
-
-<h2 id="5-진부분집합-proper-subset">5. 진부분집합 (proper subset)</h2>
-<blockquote>
-  <p>부분 집합 중 자기 자신은 원소로 갖지 않는 집합<br />
-A $\subseteq$ B 이고, A $\ne$ B 일때, 진부분집합이라고 한다.<br />
-A $\subset$ B 로 표기</p>
-</blockquote>
-
-<h2 id="6-여집합-complementary-set">6. 여집합 (complementary set)</h2>
-<blockquote>
-  <p>전체 집합 U 에는 속하나 A에 속하지 않는 집합<br />
-$A^c$ 로 표기</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_2.png" width="200" height="200" /></p>
-
-<h1 id="집합의-연산">집합의 연산</h1>
-<h2 id="1-합집합-union">1. 합집합 (Union)</h2>
-<blockquote>
-  <p>둘 또는 더 많은 집합의 원소를 한 군데 합쳐놓은 집합<br />
-A $\cup$ B 로 표기</p>
-</blockquote>
-
+<h3 id="예시">예시</h3>
 <ul>
-  <li>A $\cup$ B = {x : x $\in$ A 또는 x $\in$ B}</li>
-  <li>x가 A $\cup$ B 에 속할 필요충분조건은 x $\in$ A 또는 x $\in$ B 이다.</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_3.png" width="200" height="200" /></p>
-
-<h2 id="2-교집합-intersection">2. 교집합 (Intersection)</h2>
-<blockquote>
-  <p>둘 또는 더 많은 집합이 공통으로 포함하는 원소로 이루어진 집합<br />
-A $\cap$ B 로 표기</p>
-</blockquote>
-
-<ul>
-  <li>A $\cap$ B = {x : x $\in$ A and x $\in$ B}</li>
-  <li>x $\in$ A $\cap$ B  일 필요충분조건은 x x $\in$ A 또한 x $\in$ B 이다.</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_4.png" width="200" height="200" /></p>
-
-<h2 id="3-차집합-difference">3. 차집합 (Difference)</h2>
-<blockquote>
-  <p>두 집합 A, B 에서 B의 원소 중 A에 속하지 않는 원소만으로 이루어진 집합을 B $\setminus$ A 라고 한다.</p>
-</blockquote>
-
-<ul>
-  <li>집합 B 에 대한 A 의 차집합은 B - A 또는 B $\setminus$ A 로 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_2_5.png" width="200" height="200" /></p>
-
-<h2 id="4-곱집합-product-set">4. 곱집합 (Product Set)</h2>
-<blockquote>
-  <ol>
-    <li>곱집합 (Product Set) 또는 카티션 곱 (Cartesian Product) 라고 한다.
-      <ul>
-        <li>두 집합 A,B 의 원소들로 만들어지는 모든 순서상 (a,b) 들의 집합</li>
-        <li>a $\in$ A 이고, b $\in$ B 인 모든 순서쌍 (a,b) 들의 집합</li>
-        <li>A $\times$ B 로 표기</li>
-        <li>A $\times$ B = {(a,b) $\mid$ a $\in$ A and b $\in$ B}</li>
-      </ul>
-    </li>
-    <li>카티션 곱의 길이(크기) $\rightarrow$ 가능한 모든 순서쌍의 개수
-      <ul>
-        <li>$\mid$ A $\times$ B $\mid$ 로 표기</li>
-        <li>$\mid$ A $\times$ B $\mid$ = $\mid$ A $\mid$  $\cdot$ $\mid$ B $\mid$</li>
-      </ul>
-    </li>
-  </ol>
-</blockquote>
-
-<ul>
-  <li>A = {x, y, z}, B = {1, 2, 3}
-    <ul>
-      <li>A $\times$ B = {(x,1), (x,2), (x,3), (y,1), (y,2), (y,3), (z,1), (z,2), (z,3)}</li>
-      <li>$\mid$ A $\times$ B $\mid$ = 3 $\cdot$ 3 = 9<br />
-<br />
-<img src="/assets/images/Math/dm/dm_example_2_6.png" width="200" height="200" /></li>
-    </ul>
+  <li>
+    <p>다음 행렬 $A,B$ 가 있다.</p>
+  </li>
+  <li>
+    <p>$A =$
+$\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\<br />
+4 &amp; 5 &amp; 6
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>$B =$
+$\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\<br />
+0 &amp; 2 &amp; 0 \\<br />
+0 &amp; 0 &amp; 3
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>행렬 $A$ 는 정사각행렬이 아니다. 즉, 행과 열의 크기가 같지 않으므로 대각행렬이 아니다.</p>
+  </li>
+  <li>
+    <p>반면, 행렬 $B$ 는 정사각행렬이고, 주대각 원소 $1, 2, 3$ 을 제외한 원소가 0이므로 대각행렬이다.</p>
   </li>
 </ul>
 
-<h2 id="5-서로소-disjoint">5. 서로소 (disjoint)</h2>
+<p><br /></p>
+
+<h1 id="전치행렬-transpose-matrix--at">전치행렬 (transpose matrix : $A^T$)</h1>
+
+<h2 id="정의-1">정의</h2>
+
 <blockquote>
-  <p>두 집합의 교집합이 공집합이면 두 집합을 서로소 (disjoint)라고 한다.</p>
+  <p>$m \times n$ 행렬 $A = [a_{ij}]$ 의 행과 열의 위치를 바꾼 $n \times m$ 행렬</p>
 </blockquote>
 
 <ul>
-  <li>A $\cap$ B = $\emptyset$</li>
+  <li>$A = $
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix} A^T = $
+$\begin{bmatrix}
+a_{11} &amp; a_{21} &amp; \cdots &amp; a_{m1} \\<br />
+a_{12} &amp; a_{22} &amp; \cdots &amp; a_{m2} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{1n} &amp; a_{2n} &amp; \cdots &amp; a_{nm}
+\end{bmatrix}$</li>
 </ul>
+
+<h2 id="예시-1">예시</h2>
+
+<ul>
+  <li>
+    <p>다음 행렬 $A$ 가 있다.</p>
+  </li>
+  <li>
+    <p>$A =$
+$\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\<br />
+4 &amp; 5 &amp; 6
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>$A^T =$
+$\begin{bmatrix}
+1 &amp; 4 \\ 
+2 &amp; 5 \\ 
+3 &amp; 6
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>전치행렬은 행의 원소와 열의 원소의 위치를 바꾼 행렬로 정사각행렬이 아니어도 전치행렬을 구할 수 있다.</p>
+  </li>
+</ul>
+
+<h1 id="대칭행렬-symmetric-matrix">대칭행렬 (symmetric matrix)</h1>
+
+<h2 id="정의-2">정의</h2>
+
+<blockquote>
+  <p>$n$ 차 정사각행렬 $A = [a_{ij}]$ 가 있을 때, $A^T = A$ 인 행렬</p>
+</blockquote>
+
+<h2 id="예시-2">예시</h2>
+
+<ul>
+  <li>
+    <p>$A = A^T$</p>
+  </li>
+  <li>
+    <p>$\begin{bmatrix}
+  8 &amp; 1 &amp; 4 \\<br />
+  1 &amp; 3 &amp; 7 \\<br />
+  4 &amp; 7 &amp; 6
+  \end{bmatrix} =  $
+  $\begin{bmatrix}
+  8 &amp; 1 &amp; 4 \\<br />
+  1 &amp; 3 &amp; 7 \\<br />
+  4 &amp; 7 &amp; 6
+  \end{bmatrix}$</p>
+  </li>
+  <li>대칭행렬의 경우 원래 행렬과 전치행렬이 같은 형태</li>
+  <li>정사각행렬인 경우에만 만들어질 수 있다.</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="부울행렬-boolean-matrix">부울행렬 (Boolean matrix)</h1>
+
+<h2 id="정의-3">정의</h2>
+<blockquote>
+  <p>행렬의 모든 원소가 부울값 <strong>0</strong>과 <strong>1</strong>로만 구성된 행렬</p>
+</blockquote>
+
+<h2 id="부울행렬-연산자">부울행렬 연산자</h2>
+
+<ul>
+  <li>부울행렬 $A = [a_{ij}]$ 와 $B = [b_{ij}]$ 에 대하여 다음이 성립한다.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>합(join) : $A \lor B = [a_{ij} \lor b_{ij}]$</p>
+  </li>
+  <li>
+    <p>교차(meet) : $A \land B = [a_{ij} \land b_{ij}]$</p>
+  </li>
+  <li>
+    <p>부울곱(Boolean product) : $A \odot B$</p>
+
+    <ul>
+      <li>
+        <p>$m \times n$ 부울행렬 $A = [a_{ij}]$ 와 $n \times r$ 부울행렬 $B = [b_{ij}]$ 의 부울곱 결과는 $m \times r $ 부울행렬 $A \odot B = [c_{ij}]$</p>
+      </li>
+      <li>
+        <p>$A \odot B = $
+ $\begin{bmatrix}
+ a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+ \end{bmatrix} \times $
+ $\begin{bmatrix}
+ b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1r} \\<br />
+ b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2r} \\<br />
+ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+ b_{n1} &amp; b_{n2} &amp; \cdots &amp; b_{nr}
+ \end{bmatrix} = $
+ $\begin{bmatrix}
+ c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1r} \\<br />
+ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2r} \\<br />
+ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+ c_{m1} &amp; c_{m2} &amp; \cdots &amp; c_{mr}
+ \end{bmatrix}$</p>
+      </li>
+    </ul>
+
+    <p>$(c_{ij} = (a_{i1} \land b_{1j}) \lor (a_{i2}\land b_{2j}) \lor \cdots \lor (a_{im} \land b_{mj}))$</p>
+  </li>
+</ol>
+
+<h3 id="합-연산">합 연산</h3>
+<blockquote>
+  <p>행렬 $A$ 의 원소 $a_{ij}$ 와 행렬 $B$ 의 원소 $b_{ij}$ 중 하나라도 1 이면 1 이고 그 외의 경우는 0 이다.</p>
+</blockquote>
+
+<ul>
+  <li>행렬의 연산의 덧셈, 뺄셈 연산처럼 행렬의 크기가 같아야한다.</li>
+</ul>
+
+<h4 id="예시-3">예시</h4>
+
+<ul>
+  <li>
+    <p>다음 부울행렬 $A, B$ 가 있다.</p>
+  </li>
+  <li>
+    <p>$A = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} , B = $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>$A \lor B = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} \lor $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix} = $
+$\begin{bmatrix}
+1 \lor 1 &amp; 0 \lor 1 \\<br />
+0 \lor 0 &amp; 1 \lor 0
+\end{bmatrix} = $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 1
+\end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h3 id="교차-연산">교차 연산</h3>
+<blockquote>
+  <p>행렬 $A$ 의 원소 $a_{ij}$ 와 행렬 $B$ 의 원소 $b_{ij}$ 가 모두 1 인 경우에만 1 이고 그 외의 경우는 0 이다.</p>
+</blockquote>
+
+<ul>
+  <li>행렬의 연산의 덧셈, 뺄셈 연산처럼 행렬의 크기가 같아야한다.</li>
+</ul>
+
+<h4 id="예시-4">예시</h4>
+
+<ul>
+  <li>
+    <p>다음 부울행렬 $A, B$ 가 있다.</p>
+  </li>
+  <li>
+    <p>$A = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} , B = $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>$A \land B = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} \land $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix} = $
+$\begin{bmatrix}
+1 \land 1 &amp; 0 \land 1 \\<br />
+0 \land 0 &amp; 1 \land 0
+\end{bmatrix} = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 0
+\end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h3 id="부울곱-연산">부울곱 연산</h3>
+
+<ul>
+  <li>행렬의 곱셈처럼 부울행렬의 크기가 $(m \times n) \times (n \times r)$ 을 성립해야 한다.</li>
+</ul>
+
+<h4 id="예시-5">예시</h4>
+
+<ul>
+  <li>
+    <p>다음 부울행렬 $A, B$ 가 있다.</p>
+  </li>
+  <li>
+    <p>$A = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} , B = $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix}$</p>
+  </li>
+  <li>
+    <p>$A \odot B = $
+$\begin{bmatrix}
+1 &amp; 0 \\<br />
+0 &amp; 1
+\end{bmatrix} \odot $
+$\begin{bmatrix}
+1 &amp; 1 \\<br />
+0 &amp; 0
+\end{bmatrix} = $
+$\begin{bmatrix}
+(1 \land 1) \lor (0 \land 0) &amp; (1 \land 1) \lor (0 \land 0) \\ 
+(0 \land 1) \lor (1 \land 0) &amp; (0 \land 1) \lor (1 \land 0)
+\end{bmatrix} = $
+$\begin{bmatrix}
+1 &amp; 1 \\ 
+0 &amp; 0
+\end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h2 id="부울행렬-연산의-특징">부울행렬 연산의 특징</h2>
+
+<blockquote>
+  <p>부울행렬 $A,B,C$ 에 대하여 다음이 성립한다.</p>
+</blockquote>
+
+<ol>
+  <li>$A \lor A = A$</li>
+  <li>$A \land A = A$</li>
+  <li>$A \lor B = B \lor A$</li>
+  <li>$A \land B = B \land A$</li>
+  <li>$(A \lor B) \lor C = A \lor (B \lor C)$</li>
+  <li>$(A \land B) \land C = A \land (B \land C)$</li>
+  <li>$(A \odot B) \odot C = A \odot (B \odot C)$</li>
+  <li>$(A \lor B) \land C = (A \land C) \lor (B \land C)$</li>
+  <li>$(A \land B) \land C = (A \lor C) \land (B \lor C)$</li>
+</ol>
 
 <hr />
 
-<h1 id="집합의-법칙">집합의 법칙</h1>
-<h2 id="1-항등법칙">1. 항등법칙</h2>
+<h1 id="참고-문헌">참고 문헌</h1>
 <ul>
-  <li>A $\cap$ $\emptyset$ = A</li>
-  <li>A $\cup$ U = A</li>
+  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p214 ~ p219</li>
 </ul>
 
-<h2 id="2-지배법칙">2. 지배법칙</h2>
-<ul>
-  <li>A $\cup$ U = U</li>
-  <li>A $\cap$ $\emptyset$ = $\emptyset$</li>
-</ul>
-
-<h2 id="3-멱등법칙">3. 멱등법칙</h2>
-<ul>
-  <li>A $\cup$ A = A</li>
-  <li>A $\cap$ A = A</li>
-</ul>
-
-<h2 id="4-교환법칙">4. 교환법칙</h2>
-<ul>
-  <li>A $\cup$ B = B $\cup$ A</li>
-  <li>A $\cap$ B = B $\cap$ A</li>
-</ul>
-
-<h2 id="5-결합법칙">5. 결합법칙</h2>
-<ul>
-  <li>A $\cup$ (B $\cup$ C) = (A $\cup$ B) $\cup$ C</li>
-  <li>A $\cap$ (B $\cap$ C) = (A $\cap$ B) $\cap$ C</li>
-</ul>
-
-<h2 id="6-분배법칙">6. 분배법칙</h2>
-<ul>
-  <li>A $\cup$ (B $\cap$ C) = (A $\cup$ B) $\cap$ (A $\cup$ C)</li>
-  <li>A $\cap$ (B $\cup$ C) = (A $\cap$ B) $\cup$ (A $\cap$ C)</li>
-</ul>
-
-<h2 id="7-이중-여집합">7. 이중 여집합</h2>
-<ul>
-  <li>$(A^c)^c$ = $A$</li>
-</ul>
-
-<h2 id="8-여집합의-법칙">8. 여집합의 법칙</h2>
-<ul>
-  <li>$A$ $\cup$ $A^c$ = U</li>
-  <li>$A$ $\cap$ $A^c$ = $\phi$</li>
-  <li>$\emptyset^c$ = U</li>
-  <li>$U^c$ = $\emptyset$</li>
-</ul>
-
-<h2 id="9-드로므간의-법칙">9. 드로므간의 법칙</h2>
-<ul>
-  <li>(A $\cup$ B)$^c$ = A$^c$ $\cap$ B$^c$</li>
-  <li>(A $\cap$ B)$^c$ = A$^c$ $\cup$ B$^c$</li>
-</ul>
-
-<h2 id="10-흡수법칙">10. 흡수법칙</h2>
-<ul>
-  <li>A $\cup$ (A $\cap$ B) = A</li>
-  <li>A $\cap$ (A $\cup$ B) = A</li>
-</ul>
-
-<hr />
-
-<h1 id="참조">참조</h1>
-<p><a href="https://ko.wikipedia.org/wiki/%EC%A7%91%ED%95%A9">https://ko.wikipedia.org/wiki/%EC%A7%91%ED%95%A9</a><br />
-<a href="https://mathbang.net/1#gsc.tab=0">https://mathbang.net/1#gsc.tab=0</a><br />
-<a href="http://www.ktword.co.kr/test/view/view.php?nav=2&amp;no=3902&amp;sh=%EC%A7%91%ED%95%A9">http://www.ktword.co.kr/test/view/view.php?nav=2&amp;no=3902&amp;sh=%EC%A7%91%ED%95%A9</a></p>
 
         
       </section>
@@ -677,7 +788,7 @@ A $\cap$ B 로 표기</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-10-16">October 16, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-11-27">November 27, 2023</time></p>
 
       </footer>
 
@@ -686,18 +797,6 @@ A $\cap$ B 로 표기</p>
       
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
   	
@@ -709,10 +808,10 @@ A $\cap$ B 로 표기</p>
 
   <nav class="pagination_prev_next">
     
-      <a href="/discrete%20mathematics/DM-01/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 이산수학(Discrete Mathmatics)</a>
+      <a href="/discrete%20mathematics/DM-07/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 행렬(Matrix) : 02_행렬의 연산</a>
     
     
-      <a href="/discrete%20mathematics/DM-03/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 논리와 명제 (Logic & Proposition)</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     
   </nav>
 
@@ -722,12 +821,11 @@ A $\cap$ B 로 표기</p>
 <!-- 
   <nav class="pagination">
     
-      <a href="/discrete%20mathematics/DM-01/" class="pagination--pager" title="[이산수학] 이산수학(Discrete Mathmatics)
+      <a href="/discrete%20mathematics/DM-07/" class="pagination--pager" title="[이산수학] 행렬(Matrix) : 02_행렬의 연산
 ">이전</a>
     
     
-      <a href="/boj/BOJ-1543/" class="pagination--pager" title="[백준] 1543 : 문서검색 (파이썬)
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
  -->
@@ -742,47 +840,6 @@ A $\cap$ B 로 표기</p>
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/discrete%20mathematics/DM-08/" rel="permalink">[이산수학] 행렬(Matrix) : 03_행렬의 종류
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">행렬의 종류
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -811,7 +868,7 @@ A $\cap$ B 로 표기</p>
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          5 분 소요
         
       </span>
     
@@ -852,7 +909,7 @@ A $\cap$ B 로 표기</p>
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          2 분 소요
         
       </span>
     
@@ -906,6 +963,57 @@ A $\cap$ B 로 표기</p>
 
 
 </p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink">[프로그래머스] Lv.01 : 삼총사 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  Lv.01
+
+
+✏️ 문제
+
+  https://school.programmers.co.kr/learn/courses/30/lessons/131705
+
+
+✒️ 문제 설명
+한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다.
+이 학교 학생 3명의 정수 번호를 더...</p>
   </article>
 </div>
 

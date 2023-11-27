@@ -106,4 +106,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-07/",
         "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 03_행렬의 종류",
+        "excerpt":"행렬의 종류 행렬의 형태 혹은 구성 원소에 따라 다양한 종류의 행렬로 나눌 수 있다. 대각행렬 (diagonal matrix) 정의 $n$ 차 정사각행렬에서 주대각 원소 $a_{11}, a_{22}, \\cdots, a_{nn}$ 을 제외한 나머지 원소가 모두 0 인 행렬 $A =$ $\\begin{bmatrix} a_{11} &amp; 0 &amp; \\cdots &amp; 0 \\\\ 0 &amp; a_{22} &amp;...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-08/",
+        "teaser": null
       }]
