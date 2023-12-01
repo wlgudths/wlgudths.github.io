@@ -112,4 +112,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-08/",
         "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 04_행렬식",
+        "excerpt":"행렬식 하나 이상의 수로 구성된 $n$ 차 정사각행렬에는 행렬를 대표하는 수를 대응할 수 있는데, 그 수를 구하는 식을 행렬식이라고한다. 역행렬 존재 유무 판별 연립일차방정식의 해가 유일하게 존재하는지 판단 정의 $n$ 차 정사각행렬에 대응하는 수를 구하는 식 $det(A) = |A| = $ $\\begin{bmatrix} a_{11} &amp; a_{11} &amp; \\cdots &amp; a_{1n} \\\\...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-09/",
+        "teaser": null
       }]
