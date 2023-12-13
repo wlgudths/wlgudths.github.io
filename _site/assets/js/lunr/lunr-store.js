@@ -118,4 +118,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-09/",
         "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 05_역행렬",
+        "excerpt":"역행렬 행렬에서도 항등원과 역원의 역할을 하는 행렬이 있다. 항등원인 행렬은 단위행렬 $I$ 역원인 행렬은 역행렬 정의 : 역행렬 (inverse matrix : $A^{-1}$) 정사각행렬 $A$ 에 대하여, $AB = BA = I$ 를 만족시키는 행렬 B $AA^{-1} = A^{-1}A = I$ 예시 $A = $ $\\begin{bmatrix} 1 &amp; 2 \\\\ 1...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-10/",
+        "teaser": null
       }]
