@@ -1,4 +1,837 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-14T00:41:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 행렬(Matrix) : 05_역행렬</title><link href="http://localhost:4000/discrete%20mathematics/DM-10/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 05_역행렬" /><published>2023-12-12T00:00:00+09:00</published><updated>2023-12-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-10</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-10/"><![CDATA[<h1 id="역행렬">역행렬</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-18T15:50:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
+
+<h1 id="항등함수-identity-function--i_a">항등함수 (identity function : $I_{A}$)</h1>
+
+<h2 id="정의">정의</h2>
+
+<blockquote>
+  <p>집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계</p>
+</blockquote>
+
+<h2 id="항등함수의-조건">항등함수의 조건</h2>
+
+<blockquote>
+  <p>항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다.</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_01.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="역함수-inverse-function--f-1">역함수 (inverse function : $f^{-1}$)</h1>
+
+<h2 id="정의-1">정의</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계</p>
+</blockquote>
+
+<blockquote>
+  <p>$a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 )</p>
+</blockquote>
+
+<ul>
+  <li>가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수
+<br /></li>
+</ul>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>
+    <p>전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다.</p>
+  </li>
+  <li>
+    <p>$f : ${$1,2,3$} $\rightarrow$ {$a,b,c$}
+<br /></p>
+  </li>
+  <li>
+    <p>$f = ${$(1,a), (2,b), (3,c)$}</p>
+
+    <ul>
+      <li>함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다.</li>
+      <li>$f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>$f^{-1} =$ {$(a,1), (b,2), (c,3)$}</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="항등함수와-역함수의-관계">항등함수와 역함수의 관계</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$f^{-1} \circ f = I_{A}$
+<br /></p>
+  </li>
+  <li>
+    <p>$f \circ f^{-1} = I_{B}$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="합성함수의-역함수">합성함수의 역함수</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다.</p>
+</blockquote>
+
+<ul>
+  <li>$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="상수함수-constant-function">상수함수 (constant function)</h1>
+
+<h2 id="정의-2">정의</h2>
+
+<blockquote>
+  <p>함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계</p>
+</blockquote>
+
+<ul>
+  <li>$\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_02.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="특성함수-characteristic-fuction--f_a">특성함수 (characteristic fuction : $f_{A}$)</h1>
+
+<ul>
+  <li>
+    <p>관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수</p>
+  </li>
+  <li>
+    <p>조건에 맞는 원소이면 1, 아니면 0으로 출력</p>
+  </li>
+  <li>
+    <p>특성함수의 공역은 두 개의 원소 1과 0으로 구성</p>
+  </li>
+</ul>
+
+<h2 id="정의-3">정의</h2>
+
+<blockquote>
+  <p>전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$f_{A}(x) = 
+\begin{cases}
+1, \ x \in A 일 \ 때 \\<br />
+0, \ x \notin A 일 \ 때
+\end{cases}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="바닥함수와-천장함수">바닥함수와 천장함수</h1>
+
+<h2 id="바닥함수-floor-function---x--최대정수함수greatest-integer-function">바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function)</h2>
+
+<blockquote>
+  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$\lfloor\ x \ \rfloor = n  \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$</li>
+</ul>
+
+<h3 id="예시-3">예시</h3>
+
+<ul>
+  <li>
+    <p>$\lfloor \ -3.54 \ \rfloor$</p>
+
+    <ul>
+      <li>$-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>바닥함수 그래프</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_03.png" /></p>
+
+<p><br /></p>
+
+<h2 id="천장함수-ceiling-function---x---최소정수함수least-interger-function">천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function)</h2>
+
+<blockquote>
+  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$\lceil\ x \ \rceil = n  \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$</li>
+</ul>
+
+<h3 id="예시-4">예시</h3>
+
+<ul>
+  <li>
+    <p>$\lceil \ -3.54 \ \rceil$</p>
+
+    <ul>
+      <li>$-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>천장함수</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_04.png" /></p>
+
+<p><br /><br /><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 종류 항등함수 (identity function : $I_{A}$) 정의 집합 $A$ 에 대한 함수 $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계 항등함수의 조건 항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다. 예시 역함수 (inverse function : $f^{-1}$) 정의 전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계 $a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 ) 가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수 예시 전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다. $f : ${$1,2,3$} $\rightarrow$ {$a,b,c$} $f = ${$(1,a), (2,b), (3,c)$} 함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다. $f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다. $f^{-1} =$ {$(a,1), (b,2), (c,3)$} 항등함수와 역함수의 관계 전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다. $f^{-1} \circ f = I_{A}$ $f \circ f^{-1} = I_{B}$ 합성함수의 역함수 전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다. $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ 상수함수 (constant function) 정의 함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계 $\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$ 예시 특성함수 (characteristic fuction : $f_{A}$) 관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수 조건에 맞는 원소이면 1, 아니면 0으로 출력 특성함수의 공역은 두 개의 원소 1과 0으로 구성 정의 전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수 $f_{A}(x) = \begin{cases} 1, \ x \in A 일 \ 때 \\ 0, \ x \notin A 일 \ 때 \end{cases}$ 바닥함수와 천장함수 바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수 $\lfloor\ x \ \rfloor = n \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$ 예시 $\lfloor \ -3.54 \ \rfloor$ $-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다. 바닥함수 그래프 천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수 $\lceil\ x \ \rceil = n \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$ 예시 $\lceil \ -3.54 \ \rceil$ $-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다. 천장함수]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 02.함수의 성질</title><link href="http://localhost:4000/discrete%20mathematics/DM-13/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 02.함수의 성질" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-13</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-13/"><![CDATA[<h1 id="함수의-성질">함수의 성질</h1>
+
+<blockquote>
+  <p>함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.</p>
+</blockquote>
+
+<blockquote>
+  <p>함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.</p>
+</blockquote>
+
+<h1 id="단사함수-일대일-함수-injective-function-injection-one-to-one-function">단사함수, 일대일 함수 (injective function, injection, one-to-one function)</h1>
+
+<h2 id="정의">정의</h2>
+
+<blockquote>
+  <p>함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>|$dom(f)$| $\le$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $\le$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$dom(f)$| $\le$ |$ran(f)$|</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다.</p>
+</blockquote>
+
+<h3 id="단사함수의-조건">단사함수의 조건</h3>
+
+<ul>
+  <li>
+    <p>공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다.</p>
+  </li>
+  <li>
+    <p>정의역과 치역의 원소 개수가 같아야 한다.</p>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_13_01.png" /></p>
+
+<p><br /><br /></p>
+
+<h2 id="정의-1">정의</h2>
+
+<blockquote>
+  <p>함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>|$dom(f)$| $\ge$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다.</p>
+</blockquote>
+
+<h3 id="전사함수의-조건">전사함수의 조건</h3>
+
+<ul>
+  <li>
+    <p>정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다.</p>
+  </li>
+  <li>
+    <p>공역과 치역의 원소 개수가 같다.</p>
+  </li>
+</ul>
+
+<h3 id="예시-1">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_13_02.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="전단사함수-일대일-대응-함수-bijecive-function-bijection-one-to-one-correspodence">전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence)</h1>
+
+<h2 id="정의-2">정의</h2>
+
+<blockquote>
+  <p>단사함수이면서 전사 함수인 함수</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>|$dom(f)$| $=$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
+  </li>
+</ul>
+
+<h3 id="전단사함수의-조건">전단사함수의 조건</h3>
+
+<blockquote>
+  <p>정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다.</p>
+</blockquote>
+
+<ul>
+  <li>정의역, 공역, 치역의 원소 개수가 모두 같다.</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_13_03.png" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 성질 함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다. 함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다. 단사함수, 일대일 함수 (injective function, injection, one-to-one function) 정의 함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수 |$dom(f)$| $\le$ |$codom(f)$| |$ran(f)$| $\le$ |$codom(f)$| |$dom(f)$| $\le$ |$ran(f)$| 정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다. 단사함수의 조건 공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다. 정의역과 치역의 원소 개수가 같아야 한다. 예시 정의 함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수 |$dom(f)$| $\ge$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다. 전사함수의 조건 정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다. 공역과 치역의 원소 개수가 같다. 예시 전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence) 정의 단사함수이면서 전사 함수인 함수 |$dom(f)$| $=$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전단사함수의 조건 정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다. 정의역, 공역, 치역의 원소 개수가 모두 같다. 예시]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 01.함수의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-12/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 01.함수의 개념" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-12</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-12/"><![CDATA[<h1 id="함수의-개념">함수의 개념</h1>
+
+<h2 id="정의--함수function--f--a-rightarrow-b">정의 : 함수(function : $f : A \rightarrow B$)</h2>
+
+<blockquote>
+  <p>집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여,</p>
+
+    <ul>
+      <li>원상 (preimage)
+        <ul>
+          <li>집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$</li>
+        </ul>
+      </li>
+      <li>상 (image)
+        <ul>
+          <li>집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$</li>
+        </ul>
+      </li>
+      <li>정의역 (domain, $dom(f)$)
+        <ul>
+          <li>원상의 집합, 집합 $A$</li>
+        </ul>
+      </li>
+      <li>공역 (codomain, $codom(f)$)
+        <ul>
+          <li>상이 포함된 집합, 집합 $B$</li>
+        </ul>
+      </li>
+      <li>치역 (range, $ran(f)$)
+        <ul>
+          <li>상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$
+  {$f(a) | a \in A$}</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="관계와-함수의-차이">관계와 함수의 차이</h2>
+
+<ul>
+  <li>집합 $A$ 에서 집합 $B$ 로의 관계
+    <ul>
+      <li>집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다.</li>
+    </ul>
+  </li>
+  <li>집합 $A$ 에서 집합 $B$ 로의 함수
+    <ul>
+      <li>집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다.</p>
+
+    <ul>
+      <li>$f =$ {$(a, 1), (b, 1), (c, 2)$}</li>
+    </ul>
+  </li>
+  <li>
+    <p>관계 $f$ 에 포함된 순서쌍</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">순서쌍에 대한 식 표현</th>
+          <th style="text-align: center">원상</th>
+          <th style="text-align: center">상</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">$f(a) = 1$</td>
+          <td style="text-align: center">a</td>
+          <td style="text-align: center">2</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$f(b) = 1$</td>
+          <td style="text-align: center">b</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$f(c) = 2$</td>
+          <td style="text-align: center">c</td>
+          <td style="text-align: center">2</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다.</p>
+  </li>
+  <li>
+    <p>상은 $f$ 의 공역인 집합 $B$ 의 원소이다.</p>
+  </li>
+  <li>
+    <p>집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다.</p>
+  </li>
+  <li>정의역 : $dom(f) = A$</li>
+  <li>공역 : $codom(f) = B$</li>
+  <li>치역 : {$1, 2$}</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 개념 정의 : 함수(function : $f : A \rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여, 원상 (preimage) 집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$ 상 (image) 집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$ 정의역 (domain, $dom(f)$) 원상의 집합, 집합 $A$ 공역 (codomain, $codom(f)$) 상이 포함된 집합, 집합 $B$ 치역 (range, $ran(f)$) 상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$ {$f(a) | a \in A$} 관계와 함수의 차이 집합 $A$ 에서 집합 $B$ 로의 관계 집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다. 집합 $A$ 에서 집합 $B$ 로의 함수 집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다. 예시 집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다. $f =$ {$(a, 1), (b, 1), (c, 2)$} 관계 $f$ 에 포함된 순서쌍 순서쌍에 대한 식 표현 원상 상 $f(a) = 1$ a 2 $f(b) = 1$ b 1 $f(c) = 2$ c 2 원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다. 상은 $f$ 의 공역인 집합 $B$ 의 원소이다. 집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다. 정의역 : $dom(f) = A$ 공역 : $codom(f) = B$ 치역 : {$1, 2$}]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 03.합성 함수</title><link href="http://localhost:4000/discrete%20mathematics/DM-14/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 03.합성 함수" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-14</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-14/"><![CDATA[<h1 id="합성함수-composite-function--g-circ-f">합성함수 (composite function : $g \circ f$)</h1>
+
+<blockquote>
+  <p>최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수</p>
+</blockquote>
+
+<h2 id="정의">정의</h2>
+
+<blockquote>
+  <p>두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow C$ 가 있을 때, 집합 $A$ 의 각 원소를 집합 $C$ 의 원소에 대응하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$g \circ f = (g \circ f)(x) = g(f(x)), \quad x \in A$</li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_14_01.png" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>집합 $A =$ {$1,2,3,4$}, $B = ${$a, b, c$}, $C = ${$w, x, y, z$} 에 대한 함수를 살펴보자.</p>
+
+    <ul>
+      <li>
+        <p>$f : A \rightarrow B, f = ${$(1,a), (2,b), (3,b), (4,c)$ }</p>
+      </li>
+      <li>
+        <p>$g : B \rightarrow C, f = ${$(a,x), (2,b), (3,b), (4,c)$}</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_14_02.png" /></p>
+
+    <p><br /></p>
+
+    <ul>
+      <li>$g(f(1)) = g(a) = x$</li>
+      <li>$g(f(2)) = g(b) = w$</li>
+      <li>$g(f(3)) = g(b) = w$</li>
+      <li>$g(f(4)) = g(c) = z$</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="합성함수의-성질">합성함수의 성질</h1>
+
+<h2 id="정리">정리</h2>
+
+<ul>
+  <li>
+    <p>집합 $A, B, C$ 에 대한 함수 $f: A \rightarrow B, g: B \rightarrow C$ 가 있을 때, 합성함수 $g \circ f$ 의 성질은 다음과 같다.</p>
+
+    <ol>
+      <li>
+        <p>$f$ 와 $g$가 단사함수이면, $g \circ f$ 도 단사함수이다.</p>
+      </li>
+      <li>
+        <p>$f$ 와 $g$ 가 전사함수이면, $g \circ f$ 도 전사함수이다.</p>
+      </li>
+      <li>
+        <p>$f$ 와 $g$ 가 전단사함수이면, $g \circ f$ 도 전단사함수이다.</p>
+      </li>
+      <li>
+        <p>$g \circ f$ 가 단사함수이면, $f$ 도 단사함수이다.</p>
+      </li>
+      <li>
+        <p>$g \circ f$ 가 전사함수이면, $g$ 도 전사함수이다.</p>
+      </li>
+      <li>
+        <p>$g \circ f$ 가 전단사함수이면, $f$ 는 단사함수이고, $g$ 는 전사함수이다.</p>
+      </li>
+    </ol>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[합성함수 (composite function : $g \circ f$) 최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수 정의 두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow C$ 가 있을 때, 집합 $A$ 의 각 원소를 집합 $C$ 의 원소에 대응하는 함수 $g \circ f = (g \circ f)(x) = g(f(x)), \quad x \in A$ 예시 집합 $A =$ {$1,2,3,4$}, $B = ${$a, b, c$}, $C = ${$w, x, y, z$} 에 대한 함수를 살펴보자. $f : A \rightarrow B, f = ${$(1,a), (2,b), (3,b), (4,c)$ } $g : B \rightarrow C, f = ${$(a,x), (2,b), (3,b), (4,c)$} $g(f(1)) = g(a) = x$ $g(f(2)) = g(b) = w$ $g(f(3)) = g(b) = w$ $g(f(4)) = g(c) = z$ 합성함수의 성질 정리 집합 $A, B, C$ 에 대한 함수 $f: A \rightarrow B, g: B \rightarrow C$ 가 있을 때, 합성함수 $g \circ f$ 의 성질은 다음과 같다. $f$ 와 $g$가 단사함수이면, $g \circ f$ 도 단사함수이다. $f$ 와 $g$ 가 전사함수이면, $g \circ f$ 도 전사함수이다. $f$ 와 $g$ 가 전단사함수이면, $g \circ f$ 도 전단사함수이다. $g \circ f$ 가 단사함수이면, $f$ 도 단사함수이다. $g \circ f$ 가 전사함수이면, $g$ 도 전사함수이다. $g \circ f$ 가 전단사함수이면, $f$ 는 단사함수이고, $g$ 는 전사함수이다.]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식</title><link href="http://localhost:4000/discrete%20mathematics/DM-11/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식" /><published>2023-12-15T00:00:00+09:00</published><updated>2023-12-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-11</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-11/"><![CDATA[<h1 id="행렬과-연립일차방정식">행렬과 연립일차방정식</h1>
+
+<blockquote>
+  <p>행렬은 연립일차방정식을 풀기 위한 방법을 연구하면서 나온 개념이다.</p>
+</blockquote>
+
+<ul>
+  <li>방정식
+    <blockquote>
+      <p>문제를 해결하기 위한 어떤 식이 한 개 이상을 변수를 포함하는 식</p>
+    </blockquote>
+
+    <blockquote>
+      <p>포함하는 변수의 차수가 1 일 때, 일차방적식 또는 선형방정식이라 한다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="정의--일차방정식linear-equation--선형방정식">정의 : 일차방정식(linear equation) / 선형방정식</h2>
+<blockquote>
+  <p>$a_{1}, a_{2} \cdots a_{n} \quad, b$ 가 실수일 때, 다음과 같이 표현되는 식<br />
+<br />
+$a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$<br />
+($a_{1},a_{2} \cdots, a_{n}$ : 계수, $\quad b$ : 상수, $\quad x_{1},x_{2},\cdots,x_{n}$ : 변수)</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>$x + 5y + z = 9$</li>
+  <li>$x_{1} + x_{2} - 10x_{3} = 0$</li>
+</ul>
+
+<h2 id="정의--해solution와-해집합solution-set">정의 : 해(solution)와 해집합(solution set)</h2>
+<blockquote>
+  <p>일차방정식에 포함된 n개의 변수에 대응하는 값으로, 방정식을 참($T$)으로 만드는 값과 그 값의 집합</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>
+    <p>일차방정식 $a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$ 에 대하여,</p>
+  </li>
+  <li>
+    <p>이 방정식의 변수에 대입하였을 때 방정식을 참($T$)으로 만드는 유일한 값</p>
+  </li>
+  <li>
+    <p>$x_{1} = s_{1}, x_{2} = s_{2}, \cdots ,x_{n} = s_{n}$ 이 존재할 수 있다.</p>
+  </li>
+  <li>
+    <p>이 $s_{1}, s_{2}, \cdots, s_{n}$ 을 이 방정식의 해 또는 해집합이라고 한다.</p>
+  </li>
+</ul>
+
+<h2 id="정의--연립일차방정식system-of-linear-equations">정의 : 연립일차방정식(system of linear equations)</h2>
+
+<blockquote>
+  <p>$m$ 개의 일차방정식으로 구성된 방정식</p>
+</blockquote>
+
+<ul>
+  <li>$\begin{Bmatrix}
+a_{11}x_{1} + a{12}x_{2} + \cdots + a_{1n}x_{n} = b1 \\<br />
+a_{21}x_{1} + a{22}x_{2} + \cdots + a_{2n}x_{n} = b2 \\<br />
+\cdots \\<br />
+a_{m1}x_{1} + a{m2}x_{2} + \cdots + a_{mn}x_{n} = bm
+\end{Bmatrix}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="연립일차방정식의-행렬-표현">연립일차방정식의 행렬 표현</h1>
+
+<h2 id="정의--m-개의-일차방정식으로-구성된-연립일차방정식의-행렬-표현">정의 : $m$ 개의 일차방정식으로 구성된 연립일차방정식의 행렬 표현</h2>
+
+<blockquote>
+  <ol>
+    <li>계수행렬(coefficient matrix) : 연립일차방정식의 계수들로 구성된 $m \times n$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$A = $
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>미지수행렬(unknown value matrix) : 연립일차방정식의 미지수들로 구성된 $n \times 1$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$X = $
+$\begin{bmatrix}
+x_{1}\\<br />
+x_{2}\\<br />
+\cdots\\<br />
+x_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>상수행렬 (constant matrix) : 연립일차방정식의 상수들로 구성된 $m \times 1$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$B = $
+$\begin{bmatrix}
+b_{1}\\<br />
+b_{2}\\<br />
+\cdots\\<br />
+b_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<ul>
+  <li>
+    <p>연립일차방정식을 행렬로 표현하면 다음과 같다.</p>
+  </li>
+  <li>
+    <p>$AX = $
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$
+$\begin{bmatrix}
+x_{1}\\<br />
+x_{2}\\<br />
+\cdots\\<br />
+x_{n}
+\end{bmatrix} = $
+$\begin{bmatrix}
+b_{1}\\<br />
+b_{2}\\<br />
+\cdots\\<br />
+b_{n}
+\end{bmatrix} = B$</p>
+  </li>
+</ul>
+
+<h2 id="정의--첨가행렬-augmented-matrix">정의 : 첨가행렬 (augmented matrix)</h2>
+
+<blockquote>
+  <p>연립일차방정식의 계수행렬 $A$ 와 상수행렬 $B$ 를 다음과 같은 형태로 구성한 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; | &amp; b_{1} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; | &amp; b_{2} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; | &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; | &amp; b_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="예시-3">예시</h3>
+
+<ul>
+  <li>
+    <p>다음과 같은 연립일차방정식이 있다.</p>
+
+    <p>$ x + 5y + 10z = 1$<br />
+  $ 3x + y + z = 2$<br />
+  $ 2 + 9y + 5z = 3$</p>
+
+    <ul>
+      <li>
+        <p>계수행렬 $A = $ 
+  $\begin{bmatrix}
+  1 &amp; 5 &amp; 10 \\<br />
+  3 &amp; 1 &amp; 1  \\<br />
+  2 &amp; 9 &amp; 5
+  \end{bmatrix}$</p>
+      </li>
+      <li>
+        <p>미지수 행렬 $X = $
+  $\begin{bmatrix}
+  x \\<br />
+  y \\<br />
+  z
+  \end{bmatrix}$</p>
+      </li>
+      <li>
+        <p>상수행렬 $B = $
+  $\begin{bmatrix}
+  1 \\<br />
+  2 \\<br />
+  3
+  \end{bmatrix}$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>첨가행렬</p>
+
+    <p>$\begin{bmatrix}
+  1 &amp; 5 &amp; 10 &amp; | &amp; 1 \\<br />
+  3 &amp; 1 &amp; 1  &amp; | &amp; 2 \\<br />
+  2 &amp; 9 &amp; 5  &amp; | &amp; 3
+  \end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h2 id="정의--행-사다리꼴-행렬과-기약-행-사다리꼴-행렬">정의 : 행 사다리꼴 행렬과 기약 행 사다리꼴 행렬</h2>
+
+<blockquote>
+  <ol>
+    <li>행 사다리꼴 행렬(row echelon form matrix)
+      <ul>
+        <li>각 행의 0이 아닌 첫 번째 원소가 1이고, 그 1을 포함하는 열에서 1의 아래쪽 원소가 모두 0인 행렬</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>기약 행 사다리꼴(reduced row echelon form matrix)
+      <ul>
+        <li>행 사다리꼴 행렬에서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<h3 id="예시-4">예시</h3>
+
+<ul>
+  <li>
+    <p>행 사다리꼴 행렬의 조건</p>
+
+    <ol>
+      <li>
+        <p>어떤 행은 1열부터 0으로 구성된다.</p>
+      </li>
+      <li>
+        <p>모든 행의 0이 아닌 첫 번째 원소는 1이다.</p>
+      </li>
+      <li>
+        <p>모든 행의 0이 아닌 첫 번째 원소는 상위 행의 0이 아닌 첫 번째 원소보다 오른쪽 열에 위치한다.</p>
+      </li>
+      <li>
+        <p>모든 원소가 0인 행이 있다면 행렬의 가장 마지막 행에 위치한다.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>다음 행렬 $A$ 가 있다.</p>
+
+    <p>$A = $
+  $\begin{bmatrix}
+  1 &amp; 5 &amp; 9 &amp; 1 \\<br />
+  0 &amp; 0 &amp; 1 &amp; 3 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 1 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 0
+  \end{bmatrix}$</p>
+
+    <ul>
+      <li>
+        <p>4행은 1열부터 0으로 구성되어 조건 1을 만족한다.</p>
+      </li>
+      <li>
+        <p>각 행의 0이 아닌 첫 번째 원소가 모두 1이므로 조건 2를 만족한다.</p>
+      </li>
+      <li>
+        <p>각 행의 0이 아닌 첫 번째 원소 1은 상위 행의 0이 아닌 첫 번째 원소 1보다 오른쪽 열에 위치하므로 조건 3도 만족한다.</p>
+      </li>
+      <li>
+        <p>모든 원소가 0인 행은 가장 마지막 행에 위치하여 조건 4를 만족한다.</p>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p>위 조건 1 ~ 4 까지 전부 만족하므로 행렬 $A$ 는 행 사다리꼴 행렬이다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>기약 행 사다리꼴 조건</p>
+
+    <ul>
+      <li>행 사다리꼴 행렬의 조건을 만족하면서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬을 말한다.</li>
+    </ul>
+
+    <p>$A = $
+  $\begin{bmatrix}
+  0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h1 id="가우스-소거법-gaussian-elimination">가우스 소거법 (Gaussian elimination)</h1>
+
+<blockquote>
+  <p>가우스 소거법은 주어진 첨가행렬을 행 사다리꼴 행렬로 변환하고 그렇게 변환한 첨가행렬을 다시 연립일차방정식으로 만들어 후진 대입법으로 값을 대입하면서 해를 구한다.</p>
+</blockquote>
+
+<h2 id="정리--기본-행-연산-elementary-row-operation">정리 : 기본 행 연산 (elementary row operation)</h2>
+<blockquote>
+  <ol>
+    <li>한 행에 0이 아닌 스칼라를 곱한다.</li>
+    <li>스칼라곱을 한 행을 다른 행에 더한다.<br />
+(필요에 따라 행의 위치를 교환할 수도 있다.)</li>
+  </ol>
+</blockquote>
+
+<p><br /><br /></p>
+
+<h1 id="참고-문헌">참고 문헌</h1>
+<ul>
+  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p231 ~ p233</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬과 연립일차방정식]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 05.역행렬</title><link href="http://localhost:4000/discrete%20mathematics/DM-10/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 05.역행렬" /><published>2023-12-12T00:00:00+09:00</published><updated>2023-12-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-10</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-10/"><![CDATA[<h1 id="역행렬">역행렬</h1>
 
 <ul>
   <li>행렬에서도 항등원과 역원의 역할을 하는 행렬이 있다.
@@ -155,7 +988,7 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p231 ~ p233</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[역행렬]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 04_행렬식</title><link href="http://localhost:4000/discrete%20mathematics/DM-09/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 04_행렬식" /><published>2023-12-01T00:00:00+09:00</published><updated>2023-12-01T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-09</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-09/"><![CDATA[<h1 id="행렬식">행렬식</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[역행렬]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 04.행렬식</title><link href="http://localhost:4000/discrete%20mathematics/DM-09/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 04.행렬식" /><published>2023-12-01T00:00:00+09:00</published><updated>2023-12-01T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-09</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-09/"><![CDATA[<h1 id="행렬식">행렬식</h1>
 
 <ul>
   <li>하나 이상의 수로 구성된 $n$ 차 정사각행렬에는 행렬를 대표하는 수를 대응할 수 있는데, 그 수를 구하는 식을 <strong>행렬식</strong>이라고한다.</li>
@@ -446,7 +1279,7 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p220 ~ p230</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬식]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 03_행렬의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-08/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 03_행렬의 종류" /><published>2023-11-27T00:00:00+09:00</published><updated>2023-11-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-08</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-08/"><![CDATA[<h1 id="행렬의-종류">행렬의 종류</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬식]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 03.행렬의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-08/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 03.행렬의 종류" /><published>2023-11-27T00:00:00+09:00</published><updated>2023-11-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-08</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-08/"><![CDATA[<h1 id="행렬의-종류">행렬의 종류</h1>
 
 <ul>
   <li>행렬의 형태 혹은 구성 원소에 따라 다양한 종류의 행렬로 나눌 수 있다.</li>
@@ -799,7 +1632,7 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p214 ~ p219</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬의 종류]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 02_행렬의 연산</title><link href="http://localhost:4000/discrete%20mathematics/DM-07/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 02_행렬의 연산" /><published>2023-11-24T00:00:00+09:00</published><updated>2023-11-24T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-07</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-07/"><![CDATA[<h1 id="행렬의-연산">행렬의 연산</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬의 종류]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 02.행렬의 연산</title><link href="http://localhost:4000/discrete%20mathematics/DM-07/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 02.행렬의 연산" /><published>2023-11-24T00:00:00+09:00</published><updated>2023-11-24T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-07</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-07/"><![CDATA[<h1 id="행렬의-연산">행렬의 연산</h1>
 
 <ul>
   <li>행렬에서 가능한 연산은 덧셈, 곱셈, 스칼라곱, 곱셈이 있다.</li>
@@ -1114,7 +1947,7 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p205 ~ p213</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬의 연산]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 01_행렬의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-06/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 01_행렬의 개념" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-06</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-06/"><![CDATA[<h1 id="행렬-matrix">행렬 (Matrix)</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬의 연산]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 01.행렬의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-06/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 01.행렬의 개념" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-06</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-06/"><![CDATA[<h1 id="행렬-matrix">행렬 (Matrix)</h1>
 
 <ul>
   <li>
@@ -1313,483 +2146,4 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p201 ~ p204</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬 (Matrix)]]></summary></entry><entry><title type="html">[백준] 1436 : 영화감독 숌 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1436/" rel="alternate" type="text/html" title="[백준] 1436 : 영화감독 숌 (파이썬)" /><published>2023-11-23T00:00:00+09:00</published><updated>2023-11-23T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1436</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1436/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p>⚪️ <strong>실버 5</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/1436">https://www.acmicpc.net/problem/1436</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1436_1.png" />
-<br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1436_2.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
-
-<ul>
-  <li>브루트포스 알고리즘</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-
-<ul>
-  <li>처음에 규칙이 있을거라 생각했다.
-    <ul>
-      <li>666 ${\rightarrow}$ 1666 ${\rightarrow}$ … ${\rightarrow}$ 6660 ${\rightarrow}$ 6661 ${\rightarrow}$ 6662 ${\rightarrow}$ … ${\rightarrow}$ 6669 ${\rightarrow}$ 7666 ${\rightarrow}$ …</li>
-    </ul>
-  </li>
-  <li>위와 같이 666 의 뒤로 0 ~ 9 까지 진행하는 경우와 666 앞으로 진행하는 규칙이 있기 때문에 일관된 규칙을 찾기 어려웠습니다.</li>
-  <li>그리고 코드가 복잡해질거라 생각하여 첫 번째 제목인 ‘666’ 부터 1씩 더해가며 666이 들어간 숫자를 찾아내는 완전탐색 방식을 채택하여 풀이했습니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-
-<span class="c1"># 영화 제목
-</span><span class="n">title</span> <span class="o">=</span> <span class="mi">666</span>
-
-<span class="c1"># n과 비교할 숫자
-</span><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="c1"># 666이 영화제목에 들어가면 cnt = cnt + 1
-</span>    <span class="k">if</span> <span class="s">'666'</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
-      <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="c1"># n과 cnt가 같으면 while문 탈출
-</span>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">cnt</span><span class="p">:</span>
-        <span class="k">break</span>
-    
-    <span class="c1"># 영화 제목 + 1
-</span>    <span class="n">title</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="c1"># 출력
-</span><span class="k">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-
-<ul>
-  <li>N번째로 큰 영화 제목을 찾을 때 연산의 횟수를 알수없기에 While문을 통해 반복했습니다.</li>
-  <li>while문 종료 조건으로 n과 cnt를 비교하여 반복문을 탈출하게 설정했습니다.</li>
-  <li>title을 1씩 더해가며 ‘666’이 포함될 때 cnt = cnt + 1</li>
-</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5]]></summary></entry><entry><title type="html">[프로그래머스] Lv.01 : 삼총사 (파이썬)</title><link href="http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스] Lv.01 : 삼총사 (파이썬)" /><published>2023-11-04T00:00:00+09:00</published><updated>2023-11-04T00:00:00+09:00</updated><id>http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/programmers/Programmers-%EC%82%BC%EC%B4%9D%EC%82%AC/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p><strong>Lv.01</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131705">https://school.programmers.co.kr/learn/courses/30/lessons/131705</a></p>
-</blockquote>
-
-<h1 id="️-문제-설명">✒️ 문제 설명</h1>
-<p>한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다.<br />
-이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다.<br />
-예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 $-2, 3, 0, 2, -5$ 일 때,<br />
-첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 $0$ 이므로 세 학생은 삼총사입니다.<br />
-또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 $0$ 이므로 세 학생도 삼총사입니다.<br />
-따라서 이 경우 한국 중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.</p>
-
-<p>한국중학교 학생들의 번호를 나타내는 정수 배열 $number$ 가 매개변수로 주어질 때,<br />
-학생들 중 삼총사를 만들 수 있는 방법의 수를 $return$ 하도록 $solution$ 함수를 완성하세요.</p>
-
-<p><br /></p>
-
-<h1 id="️-제한사항">🙅‍♂️ 제한사항</h1>
-<ul>
-  <li>
-    <p>$3$ $\le$ $number$ 의 길이 $\le$ $13$</p>
-  </li>
-  <li>
-    <p>$-1000$ $\le$ $number$ 의 각 원소 $\le$ $1000$</p>
-  </li>
-  <li>
-    <p>서로 다른 학생의 정수 번호가 같을 수 있습니다.</p>
-  </li>
-</ul>
-
-<h1 id="-입출력-예">🤖 입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">number</th>
-      <th style="text-align: center">result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">[-2, 3, 0, 2, -5]</td>
-      <td style="text-align: center">2</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">[-3, -2, -1, 0, 1, 2, 3]</td>
-      <td style="text-align: center">5</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">[-1, 1, -1, 1]</td>
-      <td style="text-align: center">0</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="-입출력-예-설명">🤖 입출력 예 설명</h1>
-<ul>
-  <li>입출력 예 # 1
-    <ul>
-      <li>문제의 예시와 같습니다.</li>
-    </ul>
-  </li>
-  <li>입출력 예 # 2
-    <ul>
-      <li>학생들의 정수 번호 쌍 (-3, 0, 3), (-2, 0, 2), (-1, 0, 1), (-2, -1, 3), (-3, 1, 2) 이 삼총사가 될 수 있으므로, 5를 return 합니다.</li>
-    </ul>
-  </li>
-  <li>입출력 예 # 3
-    <ul>
-      <li>삼총사가 될 수 있는 방법이 없습니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-<blockquote>
-  <p>number 리스트에서 3개의 원소를 뽑아 합이 0이되는 경우를 찾아 개수를 세는 문제였다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="c1"># 출력 및 정답
-</span>    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="c1"># 3중 반복문을 통해 number 원소 3개씩 뽑기
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span>
-                <span class="c1"># 원소 3개의 합이 0이라면, 즉, 삼총사라면 정답 += 1
-</span>                <span class="k">if</span> <span class="p">(</span><span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">number</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">number</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">answer</span>
-
-</code></pre></div></div>
-<p><br /></p>
-
-<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-<p>처음에는 DFS로 구현하여 풀었지만, 코드도 직관적이지 못하였고, 다시 보니 이해하기도 어려웠다.<br />
-그래서 삼중 반복문을 통해 원소 3개를 뽑는 것을 구현하였다.<br />
-삼중 반복문보다 더욱 간단하게 푸는 법은 itertools의 combinations 라이브러리를 활용하는 방법이 있다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
-</code></pre></div></div>]]></content><author><name>지지형</name></author><category term="Programmers" /><summary type="html"><![CDATA[🔎 난이도 Lv.01 ✏️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/131705 ✒️ 문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 $-2, 3, 0, 2, -5$ 일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 $0$ 이므로 세 학생은 삼총사입니다. 또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 $0$ 이므로 세 학생도 삼총사입니다. 따라서 이 경우 한국 중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다. 한국중학교 학생들의 번호를 나타내는 정수 배열 $number$ 가 매개변수로 주어질 때, 학생들 중 삼총사를 만들 수 있는 방법의 수를 $return$ 하도록 $solution$ 함수를 완성하세요. 🙅‍♂️ 제한사항 $3$ $\le$ $number$ 의 길이 $\le$ $13$ $-1000$ $\le$ $number$ 의 각 원소 $\le$ $1000$ 서로 다른 학생의 정수 번호가 같을 수 있습니다. 🤖 입출력 예 number result [-2, 3, 0, 2, -5] 2 [-3, -2, -1, 0, 1, 2, 3] 5 [-1, 1, -1, 1] 0 🤖 입출력 예 설명 입출력 예 # 1 문제의 예시와 같습니다. 입출력 예 # 2 학생들의 정수 번호 쌍 (-3, 0, 3), (-2, 0, 2), (-1, 0, 1), (-2, -1, 3), (-3, 1, 2) 이 삼총사가 될 수 있으므로, 5를 return 합니다. 입출력 예 # 3 삼총사가 될 수 있는 방법이 없습니다. 🧐 아이디어 number 리스트에서 3개의 원소를 뽑아 합이 0이되는 경우를 찾아 개수를 세는 문제였다. 📝 내 풀이 def solution(number): # 출력 및 정답 answer = 0 # 3중 반복문을 통해 number 원소 3개씩 뽑기 for i in range(0, len(number)-2): for j in range(i+1, len(number)-1): for k in range(j+1, len(number)): # 원소 3개의 합이 0이라면, 즉, 삼총사라면 정답 += 1 if (number[i] + number[j] + number[k]) == 0: answer += 1 return answer 😳 풀이 리뷰 처음에는 DFS로 구현하여 풀었지만, 코드도 직관적이지 못하였고, 다시 보니 이해하기도 어려웠다. 그래서 삼중 반복문을 통해 원소 3개를 뽑는 것을 구현하였다. 삼중 반복문보다 더욱 간단하게 푸는 법은 itertools의 combinations 라이브러리를 활용하는 방법이 있다. from itertools import combinations]]></summary></entry><entry><title type="html">[백준] 1057 : 토너먼트 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-1057/" rel="alternate" type="text/html" title="[백준] 1057 : 토너먼트 (파이썬)" /><published>2023-11-01T00:00:00+09:00</published><updated>2023-11-01T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-1057</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-1057/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p>⚪️ <strong>실버 4</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/1057">https://www.acmicpc.net/problem/1057</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1057_1.png" />
-<br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1057_2.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
-
-<ul>
-  <li>수학</li>
-  <li>브루트포스 알고리즘</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-<p><br /></p>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_1057_3.png" width="700" /></p>
-
-<p><br /></p>
-
-<p>고민하다 처음 생각한 아이디어이다.</p>
-
-<ul>
-  <li>0으로 이루어진 대진표 리스트와 김지민과 임한수의 인덱스를 1로 표시한다.</li>
-  <li>대진표는 n // 2</li>
-  <li>step을 2로 둔 for문을 통해 김지민과 임한수가 대결했을 경우의 리스트 합이 2가 나올 것이다.</li>
-</ul>
-
-<p>이러한 아이디어를 뼈대로 잡고 코드를 작성했다.</p>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1"># 입력
-</span><span class="n">n</span><span class="p">,</span> <span class="n">kim</span><span class="p">,</span> <span class="n">lim</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
-
-<span class="c1"># 출력값
-</span><span class="nb">round</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># 인덱스
-</span><span class="n">kim</span> <span class="o">-=</span> <span class="mi">1</span>
-<span class="n">lim</span> <span class="o">-=</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># 서로 대결하지 않을 경우
-</span>    <span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">round</span> <span class="o">+=</span> <span class="mi">1</span>
-
-        <span class="n">table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="c1"># 대진표 생성
-</span>
-        <span class="n">table</span><span class="p">[</span><span class="n">kim</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="n">lim</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span> <span class="c1"># 김, 임 대진 자리 표시
-</span>
-        <span class="c1"># 출력 (김지민과 임한수가 만났을 경우 break)
-</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
-            <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
-                <span class="k">break</span>
-    
-        <span class="c1"># n이 홀수 일 경우
-</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span> <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
-
-        <span class="n">kim</span> <span class="o">//=</span> <span class="mi">2</span>
-        <span class="n">lim</span> <span class="o">//=</span> <span class="mi">2</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-
-<blockquote>
-  <p>생각한 아이디어를 충실히(?) 이행하며, 코드를 짜다보니 많이 복잡해졌다.<br />
-while문이 한 번 돌 때마다 round(정답), 대진표, 인덱스 표시를 갱신 한다. <br />
-for 문을 통해 김지민과 임한수가 대결 유무를 판단한다.<br />
-대결을 했을 경우 탈출, 대결하지 않았을 경우 n과 kim.lim 를 // 2를 해준다.</p>
-</blockquote>
-
-<h1 id="-다른-사람-풀이">😳 다른 사람 풀이</h1>
-
-<blockquote>
-  <p>사실 이 문제는 수학적으로 해결이 가능한 문제였다. 필자는 n 길이의 리스트에 직접 김지민과 임한수의 위치를 표시하며 n,김지민,임한수의 2로 나누며 문제를 해결했다.</p>
-</blockquote>
-
-<blockquote>
-  <p>이 문제의 핵심은 김지민과 임한수의 인덱스가 8,9 라고 할 때, 예시의 식을 이용하는 것이었다.</p>
-</blockquote>
-
-<ul>
-  <li>김지민 : 8 $\rightarrow$ 4 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 1</li>
-  <li>임한수 : 9 $\rightarrow$ 5 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 입력
-</span><span class="n">n</span><span class="p">,</span> <span class="n">kim</span> <span class="p">,</span><span class="n">lim</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
-
-<span class="c1"># 출력
-</span><span class="nb">round</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">kim</span> <span class="o">!=</span> <span class="n">lim</span><span class="p">:</span>
-  
-    <span class="n">kim</span> <span class="o">-=</span> <span class="n">kim</span> <span class="o">//</span> <span class="mi">2</span>
-  
-    <span class="n">lim</span> <span class="o">-=</span> <span class="n">lim</span> <span class="o">//</span> <span class="mi">2</span>
-  
-    <span class="nb">round</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">)</span>
-</code></pre></div></div>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/1057 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 브루트포스 알고리즘 🧐 아이디어 고민하다 처음 생각한 아이디어이다. 0으로 이루어진 대진표 리스트와 김지민과 임한수의 인덱스를 1로 표시한다. 대진표는 n // 2 step을 2로 둔 for문을 통해 김지민과 임한수가 대결했을 경우의 리스트 합이 2가 나올 것이다. 이러한 아이디어를 뼈대로 잡고 코드를 작성했다. 📝 내 풀이 # 입력 n, kim, lim = map(int, input().split()) # 출력값 round = 0 # 인덱스 kim -= 1 lim -= 1 if n &lt; 2: # 서로 대결하지 않을 경우 print(-1) else: while n != 1: round += 1 table = [0] * n # 대진표 생성 table[kim], table[lim] = 1,1 # 김, 임 대진 자리 표시 # 출력 (김지민과 임한수가 만났을 경우 break) for i in range(0, n, 2): if sum(table[i : i + 2]) == 2: print(round) break # n이 홀수 일 경우 if n % 2 == 1: n = n // 2 + 1 else: n //= 2 kim //= 2 lim //= 2 😳 풀이 리뷰 생각한 아이디어를 충실히(?) 이행하며, 코드를 짜다보니 많이 복잡해졌다. while문이 한 번 돌 때마다 round(정답), 대진표, 인덱스 표시를 갱신 한다. for 문을 통해 김지민과 임한수가 대결 유무를 판단한다. 대결을 했을 경우 탈출, 대결하지 않았을 경우 n과 kim.lim 를 // 2를 해준다. 😳 다른 사람 풀이 사실 이 문제는 수학적으로 해결이 가능한 문제였다. 필자는 n 길이의 리스트에 직접 김지민과 임한수의 위치를 표시하며 n,김지민,임한수의 2로 나누며 문제를 해결했다. 이 문제의 핵심은 김지민과 임한수의 인덱스가 8,9 라고 할 때, 예시의 식을 이용하는 것이었다. 김지민 : 8 $\rightarrow$ 4 $\rightarrow$ 2 $\rightarrow$ 1 $\rightarrow$ 1 임한수 : 9 $\rightarrow$ 5 $\rightarrow$ 3 $\rightarrow$ 2 $\rightarrow$ 1 # 입력 n, kim ,lim = map(int, input().split()) # 출력 round = 0 while kim != lim: kim -= kim // 2 lim -= lim // 2 round += 1 print(round)]]></summary></entry><entry><title type="html">[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)</title><link href="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스] Lv.01 : 같은 숫자는 싫어 (파이썬)" /><published>2023-10-27T00:00:00+09:00</published><updated>2023-10-27T00:00:00+09:00</updated><id>http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80%20%EC%88%AB%EC%9E%90%EB%8A%94%20%EC%8B%AB%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/programmers/Programmers-%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p><strong>Lv.01</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
-</blockquote>
-
-<h1 id="️-문제-설명">✒️ 문제 설명</h1>
-<p>배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다.<br />
-이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다.<br />
-단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다.</p>
-
-<ul>
-  <li>arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다.</li>
-  <li>arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다.</li>
-</ul>
-
-<p>배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.</p>
-
-<p><br /></p>
-
-<h1 id="️-제한사항">🙅‍♂️ 제한사항</h1>
-<ul>
-  <li>배열 arr의 크기 : 1,000,000 이하의 자연수</li>
-  <li>배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수</li>
-</ul>
-
-<h1 id="-입출력-예">🤖 입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>arr</th>
-      <th>answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[1, 1, 3, 3, 0, 1 ,1]</td>
-      <td>[1, 3, 0, 1]</td>
-    </tr>
-    <tr>
-      <td>[4, 4, 4, 3, 3]</td>
-      <td>[4, 3]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="-입출력-예-설명">🤖 입출력 예 설명</h1>
-<ul>
-  <li>입출력 예 # 1,2 문제의 예시와 같습니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-<p>단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">example</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="n">set_example</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">example</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">set_example</span><span class="p">)</span>
-<span class="c1"># {1, 2, 3, 4, 5, 6}
-</span></code></pre></div></div>
-
-<p>순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다.</p>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1"># arr의 첫 번째 원소
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span> <span class="c1"># 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복)
-</span>        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ...
-</span>            <span class="n">answer</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># 같지 않다면 answer 리스트에 원소 추가
-</span>    <span class="k">return</span> <span class="n">answer</span>
-</code></pre></div></div>
-<p><br /></p>
-
-<h1 id="-다른-풀이">😳 다른 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">diff_solution</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">!=</span> <span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-            <span class="n">answer</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">answer</span>
-</code></pre></div></div>
-
-<p>answer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.</p>]]></content><author><name>지지형</name></author><category term="Programmers" /><summary type="html"><![CDATA[🔎 난이도 Lv.01 ✏️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/12906 ✒️ 문제 설명 배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져있습니다. 이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려고 합니다. 단, 제거 된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지해야 합니다. arr = [1, 1, 3, 3, 0, 1, 1] 이면 [1, 3, 0, 1] 을 return 합니다. arr = [4, 4, 4, 3, 3] 이면 [4, 3]을 return 합니다. 배열 arr 에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요. 🙅‍♂️ 제한사항 배열 arr의 크기 : 1,000,000 이하의 자연수 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수 🤖 입출력 예 arr answer [1, 1, 3, 3, 0, 1 ,1] [1, 3, 0, 1] [4, 4, 4, 3, 3] [4, 3] 🤖 입출력 예 설명 입출력 예 # 1,2 문제의 예시와 같습니다. 🧐 아이디어 단순히 연속된 숫자의 중복을 제거하는 문제였다면, Set 자료형을 통해 손 쉽게 풀 수 있었을 겁니다. 하지만 기존에 제시한 배열 arr의 순서를 보장해야하기 때문에 Set 자료형을 쓸 수 없습니다. example = [1,1,6,6,2,2,3,3,3,4,5,5] set_example = set(example) print(set_example) # {1, 2, 3, 4, 5, 6} 순서 보장을 위해 원래 배열 그대로 탐색을 하며 answer 리스트에 arr 배열의 첫 번째 값(인덱스 = 0)을 넣어 준 후, 1부터 마지막 인덱스까지 전 후 값을 비교하여 다르다면 answer의 append 해주는 방법으로 풀었습니다. 📝 내 풀이 def solution(arr): answer = [arr[0]] # arr의 첫 번째 원소 for i in range(1,len(arr)): # 1 ~ arr의 길이 만큼 반복 (길이가 n이라면 n-1 반복) if arr[i] != arr[i-1]: # arr배열의 전,후 값 비교 (1,0) (2,1) (3,2) ... answer.append(arr[i]) # 같지 않다면 answer 리스트에 원소 추가 return answer 😳 다른 풀이 def diff_solution(arr): answer = [] for i in arr: if answer[-1:] != [i]: answer.append(i) return answer answer의 마지막 원소와 현재 i와 비교를 하며 같지 않을 경우, 즉, 중복되지 않을 경우 answer 리스트에 원소를 추가하는 방법입니다.]]></summary></entry><entry><title type="html">[백준] 4673 : 셀프 넘버 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-4673/" rel="alternate" type="text/html" title="[백준] 4673 : 셀프 넘버 (파이썬)" /><published>2023-10-20T00:00:00+09:00</published><updated>2023-10-20T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-4673</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-4673/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
-<blockquote>
-  <p>⚪️ <strong>실버 5</strong></p>
-</blockquote>
-
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/4673">https://www.acmicpc.net/problem/4673</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_4673_1.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_4673_2.png" /></p>
-
-<p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
-
-<ul>
-  <li>수학</li>
-  <li>구현</li>
-  <li>브루트포스 알고리즘</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-아이디어">🧐 아이디어</h1>
-
-<blockquote>
-  <p>10,000 보다 작거나 같은 <strong>셀프 넘버</strong> 를 출력하는 문제이다.</p>
-  <ul>
-    <li>생성자 : 양의 정수 $n$ 에 대해서 $n$ 과 $n$ 의 각 자리수를 더하는 함수라고 정의해보면 $d(75) = 75 + 7 + 5 = 87$
-      <ul>
-        <li>$75$ 는 $d(75) = 87$ 의 생성자이다.</li>
-      </ul>
-    </li>
-    <li>셀프넘버 : 위의 경우처럼 생성자가 있는 것이 아니라 생성자가 없을 경우 셀프 넘버라고 한다.
-      <ul>
-        <li>각 자리수를 더하여 $31$ 을 만들 수 있는 숫자는 없기에, $31$ 은 셀프 넘버이다.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1"># 생성자 함수
-</span><span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># 한 자리 수일 경우
-</span>        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span> <span class="c1"># n과 각 자리수의 합 더하기
-</span>
-<span class="n">self_num</span> <span class="o">=</span> <span class="p">[</span><span class="bp">True</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10001</span> <span class="c1"># 셀프넘버 리스트
-</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">self_num</span><span class="p">)):</span> <span class="c1"># 1 ~ 10000
-</span>    <span class="k">if</span> <span class="n">d</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">:</span> <span class="c1"># 10000보다 작거나 같을 경우
-</span>        <span class="n">self_num</span><span class="p">[</span><span class="n">d</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># 생성자일 경우 False 처리 (셀프넘버가 아닐 경우)
-</span>
-<span class="c1"># 출력
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">self_num</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="n">self_num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 셀프넘버(True)일 경우 출력
-</span></code></pre></div></div>
-<p><br /></p>
-
-<h1 id="-풀이-리뷰">😳 풀이 리뷰</h1>
-<blockquote>
-  <p>위 아이디어에서 정리한 개념을 이해 한 후</p>
-</blockquote>
-
-<ol>
-  <li>인덱스를 통해 문제를 풀어야겠다고 생각했다.</li>
-  <li>True로 이루어진 10001개의 셀프넘버 리스트</li>
-  <li>반복문을 통해 생성자가 있을 경우 False 처리를 해주는 함수 정의.</li>
-  <li>셀프넘버 리스트 True로 남아있는 원소(셀프넘버)의 인덱스를 출력해줌으로써 문제를 해결하였다.</li>
-</ol>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 5 ✏️ 문제 https://www.acmicpc.net/problem/4673 🤖 예제 입력 및 출력 📑 알고리즘 분류 수학 구현 브루트포스 알고리즘 🧐 아이디어 10,000 보다 작거나 같은 셀프 넘버 를 출력하는 문제이다. 생성자 : 양의 정수 $n$ 에 대해서 $n$ 과 $n$ 의 각 자리수를 더하는 함수라고 정의해보면 $d(75) = 75 + 7 + 5 = 87$ $75$ 는 $d(75) = 87$ 의 생성자이다. 셀프넘버 : 위의 경우처럼 생성자가 있는 것이 아니라 생성자가 없을 경우 셀프 넘버라고 한다. 각 자리수를 더하여 $31$ 을 만들 수 있는 숫자는 없기에, $31$ 은 셀프 넘버이다. 📝 내 풀이 # 생성자 함수 def d(n): if n &lt; 10: # 한 자리 수일 경우 return n + n else: return n + sum(map(int, str(n))) # n과 각 자리수의 합 더하기 self_num = [True] * 10001 # 셀프넘버 리스트 for i in range(1,len(self_num)): # 1 ~ 10000 if d(i) &lt;= 10000: # 10000보다 작거나 같을 경우 self_num[d(i)] = False # 생성자일 경우 False 처리 (셀프넘버가 아닐 경우) # 출력 for i in range(1,len(self_num)): if self_num[i] == True: print(i) # 셀프넘버(True)일 경우 출력 😳 풀이 리뷰 위 아이디어에서 정리한 개념을 이해 한 후 인덱스를 통해 문제를 풀어야겠다고 생각했다. True로 이루어진 10001개의 셀프넘버 리스트 반복문을 통해 생성자가 있을 경우 False 처리를 해주는 함수 정의. 셀프넘버 리스트 True로 남아있는 원소(셀프넘버)의 인덱스를 출력해줌으로써 문제를 해결하였다.]]></summary></entry></feed>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬 (Matrix)]]></summary></entry></feed>

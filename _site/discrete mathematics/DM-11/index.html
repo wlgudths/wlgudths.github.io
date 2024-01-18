@@ -1,0 +1,1122 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식 | 느려도 괜찮아</title>
+<meta name="description" content="행렬과 연립일차방정식">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-11/">
+
+
+  <meta property="og:description" content="행렬과 연립일차방정식">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-12-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-12-15T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-11/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">26</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (15)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (9)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식">
+    <meta itemprop="description" content="행렬과 연립일차방정식">
+    <meta itemprop="datePublished" content="2023-12-15T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2023-12-15T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-11/" class="u-url" itemprop="url">[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 행렬과 연립일차방정식</h4></header>
+              <ul class="toc__menu"><li><a href="#행렬과-연립일차방정식">행렬과 연립일차방정식</a><ul><li><a href="#정의--일차방정식linear-equation--선형방정식">정의 : 일차방정식(linear equation) / 선형방정식</a><ul><li><a href="#예시">예시</a></li></ul></li><li><a href="#정의--해solution와-해집합solution-set">정의 : 해(solution)와 해집합(solution set)</a><ul><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#정의--연립일차방정식system-of-linear-equations">정의 : 연립일차방정식(system of linear equations)</a></li></ul></li><li><a href="#연립일차방정식의-행렬-표현">연립일차방정식의 행렬 표현</a><ul><li><a href="#정의--m-개의-일차방정식으로-구성된-연립일차방정식의-행렬-표현">정의 : $m$ 개의 일차방정식으로 구성된 연립일차방정식의 행렬 표현</a><ul><li><a href="#예시-2">예시</a></li></ul></li><li><a href="#정의--첨가행렬-augmented-matrix">정의 : 첨가행렬 (augmented matrix)</a><ul><li><a href="#예시-3">예시</a></li></ul></li><li><a href="#정의--행-사다리꼴-행렬과-기약-행-사다리꼴-행렬">정의 : 행 사다리꼴 행렬과 기약 행 사다리꼴 행렬</a><ul><li><a href="#예시-4">예시</a></li></ul></li></ul></li><li><a href="#가우스-소거법-gaussian-elimination">가우스 소거법 (Gaussian elimination)</a><ul><li><a href="#정리--기본-행-연산-elementary-row-operation">정리 : 기본 행 연산 (elementary row operation)</a></li></ul></li><li><a href="#참고-문헌">참고 문헌</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="행렬과-연립일차방정식">행렬과 연립일차방정식</h1>
+
+<blockquote>
+  <p>행렬은 연립일차방정식을 풀기 위한 방법을 연구하면서 나온 개념이다.</p>
+</blockquote>
+
+<ul>
+  <li>방정식
+    <blockquote>
+      <p>문제를 해결하기 위한 어떤 식이 한 개 이상을 변수를 포함하는 식</p>
+    </blockquote>
+
+    <blockquote>
+      <p>포함하는 변수의 차수가 1 일 때, 일차방적식 또는 선형방정식이라 한다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="정의--일차방정식linear-equation--선형방정식">정의 : 일차방정식(linear equation) / 선형방정식</h2>
+<blockquote>
+  <p>$a_{1}, a_{2} \cdots a_{n} \quad, b$ 가 실수일 때, 다음과 같이 표현되는 식<br />
+<br />
+$a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$<br />
+($a_{1},a_{2} \cdots, a_{n}$ : 계수, $\quad b$ : 상수, $\quad x_{1},x_{2},\cdots,x_{n}$ : 변수)</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>$x + 5y + z = 9$</li>
+  <li>$x_{1} + x_{2} - 10x_{3} = 0$</li>
+</ul>
+
+<h2 id="정의--해solution와-해집합solution-set">정의 : 해(solution)와 해집합(solution set)</h2>
+<blockquote>
+  <p>일차방정식에 포함된 n개의 변수에 대응하는 값으로, 방정식을 참($T$)으로 만드는 값과 그 값의 집합</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>
+    <p>일차방정식 $a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$ 에 대하여,</p>
+  </li>
+  <li>
+    <p>이 방정식의 변수에 대입하였을 때 방정식을 참($T$)으로 만드는 유일한 값</p>
+  </li>
+  <li>
+    <p>$x_{1} = s_{1}, x_{2} = s_{2}, \cdots ,x_{n} = s_{n}$ 이 존재할 수 있다.</p>
+  </li>
+  <li>
+    <p>이 $s_{1}, s_{2}, \cdots, s_{n}$ 을 이 방정식의 해 또는 해집합이라고 한다.</p>
+  </li>
+</ul>
+
+<h2 id="정의--연립일차방정식system-of-linear-equations">정의 : 연립일차방정식(system of linear equations)</h2>
+
+<blockquote>
+  <p>$m$ 개의 일차방정식으로 구성된 방정식</p>
+</blockquote>
+
+<ul>
+  <li>$\begin{Bmatrix}
+a_{11}x_{1} + a{12}x_{2} + \cdots + a_{1n}x_{n} = b1 \\<br />
+a_{21}x_{1} + a{22}x_{2} + \cdots + a_{2n}x_{n} = b2 \\<br />
+\cdots \\<br />
+a_{m1}x_{1} + a{m2}x_{2} + \cdots + a_{mn}x_{n} = bm
+\end{Bmatrix}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="연립일차방정식의-행렬-표현">연립일차방정식의 행렬 표현</h1>
+
+<h2 id="정의--m-개의-일차방정식으로-구성된-연립일차방정식의-행렬-표현">정의 : $m$ 개의 일차방정식으로 구성된 연립일차방정식의 행렬 표현</h2>
+
+<blockquote>
+  <ol>
+    <li>계수행렬(coefficient matrix) : 연립일차방정식의 계수들로 구성된 $m \times n$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$A = $
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>미지수행렬(unknown value matrix) : 연립일차방정식의 미지수들로 구성된 $n \times 1$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$X = $
+$\begin{bmatrix}
+x_{1}\\<br />
+x_{2}\\<br />
+\cdots\\<br />
+x_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>상수행렬 (constant matrix) : 연립일차방정식의 상수들로 구성된 $m \times 1$ 행렬</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>$B = $
+$\begin{bmatrix}
+b_{1}\\<br />
+b_{2}\\<br />
+\cdots\\<br />
+b_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<ul>
+  <li>
+    <p>연립일차방정식을 행렬로 표현하면 다음과 같다.</p>
+  </li>
+  <li>
+    <p>$AX = $
+$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}$
+$\begin{bmatrix}
+x_{1}\\<br />
+x_{2}\\<br />
+\cdots\\<br />
+x_{n}
+\end{bmatrix} = $
+$\begin{bmatrix}
+b_{1}\\<br />
+b_{2}\\<br />
+\cdots\\<br />
+b_{n}
+\end{bmatrix} = B$</p>
+  </li>
+</ul>
+
+<h2 id="정의--첨가행렬-augmented-matrix">정의 : 첨가행렬 (augmented matrix)</h2>
+
+<blockquote>
+  <p>연립일차방정식의 계수행렬 $A$ 와 상수행렬 $B$ 를 다음과 같은 형태로 구성한 행렬</p>
+</blockquote>
+
+<ul>
+  <li>$\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; | &amp; b_{1} \\<br />
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; | &amp; b_{2} \\<br />
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; | &amp; \cdots \\<br />
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; | &amp; b_{n}
+\end{bmatrix}$</li>
+</ul>
+
+<h3 id="예시-3">예시</h3>
+
+<ul>
+  <li>
+    <p>다음과 같은 연립일차방정식이 있다.</p>
+
+    <p>$ x + 5y + 10z = 1$<br />
+  $ 3x + y + z = 2$<br />
+  $ 2 + 9y + 5z = 3$</p>
+
+    <ul>
+      <li>
+        <p>계수행렬 $A = $ 
+  $\begin{bmatrix}
+  1 &amp; 5 &amp; 10 \\<br />
+  3 &amp; 1 &amp; 1  \\<br />
+  2 &amp; 9 &amp; 5
+  \end{bmatrix}$</p>
+      </li>
+      <li>
+        <p>미지수 행렬 $X = $
+  $\begin{bmatrix}
+  x \\<br />
+  y \\<br />
+  z
+  \end{bmatrix}$</p>
+      </li>
+      <li>
+        <p>상수행렬 $B = $
+  $\begin{bmatrix}
+  1 \\<br />
+  2 \\<br />
+  3
+  \end{bmatrix}$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>첨가행렬</p>
+
+    <p>$\begin{bmatrix}
+  1 &amp; 5 &amp; 10 &amp; | &amp; 1 \\<br />
+  3 &amp; 1 &amp; 1  &amp; | &amp; 2 \\<br />
+  2 &amp; 9 &amp; 5  &amp; | &amp; 3
+  \end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h2 id="정의--행-사다리꼴-행렬과-기약-행-사다리꼴-행렬">정의 : 행 사다리꼴 행렬과 기약 행 사다리꼴 행렬</h2>
+
+<blockquote>
+  <ol>
+    <li>행 사다리꼴 행렬(row echelon form matrix)
+      <ul>
+        <li>각 행의 0이 아닌 첫 번째 원소가 1이고, 그 1을 포함하는 열에서 1의 아래쪽 원소가 모두 0인 행렬</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>기약 행 사다리꼴(reduced row echelon form matrix)
+      <ul>
+        <li>행 사다리꼴 행렬에서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬</li>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
+
+<h3 id="예시-4">예시</h3>
+
+<ul>
+  <li>
+    <p>행 사다리꼴 행렬의 조건</p>
+
+    <ol>
+      <li>
+        <p>어떤 행은 1열부터 0으로 구성된다.</p>
+      </li>
+      <li>
+        <p>모든 행의 0이 아닌 첫 번째 원소는 1이다.</p>
+      </li>
+      <li>
+        <p>모든 행의 0이 아닌 첫 번째 원소는 상위 행의 0이 아닌 첫 번째 원소보다 오른쪽 열에 위치한다.</p>
+      </li>
+      <li>
+        <p>모든 원소가 0인 행이 있다면 행렬의 가장 마지막 행에 위치한다.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>다음 행렬 $A$ 가 있다.</p>
+
+    <p>$A = $
+  $\begin{bmatrix}
+  1 &amp; 5 &amp; 9 &amp; 1 \\<br />
+  0 &amp; 0 &amp; 1 &amp; 3 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 1 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 0
+  \end{bmatrix}$</p>
+
+    <ul>
+      <li>
+        <p>4행은 1열부터 0으로 구성되어 조건 1을 만족한다.</p>
+      </li>
+      <li>
+        <p>각 행의 0이 아닌 첫 번째 원소가 모두 1이므로 조건 2를 만족한다.</p>
+      </li>
+      <li>
+        <p>각 행의 0이 아닌 첫 번째 원소 1은 상위 행의 0이 아닌 첫 번째 원소 1보다 오른쪽 열에 위치하므로 조건 3도 만족한다.</p>
+      </li>
+      <li>
+        <p>모든 원소가 0인 행은 가장 마지막 행에 위치하여 조건 4를 만족한다.</p>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p>위 조건 1 ~ 4 까지 전부 만족하므로 행렬 $A$ 는 행 사다리꼴 행렬이다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>기약 행 사다리꼴 조건</p>
+
+    <ul>
+      <li>행 사다리꼴 행렬의 조건을 만족하면서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬을 말한다.</li>
+    </ul>
+
+    <p>$A = $
+  $\begin{bmatrix}
+  0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\<br />
+  0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}$</p>
+  </li>
+</ul>
+
+<h1 id="가우스-소거법-gaussian-elimination">가우스 소거법 (Gaussian elimination)</h1>
+
+<blockquote>
+  <p>가우스 소거법은 주어진 첨가행렬을 행 사다리꼴 행렬로 변환하고 그렇게 변환한 첨가행렬을 다시 연립일차방정식으로 만들어 후진 대입법으로 값을 대입하면서 해를 구한다.</p>
+</blockquote>
+
+<h2 id="정리--기본-행-연산-elementary-row-operation">정리 : 기본 행 연산 (elementary row operation)</h2>
+<blockquote>
+  <ol>
+    <li>한 행에 0이 아닌 스칼라를 곱한다.</li>
+    <li>스칼라곱을 한 행을 다른 행에 더한다.<br />
+(필요에 따라 행의 위치를 교환할 수도 있다.)</li>
+  </ol>
+</blockquote>
+
+<p><br /><br /></p>
+
+<h1 id="참고-문헌">참고 문헌</h1>
+<ul>
+  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p231 ~ p233</li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-12-15">December 15, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-10/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 행렬(Matrix) : 05.역행렬</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-12/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 함수(Function) : 01.함수의 개념</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-10/" class="pagination--pager" title="[이산수학] 행렬(Matrix) : 05.역행렬
+">이전</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-12/" class="pagination--pager" title="[이산수학] 함수(Function) : 01.함수의 개념
+">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-15/" rel="permalink">[이산수학] 함수(Function) : 04.함수의 종류
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 종류
+
+항등함수 (identity function : $I_{A}$)
+
+정의
+
+
+  집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계
+
+
+항등함수의 조건
+
+
+  항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-14/" rel="permalink">[이산수학] 함수(Function) : 03.합성 함수
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">합성함수 (composite function : $g \circ f$)
+
+
+  최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수
+
+
+정의
+
+
+  두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-13/" rel="permalink">[이산수학] 함수(Function) : 02.함수의 성질
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 성질
+
+
+  함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.
+
+
+
+  함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.
+
+
+단사함수, 일대일 함수 (injective function, injection, one-to-on...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-12/" rel="permalink">[이산수학] 함수(Function) : 01.함수의 개념
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 개념
+
+정의 : 함수(function : $f : A \rightarrow B$)
+
+
+  집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계
+
+
+
+  
+    집합 $A$ 에서 ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>

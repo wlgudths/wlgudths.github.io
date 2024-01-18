@@ -95,33 +95,63 @@ var store = [{
         "url": "/boj/BOJ-1436/",
         "teaser": null
       },{
-        "title": "[이산수학] 행렬(Matrix) : 01_행렬의 개념",
+        "title": "[이산수학] 행렬(Matrix) : 01.행렬의 개념",
         "excerpt":"행렬 (Matrix) 행렬은 연립일차방적식을 풀기 위해 사용되는 수의 구조이다. 2차원 배열 형태인 행렬은 두 개 이상의 집합을 구성하는 원소 간의 관계를 표현하기에 적합하다. 행렬은 데이터 연산 구조, 네트워크 모델, 선형 모델등과 같은 수학적 모델을 표현하는데 활용된다. 인공지능 관련해서 Python의 라이브러리 numpy를 활용할 때 행렬에 대한 지식이 필수적이라 느껴 정리했습니다. 행렬의...","categories": ["Discrete Mathematics"],
         "tags": [],
         "url": "/discrete%20mathematics/DM-06/",
         "teaser": null
       },{
-        "title": "[이산수학] 행렬(Matrix) : 02_행렬의 연산",
+        "title": "[이산수학] 행렬(Matrix) : 02.행렬의 연산",
         "excerpt":"행렬의 연산 행렬에서 가능한 연산은 덧셈, 곱셈, 스칼라곱, 곱셈이 있다. 행렬의 덧셈과 뺄셈 행렬의 덧셈과 뺄셈이 가능하려면 두 행렬의 크기가 같아야 한다. 두 행렬 $A$ 와 $B$ 는 덧셈과 뺄셈이 가능하다. $A = 4 \\times 4$ $B = 4 \\times 4$ 정의 두 행렬 크기가 $m \\times n$인 두 행렬...","categories": ["Discrete Mathematics"],
         "tags": [],
         "url": "/discrete%20mathematics/DM-07/",
         "teaser": null
       },{
-        "title": "[이산수학] 행렬(Matrix) : 03_행렬의 종류",
+        "title": "[이산수학] 행렬(Matrix) : 03.행렬의 종류",
         "excerpt":"행렬의 종류 행렬의 형태 혹은 구성 원소에 따라 다양한 종류의 행렬로 나눌 수 있다. 대각행렬 (diagonal matrix) 정의 $n$ 차 정사각행렬에서 주대각 원소 $a_{11}, a_{22}, \\cdots, a_{nn}$ 을 제외한 나머지 원소가 모두 0 인 행렬 $A =$ $\\begin{bmatrix} a_{11} &amp; 0 &amp; \\cdots &amp; 0 \\\\ 0 &amp; a_{22} &amp;...","categories": ["Discrete Mathematics"],
         "tags": [],
         "url": "/discrete%20mathematics/DM-08/",
         "teaser": null
       },{
-        "title": "[이산수학] 행렬(Matrix) : 04_행렬식",
+        "title": "[이산수학] 행렬(Matrix) : 04.행렬식",
         "excerpt":"행렬식 하나 이상의 수로 구성된 $n$ 차 정사각행렬에는 행렬를 대표하는 수를 대응할 수 있는데, 그 수를 구하는 식을 행렬식이라고한다. 역행렬 존재 유무 판별 연립일차방정식의 해가 유일하게 존재하는지 판단 정의 $n$ 차 정사각행렬에 대응하는 수를 구하는 식 $det(A) = |A| = $ $\\begin{bmatrix} a_{11} &amp; a_{11} &amp; \\cdots &amp; a_{1n} \\\\...","categories": ["Discrete Mathematics"],
         "tags": [],
         "url": "/discrete%20mathematics/DM-09/",
         "teaser": null
       },{
-        "title": "[이산수학] 행렬(Matrix) : 05_역행렬",
+        "title": "[이산수학] 행렬(Matrix) : 05.역행렬",
         "excerpt":"역행렬 행렬에서도 항등원과 역원의 역할을 하는 행렬이 있다. 항등원인 행렬은 단위행렬 $I$ 역원인 행렬은 역행렬 정의 : 역행렬 (inverse matrix : $A^{-1}$) 정사각행렬 $A$ 에 대하여, $AB = BA = I$ 를 만족시키는 행렬 B $AA^{-1} = A^{-1}A = I$ 예시 $A = $ $\\begin{bmatrix} 1 &amp; 2 \\\\ 1...","categories": ["Discrete Mathematics"],
         "tags": [],
         "url": "/discrete%20mathematics/DM-10/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식",
+        "excerpt":"행렬과 연립일차방정식 행렬은 연립일차방정식을 풀기 위한 방법을 연구하면서 나온 개념이다. 방정식 문제를 해결하기 위한 어떤 식이 한 개 이상을 변수를 포함하는 식 포함하는 변수의 차수가 1 일 때, 일차방적식 또는 선형방정식이라 한다. 정의 : 일차방정식(linear equation) / 선형방정식 $a_{1}, a_{2} \\cdots a_{n} \\quad, b$ 가 실수일 때, 다음과 같이 표현되는...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-11/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 함수(Function) : 01.함수의 개념",
+        "excerpt":"함수의 개념 정의 : 함수(function : $f : A \\rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \\rightarrow B$ 에...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-12/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 함수(Function) : 02.함수의 성질",
+        "excerpt":"함수의 성질 함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다. 함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다. 단사함수, 일대일 함수 (injective function, injection, one-to-one function) 정의 함수 $f : X \\rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \\in X$ 에 대하여 $x_{1}...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-13/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 함수(Function) : 03.합성 함수",
+        "excerpt":"합성함수 (composite function : $g \\circ f$) 최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수 정의 두 함수 $f: A \\rightarrow B$ 와 $g: B \\rightarrow C$ 가 있을 때, 집합 $A$ 의 각 원소를 집합 $C$ 의 원소에 대응하는 함수 $g...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-14/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 함수(Function) : 04.함수의 종류",
+        "excerpt":"함수의 종류 항등함수 (identity function : $I_{A}$) 정의 집합 $A$ 에 대한 함수 $f: A \\rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계 항등함수의 조건 항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다. 예시 역함수 (inverse function : $f^{-1}$) 정의 전단사함수 $f: A \\rightarrow B$ 에 대해...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-15/",
         "teaser": null
       }]
