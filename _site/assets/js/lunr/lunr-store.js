@@ -166,4 +166,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-17/",
         "teaser": null
+      },{
+        "title": "[이산수학] 그래프(Graph) : 03.그래프의 표현",
+        "excerpt":"그래프의 표현 지금까지 그래프는 수학적 기호와 그림으로 표현했지만, 그래프를 이용한 연산이나 데이터의 구조를 나타내기 위해 행렬이나 리스트 형태로 표현하기도 한다. 인접행렬 정의 : 인접행렬 (adjacency matrix : $A_{G}$) 그래프 $G = (V, E)$ 에서 |$V$| $= n$ 일 때, $n \\times n$ 행렬 $A_{G} = [a_{ij}]$ $a_{ij} = \\begin{cases} 해당\\...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-18/",
+        "teaser": null
       }]

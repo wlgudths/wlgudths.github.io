@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-27T01:06:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 그래프(Graph) : 02.그래프의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-17/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 02.그래프의 종류" /><published>2024-01-23T00:00:00+09:00</published><updated>2024-01-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-17</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-17/"><![CDATA[<h1 id="그래프의-종류">그래프의 종류</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-27T01:36:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 그래프(Graph) : 03.그래프의 표현</title><link href="http://localhost:4000/discrete%20mathematics/DM-18/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 03.그래프의 표현" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-18</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-18/"><![CDATA[<h1 id="그래프의-표현">그래프의 표현</h1>
+
+<ul>
+  <li>지금까지 그래프는 수학적 기호와 그림으로 표현했지만, 그래프를 이용한 연산이나 데이터의 구조를 나타내기 위해 행렬이나 리스트 형태로 표현하기도 한다.</li>
+</ul>
+
+<h1 id="인접행렬">인접행렬</h1>
+
+<h2 id="정의--인접행렬-adjacency-matrix--a_g">정의 : 인접행렬 (adjacency matrix : $A_{G}$)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에서 |$V$| $= n$ 일 때, $n \times n$ 행렬 $A_{G} = [a_{ij}]$</p>
+</blockquote>
+
+<ul>
+  <li>$a_{ij} = 
+\begin{cases}
+해당\ 정점에\ 근접하는\ 변의\ 수, (v_{i}, v_{j}) \in E\\<br />
+\qquad \qquad \quad 0, \qquad \quad \quad \quad \quad \quad \ (v_{i}, v_{j}) \notin E
+\end{cases}$</li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>그래프의 인접행렬 표기</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_18_01.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_02.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_03.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $C$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_04.png" /></p>
+  </li>
+</ul>
+
+<h1 id="인접리스트">인접리스트</h1>
+
+<h2 id="정의--인접리스트-adjacency-list">정의 : 인접리스트 (adjacency list)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에 포함되는 각 정점에 인접하는 정점들을 연결리스트로 표현한 것</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>그래프의 인접리스트 표기</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_18_05.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_06.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_07.png" /></p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 02.그래프의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-17/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 02.그래프의 종류" /><published>2024-01-23T00:00:00+09:00</published><updated>2024-01-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-17</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-17/"><![CDATA[<h1 id="그래프의-종류">그래프의 종류</h1>
 
 <ul>
   <li>그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.</li>
@@ -548,7 +623,210 @@ $d(out)(e) = 2, \quad d(in)(e) = 1$
 
 <ul>
   <li>그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 변(edge)의 집합 $E$ 로 구성된 구조 $G = (V, E)$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $ $1 \le i, j \le n$ 정점 $v_{i}$ 와 $v_{j}$ 는 서로 인접(adjacent) 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다. 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 근접(incident) 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다. 예시 위 정의에서 사용한 기호 표현의 의미는 다음과 같다. $G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$ $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$ $\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍 위 그래프를 수학적 기호로 표현하면 다음과 같다. 그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다. 집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다. 집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다. $e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$ 루프 (loop) 위 그림 변 $e_{3}$ 과 같은 변을 루프(loop) 라고 한다. 루프는 하나의 정점에만 인접하는 변이다. 그래프의 형태 정의 : 단순 그래프 (simple graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프 정의 : 다중 그래프 (multi-graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프 정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$) 그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프 $G = &lt;V, E&gt;$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $ $1 \le i, j \le n$ 정의 : 가중치 그래프 (weighted graph) 그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프 $W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기 그래프의 차수 그래프는 정점과 변으로 구성된다. 그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다. 정의 : 차수 (degree : $d(v)$) 정점 v 에 근접하는 변의 개수 방향 그래프에 대하여, 외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수 내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수 예시 다음 그림의 외차수, 내차수를 구해보자. 정답 $d(out)(a) = 1, \quad d(in)(a) = 0$ $d(out)(b) = 2, \quad d(in)(b) = 1$ $d(out)(c) = 1, \quad d(in)(c) = 2$ $d(out)(d) = 1, \quad d(in)(d) = 3$ $d(out)(e) = 2, \quad d(in)(e) = 1$ 정리 : 차수에 대한 정리 그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다. $\sum_{v \in V}{d(v)} = $$2$|$E$| 그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 03.합성 함수</title><link href="http://localhost:4000/discrete%20mathematics/DM-14/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 03.합성 함수" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-14</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-14/"><![CDATA[<h1 id="합성함수-composite-function--g-circ-f">합성함수 (composite function : $g \circ f$)</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 변(edge)의 집합 $E$ 로 구성된 구조 $G = (V, E)$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $ $1 \le i, j \le n$ 정점 $v_{i}$ 와 $v_{j}$ 는 서로 인접(adjacent) 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다. 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 근접(incident) 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다. 예시 위 정의에서 사용한 기호 표현의 의미는 다음과 같다. $G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$ $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$ $\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍 위 그래프를 수학적 기호로 표현하면 다음과 같다. 그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다. 집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다. 집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다. $e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$ 루프 (loop) 위 그림 변 $e_{3}$ 과 같은 변을 루프(loop) 라고 한다. 루프는 하나의 정점에만 인접하는 변이다. 그래프의 형태 정의 : 단순 그래프 (simple graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프 정의 : 다중 그래프 (multi-graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프 정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$) 그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프 $G = &lt;V, E&gt;$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $ $1 \le i, j \le n$ 정의 : 가중치 그래프 (weighted graph) 그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프 $W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기 그래프의 차수 그래프는 정점과 변으로 구성된다. 그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다. 정의 : 차수 (degree : $d(v)$) 정점 v 에 근접하는 변의 개수 방향 그래프에 대하여, 외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수 내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수 예시 다음 그림의 외차수, 내차수를 구해보자. 정답 $d(out)(a) = 1, \quad d(in)(a) = 0$ $d(out)(b) = 2, \quad d(in)(b) = 1$ $d(out)(c) = 1, \quad d(in)(c) = 2$ $d(out)(d) = 1, \quad d(in)(d) = 3$ $d(out)(e) = 2, \quad d(in)(e) = 1$ 정리 : 차수에 대한 정리 그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다. $\sum_{v \in V}{d(v)} = $$2$|$E$| 그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
+
+<h1 id="항등함수-identity-function--i_a">항등함수 (identity function : $I_{A}$)</h1>
+
+<h2 id="정의">정의</h2>
+
+<blockquote>
+  <p>집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계</p>
+</blockquote>
+
+<h2 id="항등함수의-조건">항등함수의 조건</h2>
+
+<blockquote>
+  <p>항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다.</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_01.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="역함수-inverse-function--f-1">역함수 (inverse function : $f^{-1}$)</h1>
+
+<h2 id="정의-1">정의</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계</p>
+</blockquote>
+
+<blockquote>
+  <p>$a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 )</p>
+</blockquote>
+
+<ul>
+  <li>가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수
+<br /></li>
+</ul>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>
+    <p>전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다.</p>
+  </li>
+  <li>
+    <p>$f : ${$1,2,3$} $\rightarrow$ {$a,b,c$}
+<br /></p>
+  </li>
+  <li>
+    <p>$f = ${$(1,a), (2,b), (3,c)$}</p>
+
+    <ul>
+      <li>함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다.</li>
+      <li>$f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>$f^{-1} =$ {$(a,1), (b,2), (c,3)$}</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="항등함수와-역함수의-관계">항등함수와 역함수의 관계</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$f^{-1} \circ f = I_{A}$
+<br /></p>
+  </li>
+  <li>
+    <p>$f \circ f^{-1} = I_{B}$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="합성함수의-역함수">합성함수의 역함수</h2>
+
+<blockquote>
+  <p>전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다.</p>
+</blockquote>
+
+<ul>
+  <li>$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="상수함수-constant-function">상수함수 (constant function)</h1>
+
+<h2 id="정의-2">정의</h2>
+
+<blockquote>
+  <p>함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계</p>
+</blockquote>
+
+<ul>
+  <li>$\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_02.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="특성함수-characteristic-fuction--f_a">특성함수 (characteristic fuction : $f_{A}$)</h1>
+
+<ul>
+  <li>
+    <p>관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수</p>
+  </li>
+  <li>
+    <p>조건에 맞는 원소이면 1, 아니면 0으로 출력</p>
+  </li>
+  <li>
+    <p>특성함수의 공역은 두 개의 원소 1과 0으로 구성</p>
+  </li>
+</ul>
+
+<h2 id="정의-3">정의</h2>
+
+<blockquote>
+  <p>전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$f_{A}(x) = 
+\begin{cases}
+1, \ x \in A 일 \ 때 \\<br />
+0, \ x \notin A 일 \ 때
+\end{cases}$</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h1 id="바닥함수와-천장함수">바닥함수와 천장함수</h1>
+
+<h2 id="바닥함수-floor-function---x--최대정수함수greatest-integer-function">바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function)</h2>
+
+<blockquote>
+  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$\lfloor\ x \ \rfloor = n  \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$</li>
+</ul>
+
+<h3 id="예시-3">예시</h3>
+
+<ul>
+  <li>
+    <p>$\lfloor \ -3.54 \ \rfloor$</p>
+
+    <ul>
+      <li>$-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>바닥함수 그래프</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_03.png" /></p>
+
+<p><br /></p>
+
+<h2 id="천장함수-ceiling-function---x---최소정수함수least-interger-function">천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function)</h2>
+
+<blockquote>
+  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수</p>
+</blockquote>
+
+<ul>
+  <li>$\lceil\ x \ \rceil = n  \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$</li>
+</ul>
+
+<h3 id="예시-4">예시</h3>
+
+<ul>
+  <li>
+    <p>$\lceil \ -3.54 \ \rceil$</p>
+
+    <ul>
+      <li>$-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>천장함수</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_15_04.png" /></p>
+
+<p><br /><br /><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 종류 항등함수 (identity function : $I_{A}$) 정의 집합 $A$ 에 대한 함수 $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계 항등함수의 조건 항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다. 예시 역함수 (inverse function : $f^{-1}$) 정의 전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계 $a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 ) 가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수 예시 전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다. $f : ${$1,2,3$} $\rightarrow$ {$a,b,c$} $f = ${$(1,a), (2,b), (3,c)$} 함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다. $f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다. $f^{-1} =$ {$(a,1), (b,2), (c,3)$} 항등함수와 역함수의 관계 전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다. $f^{-1} \circ f = I_{A}$ $f \circ f^{-1} = I_{B}$ 합성함수의 역함수 전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다. $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ 상수함수 (constant function) 정의 함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계 $\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$ 예시 특성함수 (characteristic fuction : $f_{A}$) 관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수 조건에 맞는 원소이면 1, 아니면 0으로 출력 특성함수의 공역은 두 개의 원소 1과 0으로 구성 정의 전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수 $f_{A}(x) = \begin{cases} 1, \ x \in A 일 \ 때 \\ 0, \ x \notin A 일 \ 때 \end{cases}$ 바닥함수와 천장함수 바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수 $\lfloor\ x \ \rfloor = n \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$ 예시 $\lfloor \ -3.54 \ \rfloor$ $-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다. 바닥함수 그래프 천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수 $\lceil\ x \ \rceil = n \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$ 예시 $\lceil \ -3.54 \ \rceil$ $-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다. 천장함수]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 03.합성 함수</title><link href="http://localhost:4000/discrete%20mathematics/DM-14/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 03.합성 함수" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-14</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-14/"><![CDATA[<h1 id="합성함수-composite-function--g-circ-f">합성함수 (composite function : $g \circ f$)</h1>
 
 <blockquote>
   <p>최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수</p>
@@ -853,210 +1131,7 @@ $d(out)(e) = 2, \quad d(in)(e) = 1$
   <li>정의역 : $dom(f) = A$</li>
   <li>공역 : $codom(f) = B$</li>
   <li>치역 : {$1, 2$}</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 개념 정의 : 함수(function : $f : A \rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여, 원상 (preimage) 집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$ 상 (image) 집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$ 정의역 (domain, $dom(f)$) 원상의 집합, 집합 $A$ 공역 (codomain, $codom(f)$) 상이 포함된 집합, 집합 $B$ 치역 (range, $ran(f)$) 상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$ {$f(a) | a \in A$} 관계와 함수의 차이 집합 $A$ 에서 집합 $B$ 로의 관계 집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다. 집합 $A$ 에서 집합 $B$ 로의 함수 집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다. 예시 집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다. $f =$ {$(a, 1), (b, 1), (c, 2)$} 관계 $f$ 에 포함된 순서쌍 순서쌍에 대한 식 표현 원상 상 $f(a) = 1$ a 2 $f(b) = 1$ b 1 $f(c) = 2$ c 2 원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다. 상은 $f$ 의 공역인 집합 $B$ 의 원소이다. 집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다. 정의역 : $dom(f) = A$ 공역 : $codom(f) = B$ 치역 : {$1, 2$}]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
-
-<h1 id="항등함수-identity-function--i_a">항등함수 (identity function : $I_{A}$)</h1>
-
-<h2 id="정의">정의</h2>
-
-<blockquote>
-  <p>집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계</p>
-</blockquote>
-
-<h2 id="항등함수의-조건">항등함수의 조건</h2>
-
-<blockquote>
-  <p>항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다.</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_01.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="역함수-inverse-function--f-1">역함수 (inverse function : $f^{-1}$)</h1>
-
-<h2 id="정의-1">정의</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계</p>
-</blockquote>
-
-<blockquote>
-  <p>$a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 )</p>
-</blockquote>
-
-<ul>
-  <li>가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수
-<br /></li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>
-    <p>전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다.</p>
-  </li>
-  <li>
-    <p>$f : ${$1,2,3$} $\rightarrow$ {$a,b,c$}
-<br /></p>
-  </li>
-  <li>
-    <p>$f = ${$(1,a), (2,b), (3,c)$}</p>
-
-    <ul>
-      <li>함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다.</li>
-      <li>$f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>$f^{-1} =$ {$(a,1), (b,2), (c,3)$}</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="항등함수와-역함수의-관계">항등함수와 역함수의 관계</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다.</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$f^{-1} \circ f = I_{A}$
-<br /></p>
-  </li>
-  <li>
-    <p>$f \circ f^{-1} = I_{B}$</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="합성함수의-역함수">합성함수의 역함수</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다.</p>
-</blockquote>
-
-<ul>
-  <li>$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="상수함수-constant-function">상수함수 (constant function)</h1>
-
-<h2 id="정의-2">정의</h2>
-
-<blockquote>
-  <p>함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계</p>
-</blockquote>
-
-<ul>
-  <li>$\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_02.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="특성함수-characteristic-fuction--f_a">특성함수 (characteristic fuction : $f_{A}$)</h1>
-
-<ul>
-  <li>
-    <p>관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수</p>
-  </li>
-  <li>
-    <p>조건에 맞는 원소이면 1, 아니면 0으로 출력</p>
-  </li>
-  <li>
-    <p>특성함수의 공역은 두 개의 원소 1과 0으로 구성</p>
-  </li>
-</ul>
-
-<h2 id="정의-3">정의</h2>
-
-<blockquote>
-  <p>전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$f_{A}(x) = 
-\begin{cases}
-1, \ x \in A 일 \ 때 \\<br />
-0, \ x \notin A 일 \ 때
-\end{cases}$</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="바닥함수와-천장함수">바닥함수와 천장함수</h1>
-
-<h2 id="바닥함수-floor-function---x--최대정수함수greatest-integer-function">바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function)</h2>
-
-<blockquote>
-  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$\lfloor\ x \ \rfloor = n  \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$</li>
-</ul>
-
-<h3 id="예시-3">예시</h3>
-
-<ul>
-  <li>
-    <p>$\lfloor \ -3.54 \ \rfloor$</p>
-
-    <ul>
-      <li>$-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>바닥함수 그래프</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_03.png" /></p>
-
-<p><br /></p>
-
-<h2 id="천장함수-ceiling-function---x---최소정수함수least-interger-function">천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function)</h2>
-
-<blockquote>
-  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$\lceil\ x \ \rceil = n  \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$</li>
-</ul>
-
-<h3 id="예시-4">예시</h3>
-
-<ul>
-  <li>
-    <p>$\lceil \ -3.54 \ \rceil$</p>
-
-    <ul>
-      <li>$-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>천장함수</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_04.png" /></p>
-
-<p><br /><br /><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 종류 항등함수 (identity function : $I_{A}$) 정의 집합 $A$ 에 대한 함수 $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계 항등함수의 조건 항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다. 예시 역함수 (inverse function : $f^{-1}$) 정의 전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계 $a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 ) 가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수 예시 전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다. $f : ${$1,2,3$} $\rightarrow$ {$a,b,c$} $f = ${$(1,a), (2,b), (3,c)$} 함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다. $f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다. $f^{-1} =$ {$(a,1), (b,2), (c,3)$} 항등함수와 역함수의 관계 전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다. $f^{-1} \circ f = I_{A}$ $f \circ f^{-1} = I_{B}$ 합성함수의 역함수 전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다. $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ 상수함수 (constant function) 정의 함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계 $\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$ 예시 특성함수 (characteristic fuction : $f_{A}$) 관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수 조건에 맞는 원소이면 1, 아니면 0으로 출력 특성함수의 공역은 두 개의 원소 1과 0으로 구성 정의 전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수 $f_{A}(x) = \begin{cases} 1, \ x \in A 일 \ 때 \\ 0, \ x \notin A 일 \ 때 \end{cases}$ 바닥함수와 천장함수 바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수 $\lfloor\ x \ \rfloor = n \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$ 예시 $\lfloor \ -3.54 \ \rfloor$ $-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다. 바닥함수 그래프 천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수 $\lceil\ x \ \rceil = n \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$ 예시 $\lceil \ -3.54 \ \rceil$ $-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다. 천장함수]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식</title><link href="http://localhost:4000/discrete%20mathematics/DM-11/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식" /><published>2023-12-15T00:00:00+09:00</published><updated>2023-12-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-11</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-11/"><![CDATA[<h1 id="행렬과-연립일차방정식">행렬과 연립일차방정식</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 개념 정의 : 함수(function : $f : A \rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여, 원상 (preimage) 집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$ 상 (image) 집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$ 정의역 (domain, $dom(f)$) 원상의 집합, 집합 $A$ 공역 (codomain, $codom(f)$) 상이 포함된 집합, 집합 $B$ 치역 (range, $ran(f)$) 상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$ {$f(a) | a \in A$} 관계와 함수의 차이 집합 $A$ 에서 집합 $B$ 로의 관계 집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다. 집합 $A$ 에서 집합 $B$ 로의 함수 집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다. 예시 집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다. $f =$ {$(a, 1), (b, 1), (c, 2)$} 관계 $f$ 에 포함된 순서쌍 순서쌍에 대한 식 표현 원상 상 $f(a) = 1$ a 2 $f(b) = 1$ b 1 $f(c) = 2$ c 2 원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다. 상은 $f$ 의 공역인 집합 $B$ 의 원소이다. 집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다. 정의역 : $dom(f) = A$ 공역 : $codom(f) = B$ 치역 : {$1, 2$}]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식</title><link href="http://localhost:4000/discrete%20mathematics/DM-11/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식" /><published>2023-12-15T00:00:00+09:00</published><updated>2023-12-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-11</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-11/"><![CDATA[<h1 id="행렬과-연립일차방정식">행렬과 연립일차방정식</h1>
 
 <blockquote>
   <p>행렬은 연립일차방정식을 풀기 위한 방법을 연구하면서 나온 개념이다.</p>
@@ -1829,357 +1904,4 @@ $\begin{bmatrix}
 <h1 id="참고-문헌">참고 문헌</h1>
 <ul>
   <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p220 ~ p230</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬식]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 03.행렬의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-08/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 03.행렬의 종류" /><published>2023-11-27T00:00:00+09:00</published><updated>2023-11-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-08</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-08/"><![CDATA[<h1 id="행렬의-종류">행렬의 종류</h1>
-
-<ul>
-  <li>행렬의 형태 혹은 구성 원소에 따라 다양한 종류의 행렬로 나눌 수 있다.</li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<h1 id="대각행렬-diagonal-matrix">대각행렬 (diagonal matrix)</h1>
-
-<h2 id="정의">정의</h2>
-<blockquote>
-  <p>$n$ 차 정사각행렬에서 주대각 원소 $a_{11}, a_{22}, \cdots, a_{nn}$ 을 제외한 나머지 원소가 모두 0 인 행렬</p>
-</blockquote>
-
-<ul>
-  <li>$A =$
-$\begin{bmatrix}
-a_{11} &amp; 0 &amp; \cdots &amp; 0 \\<br />
-0 &amp; a_{22} &amp; \cdots &amp; 0 \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
-0 &amp; 0 &amp; \cdots &amp; a_{nn}
-\end{bmatrix}$</li>
-</ul>
-
-<h3 id="예시">예시</h3>
-<ul>
-  <li>
-    <p>다음 행렬 $A,B$ 가 있다.</p>
-  </li>
-  <li>
-    <p>$A =$
-$\begin{bmatrix}
-1 &amp; 2 &amp; 3 \\<br />
-4 &amp; 5 &amp; 6
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$B =$
-$\begin{bmatrix}
-1 &amp; 0 &amp; 0 \\<br />
-0 &amp; 2 &amp; 0 \\<br />
-0 &amp; 0 &amp; 3
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>행렬 $A$ 는 정사각행렬이 아니다. 즉, 행과 열의 크기가 같지 않으므로 대각행렬이 아니다.</p>
-  </li>
-  <li>
-    <p>반면, 행렬 $B$ 는 정사각행렬이고, 주대각 원소 $1, 2, 3$ 을 제외한 원소가 0이므로 대각행렬이다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="전치행렬-transpose-matrix--at">전치행렬 (transpose matrix : $A^T$)</h1>
-
-<h2 id="정의-1">정의</h2>
-
-<blockquote>
-  <p>$m \times n$ 행렬 $A = [a_{ij}]$ 의 행과 열의 위치를 바꾼 $n \times m$ 행렬</p>
-</blockquote>
-
-<ul>
-  <li>$A = $
-$\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
-a_{m1} a_{m2} &amp; \cdots &amp; a_{mn}
-\end{bmatrix} A^T = $
-$\begin{bmatrix}
-a_{11} &amp; a_{21} &amp; \cdots &amp; a_{m1} \\<br />
-a_{12} &amp; a_{22} &amp; \cdots &amp; a_{m2} \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
-a_{1n} &amp; a_{2n} &amp; \cdots &amp; a_{nm}
-\end{bmatrix}$</li>
-</ul>
-
-<h2 id="예시-1">예시</h2>
-
-<ul>
-  <li>
-    <p>다음 행렬 $A$ 가 있다.</p>
-  </li>
-  <li>
-    <p>$A =$
-$\begin{bmatrix}
-1 &amp; 2 &amp; 3 \\<br />
-4 &amp; 5 &amp; 6
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$A^T =$
-$\begin{bmatrix}
-1 &amp; 4 \\ 
-2 &amp; 5 \\ 
-3 &amp; 6
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>전치행렬은 행의 원소와 열의 원소의 위치를 바꾼 행렬로 정사각행렬이 아니어도 전치행렬을 구할 수 있다.</p>
-  </li>
-</ul>
-
-<h1 id="대칭행렬-symmetric-matrix">대칭행렬 (symmetric matrix)</h1>
-
-<h2 id="정의-2">정의</h2>
-
-<blockquote>
-  <p>$n$ 차 정사각행렬 $A = [a_{ij}]$ 가 있을 때, $A^T = A$ 인 행렬</p>
-</blockquote>
-
-<h2 id="예시-2">예시</h2>
-
-<ul>
-  <li>
-    <p>$A = A^T$</p>
-  </li>
-  <li>
-    <p>$\begin{bmatrix}
-  8 &amp; 1 &amp; 4 \\<br />
-  1 &amp; 3 &amp; 7 \\<br />
-  4 &amp; 7 &amp; 6
-  \end{bmatrix} =  $
-  $\begin{bmatrix}
-  8 &amp; 1 &amp; 4 \\<br />
-  1 &amp; 3 &amp; 7 \\<br />
-  4 &amp; 7 &amp; 6
-  \end{bmatrix}$</p>
-  </li>
-  <li>대칭행렬의 경우 원래 행렬과 전치행렬이 같은 형태</li>
-  <li>정사각행렬인 경우에만 만들어질 수 있다.</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="부울행렬-boolean-matrix">부울행렬 (Boolean matrix)</h1>
-
-<h2 id="정의-3">정의</h2>
-<blockquote>
-  <p>행렬의 모든 원소가 부울값 <strong>0</strong>과 <strong>1</strong>로만 구성된 행렬</p>
-</blockquote>
-
-<h2 id="부울행렬-연산자">부울행렬 연산자</h2>
-
-<ul>
-  <li>부울행렬 $A = [a_{ij}]$ 와 $B = [b_{ij}]$ 에 대하여 다음이 성립한다.</li>
-</ul>
-
-<ol>
-  <li>
-    <p>합(join) : $A \lor B = [a_{ij} \lor b_{ij}]$</p>
-  </li>
-  <li>
-    <p>교차(meet) : $A \land B = [a_{ij} \land b_{ij}]$</p>
-  </li>
-  <li>
-    <p>부울곱(Boolean product) : $A \odot B$</p>
-
-    <ul>
-      <li>
-        <p>$m \times n$ 부울행렬 $A = [a_{ij}]$ 와 $n \times r$ 부울행렬 $B = [b_{ij}]$ 의 부울곱 결과는 $m \times r $ 부울행렬 $A \odot B = [c_{ij}]$</p>
-      </li>
-      <li>
-        <p>$A \odot B = $
- $\begin{bmatrix}
- a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
- a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
- \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
- a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
- \end{bmatrix} \times $
- $\begin{bmatrix}
- b_{11} &amp; b_{12} &amp; \cdots &amp; b_{1r} \\<br />
- b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2r} \\<br />
- \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
- b_{n1} &amp; b_{n2} &amp; \cdots &amp; b_{nr}
- \end{bmatrix} = $
- $\begin{bmatrix}
- c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1r} \\<br />
- c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2r} \\<br />
- \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
- c_{m1} &amp; c_{m2} &amp; \cdots &amp; c_{mr}
- \end{bmatrix}$</p>
-      </li>
-    </ul>
-
-    <p>$(c_{ij} = (a_{i1} \land b_{1j}) \lor (a_{i2}\land b_{2j}) \lor \cdots \lor (a_{im} \land b_{mj}))$</p>
-  </li>
-</ol>
-
-<h3 id="합-연산">합 연산</h3>
-<blockquote>
-  <p>행렬 $A$ 의 원소 $a_{ij}$ 와 행렬 $B$ 의 원소 $b_{ij}$ 중 하나라도 1 이면 1 이고 그 외의 경우는 0 이다.</p>
-</blockquote>
-
-<ul>
-  <li>행렬의 연산의 덧셈, 뺄셈 연산처럼 행렬의 크기가 같아야한다.</li>
-</ul>
-
-<h4 id="예시-3">예시</h4>
-
-<ul>
-  <li>
-    <p>다음 부울행렬 $A, B$ 가 있다.</p>
-  </li>
-  <li>
-    <p>$A = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} , B = $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$A \lor B = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} \lor $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 \lor 1 &amp; 0 \lor 1 \\<br />
-0 \lor 0 &amp; 1 \lor 0
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 1
-\end{bmatrix}$</p>
-  </li>
-</ul>
-
-<h3 id="교차-연산">교차 연산</h3>
-<blockquote>
-  <p>행렬 $A$ 의 원소 $a_{ij}$ 와 행렬 $B$ 의 원소 $b_{ij}$ 가 모두 1 인 경우에만 1 이고 그 외의 경우는 0 이다.</p>
-</blockquote>
-
-<ul>
-  <li>행렬의 연산의 덧셈, 뺄셈 연산처럼 행렬의 크기가 같아야한다.</li>
-</ul>
-
-<h4 id="예시-4">예시</h4>
-
-<ul>
-  <li>
-    <p>다음 부울행렬 $A, B$ 가 있다.</p>
-  </li>
-  <li>
-    <p>$A = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} , B = $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$A \land B = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} \land $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 \land 1 &amp; 0 \land 1 \\<br />
-0 \land 0 &amp; 1 \land 0
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 0
-\end{bmatrix}$</p>
-  </li>
-</ul>
-
-<h3 id="부울곱-연산">부울곱 연산</h3>
-
-<ul>
-  <li>행렬의 곱셈처럼 부울행렬의 크기가 $(m \times n) \times (n \times r)$ 을 성립해야 한다.</li>
-</ul>
-
-<h4 id="예시-5">예시</h4>
-
-<ul>
-  <li>
-    <p>다음 부울행렬 $A, B$ 가 있다.</p>
-  </li>
-  <li>
-    <p>$A = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} , B = $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$A \odot B = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix} \odot $
-$\begin{bmatrix}
-1 &amp; 1 \\<br />
-0 &amp; 0
-\end{bmatrix} = $
-$\begin{bmatrix}
-(1 \land 1) \lor (0 \land 0) &amp; (1 \land 1) \lor (0 \land 0) \\ 
-(0 \land 1) \lor (1 \land 0) &amp; (0 \land 1) \lor (1 \land 0)
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 &amp; 1 \\ 
-0 &amp; 0
-\end{bmatrix}$</p>
-  </li>
-</ul>
-
-<h2 id="부울행렬-연산의-특징">부울행렬 연산의 특징</h2>
-
-<blockquote>
-  <p>부울행렬 $A,B,C$ 에 대하여 다음이 성립한다.</p>
-</blockquote>
-
-<ol>
-  <li>$A \lor A = A$</li>
-  <li>$A \land A = A$</li>
-  <li>$A \lor B = B \lor A$</li>
-  <li>$A \land B = B \land A$</li>
-  <li>$(A \lor B) \lor C = A \lor (B \lor C)$</li>
-  <li>$(A \land B) \land C = A \land (B \land C)$</li>
-  <li>$(A \odot B) \odot C = A \odot (B \odot C)$</li>
-  <li>$(A \lor B) \land C = (A \land C) \lor (B \land C)$</li>
-  <li>$(A \land B) \land C = (A \lor C) \land (B \lor C)$</li>
-</ol>
-
-<hr />
-
-<h1 id="참고-문헌">참고 문헌</h1>
-<ul>
-  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p214 ~ p219</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬의 종류]]></summary></entry></feed>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬식]]></summary></entry></feed>
