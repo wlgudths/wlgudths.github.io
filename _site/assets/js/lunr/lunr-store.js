@@ -154,4 +154,16 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-15/",
         "teaser": null
+      },{
+        "title": "[이산수학] 그래프(Graph) : 01.그래프의 개념",
+        "excerpt":"그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-16/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 그래프(Graph) : 02.그래프의 종류",
+        "excerpt":"그래프의 종류 그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다. 부분그래프와 신장부분그래프 정의 : 부분그래프 (subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ \\subseteq V$ 이고 $E’ \\subseteq E$ 인 정점과 변으로 구성된 $G \\ne G’$ 인 그래프 $G’ = (V’, E’)$ 정의 : 신장부분그래프 (spanning subgraph) 그래프 $G...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-17/",
+        "teaser": null
       }]

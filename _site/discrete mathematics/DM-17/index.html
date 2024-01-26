@@ -1,0 +1,1130 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 그래프(Graph) : 02.그래프의 종류 | 느려도 괜찮아</title>
+<meta name="description" content="그래프의 종류     그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.   부분그래프와 신장부분그래프  정의 : 부분그래프 (subgraph)     그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$   정의 : 신장부분그래프 (spanning subgraph)     그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$   예시          다음 그래프 $G$ 가 다음과 같다.      $G = (V, E)$   $V = ${$A, B, C, D$}   $E = ${$(A, B), (A, D), (B, C), (B, D)$}           그래프 $G$              $G$ 의 부분그래프              $G$ 의 신장부분그래프         정의 : 동형그래프 (isomorphic graph)     그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$   예시     동형그래프인 예와 아닌 예             그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다.                      $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                       $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                       $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$}                       그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다.                      $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$                       $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$                       그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다.           그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다.      연결그래프  정의 : 연결그래프 (connecteed graph)     그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프   정의 : 경로 (path)     그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길      길 (walk)      그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열      $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$   $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$   예시     연결그래프인 예와 아닌 예        그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다.            $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다.            그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다.            그래프 $B$ 는 연결그래프가 아니다.             평면그래프  정의 : 평면그래프(planar graph)     연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프   예시     평면그래프인 예와 아닌 예             그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다.           그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다.           그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다.      정리 : 오일러 공식 (Euler’s formula)     평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다.      $v - e + s = 2$   정규그래프와 완전그래프  정의 : 정규그래프 (regular graph : $k-$정규그래프)     그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프      $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$   정의 : 완전그래프 (complete graph : $K_{n}$)     그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프      |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$   예시     정규그래프와 완전그래프 예             두 그래프 모두 정규그래프이다.           두 그래프의 정점의 차수를 구하면 다음과 같다.                      그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$                       그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$                       그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다.           그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다.                특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다.           그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다.           그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다.      이분그래프와 완전이분그래프  정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))     그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프   정의 : 이분그래프(bipartite graph)     그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프   예시     이분그래프, 완전이분그래프인 예와 아닌 예             그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다.           완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다.      $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$       그래프 $A$              정점 $a$ $\rightarrow$ $b, d ,f$       정점 $c$ $\rightarrow$ $b, d, f$                정점 $d$ $\rightarrow$ $b, d, f$                       $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다.              그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다.               그래프 $B$              정점 $a$ $\rightarrow$ $d ,f$       정점 $c$ $\rightarrow$ $b, d$                정점 $d$ $\rightarrow$ $d, f$                       $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다.              그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다.               그래프 $C$                       정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다.                       따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 그래프(Graph) : 02.그래프의 종류">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-17/">
+
+
+  <meta property="og:description" content="그래프의 종류     그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.   부분그래프와 신장부분그래프  정의 : 부분그래프 (subgraph)     그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$   정의 : 신장부분그래프 (spanning subgraph)     그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$   예시          다음 그래프 $G$ 가 다음과 같다.      $G = (V, E)$   $V = ${$A, B, C, D$}   $E = ${$(A, B), (A, D), (B, C), (B, D)$}           그래프 $G$              $G$ 의 부분그래프              $G$ 의 신장부분그래프         정의 : 동형그래프 (isomorphic graph)     그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$   예시     동형그래프인 예와 아닌 예             그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다.                      $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                       $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                       $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$}                       그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다.                      $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$                       $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$                       그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다.           그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다.      연결그래프  정의 : 연결그래프 (connecteed graph)     그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프   정의 : 경로 (path)     그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길      길 (walk)      그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열      $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$   $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$   예시     연결그래프인 예와 아닌 예        그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다.            $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다.            그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다.            그래프 $B$ 는 연결그래프가 아니다.             평면그래프  정의 : 평면그래프(planar graph)     연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프   예시     평면그래프인 예와 아닌 예             그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다.           그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다.           그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다.      정리 : 오일러 공식 (Euler’s formula)     평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다.      $v - e + s = 2$   정규그래프와 완전그래프  정의 : 정규그래프 (regular graph : $k-$정규그래프)     그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프      $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$   정의 : 완전그래프 (complete graph : $K_{n}$)     그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프      |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$   예시     정규그래프와 완전그래프 예             두 그래프 모두 정규그래프이다.           두 그래프의 정점의 차수를 구하면 다음과 같다.                      그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$                       그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$                       그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다.           그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다.                특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다.           그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다.           그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다.      이분그래프와 완전이분그래프  정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))     그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프   정의 : 이분그래프(bipartite graph)     그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프   예시     이분그래프, 완전이분그래프인 예와 아닌 예             그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다.           완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다.      $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$       그래프 $A$              정점 $a$ $\rightarrow$ $b, d ,f$       정점 $c$ $\rightarrow$ $b, d, f$                정점 $d$ $\rightarrow$ $b, d, f$                       $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다.              그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다.               그래프 $B$              정점 $a$ $\rightarrow$ $d ,f$       정점 $c$ $\rightarrow$ $b, d$                정점 $d$ $\rightarrow$ $d, f$                       $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다.              그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다.               그래프 $C$                       정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다.                       따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-23T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-01-23T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-17/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">28</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (17)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (9)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 그래프(Graph) : 02.그래프의 종류">
+    <meta itemprop="description" content="그래프의 종류  그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.부분그래프와 신장부분그래프정의 : 부분그래프 (subgraph)  그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$정의 : 신장부분그래프 (spanning subgraph)  그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$예시      다음 그래프 $G$ 가 다음과 같다.    $G = (V, E)$  $V = ${$A, B, C, D$}  $E = ${$(A, B), (A, D), (B, C), (B, D)$}        그래프 $G$          $G$ 의 부분그래프          $G$ 의 신장부분그래프    정의 : 동형그래프 (isomorphic graph)  그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$예시  동형그래프인 예와 아닌 예      그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다.                  $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                    $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}                    $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$}                  그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다.                  $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$                    $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$                  그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다.        그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다.  연결그래프정의 : 연결그래프 (connecteed graph)  그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프정의 : 경로 (path)  그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길  길 (walk)  그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열  $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$  $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$예시  연결그래프인 예와 아닌 예  그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다.          $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다.        그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다.          그래프 $B$ 는 연결그래프가 아니다.      평면그래프정의 : 평면그래프(planar graph)  연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프예시  평면그래프인 예와 아닌 예      그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다.        그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다.        그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다.  정리 : 오일러 공식 (Euler’s formula)  평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다.  $v - e + s = 2$정규그래프와 완전그래프정의 : 정규그래프 (regular graph : $k-$정규그래프)  그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프  $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$정의 : 완전그래프 (complete graph : $K_{n}$)  그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프  |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$예시  정규그래프와 완전그래프 예      두 그래프 모두 정규그래프이다.        두 그래프의 정점의 차수를 구하면 다음과 같다.                  그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$                    그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$                  그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다.        그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다.        특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다.        그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다.        그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다.  이분그래프와 완전이분그래프정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))  그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프정의 : 이분그래프(bipartite graph)  그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프예시  이분그래프, 완전이분그래프인 예와 아닌 예      그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다.        완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다.    $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$  그래프 $A$          정점 $a$ $\rightarrow$ $b, d ,f$      정점 $c$ $\rightarrow$ $b, d, f$              정점 $d$ $\rightarrow$ $b, d, f$                    $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다.            그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다.      그래프 $B$          정점 $a$ $\rightarrow$ $d ,f$      정점 $c$ $\rightarrow$ $b, d$              정점 $d$ $\rightarrow$ $d, f$                    $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다.            그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다.      그래프 $C$                  정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다.                    따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.            ">
+    <meta itemprop="datePublished" content="2024-01-23T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-23T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-17/" class="u-url" itemprop="url">[이산수학] 그래프(Graph) : 02.그래프의 종류
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 02_그래프의 종류</h4></header>
+              <ul class="toc__menu"><li><a href="#그래프의-종류">그래프의 종류</a></li><li><a href="#부분그래프와-신장부분그래프">부분그래프와 신장부분그래프</a><ul><li><a href="#정의--부분그래프-subgraph">정의 : 부분그래프 (subgraph)</a></li><li><a href="#정의--신장부분그래프-spanning-subgraph">정의 : 신장부분그래프 (spanning subgraph)</a><ul><li><a href="#예시">예시</a></li></ul></li><li><a href="#정의--동형그래프-isomorphic-graph">정의 : 동형그래프 (isomorphic graph)</a><ul><li><a href="#예시-1">예시</a></li></ul></li></ul></li><li><a href="#연결그래프">연결그래프</a><ul><li><a href="#정의--연결그래프-connecteed-graph">정의 : 연결그래프 (connecteed graph)</a></li><li><a href="#정의--경로-path">정의 : 경로 (path)</a><ul><li><a href="#예시-2">예시</a></li></ul></li></ul></li><li><a href="#평면그래프">평면그래프</a><ul><li><a href="#정의--평면그래프planar-graph">정의 : 평면그래프(planar graph)</a><ul><li><a href="#예시-3">예시</a></li></ul></li><li><a href="#정리--오일러-공식-eulers-formula">정리 : 오일러 공식 (Euler’s formula)</a></li></ul></li><li><a href="#정규그래프와-완전그래프">정규그래프와 완전그래프</a><ul><li><a href="#정의--정규그래프-regular-graph--k-정규그래프">정의 : 정규그래프 (regular graph : $k-$정규그래프)</a></li><li><a href="#정의--완전그래프-complete-graph--k_n">정의 : 완전그래프 (complete graph : $K_{n}$)</a><ul><li><a href="#예시-4">예시</a></li></ul></li></ul></li><li><a href="#이분그래프와-완전이분그래프">이분그래프와 완전이분그래프</a><ul><li><a href="#정의--완전이분그래프complete-bipartite-graph--k_mn--v_1-m-v_2--n">정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))</a></li><li><a href="#정의--이분그래프bipartite-graph">정의 : 이분그래프(bipartite graph)</a><ul><li><a href="#예시-5">예시</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="그래프의-종류">그래프의 종류</h1>
+
+<ul>
+  <li>그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.</li>
+</ul>
+
+<h1 id="부분그래프와-신장부분그래프">부분그래프와 신장부분그래프</h1>
+
+<h2 id="정의--부분그래프-subgraph">정의 : 부분그래프 (subgraph)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$</p>
+</blockquote>
+
+<h2 id="정의--신장부분그래프-spanning-subgraph">정의 : 신장부분그래프 (spanning subgraph)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>다음 그래프 $G$ 가 다음과 같다.</p>
+
+    <p>$G = (V, E)$<br />
+  $V = ${$A, B, C, D$}<br />
+  $E = ${$(A, B), (A, D), (B, C), (B, D)$}</p>
+  </li>
+  <li>
+    <p>그래프 $G$<br />
+  <img src="/assets/images/Math/dm/dm_example_17_01.png" /></p>
+  </li>
+  <li>
+    <p>$G$ 의 부분그래프<br />
+  <img src="/assets/images/Math/dm/dm_example_17_02.png" /></p>
+  </li>
+  <li>
+    <p>$G$ 의 신장부분그래프<br />
+  <img src="/assets/images/Math/dm/dm_example_17_03.png" /></p>
+  </li>
+</ul>
+
+<h2 id="정의--동형그래프-isomorphic-graph">정의 : 동형그래프 (isomorphic graph)</h2>
+
+<blockquote>
+  <p>그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>동형그래프인 예와 아닌 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_17_04.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다.</p>
+
+    <ul>
+      <li>
+        <p>$A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}</p>
+      </li>
+      <li>
+        <p>$B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}</p>
+      </li>
+      <li>
+        <p>$C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$}</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다.</p>
+
+    <ul>
+      <li>
+        <p>$V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$</p>
+      </li>
+      <li>
+        <p>$E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다.</p>
+  </li>
+  <li>
+    <p>그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다.</p>
+  </li>
+</ul>
+
+<h1 id="연결그래프">연결그래프</h1>
+
+<h2 id="정의--연결그래프-connecteed-graph">정의 : 연결그래프 (connecteed graph)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프</p>
+</blockquote>
+
+<h2 id="정의--경로-path">정의 : 경로 (path)</h2>
+
+<blockquote>
+  <p>그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길</p>
+</blockquote>
+
+<ul>
+  <li>길 (walk)</li>
+</ul>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열</p>
+</blockquote>
+
+<ul>
+  <li>$v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$</li>
+  <li>$v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<ul>
+  <li>연결그래프인 예와 아닌 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_17_05.png" /></p>
+
+<ul>
+  <li>그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다.
+    <ul>
+      <li>$a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다.
+<br /></li>
+    </ul>
+  </li>
+  <li>그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다.
+    <ul>
+      <li>그래프 $B$ 는 연결그래프가 아니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="평면그래프">평면그래프</h1>
+
+<h2 id="정의--평면그래프planar-graph">정의 : 평면그래프(planar graph)</h2>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프</p>
+</blockquote>
+
+<h3 id="예시-3">예시</h3>
+
+<ul>
+  <li>평면그래프인 예와 아닌 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_17_06.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다.</p>
+  </li>
+  <li>
+    <p>그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다.</p>
+  </li>
+  <li>
+    <p>그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다.</p>
+  </li>
+</ul>
+
+<h2 id="정리--오일러-공식-eulers-formula">정리 : 오일러 공식 (Euler’s formula)</h2>
+
+<blockquote>
+  <p>평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다.</p>
+</blockquote>
+
+<ul>
+  <li>$v - e + s = 2$</li>
+</ul>
+
+<h1 id="정규그래프와-완전그래프">정규그래프와 완전그래프</h1>
+
+<h2 id="정의--정규그래프-regular-graph--k-정규그래프">정의 : 정규그래프 (regular graph : $k-$정규그래프)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프</p>
+</blockquote>
+
+<ul>
+  <li>$V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$</li>
+</ul>
+
+<h2 id="정의--완전그래프-complete-graph--k_n">정의 : 완전그래프 (complete graph : $K_{n}$)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프</p>
+</blockquote>
+
+<ul>
+  <li>|$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$</li>
+</ul>
+
+<h3 id="예시-4">예시</h3>
+
+<ul>
+  <li>정규그래프와 완전그래프 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_17_07.png" /></p>
+
+<ul>
+  <li>
+    <p>두 그래프 모두 정규그래프이다.</p>
+  </li>
+  <li>
+    <p>두 그래프의 정점의 차수를 구하면 다음과 같다.</p>
+
+    <ul>
+      <li>
+        <p>그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$</p>
+      </li>
+      <li>
+        <p>그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다.</p>
+  </li>
+  <li>
+    <p>그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 <strong>완전그래프</strong>라고한다.</p>
+  </li>
+  <li>
+    <p>그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다.</p>
+  </li>
+  <li>
+    <p>그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다.</p>
+  </li>
+</ul>
+
+<h1 id="이분그래프와-완전이분그래프">이분그래프와 완전이분그래프</h1>
+
+<h2 id="정의--완전이분그래프complete-bipartite-graph--k_mn--v_1-m-v_2--n">정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 <span style="color:red"><strong>모든</strong></span> 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프</p>
+</blockquote>
+
+<h2 id="정의--이분그래프bipartite-graph">정의 : 이분그래프(bipartite graph)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 <span style="color:red"><strong>어떤</strong></span> 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프</p>
+</blockquote>
+
+<h3 id="예시-5">예시</h3>
+
+<ul>
+  <li>이분그래프, 완전이분그래프인 예와 아닌 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_17_08.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다.</p>
+  </li>
+  <li>
+    <p>완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다.</p>
+
+    <p>$V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$</p>
+  </li>
+</ul>
+
+<details>
+<summary>그래프 $A$</summary>
+<div>
+
+    <ul>
+      <li>정점 $a$ $\rightarrow$ $b, d ,f$</li>
+      <li>정점 $c$ $\rightarrow$ $b, d, f$</li>
+      <li>
+        <p>정점 $d$ $\rightarrow$ $b, d, f$</p>
+      </li>
+      <li>
+        <p>$V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다.</p>
+      </li>
+      <li>그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다.</li>
+    </ul>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<details>
+<summary>그래프 $B$</summary>
+<div>
+
+    <ul>
+      <li>정점 $a$ $\rightarrow$ $d ,f$</li>
+      <li>정점 $c$ $\rightarrow$ $b, d$</li>
+      <li>
+        <p>정점 $d$ $\rightarrow$ $d, f$</p>
+      </li>
+      <li>
+        <p>$V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다.</p>
+      </li>
+      <li>그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다.</li>
+    </ul>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<details>
+<summary>그래프 $C$</summary>
+<div>
+
+    <ul>
+      <li>
+        <p>정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다.</p>
+      </li>
+      <li>
+        <p>따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.</p>
+      </li>
+    </ul>
+
+  </div>
+</details>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-23">January 23, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-16/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 그래프(Graph) : 01.그래프의 개념</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-16/" class="pagination--pager" title="[이산수학] 그래프(Graph) : 01.그래프의 개념
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-16/" rel="permalink">[이산수학] 그래프(Graph) : 01.그래프의 개념
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">그래프의 개념
+
+
+  
+    그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다.
+  
+  
+    그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다.
+  
+
+
+
+
+그래프의 정의...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-15/" rel="permalink">[이산수학] 함수(Function) : 04.함수의 종류
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 종류
+
+항등함수 (identity function : $I_{A}$)
+
+정의
+
+
+  집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계
+
+
+항등함수의 조건
+
+
+  항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-14/" rel="permalink">[이산수학] 함수(Function) : 03.합성 함수
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">합성함수 (composite function : $g \circ f$)
+
+
+  최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수
+
+
+정의
+
+
+  두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-13/" rel="permalink">[이산수학] 함수(Function) : 02.함수의 성질
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 성질
+
+
+  함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.
+
+
+
+  함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.
+
+
+단사함수, 일대일 함수 (injective function, injection, one-to-on...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
