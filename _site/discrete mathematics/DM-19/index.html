@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이산수학] 행렬(Matrix) : 05.역행렬 | 느려도 괜찮아</title>
-<meta name="description" content="역행렬">
+<!-- begin _includes/seo.html --><title>[이산수학] 그래프(Graph) : 04.오일러와 해밀턴 | 느려도 괜찮아</title>
+<meta name="description" content="오일러와 해밀턴">
 
 
   <meta name="author" content="지지형">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
-<meta property="og:title" content="[이산수학] 행렬(Matrix) : 05.역행렬">
-<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-10/">
+<meta property="og:title" content="[이산수학] 그래프(Graph) : 04.오일러와 해밀턴">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-19/">
 
 
-  <meta property="og:description" content="역행렬">
-
-
-
+  <meta property="og:description" content="오일러와 해밀턴">
 
 
 
 
-  <meta property="article:published_time" content="2023-12-12T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2023-12-12T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-01-27T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-01-27T00:00:00+09:00">
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-10/">
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-19/">
 
 
 
@@ -361,16 +361,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이산수학] 행렬(Matrix) : 05.역행렬">
-    <meta itemprop="description" content="역행렬">
-    <meta itemprop="datePublished" content="2023-12-12T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2023-12-12T00:00:00+09:00">
+    <meta itemprop="headline" content="[이산수학] 그래프(Graph) : 04.오일러와 해밀턴">
+    <meta itemprop="description" content="오일러와 해밀턴">
+    <meta itemprop="datePublished" content="2024-01-27T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-01-27T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/discrete%20mathematics/DM-10/" class="u-url" itemprop="url">[이산수학] 행렬(Matrix) : 05.역행렬
+            <a href="http://localhost:4000/discrete%20mathematics/DM-19/" class="u-url" itemprop="url">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴
 </a>
           </h1>
           
@@ -387,7 +387,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          4 분 소요
         
       </span>
     
@@ -401,169 +401,289 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 역행렬</h4></header>
-              <ul class="toc__menu"><li><a href="#역행렬">역행렬</a><ul><li><a href="#정의--역행렬-inverse-matrix--a-1">정의 : 역행렬 (inverse matrix : $A^{-1}$)</a><ul><li><a href="#예시">예시</a></li></ul></li><li><a href="#정의--행렬식을-이용한-역행렬">정의 : 행렬식을 이용한 역행렬</a></li><li><a href="#정의--수반행렬-adjoint-matrix--a_ijt">정의 : 수반행렬 (adjoint matrix : $[A_{ij}]^{T}$)</a><ul><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#정의--가역행렬-invertible-matrix">정의 : 가역행렬 (invertible matrix)</a></li><li><a href="#정의--특이행렬-singular-matrix">정의 : 특이행렬 (singular matrix)</a><ul><li><a href="#예시-2">예시</a></li></ul></li></ul></li><li><a href="#참고-문헌">참고 문헌</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 04_오일러와 해밀턴</h4></header>
+              <ul class="toc__menu"><li><a href="#오일러와-해밀턴">오일러와 해밀턴</a><ul><li><a href="#정의--순환-cycle--회로-circuit">정의 : 순환 (cycle) / 회로 (circuit)</a></li><li><a href="#정의--길이-length">정의 : 길이 (length)</a><ul><li><a href="#예시">예시</a></li></ul></li></ul></li><li><a href="#오일러-그래프">오일러 그래프</a><ul><li><a href="#정의--오일러-경로-eulerian-path">정의 : 오일러 경로 (Eulerian path)</a></li><li><a href="#정의--오일러-순환-eulerian-cycle--오일러-회로-eulerian-circuit">정의 : 오일러 순환 (Eulerian cycle) / 오일러 회로 (Eulerian circuit)</a><ul><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#정리--오일러-그래프에-대한-정리">정리 : 오일러 그래프에 대한 정리</a></li></ul></li><li><a href="#해밀턴-그래프">해밀턴 그래프</a><ul><li><a href="#정의--해밀턴-경로-hamiltonian-path">정의 : 해밀턴 경로 (Hamiltonian path)</a></li><li><a href="#정의--해밀턴-순환-hamiltonian-cycle--해밀턴-회로-hamiltonian-circuit">정의 : 해밀턴 순환 (Hamiltonian cycle) / 해밀턴 회로 (Hamiltonian circuit)</a><ul><li><a href="#예시-2">예시</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="역행렬">역행렬</h1>
+        <h1 id="오일러와-해밀턴">오일러와 해밀턴</h1>
 
 <ul>
-  <li>행렬에서도 항등원과 역원의 역할을 하는 행렬이 있다.
-    <blockquote>
-      <p>항등원인 행렬은 <strong>단위행렬 $I$</strong></p>
-    </blockquote>
-
-    <blockquote>
-      <p>역원인 행렬은 <strong>역행렬</strong></p>
-    </blockquote>
+  <li>
+    <p>네트워크의 신호 흐름이나 인공지능의 지식 연결, 하드웨어의 회로 등에서 신호나 지식의 흐름을 어떻게 구성하느냐는 시스템의 성능을 결정하는 주요한 기준 중 하나이다.</p>
+  </li>
+  <li>
+    <p>이러한 신호나 지식의 흐름을 계획하기 위해 그래프의 경로나 순환 개념을 응용할 수 있다.</p>
+  </li>
+  <li>
+    <p>그래프에서 경로나 순환을 찾는 대표적인 방법으로 수학자 레온하르트 오일러와 윌리엄 로언 해밀턴이 제안한 이론이 있다.</p>
   </li>
 </ul>
 
-<h2 id="정의--역행렬-inverse-matrix--a-1">정의 : 역행렬 (inverse matrix : $A^{-1}$)</h2>
+<h2 id="정의--순환-cycle--회로-circuit">정의 : 순환 (cycle) / 회로 (circuit)</h2>
+
 <blockquote>
-  <p>정사각행렬 $A$ 에 대하여, $AB = BA = I$ 를 만족시키는 행렬 B</p>
-  <ul>
-    <li>$AA^{-1} = A^{-1}A = I$</li>
-  </ul>
+  <p>연결그래프에서 시작하는 정점과 끝나는 정점이 같은 경로</p>
+</blockquote>
+
+<h2 id="정의--길이-length">정의 : 길이 (length)</h2>
+
+<blockquote>
+  <p>경로 또는 순환을 구성하는 변의 수</p>
 </blockquote>
 
 <h3 id="예시">예시</h3>
 
 <ul>
-  <li>
-    <p>$A = $
-$\begin{bmatrix}
-1 &amp; 2 \\<br />
-1 &amp; 3
-\end{bmatrix} \quad$
-$B = $
-$\begin{bmatrix}
-3 &amp; -2 \\<br />
--1 &amp; 1
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$AB = $
-$\begin{bmatrix}
-1 \times 3 + 2 \times (-1) &amp; 1 \times (-2) + 2 \times 1 \\<br />
-1 \times 3 + 3 \times (-1) &amp; 1 \times (-2) + 3 \times 1
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix}$</p>
-  </li>
-  <li>
-    <p>$BA = $
-$\begin{bmatrix}
-3 \times 1 + (-2) \times 1 &amp; 3 \times 2 + (-2) \times 3 \\<br />
-1 \times 3 + 3 \times (-1) &amp; 1 \times (-2) + 3 \times 1
-\end{bmatrix} = $
-$\begin{bmatrix}
-1 &amp; 0 \\<br />
-0 &amp; 1
-\end{bmatrix}$</p>
-  </li>
+  <li>길, 경로, 순환의 예</li>
 </ul>
 
-<h2 id="정의--행렬식을-이용한-역행렬">정의 : 행렬식을 이용한 역행렬</h2>
-
-<blockquote>
-  <p>$A^{-1} = {1 \over det(A)}$ $[A_{ij}]^{T}$ (단, $det(A) \neq 0 $)</p>
-</blockquote>
-
-<h2 id="정의--수반행렬-adjoint-matrix--a_ijt">정의 : 수반행렬 (adjoint matrix : $[A_{ij}]^{T}$)</h2>
-
-<blockquote>
-  <p>여인수행렬 $[A_{ij}]$ 의 전치행렬</p>
-</blockquote>
-
-<ul>
-  <li>여인수를 이용한 행렬식과 수반행렬을 이용하면 정사각행렬의 크기가 무엇이든 상관없이 행렬의 역행렬을 구할 수 있다.</li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<p>행렬 $A =$
-$\begin{bmatrix}
--2 &amp; 2 &amp; -3 \\<br />
-1 &amp; 0 &amp; 1 \\<br />
--4 &amp; 3 &amp; -5
-\end{bmatrix}$ 의 역행렬은 구하는 방식은 다음과 같다.</p>
-
-<p>$[A_{ij}] = $
-$\begin{bmatrix}
--3 &amp; 1 &amp; 3 \\<br />
-1 &amp; -2 &amp; -2 \\<br />
-2 &amp; -1 &amp; -2
-\end{bmatrix}$ , $det(A) = -1$</p>
-
-<ul>
-  <li>여인수행렬의 행과 열을 바꿔서 수반행렬을 구하면 다음과 같다.</li>
-</ul>
-
-<p>$[A_{ij}]^{T} = $
-$\begin{bmatrix}
--3 &amp; 1 &amp; 2 \\<br />
-1 &amp; -2 &amp; -1 \\<br />
-3 &amp; -2 &amp; -2
-\end{bmatrix}$</p>
-
-<p>$A^{-1} = (-1)$ $\times$
-$\begin{bmatrix}
--3 &amp; 1 &amp; 2 \\<br />
-1 &amp; -2 &amp; -1 \\<br />
-3 &amp; -2 &amp; -2
-\end{bmatrix} = $
-$\begin{bmatrix}
-3 &amp; -1 &amp; -2 \\<br />
--1 &amp; 2 &amp; 1 \\<br />
--3 &amp; 2 &amp; 2
-\end{bmatrix}$</p>
-
-<h2 id="정의--가역행렬-invertible-matrix">정의 : 가역행렬 (invertible matrix)</h2>
-
-<blockquote>
-  <p>역행렬이 존재하는 행렬, $det(A) \neq 0$ 인 행렬</p>
-</blockquote>
-
-<h2 id="정의--특이행렬-singular-matrix">정의 : 특이행렬 (singular matrix)</h2>
-
-<blockquote>
-  <p>역행렬이 존재하지 않는 행렬, $det(A) = 0$ 인 행렬</p>
-</blockquote>
-
-<h3 id="예시-2">예시</h3>
+<p><img src="/assets/images/Math/dm/dm_example_19_01.png" /></p>
 
 <ul>
   <li>
-    <p>특이행렬</p>
+    <p>정점 $a$ 에서 시작하는 길의 몇 가지 예</p>
 
-    <p>$[A_{ij}] = $
-  $\begin{bmatrix}
-  1 &amp; 2 &amp; 3 \\<br />
-  4 &amp; 5 &amp; 6 \\<br />
-  7 &amp; 8 &amp; 9
-  \end{bmatrix}$ , $det(A) = 0$</p>
-
+    <ol>
+      <li>
+        <p>$a - c - d -f$</p>
+      </li>
+      <li>
+        <p>$a - e - c - d - b - f$</p>
+      </li>
+      <li>
+        <p>$a - c - e - a$</p>
+      </li>
+      <li>
+        <p>$a - e - c - a$</p>
+      </li>
+      <li>
+        <p>$a - c - d - b - f - d - c - a$</p>
+      </li>
+    </ol>
+  </li>
+  <li>1번과 2번은 정점 $a$ 에서 정점 $f$ 까지의 길로 두 번 이상 중복되어 지나는 변이 없다.
     <ul>
-      <li>
-        <p>위 행렬 $A$ 의 행렬식은 0이므로 역행렬을 구할 수 없다.</p>
-      </li>
-      <li>
-        <p>그러므로 행렬 $A$ 는 특이행렬이다.</p>
-      </li>
+      <li>정점 $a$ 에서 정점 $f$ 까지의 경로</li>
     </ul>
+  </li>
+  <li>3번과 4번은 정점 $a$ 에서 시작하여 정점 $a$ 로 끝나는 길로 두번 이상 중복되어 지나는 변이 없고, 시작한 정점으로 다시 돌아오는 길이다.
+    <ul>
+      <li>정점 $a$ 에서 시작하는 순환</li>
+    </ul>
+  </li>
+  <li>
+    <p>5번은 정점 $a$ 에서 시작하여 정점 $a$ 로 끝나지만, 변 $(c, d)$ 가 두 번 반복되므로 경로도 순환도 아닌 길이다.</p>
+  </li>
+  <li>경로와 순환의 길이
+    <ol>
+      <li>
+        <p>$a - c - d -f : (a,c), (c,d), (d,f) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
+      </li>
+      <li>
+        <p>$a - e - c - d - b - f : (a,e), (e,c), (c,d), (d,b), (b,f) \rightarrow $ 변 $5$ 개, 길이 : $5$</p>
+      </li>
+      <li>
+        <p>$a - c - e - a : (a,c), (c,e), (e,a) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
+      </li>
+      <li>
+        <p>$a - e - c - a : (a,e), (e,c), (c,a) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
+      </li>
+    </ol>
   </li>
 </ul>
 
 <p><br /><br /></p>
 
-<h1 id="참고-문헌">참고 문헌</h1>
+<h1 id="오일러-그래프">오일러 그래프</h1>
+
 <ul>
-  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p231 ~ p233</li>
+  <li>각 지역을 연결하는 길을 한 번씩만 거쳐서 모든 지역을 돌아보고 원래 위치로 돌아오는 문제를 해결하기 위해 오일러 이론을 제안했다.</li>
+</ul>
+
+<h2 id="정의--오일러-경로-eulerian-path">정의 : 오일러 경로 (Eulerian path)</h2>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 변을 꼭 한 번씩만 지나는 경로</p>
+</blockquote>
+
+<h2 id="정의--오일러-순환-eulerian-cycle--오일러-회로-eulerian-circuit">정의 : 오일러 순환 (Eulerian cycle) / 오일러 회로 (Eulerian circuit)</h2>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 변을 꼭 한번씩만 지나 다시 정점 $v$ 로 돌아오는 경로</p>
+</blockquote>
+
+<ul>
+  <li>오일러 그래프 (Eulerian graph) : 오일러 순환을 가지는 그래프</li>
+</ul>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>
+    <p>오일러 경로와 오일러 순환은 그래프에 포함된 모든 변을 반드시 한 번씩 지나야 한다.</p>
+  </li>
+  <li>
+    <p>그러므로 그래프에 따라 오일러 경로나 오일러 순환이 존재할 수도 있고 존재하지 않을 수도 있다.</p>
+  </li>
+  <li>
+    <p>오일러 경로, 오일러 순환이 있는 예와 없는 예</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_19_02.png" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <ul>
+      <li>
+        <p>오일러 경로는 있지만 오일러 순환은 없다.</p>
+      </li>
+      <li>
+        <p>그래프 $A$ 에 포함된 오일러 경로</p>
+
+        <ul>
+          <li>$a - b - d - c - a - d \ $ / $\ a - b - d - a - c - d\ $ / $\ a - c - d - b - a - d\ $ / $\cdots$</li>
+          <li>$d - a - b - d - c - a \ $ / $\ d - a - c - d - b - a\ $ / $\ d - b - a - c - d - a\ $ / $\cdots$</li>
+        </ul>
+      </li>
+      <li>
+        <p>정점 $c$ 나 $b$ 를 시작점이나 끝점으로 하면 오일려 경로를 찾을 수 없다.</p>
+      </li>
+      <li>
+        <p>반면, 그래프 $A$ 에서는 순환은 최소 1개의 변을 두 번씩 지나야 하므로 오일러 순환은 존재하지 않는다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <ul>
+      <li>
+        <p>오일러 순환과 오일러 경로를 모두 찾을 수 있다.</p>
+      </li>
+      <li>
+        <p>그래프 $B$ 의 정점 $a$ 에서 시작하는 오일러 순환은 다음과 같다.</p>
+
+        <ul>
+          <li>$a - b - e - c - d - e - a \ $ / $\ a - b - e - d - c - e - a$</li>
+          <li>$a - e - c - d - e - b - a \ $ / $\ a - e - d - c - e - b - a$</li>
+        </ul>
+      </li>
+      <li>
+        <p>이 순환들은 그래프 $B$ 의 정점 $e$ 를 두 번씩 지나지만 모든 변을 한 번씩 지나므로 오일러 순환이다.</p>
+      </li>
+      <li>
+        <p>따라서 그래프 $B$ 는 오일러 그래프이다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $C$</p>
+
+    <ul>
+      <li>경로는 최소 하나의 변을 지나지 않고, 순환은 최소 2개의 변을 두 번 지나므로 오일러 경로와 순환이 존재하지 않는다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="정리--오일러-그래프에-대한-정리">정리 : 오일러 그래프에 대한 정리</h2>
+
+<ul>
+  <li>주어진 그래프에 오일러 경로나 오일러 순환이 존재하는지를 판별하는 데 정점의 차수를 활용할 수 있다.</li>
+</ul>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 모든 정점의 차수가 짝수인 것과 오일러 그래프는 서로 필요충분조건이다.</p>
+</blockquote>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 정점 중 차수가 홀수인 정점의 수가 0 또는 2개인 것과 그래프에 오일러 경로가 존재하는 것은 서로 필요충분조건이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="해밀턴-그래프">해밀턴 그래프</h1>
+
+<h2 id="정의--해밀턴-경로-hamiltonian-path">정의 : 해밀턴 경로 (Hamiltonian path)</h2>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 모든 정점을 한 번씩만 지나는 경로</p>
+</blockquote>
+
+<h2 id="정의--해밀턴-순환-hamiltonian-cycle--해밀턴-회로-hamiltonian-circuit">정의 : 해밀턴 순환 (Hamiltonian cycle) / 해밀턴 회로 (Hamiltonian circuit)</h2>
+
+<blockquote>
+  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 정점을 딱 한 번씩만 지나 정점 $v$ 로 다시 돌아오는 경로</p>
+</blockquote>
+
+<ul>
+  <li>해밀턴 그래프 (Hamiltonian graph) : 해밀턴 순환을 갖는 그래프</li>
+</ul>
+
+<h3 id="예시-2">예시</h3>
+
+<ul>
+  <li>
+    <p>오일러 경로, 순환과는 다르게 해밀턴 경로, 순환은 같은 변을 몇 번 지나든, 혹은 지나지 않든 상관없이 모든 정점을 반드시 한 번씩만 지나면 된다.</p>
+  </li>
+  <li>
+    <p>해밀턴 경로, 해밀턴 순환이 있는 예와 없는 예</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_19_03.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <ul>
+      <li>
+        <p>해밀턴 경로와 순환이 모두 존재하는 그래프이다.</p>
+      </li>
+      <li>
+        <p>정점 $a$ 에서 시작하는 해밀턴 경로와 해밀턴 순환</p>
+
+        <ul>
+          <li>
+            <p>해밀턴 경로 : $a - d - b - e - c - f\ $ / $\ a - d - b - f - c - e\ $ / $\ a - e - c - f - b - d\ $</p>
+          </li>
+          <li>
+            <p>해밀턴 순환 : $\ a - d - b - f - c - e - a\ $  / $\ a - e - c - f - b - d - a$</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <ul>
+      <li>
+        <p>해밀턴 경로가 존재한다.</p>
+
+        <ul>
+          <li>해밀턴 경로 : $b - c - a - d\ $ / $\ c - b - a - d\ $  / $\ d - a - c - b\ $ / $\ d - a - b - c\ $</li>
+        </ul>
+      </li>
+      <li>
+        <p>어떤 정점에서 시작하는 순환이든지 정점 $a$ 를 두 번은 지나야 하므로 해밀턴 순환은 존재하지 않는다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그래프 $C$</p>
+
+    <ul>
+      <li>어떤 경로나 순환이든 정점 $b$ 를 두 번 포함하므로 해밑턴 경로나 순환이 모두 존재하지 않는다.</li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -592,7 +712,7 @@ $\begin{bmatrix}
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-12-12">December 12, 2023</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-01-27">January 27, 2024</time></p>
 
       </footer>
 
@@ -601,24 +721,6 @@ $\begin{bmatrix}
       
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
   	
@@ -630,10 +732,10 @@ $\begin{bmatrix}
 
   <nav class="pagination_prev_next">
     
-      <a href="/discrete%20mathematics/DM-09/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 행렬(Matrix) : 04.행렬식</a>
+      <a href="/discrete%20mathematics/DM-18/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 그래프(Graph) : 03.그래프의 표현</a>
     
     
-      <a href="/discrete%20mathematics/DM-11/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     
   </nav>
 
@@ -643,12 +745,11 @@ $\begin{bmatrix}
 <!-- 
   <nav class="pagination">
     
-      <a href="/discrete%20mathematics/DM-09/" class="pagination--pager" title="[이산수학] 행렬(Matrix) : 04.행렬식
+      <a href="/discrete%20mathematics/DM-18/" class="pagination--pager" title="[이산수학] 그래프(Graph) : 03.그래프의 표현
 ">이전</a>
     
     
-      <a href="/discrete%20mathematics/DM-11/" class="pagination--pager" title="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
  -->
@@ -663,47 +764,6 @@ $\begin{bmatrix}
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/discrete%20mathematics/DM-19/" rel="permalink">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">오일러와 해밀턴
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -823,7 +883,7 @@ $\begin{bmatrix}
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          2 분 소요
         
       </span>
     
@@ -844,6 +904,58 @@ $\begin{bmatrix}
 
 
 그래프의 정의...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-15/" rel="permalink">[이산수학] 함수(Function) : 04.함수의 종류
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수의 종류
+
+항등함수 (identity function : $I_{A}$)
+
+정의
+
+
+  집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계
+
+
+항등함수의 조건
+
+
+  항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이...</p>
   </article>
 </div>
 

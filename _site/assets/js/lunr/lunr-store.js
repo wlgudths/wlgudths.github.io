@@ -172,4 +172,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-18/",
         "teaser": null
+      },{
+        "title": "[이산수학] 그래프(Graph) : 04.오일러와 해밀턴",
+        "excerpt":"오일러와 해밀턴 네트워크의 신호 흐름이나 인공지능의 지식 연결, 하드웨어의 회로 등에서 신호나 지식의 흐름을 어떻게 구성하느냐는 시스템의 성능을 결정하는 주요한 기준 중 하나이다. 이러한 신호나 지식의 흐름을 계획하기 위해 그래프의 경로나 순환 개념을 응용할 수 있다. 그래프에서 경로나 순환을 찾는 대표적인 방법으로 수학자 레온하르트 오일러와 윌리엄 로언 해밀턴이 제안한 이론이...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-19/",
+        "teaser": null
       }]
