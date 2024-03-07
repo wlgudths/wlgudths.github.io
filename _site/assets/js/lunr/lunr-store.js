@@ -178,4 +178,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-19/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 01. 트리의 개념",
+        "excerpt":"트리의 개념 나무가 땅에 뿌리를 박고 자라나 가지를 뻗어나가는 듯한 모양을 그대로 적용하여 자료의 구조나 처리 흐름 등을 표현하기 위해 트리를 사용한다. 정의 : 트리 (tree : $T$) 루트(root)라고 하는 특별한 노드(node)에서 시작하는 그래프로, 그래프의 정점에 해당하는 노드 $u, v$ 사이에 $u$ 에서 $v$ 로 가는 단순 경로가 존재하는 비순환의...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-20/",
+        "teaser": null
       }]
