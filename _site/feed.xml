@@ -1,4 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-08T01:58:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 01. 트리의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-20/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 01. 트리의 개념" /><published>2024-02-05T00:00:00+09:00</published><updated>2024-02-05T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-20</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-20/"><![CDATA[<h1 id="트리의-개념">트리의 개념</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-11T17:32:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 02. 이진트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-21/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 02. 이진트리" /><published>2024-02-07T00:00:00+09:00</published><updated>2024-02-07T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-21</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-21/"><![CDATA[<h1 id="이진트리-binary-tree">이진트리 (binary tree)</h1>
+
+<ul>
+  <li>
+    <p>트리에서 부모노드가 가질 수 있는 자식노드의 수는 제한이 없다.</p>
+  </li>
+  <li>
+    <p>그러나 컴퓨터 과학에서는 단순하고 명확하게 연산, 탐색, 정렬하기 위해 자식노드의 수를 2개로 제한해 표현하기도 한다.</p>
+
+    <blockquote>
+      <p>이러한 트리를 <strong>이진트리</strong>라고 한다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="정의--이진트리-binary-tree">정의 : 이진트리 (binary tree)</h2>
+
+<blockquote>
+  <p>트리인 그래프 $T$를 구성하는 각 노드의 최대 차수가 2인 트리</p>
+</blockquote>
+
+<h3 id="예시-n항-트리">예시 ($n$항 트리)</h3>
+
+<ul>
+  <li>
+    <p>어떤 트리의 최대 차수가 $n$이라면 <strong>$n$항트리(n - ary tree)</strong> 라고 한다.</p>
+  </li>
+  <li>
+    <p>다음 트리 $T$는 최대 차수가 $3$인 $3$항 트리라고 한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="/assets/images/Math/dm/dm_example_20_04.png" width="500" /></p>
+
+<p><br /></p>
+
+<h3 id="예시-이진트리">예시 (이진트리)</h3>
+
+<ul>
+  <li>
+    <p>이진트리는 노드의 최대 차수가 $2$인 트리이다.</p>
+  </li>
+  <li>
+    <p>부모노드가 가질 수 있는 자식노드는 없거나, 한 개 또는 두 개어야 한다.</p>
+  </li>
+  <li>
+    <p>다음 트리 $T$는 모든 노드가 자식노드를 $2$개 이하로 갖는 이진트리의 예이다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_01.png" width="500" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이진트리는 노드의 구성에 따라 다음과 같이 구분할 수 있다.</p>
+
+    <ol>
+      <li>
+        <p>완전이진트리</p>
+      </li>
+      <li>
+        <p>포화이진트리</p>
+      </li>
+      <li>
+        <p>편향이진트리</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--완전이진트리-complete-binary-tree">정의 : 완전이진트리 (complete binary tree)</h2>
+
+<blockquote>
+  <p>높이가 $h$일 때 레벨 $0$ 부터 $h - 1$ 까지의 모든 부모노드의 차수가 $2$이고,<br />
+레벨 $h$ 는 레벨 $h - 1$의 왼쪽부터 노드가 $2$개씩 채워져 있는 트리</p>
+</blockquote>
+
+<h3 id="예시-완전이진트리">예시 (완전이진트리)</h3>
+
+<ul>
+  <li>다음 두 트리는 모든 부모노드의 최대 차수가 $2$이므로 이진트리이다.</li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_02.png" width="500" /></p>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>완전이진트리</p>
+
+    <ul>
+      <li>
+        <p>모든 부모노드는 차수가 $2$로 자식노드를 $2$개씩 갖는다.</p>
+      </li>
+      <li>
+        <p>마지막 레벨인 레벨 $3$의 노드는 레벨 $2$의 가장 왼쪽 노드 $D$의 자식노드이므로<br />
+ 레벨 $3$의 노드들은 왼쪽부터 채워져 있다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>완전이진트리가 아닌 트리</p>
+
+    <ul>
+      <li>
+        <p>레벨 $1$의 노드 중 노드 $C$가 왼쪽 자식노드 하나만 가지므로 차수가 $1$이다.</p>
+      </li>
+      <li>
+        <p>레벨 $2$의 노드 중 가장 왼쪽에 있는 노드가 아닌 노드 $F$노드를 하나만 가진다.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h4 id="완전이진트리-vs-이진트리">완전이진트리 VS 이진트리</h4>
+
+<ul>
+  <li>다음과 같은 트리는 완전이진트리일까?</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_03.png" width="500" /></p>
+
+<blockquote>
+  <p>결론적으로 이에 대해서는 아직까지 의견이 분분하다.</p>
+</blockquote>
+
+<ol>
+  <li>완전이진트리이다.
+    <ul>
+      <li>마지막 레벨의 노드가 왼쪽부터 채워져 있으므로 완전이진트리이다.</li>
+    </ul>
+  </li>
+  <li>완전이진트리가 아니다.
+    <ul>
+      <li>노드 $E$의 차수가 2가이니므로 완전이진트리가 아니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p>이 책에서는 2번째 의견을 따라 완전이진트리가 아닌 것으로 판단한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--포화이진트리-full-binary-tree">정의 : 포화이진트리 (full binary tree)</h2>
+
+<blockquote>
+  <p>높이가 $h$일 때 레벨 $0$부터 $h - 1$까지의 모든 노드의 차수가 2인 트리</p>
+</blockquote>
+
+<h3 id="예시-포화이진트리">예시 (포화이진트리)</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_04.png" width="500" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>포화이진트리는 완전이진트리의 한 종류이다.</p>
+  </li>
+  <li>
+    <p>위 그림과 같이 트리의 마지막 리프노드까지 모두 2개씩 노드가 채워져 있는 트리를 말한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--편향이진트리-skewed-binary-tree">정의 : 편향이진트리 (skewed binary tree)</h2>
+
+<blockquote>
+  <p>왼쪽이나 오른쪽 서브트리만 갖는 트리</p>
+</blockquote>
+
+<h3 id="예시-편향이진트리">예시 (편향이진트리)</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_05.png" width="250" /> <img src="/assets/images/Math/dm/dm_example_21_06.png" width="250" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>위 그림과 같이 한쪽 방향으로만 노드를 갖는 트리를 <strong>편향이진트리</strong>라고 한다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정리--이진트리의-노드-수">정리 : 이진트리의 노드 수</h2>
+
+<ul>
+  <li>
+    <p>이진트리는 부모노드가 가질 수 있는 자식노드의 수가 최대 $2$개이므로 노드의 수를 예측할 수 있다.</p>
+  </li>
+  <li>
+    <p>이진트리가 가질 수 있는 노드 수를 정리하면 다음과 같다.</p>
+
+    <ol>
+      <li>
+        <p>이진트리의 레벨 $k$에서 가질 수 있는 최대 노드 수 : $\ 2^{k}$개</p>
+      </li>
+      <li>
+        <p>높이가 $h$인 이진트리가 가질 수 있는 최대 노드 수 : $\ 2^{h + 1} - 1$개</p>
+      </li>
+      <li>
+        <p>높이가 $h$인 이진트리가 가질 수 있는 최소 노드 수 : $\ h + 1$개</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>포화이진트리의 그림을 통한 예시</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_21_04.png" width="500" /></p>
+
+<ol>
+  <li>이진트리의 레벨 $k$에서 가질 수 있는 최대 노드 수 $(0 \le k \le 2)$
+    <ul>
+      <li>
+        <p>레벨 $0$, $\ k = 0 \rightarrow$  $\ 2^{0} = 1$개</p>
+      </li>
+      <li>
+        <p>레벨 $1$, $\ k = 1 \rightarrow$  $\ 2^{1} = 2$개</p>
+      </li>
+      <li>
+        <p>레벨 $2$, $\ k = 2 \rightarrow$  $\ 2^{2} = 4$개</p>
+      </li>
+    </ul>
+  </li>
+  <li>높이가 $h$인 이진트리가 가질 수 있는 최대 노드 수 (위 트리의 최대 레벨은 $2$ 이므로 높이는 $2$이다.)
+    <ul>
+      <li>$2^{2 + 1} - 1 \ \rightarrow \ 7$개</li>
+    </ul>
+  </li>
+  <li>높이가 $h$인 이진트리가 가질 수 있는 최소 노드 수
+    <ul>
+      <li>$2 + 1 \ \rightarrow \ 3$개</li>
+    </ul>
+  </li>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[이진트리 (binary tree)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 01. 트리의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-20/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 01. 트리의 개념" /><published>2024-02-05T00:00:00+09:00</published><updated>2024-02-05T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-20</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-20/"><![CDATA[<h1 id="트리의-개념">트리의 개념</h1>
 
 <ul>
   <li>나무가 땅에 뿌리를 박고 자라나 가지를 뻗어나가는 듯한 모양을 그대로 적용하여 자료의 구조나 처리 흐름 등을 표현하기 위해 트리를 사용한다.</li>
@@ -855,82 +1109,7 @@
   </li>
 </ul>
 
-<p><img src="/assets/images/Math/dm/dm_example_20_18.png" width="200" /> <img src="/assets/images/Math/dm/dm_example_20_19.png" width="200" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 개념]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 03.그래프의 표현</title><link href="http://localhost:4000/discrete%20mathematics/DM-18/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 03.그래프의 표현" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-18</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-18/"><![CDATA[<h1 id="그래프의-표현">그래프의 표현</h1>
-
-<ul>
-  <li>지금까지 그래프는 수학적 기호와 그림으로 표현했지만, 그래프를 이용한 연산이나 데이터의 구조를 나타내기 위해 행렬이나 리스트 형태로 표현하기도 한다.</li>
-</ul>
-
-<h1 id="인접행렬">인접행렬</h1>
-
-<h2 id="정의--인접행렬-adjacency-matrix--a_g">정의 : 인접행렬 (adjacency matrix : $A_{G}$)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 |$V$| $= n$ 일 때, $n \times n$ 행렬 $A_{G} = [a_{ij}]$</p>
-</blockquote>
-
-<ul>
-  <li>$a_{ij} = 
-\begin{cases}
-해당\ 정점에\ 근접하는\ 변의\ 수, (v_{i}, v_{j}) \in E\\<br />
-\qquad \qquad \quad 0, \qquad \quad \quad \quad \quad \quad \ (v_{i}, v_{j}) \notin E
-\end{cases}$</li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>그래프의 인접행렬 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_18_01.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_02.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_03.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $C$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_04.png" /></p>
-  </li>
-</ul>
-
-<h1 id="인접리스트">인접리스트</h1>
-
-<h2 id="정의--인접리스트-adjacency-list">정의 : 인접리스트 (adjacency list)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에 포함되는 각 정점에 인접하는 정점들을 연결리스트로 표현한 것</p>
-</blockquote>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>그래프의 인접리스트 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_18_05.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_06.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_07.png" /></p>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴</title><link href="http://localhost:4000/discrete%20mathematics/DM-19/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 04.오일러와 해밀턴" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-19</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-19/"><![CDATA[<h1 id="오일러와-해밀턴">오일러와 해밀턴</h1>
+<p><img src="/assets/images/Math/dm/dm_example_20_18.png" width="200" /> <img src="/assets/images/Math/dm/dm_example_20_19.png" width="200" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 개념]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴</title><link href="http://localhost:4000/discrete%20mathematics/DM-19/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 04.오일러와 해밀턴" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-19</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-19/"><![CDATA[<h1 id="오일러와-해밀턴">오일러와 해밀턴</h1>
 
 <ul>
   <li>
@@ -1207,7 +1386,82 @@
       <li>어떤 경로나 순환이든 정점 $b$ 를 두 번 포함하므로 해밑턴 경로나 순환이 모두 존재하지 않는다.</li>
     </ul>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[오일러와 해밀턴]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 02.그래프의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-17/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 02.그래프의 종류" /><published>2024-01-23T00:00:00+09:00</published><updated>2024-01-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-17</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-17/"><![CDATA[<h1 id="그래프의-종류">그래프의 종류</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[오일러와 해밀턴]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 03.그래프의 표현</title><link href="http://localhost:4000/discrete%20mathematics/DM-18/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 03.그래프의 표현" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-18</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-18/"><![CDATA[<h1 id="그래프의-표현">그래프의 표현</h1>
+
+<ul>
+  <li>지금까지 그래프는 수학적 기호와 그림으로 표현했지만, 그래프를 이용한 연산이나 데이터의 구조를 나타내기 위해 행렬이나 리스트 형태로 표현하기도 한다.</li>
+</ul>
+
+<h1 id="인접행렬">인접행렬</h1>
+
+<h2 id="정의--인접행렬-adjacency-matrix--a_g">정의 : 인접행렬 (adjacency matrix : $A_{G}$)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에서 |$V$| $= n$ 일 때, $n \times n$ 행렬 $A_{G} = [a_{ij}]$</p>
+</blockquote>
+
+<ul>
+  <li>$a_{ij} = 
+\begin{cases}
+해당\ 정점에\ 근접하는\ 변의\ 수, (v_{i}, v_{j}) \in E\\<br />
+\qquad \qquad \quad 0, \qquad \quad \quad \quad \quad \quad \ (v_{i}, v_{j}) \notin E
+\end{cases}$</li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>그래프의 인접행렬 표기</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_18_01.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_02.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_03.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $C$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_04.png" /></p>
+  </li>
+</ul>
+
+<h1 id="인접리스트">인접리스트</h1>
+
+<h2 id="정의--인접리스트-adjacency-list">정의 : 인접리스트 (adjacency list)</h2>
+
+<blockquote>
+  <p>그래프 $G = (V, E)$ 에 포함되는 각 정점에 인접하는 정점들을 연결리스트로 표현한 것</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<ul>
+  <li>그래프의 인접리스트 표기</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_18_05.png" /></p>
+
+<ul>
+  <li>
+    <p>그래프 $A$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_06.png" /></p>
+  </li>
+  <li>
+    <p>그래프 $B$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_18_07.png" /></p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 02.그래프의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-17/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 02.그래프의 종류" /><published>2024-01-23T00:00:00+09:00</published><updated>2024-01-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-17</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-17/"><![CDATA[<h1 id="그래프의-종류">그래프의 종류</h1>
 
 <ul>
   <li>그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.</li>
@@ -1757,233 +2011,7 @@ $d(out)(e) = 2, \quad d(in)(e) = 1$
 
 <ul>
   <li>그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 변(edge)의 집합 $E$ 로 구성된 구조 $G = (V, E)$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $ $1 \le i, j \le n$ 정점 $v_{i}$ 와 $v_{j}$ 는 서로 인접(adjacent) 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다. 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 근접(incident) 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다. 예시 위 정의에서 사용한 기호 표현의 의미는 다음과 같다. $G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$ $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$ $\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍 위 그래프를 수학적 기호로 표현하면 다음과 같다. 그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다. 집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다. 집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다. $e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$ 루프 (loop) 위 그림 변 $e_{3}$ 과 같은 변을 루프(loop) 라고 한다. 루프는 하나의 정점에만 인접하는 변이다. 그래프의 형태 정의 : 단순 그래프 (simple graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프 정의 : 다중 그래프 (multi-graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프 정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$) 그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프 $G = &lt;V, E&gt;$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $ $1 \le i, j \le n$ 정의 : 가중치 그래프 (weighted graph) 그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프 $W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기 그래프의 차수 그래프는 정점과 변으로 구성된다. 그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다. 정의 : 차수 (degree : $d(v)$) 정점 v 에 근접하는 변의 개수 방향 그래프에 대하여, 외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수 내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수 예시 다음 그림의 외차수, 내차수를 구해보자. 정답 $d(out)(a) = 1, \quad d(in)(a) = 0$ $d(out)(b) = 2, \quad d(in)(b) = 1$ $d(out)(c) = 1, \quad d(in)(c) = 2$ $d(out)(d) = 1, \quad d(in)(d) = 3$ $d(out)(e) = 2, \quad d(in)(e) = 1$ 정리 : 차수에 대한 정리 그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다. $\sum_{v \in V}{d(v)} = $$2$|$E$| 그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 02.함수의 성질</title><link href="http://localhost:4000/discrete%20mathematics/DM-13/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 02.함수의 성질" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-13</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-13/"><![CDATA[<h1 id="함수의-성질">함수의 성질</h1>
-
-<blockquote>
-  <p>함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.</p>
-</blockquote>
-
-<blockquote>
-  <p>함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.</p>
-</blockquote>
-
-<h1 id="단사함수-일대일-함수-injective-function-injection-one-to-one-function">단사함수, 일대일 함수 (injective function, injection, one-to-one function)</h1>
-
-<h2 id="정의">정의</h2>
-
-<blockquote>
-  <p>함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $\le$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $\le$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$dom(f)$| $\le$ |$ran(f)$|</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다.</p>
-</blockquote>
-
-<h3 id="단사함수의-조건">단사함수의 조건</h3>
-
-<ul>
-  <li>
-    <p>공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다.</p>
-  </li>
-  <li>
-    <p>정의역과 치역의 원소 개수가 같아야 한다.</p>
-  </li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_01.png" /></p>
-
-<p><br /><br /></p>
-
-<h2 id="정의-1">정의</h2>
-
-<blockquote>
-  <p>함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $\ge$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다.</p>
-</blockquote>
-
-<h3 id="전사함수의-조건">전사함수의 조건</h3>
-
-<ul>
-  <li>
-    <p>정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다.</p>
-  </li>
-  <li>
-    <p>공역과 치역의 원소 개수가 같다.</p>
-  </li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_02.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="전단사함수-일대일-대응-함수-bijecive-function-bijection-one-to-one-correspodence">전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence)</h1>
-
-<h2 id="정의-2">정의</h2>
-
-<blockquote>
-  <p>단사함수이면서 전사 함수인 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $=$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
-  </li>
-</ul>
-
-<h3 id="전단사함수의-조건">전단사함수의 조건</h3>
-
-<blockquote>
-  <p>정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다.</p>
-</blockquote>
-
-<ul>
-  <li>정의역, 공역, 치역의 원소 개수가 모두 같다.</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_03.png" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 성질 함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다. 함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다. 단사함수, 일대일 함수 (injective function, injection, one-to-one function) 정의 함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수 |$dom(f)$| $\le$ |$codom(f)$| |$ran(f)$| $\le$ |$codom(f)$| |$dom(f)$| $\le$ |$ran(f)$| 정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다. 단사함수의 조건 공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다. 정의역과 치역의 원소 개수가 같아야 한다. 예시 정의 함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수 |$dom(f)$| $\ge$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다. 전사함수의 조건 정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다. 공역과 치역의 원소 개수가 같다. 예시 전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence) 정의 단사함수이면서 전사 함수인 함수 |$dom(f)$| $=$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전단사함수의 조건 정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다. 정의역, 공역, 치역의 원소 개수가 모두 같다. 예시]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 01.함수의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-12/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 01.함수의 개념" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-12</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-12/"><![CDATA[<h1 id="함수의-개념">함수의 개념</h1>
-
-<h2 id="정의--함수function--f--a-rightarrow-b">정의 : 함수(function : $f : A \rightarrow B$)</h2>
-
-<blockquote>
-  <p>집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여,</p>
-
-    <ul>
-      <li>원상 (preimage)
-        <ul>
-          <li>집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$</li>
-        </ul>
-      </li>
-      <li>상 (image)
-        <ul>
-          <li>집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$</li>
-        </ul>
-      </li>
-      <li>정의역 (domain, $dom(f)$)
-        <ul>
-          <li>원상의 집합, 집합 $A$</li>
-        </ul>
-      </li>
-      <li>공역 (codomain, $codom(f)$)
-        <ul>
-          <li>상이 포함된 집합, 집합 $B$</li>
-        </ul>
-      </li>
-      <li>치역 (range, $ran(f)$)
-        <ul>
-          <li>상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$
-  {$f(a) | a \in A$}</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="관계와-함수의-차이">관계와 함수의 차이</h2>
-
-<ul>
-  <li>집합 $A$ 에서 집합 $B$ 로의 관계
-    <ul>
-      <li>집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다.</li>
-    </ul>
-  </li>
-  <li>집합 $A$ 에서 집합 $B$ 로의 함수
-    <ul>
-      <li>집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>
-    <p>집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다.</p>
-
-    <ul>
-      <li>$f =$ {$(a, 1), (b, 1), (c, 2)$}</li>
-    </ul>
-  </li>
-  <li>
-    <p>관계 $f$ 에 포함된 순서쌍</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">순서쌍에 대한 식 표현</th>
-          <th style="text-align: center">원상</th>
-          <th style="text-align: center">상</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">$f(a) = 1$</td>
-          <td style="text-align: center">a</td>
-          <td style="text-align: center">2</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">$f(b) = 1$</td>
-          <td style="text-align: center">b</td>
-          <td style="text-align: center">1</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">$f(c) = 2$</td>
-          <td style="text-align: center">c</td>
-          <td style="text-align: center">2</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <p>원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다.</p>
-  </li>
-  <li>
-    <p>상은 $f$ 의 공역인 집합 $B$ 의 원소이다.</p>
-  </li>
-  <li>
-    <p>집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다.</p>
-  </li>
-  <li>정의역 : $dom(f) = A$</li>
-  <li>공역 : $codom(f) = B$</li>
-  <li>치역 : {$1, 2$}</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 개념 정의 : 함수(function : $f : A \rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여, 원상 (preimage) 집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$ 상 (image) 집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$ 정의역 (domain, $dom(f)$) 원상의 집합, 집합 $A$ 공역 (codomain, $codom(f)$) 상이 포함된 집합, 집합 $B$ 치역 (range, $ran(f)$) 상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$ {$f(a) | a \in A$} 관계와 함수의 차이 집합 $A$ 에서 집합 $B$ 로의 관계 집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다. 집합 $A$ 에서 집합 $B$ 로의 함수 집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다. 예시 집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다. $f =$ {$(a, 1), (b, 1), (c, 2)$} 관계 $f$ 에 포함된 순서쌍 순서쌍에 대한 식 표현 원상 상 $f(a) = 1$ a 2 $f(b) = 1$ b 1 $f(c) = 2$ c 2 원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다. 상은 $f$ 의 공역인 집합 $B$ 의 원소이다. 집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다. 정의역 : $dom(f) = A$ 공역 : $codom(f) = B$ 치역 : {$1, 2$}]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 변(edge)의 집합 $E$ 로 구성된 구조 $G = (V, E)$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $ $1 \le i, j \le n$ 정점 $v_{i}$ 와 $v_{j}$ 는 서로 인접(adjacent) 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다. 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 근접(incident) 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다. 예시 위 정의에서 사용한 기호 표현의 의미는 다음과 같다. $G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$ $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$ $\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍 위 그래프를 수학적 기호로 표현하면 다음과 같다. 그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다. 집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다. 집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다. $e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$ 루프 (loop) 위 그림 변 $e_{3}$ 과 같은 변을 루프(loop) 라고 한다. 루프는 하나의 정점에만 인접하는 변이다. 그래프의 형태 정의 : 단순 그래프 (simple graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프 정의 : 다중 그래프 (multi-graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프 정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$) 그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프 $G = &lt;V, E&gt;$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $ $1 \le i, j \le n$ 정의 : 가중치 그래프 (weighted graph) 그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프 $W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기 그래프의 차수 그래프는 정점과 변으로 구성된다. 그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다. 정의 : 차수 (degree : $d(v)$) 정점 v 에 근접하는 변의 개수 방향 그래프에 대하여, 외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수 내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수 예시 다음 그림의 외차수, 내차수를 구해보자. 정답 $d(out)(a) = 1, \quad d(in)(a) = 0$ $d(out)(b) = 2, \quad d(in)(b) = 1$ $d(out)(c) = 1, \quad d(in)(c) = 2$ $d(out)(d) = 1, \quad d(in)(d) = 3$ $d(out)(e) = 2, \quad d(in)(e) = 1$ 정리 : 차수에 대한 정리 그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다. $\sum_{v \in V}{d(v)} = $$2$|$E$| 그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
 
 <h1 id="항등함수-identity-function--i_a">항등함수 (identity function : $I_{A}$)</h1>
 
@@ -2265,329 +2293,230 @@ $d(out)(e) = 2, \quad d(in)(e) = 1$
       </li>
     </ol>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[합성함수 (composite function : $g \circ f$) 최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수 정의 두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow C$ 가 있을 때, 집합 $A$ 의 각 원소를 집합 $C$ 의 원소에 대응하는 함수 $g \circ f = (g \circ f)(x) = g(f(x)), \quad x \in A$ 예시 집합 $A =$ {$1,2,3,4$}, $B = ${$a, b, c$}, $C = ${$w, x, y, z$} 에 대한 함수를 살펴보자. $f : A \rightarrow B, f = ${$(1,a), (2,b), (3,b), (4,c)$ } $g : B \rightarrow C, f = ${$(a,x), (2,b), (3,b), (4,c)$} $g(f(1)) = g(a) = x$ $g(f(2)) = g(b) = w$ $g(f(3)) = g(b) = w$ $g(f(4)) = g(c) = z$ 합성함수의 성질 정리 집합 $A, B, C$ 에 대한 함수 $f: A \rightarrow B, g: B \rightarrow C$ 가 있을 때, 합성함수 $g \circ f$ 의 성질은 다음과 같다. $f$ 와 $g$가 단사함수이면, $g \circ f$ 도 단사함수이다. $f$ 와 $g$ 가 전사함수이면, $g \circ f$ 도 전사함수이다. $f$ 와 $g$ 가 전단사함수이면, $g \circ f$ 도 전단사함수이다. $g \circ f$ 가 단사함수이면, $f$ 도 단사함수이다. $g \circ f$ 가 전사함수이면, $g$ 도 전사함수이다. $g \circ f$ 가 전단사함수이면, $f$ 는 단사함수이고, $g$ 는 전사함수이다.]]></summary></entry><entry><title type="html">[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식</title><link href="http://localhost:4000/discrete%20mathematics/DM-11/" rel="alternate" type="text/html" title="[이산수학] 행렬(Matrix) : 06.행렬과 연립일차방정식" /><published>2023-12-15T00:00:00+09:00</published><updated>2023-12-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-11</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-11/"><![CDATA[<h1 id="행렬과-연립일차방정식">행렬과 연립일차방정식</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[합성함수 (composite function : $g \circ f$) 최초 입력을 이용해 두 개 이상의 함수를 차례로 연산하여 최종 출력을 내어 입력과 출력에 대응하는 함수 정의 두 함수 $f: A \rightarrow B$ 와 $g: B \rightarrow C$ 가 있을 때, 집합 $A$ 의 각 원소를 집합 $C$ 의 원소에 대응하는 함수 $g \circ f = (g \circ f)(x) = g(f(x)), \quad x \in A$ 예시 집합 $A =$ {$1,2,3,4$}, $B = ${$a, b, c$}, $C = ${$w, x, y, z$} 에 대한 함수를 살펴보자. $f : A \rightarrow B, f = ${$(1,a), (2,b), (3,b), (4,c)$ } $g : B \rightarrow C, f = ${$(a,x), (2,b), (3,b), (4,c)$} $g(f(1)) = g(a) = x$ $g(f(2)) = g(b) = w$ $g(f(3)) = g(b) = w$ $g(f(4)) = g(c) = z$ 합성함수의 성질 정리 집합 $A, B, C$ 에 대한 함수 $f: A \rightarrow B, g: B \rightarrow C$ 가 있을 때, 합성함수 $g \circ f$ 의 성질은 다음과 같다. $f$ 와 $g$가 단사함수이면, $g \circ f$ 도 단사함수이다. $f$ 와 $g$ 가 전사함수이면, $g \circ f$ 도 전사함수이다. $f$ 와 $g$ 가 전단사함수이면, $g \circ f$ 도 전단사함수이다. $g \circ f$ 가 단사함수이면, $f$ 도 단사함수이다. $g \circ f$ 가 전사함수이면, $g$ 도 전사함수이다. $g \circ f$ 가 전단사함수이면, $f$ 는 단사함수이고, $g$ 는 전사함수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 02.함수의 성질</title><link href="http://localhost:4000/discrete%20mathematics/DM-13/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 02.함수의 성질" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-13</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-13/"><![CDATA[<h1 id="함수의-성질">함수의 성질</h1>
 
 <blockquote>
-  <p>행렬은 연립일차방정식을 풀기 위한 방법을 연구하면서 나온 개념이다.</p>
+  <p>함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.</p>
+</blockquote>
+
+<blockquote>
+  <p>함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.</p>
+</blockquote>
+
+<h1 id="단사함수-일대일-함수-injective-function-injection-one-to-one-function">단사함수, 일대일 함수 (injective function, injection, one-to-one function)</h1>
+
+<h2 id="정의">정의</h2>
+
+<blockquote>
+  <p>함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수</p>
 </blockquote>
 
 <ul>
-  <li>방정식
-    <blockquote>
-      <p>문제를 해결하기 위한 어떤 식이 한 개 이상을 변수를 포함하는 식</p>
-    </blockquote>
-
-    <blockquote>
-      <p>포함하는 변수의 차수가 1 일 때, 일차방적식 또는 선형방정식이라 한다.</p>
-    </blockquote>
+  <li>
+    <p>|$dom(f)$| $\le$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $\le$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$dom(f)$| $\le$ |$ran(f)$|</p>
   </li>
 </ul>
 
-<h2 id="정의--일차방정식linear-equation--선형방정식">정의 : 일차방정식(linear equation) / 선형방정식</h2>
 <blockquote>
-  <p>$a_{1}, a_{2} \cdots a_{n} \quad, b$ 가 실수일 때, 다음과 같이 표현되는 식<br />
-<br />
-$a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$<br />
-($a_{1},a_{2} \cdots, a_{n}$ : 계수, $\quad b$ : 상수, $\quad x_{1},x_{2},\cdots,x_{n}$ : 변수)</p>
+  <p>정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다.</p>
 </blockquote>
+
+<h3 id="단사함수의-조건">단사함수의 조건</h3>
+
+<ul>
+  <li>
+    <p>공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다.</p>
+  </li>
+  <li>
+    <p>정의역과 치역의 원소 개수가 같아야 한다.</p>
+  </li>
+</ul>
 
 <h3 id="예시">예시</h3>
 
-<ul>
-  <li>$x + 5y + z = 9$</li>
-  <li>$x_{1} + x_{2} - 10x_{3} = 0$</li>
-</ul>
-
-<h2 id="정의--해solution와-해집합solution-set">정의 : 해(solution)와 해집합(solution set)</h2>
-<blockquote>
-  <p>일차방정식에 포함된 n개의 변수에 대응하는 값으로, 방정식을 참($T$)으로 만드는 값과 그 값의 집합</p>
-</blockquote>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>
-    <p>일차방정식 $a_{1}x_{1} + a_{2}x_{2} + \cdots + a_{n}x_{n} = b$ 에 대하여,</p>
-  </li>
-  <li>
-    <p>이 방정식의 변수에 대입하였을 때 방정식을 참($T$)으로 만드는 유일한 값</p>
-  </li>
-  <li>
-    <p>$x_{1} = s_{1}, x_{2} = s_{2}, \cdots ,x_{n} = s_{n}$ 이 존재할 수 있다.</p>
-  </li>
-  <li>
-    <p>이 $s_{1}, s_{2}, \cdots, s_{n}$ 을 이 방정식의 해 또는 해집합이라고 한다.</p>
-  </li>
-</ul>
-
-<h2 id="정의--연립일차방정식system-of-linear-equations">정의 : 연립일차방정식(system of linear equations)</h2>
-
-<blockquote>
-  <p>$m$ 개의 일차방정식으로 구성된 방정식</p>
-</blockquote>
-
-<ul>
-  <li>$\begin{Bmatrix}
-a_{11}x_{1} + a{12}x_{2} + \cdots + a_{1n}x_{n} = b1 \\<br />
-a_{21}x_{1} + a{22}x_{2} + \cdots + a_{2n}x_{n} = b2 \\<br />
-\cdots \\<br />
-a_{m1}x_{1} + a{m2}x_{2} + \cdots + a_{mn}x_{n} = bm
-\end{Bmatrix}$</li>
-</ul>
+<p><img src="/assets/images/Math/dm/dm_example_13_01.png" /></p>
 
 <p><br /><br /></p>
 
-<h1 id="연립일차방정식의-행렬-표현">연립일차방정식의 행렬 표현</h1>
-
-<h2 id="정의--m-개의-일차방정식으로-구성된-연립일차방정식의-행렬-표현">정의 : $m$ 개의 일차방정식으로 구성된 연립일차방정식의 행렬 표현</h2>
+<h2 id="정의-1">정의</h2>
 
 <blockquote>
-  <ol>
-    <li>계수행렬(coefficient matrix) : 연립일차방정식의 계수들로 구성된 $m \times n$ 행렬</li>
-  </ol>
+  <p>함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수</p>
 </blockquote>
 
 <ul>
-  <li>$A = $
-$\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
-a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{bmatrix}$</li>
+  <li>
+    <p>|$dom(f)$| $\ge$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
+  </li>
 </ul>
 
 <blockquote>
-  <ol>
-    <li>미지수행렬(unknown value matrix) : 연립일차방정식의 미지수들로 구성된 $n \times 1$ 행렬</li>
-  </ol>
+  <p>전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다.</p>
 </blockquote>
 
+<h3 id="전사함수의-조건">전사함수의 조건</h3>
+
 <ul>
-  <li>$X = $
-$\begin{bmatrix}
-x_{1}\\<br />
-x_{2}\\<br />
-\cdots\\<br />
-x_{n}
-\end{bmatrix}$</li>
+  <li>
+    <p>정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다.</p>
+  </li>
+  <li>
+    <p>공역과 치역의 원소 개수가 같다.</p>
+  </li>
 </ul>
 
+<h3 id="예시-1">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_13_02.png" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="전단사함수-일대일-대응-함수-bijecive-function-bijection-one-to-one-correspodence">전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence)</h1>
+
+<h2 id="정의-2">정의</h2>
+
 <blockquote>
-  <ol>
-    <li>상수행렬 (constant matrix) : 연립일차방정식의 상수들로 구성된 $m \times 1$ 행렬</li>
-  </ol>
+  <p>단사함수이면서 전사 함수인 함수</p>
 </blockquote>
 
 <ul>
-  <li>$B = $
-$\begin{bmatrix}
-b_{1}\\<br />
-b_{2}\\<br />
-\cdots\\<br />
-b_{n}
-\end{bmatrix}$</li>
+  <li>
+    <p>|$dom(f)$| $=$ |$codom(f)$|</p>
+  </li>
+  <li>
+    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
+  </li>
+</ul>
+
+<h3 id="전단사함수의-조건">전단사함수의 조건</h3>
+
+<blockquote>
+  <p>정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다.</p>
+</blockquote>
+
+<ul>
+  <li>정의역, 공역, 치역의 원소 개수가 모두 같다.</li>
 </ul>
 
 <h3 id="예시-2">예시</h3>
 
-<ul>
-  <li>
-    <p>연립일차방정식을 행렬로 표현하면 다음과 같다.</p>
-  </li>
-  <li>
-    <p>$AX = $
-$\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\<br />
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br />
-a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
-\end{bmatrix}$
-$\begin{bmatrix}
-x_{1}\\<br />
-x_{2}\\<br />
-\cdots\\<br />
-x_{n}
-\end{bmatrix} = $
-$\begin{bmatrix}
-b_{1}\\<br />
-b_{2}\\<br />
-\cdots\\<br />
-b_{n}
-\end{bmatrix} = B$</p>
-  </li>
-</ul>
+<p><img src="/assets/images/Math/dm/dm_example_13_03.png" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 성질 함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다. 함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다. 단사함수, 일대일 함수 (injective function, injection, one-to-one function) 정의 함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수 |$dom(f)$| $\le$ |$codom(f)$| |$ran(f)$| $\le$ |$codom(f)$| |$dom(f)$| $\le$ |$ran(f)$| 정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다. 단사함수의 조건 공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다. 정의역과 치역의 원소 개수가 같아야 한다. 예시 정의 함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수 |$dom(f)$| $\ge$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다. 전사함수의 조건 정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다. 공역과 치역의 원소 개수가 같다. 예시 전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence) 정의 단사함수이면서 전사 함수인 함수 |$dom(f)$| $=$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전단사함수의 조건 정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다. 정의역, 공역, 치역의 원소 개수가 모두 같다. 예시]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 01.함수의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-12/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 01.함수의 개념" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-12</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-12/"><![CDATA[<h1 id="함수의-개념">함수의 개념</h1>
 
-<h2 id="정의--첨가행렬-augmented-matrix">정의 : 첨가행렬 (augmented matrix)</h2>
+<h2 id="정의--함수function--f--a-rightarrow-b">정의 : 함수(function : $f : A \rightarrow B$)</h2>
 
 <blockquote>
-  <p>연립일차방정식의 계수행렬 $A$ 와 상수행렬 $B$ 를 다음과 같은 형태로 구성한 행렬</p>
+  <p>집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계</p>
 </blockquote>
 
 <ul>
-  <li>$\begin{bmatrix}
-a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; | &amp; b_{1} \\<br />
-a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; | &amp; b_{2} \\<br />
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; | &amp; \cdots \\<br />
-a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; | &amp; b_{n}
-\end{bmatrix}$</li>
-</ul>
-
-<h3 id="예시-3">예시</h3>
-
-<ul>
   <li>
-    <p>다음과 같은 연립일차방정식이 있다.</p>
-
-    <p>$ x + 5y + 10z = 1$<br />
-  $ 3x + y + z = 2$<br />
-  $ 2 + 9y + 5z = 3$</p>
+    <p>집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여,</p>
 
     <ul>
-      <li>
-        <p>계수행렬 $A = $ 
-  $\begin{bmatrix}
-  1 &amp; 5 &amp; 10 \\<br />
-  3 &amp; 1 &amp; 1  \\<br />
-  2 &amp; 9 &amp; 5
-  \end{bmatrix}$</p>
+      <li>원상 (preimage)
+        <ul>
+          <li>집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$</li>
+        </ul>
       </li>
-      <li>
-        <p>미지수 행렬 $X = $
-  $\begin{bmatrix}
-  x \\<br />
-  y \\<br />
-  z
-  \end{bmatrix}$</p>
+      <li>상 (image)
+        <ul>
+          <li>집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$</li>
+        </ul>
       </li>
-      <li>
-        <p>상수행렬 $B = $
-  $\begin{bmatrix}
-  1 \\<br />
-  2 \\<br />
-  3
-  \end{bmatrix}$</p>
+      <li>정의역 (domain, $dom(f)$)
+        <ul>
+          <li>원상의 집합, 집합 $A$</li>
+        </ul>
+      </li>
+      <li>공역 (codomain, $codom(f)$)
+        <ul>
+          <li>상이 포함된 집합, 집합 $B$</li>
+        </ul>
+      </li>
+      <li>치역 (range, $ran(f)$)
+        <ul>
+          <li>상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$
+  {$f(a) | a \in A$}</li>
+        </ul>
       </li>
     </ul>
   </li>
-  <li>
-    <p>첨가행렬</p>
+</ul>
 
-    <p>$\begin{bmatrix}
-  1 &amp; 5 &amp; 10 &amp; | &amp; 1 \\<br />
-  3 &amp; 1 &amp; 1  &amp; | &amp; 2 \\<br />
-  2 &amp; 9 &amp; 5  &amp; | &amp; 3
-  \end{bmatrix}$</p>
+<h2 id="관계와-함수의-차이">관계와 함수의 차이</h2>
+
+<ul>
+  <li>집합 $A$ 에서 집합 $B$ 로의 관계
+    <ul>
+      <li>집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다.</li>
+    </ul>
+  </li>
+  <li>집합 $A$ 에서 집합 $B$ 로의 함수
+    <ul>
+      <li>집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다.</li>
+    </ul>
   </li>
 </ul>
 
-<h2 id="정의--행-사다리꼴-행렬과-기약-행-사다리꼴-행렬">정의 : 행 사다리꼴 행렬과 기약 행 사다리꼴 행렬</h2>
-
-<blockquote>
-  <ol>
-    <li>행 사다리꼴 행렬(row echelon form matrix)
-      <ul>
-        <li>각 행의 0이 아닌 첫 번째 원소가 1이고, 그 1을 포함하는 열에서 1의 아래쪽 원소가 모두 0인 행렬</li>
-      </ul>
-    </li>
-  </ol>
-</blockquote>
-
-<blockquote>
-  <ol>
-    <li>기약 행 사다리꼴(reduced row echelon form matrix)
-      <ul>
-        <li>행 사다리꼴 행렬에서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬</li>
-      </ul>
-    </li>
-  </ol>
-</blockquote>
-
-<h3 id="예시-4">예시</h3>
+<h3 id="예시">예시</h3>
 
 <ul>
   <li>
-    <p>행 사다리꼴 행렬의 조건</p>
-
-    <ol>
-      <li>
-        <p>어떤 행은 1열부터 0으로 구성된다.</p>
-      </li>
-      <li>
-        <p>모든 행의 0이 아닌 첫 번째 원소는 1이다.</p>
-      </li>
-      <li>
-        <p>모든 행의 0이 아닌 첫 번째 원소는 상위 행의 0이 아닌 첫 번째 원소보다 오른쪽 열에 위치한다.</p>
-      </li>
-      <li>
-        <p>모든 원소가 0인 행이 있다면 행렬의 가장 마지막 행에 위치한다.</p>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <p>다음 행렬 $A$ 가 있다.</p>
-
-    <p>$A = $
-  $\begin{bmatrix}
-  1 &amp; 5 &amp; 9 &amp; 1 \\<br />
-  0 &amp; 0 &amp; 1 &amp; 3 \\<br />
-  0 &amp; 0 &amp; 0 &amp; 1 \\<br />
-  0 &amp; 0 &amp; 0 &amp; 0
-  \end{bmatrix}$</p>
+    <p>집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다.</p>
 
     <ul>
-      <li>
-        <p>4행은 1열부터 0으로 구성되어 조건 1을 만족한다.</p>
-      </li>
-      <li>
-        <p>각 행의 0이 아닌 첫 번째 원소가 모두 1이므로 조건 2를 만족한다.</p>
-      </li>
-      <li>
-        <p>각 행의 0이 아닌 첫 번째 원소 1은 상위 행의 0이 아닌 첫 번째 원소 1보다 오른쪽 열에 위치하므로 조건 3도 만족한다.</p>
-      </li>
-      <li>
-        <p>모든 원소가 0인 행은 가장 마지막 행에 위치하여 조건 4를 만족한다.</p>
-      </li>
+      <li>$f =$ {$(a, 1), (b, 1), (c, 2)$}</li>
     </ul>
-
-    <blockquote>
-      <p>위 조건 1 ~ 4 까지 전부 만족하므로 행렬 $A$ 는 행 사다리꼴 행렬이다.</p>
-    </blockquote>
   </li>
   <li>
-    <p>기약 행 사다리꼴 조건</p>
+    <p>관계 $f$ 에 포함된 순서쌍</p>
 
-    <ul>
-      <li>행 사다리꼴 행렬의 조건을 만족하면서 각 행의 0이 아닌 첫 번째 원소 1을 포함한 열의 나머지 원소가 모두 0인 행렬을 말한다.</li>
-    </ul>
-
-    <p>$A = $
-  $\begin{bmatrix}
-  0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\<br />
-  0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\<br />
-  0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
-  \end{bmatrix}$</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">순서쌍에 대한 식 표현</th>
+          <th style="text-align: center">원상</th>
+          <th style="text-align: center">상</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">$f(a) = 1$</td>
+          <td style="text-align: center">a</td>
+          <td style="text-align: center">2</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$f(b) = 1$</td>
+          <td style="text-align: center">b</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$f(c) = 2$</td>
+          <td style="text-align: center">c</td>
+          <td style="text-align: center">2</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
-</ul>
-
-<h1 id="가우스-소거법-gaussian-elimination">가우스 소거법 (Gaussian elimination)</h1>
-
-<blockquote>
-  <p>가우스 소거법은 주어진 첨가행렬을 행 사다리꼴 행렬로 변환하고 그렇게 변환한 첨가행렬을 다시 연립일차방정식으로 만들어 후진 대입법으로 값을 대입하면서 해를 구한다.</p>
-</blockquote>
-
-<h2 id="정리--기본-행-연산-elementary-row-operation">정리 : 기본 행 연산 (elementary row operation)</h2>
-<blockquote>
-  <ol>
-    <li>한 행에 0이 아닌 스칼라를 곱한다.</li>
-    <li>스칼라곱을 한 행을 다른 행에 더한다.<br />
-(필요에 따라 행의 위치를 교환할 수도 있다.)</li>
-  </ol>
-</blockquote>
-
-<p><br /><br /></p>
-
-<h1 id="참고-문헌">참고 문헌</h1>
-<ul>
-  <li>박주미, ⌜컴퓨팅 사고력을 키우는 이산 수학수학 3판⌟ , 2023 , 한빛아카데미 , p231 ~ p233</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[행렬과 연립일차방정식]]></summary></entry></feed>
+  <li>
+    <p>원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다.</p>
+  </li>
+  <li>
+    <p>상은 $f$ 의 공역인 집합 $B$ 의 원소이다.</p>
+  </li>
+  <li>
+    <p>집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다.</p>
+  </li>
+  <li>정의역 : $dom(f) = A$</li>
+  <li>공역 : $codom(f) = B$</li>
+  <li>치역 : {$1, 2$}</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 개념 정의 : 함수(function : $f : A \rightarrow B$) 집합 $A$ 에서 집합 $B$ 로 가는 관계가 성립할 때, 집합 $A$ 의 원소 $a$ 에 대하여 집합 $B$ 의 원소 $b$ 하나가 대응되는 관계 집합 $A$ 에서 집합 $B$ 로 가는 함수 $f : A \rightarrow B$ 에 대하여, 원상 (preimage) 집합 $B$ 의 원소 $b$ 와 대응하는 집합 $A$ 의 원소 $a$ 상 (image) 집합 $A$ 의 원소 $a$ 에 대응하는 집합 $B$ 의 원소 $b$ 정의역 (domain, $dom(f)$) 원상의 집합, 집합 $A$ 공역 (codomain, $codom(f)$) 상이 포함된 집합, 집합 $B$ 치역 (range, $ran(f)$) 상의 집합, 집합 $B$ 의 부분집합, $ran(f) =$ {$f(a) | a \in A$} 관계와 함수의 차이 집합 $A$ 에서 집합 $B$ 로의 관계 집합 $A$ (정의역)의 어떤 원소는 집합 $B$ (공역)의 원소와 전혀 대응하지 않거나 하나 이상의 원소와 대응할 수 있다. 집합 $A$ 에서 집합 $B$ 로의 함수 집합 $A$ (정의역)의 모든 원소는 집합 $B$ (공역)의 원소 하나와 반드시 대응해야 한다. 예시 집합 $A =$ {$a, b, c$} 에서 집합 $B = ${$1, 2, 3$} 로 가는 관계가 다음과 같다. $f =$ {$(a, 1), (b, 1), (c, 2)$} 관계 $f$ 에 포함된 순서쌍 순서쌍에 대한 식 표현 원상 상 $f(a) = 1$ a 2 $f(b) = 1$ b 1 $f(c) = 2$ c 2 원상은 관계 $f$ 의 정의역인 집합 $A$ 의 원소이다. 상은 $f$ 의 공역인 집합 $B$ 의 원소이다. 집합 $A$ 의 모든 원소가 원상으로 사용되며 각 원상은 오직 하나의 상과 대응한다. 정의역 : $dom(f) = A$ 공역 : $codom(f) = B$ 치역 : {$1, 2$}]]></summary></entry></feed>

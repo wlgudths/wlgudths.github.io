@@ -184,4 +184,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-20/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 02. 이진트리",
+        "excerpt":"이진트리 (binary tree) 트리에서 부모노드가 가질 수 있는 자식노드의 수는 제한이 없다. 그러나 컴퓨터 과학에서는 단순하고 명확하게 연산, 탐색, 정렬하기 위해 자식노드의 수를 2개로 제한해 표현하기도 한다. 이러한 트리를 이진트리라고 한다. 정의 : 이진트리 (binary tree) 트리인 그래프 $T$를 구성하는 각 노드의 최대 차수가 2인 트리 예시 ($n$항 트리) 어떤...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-21/",
+        "teaser": null
       }]
