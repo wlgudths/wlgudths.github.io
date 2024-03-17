@@ -190,4 +190,16 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-21/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 03. 이진트리 구현",
+        "excerpt":"이진트리의 구현 그래프 형태로 구현하여 확인할 수 있는 이진트리는 연산을 하거나 시스템으로 구현하기 위해 배열이나 연결리스트와 같은 자료 구조 형태로 표현하기도 한다. 배열로 구현한 이진트리 높이가 $h$인 완전이진트리는 다음 전제에 따라 1차원 배열로 구현할 수 있다. 루트노드의 인덱스를 1로 하여 각 노드에 인덱스 번호를 부여한다. 형제노드 중 왼쪽 노드의 인덱스...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-22/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 04. 이진트리 순회",
+        "excerpt":"이진트리의 순회 트리를 구성하는 모든 노드를 한 번씩 방문하는 방법을 순회(traversal)라고 한다. 트리는 다음과 같은 규칙을 따른다. 항상 루트노드에서 시작한다. 노드의 데이터를 읽기 전에 노드가 존재하는지 먼저 탐색한다. 형제노드 중 왼쪽 노드를 먼저 탐색한다. 순회하는 서브트리의 루트노드를 언제 방문하느냐에 따라 전위순회, 중위순회, 후위순회로 구분한다. 정의 : 전위순회 (preorder traversal) 부모노드...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-23/",
+        "teaser": null
       }]

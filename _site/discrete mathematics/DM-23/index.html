@@ -1,0 +1,1243 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 트리(Tree) : 04. 이진트리 순회 | 느려도 괜찮아</title>
+<meta name="description" content="이진트리의 순회">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 트리(Tree) : 04. 이진트리 순회">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-23/">
+
+
+  <meta property="og:description" content="이진트리의 순회">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-02-10T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-02-11T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-23/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">34</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (23)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (9)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 트리(Tree) : 04. 이진트리 순회">
+    <meta itemprop="description" content="이진트리의 순회">
+    <meta itemprop="datePublished" content="2024-02-10T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-11T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-23/" class="u-url" itemprop="url">[이산수학] 트리(Tree) : 04. 이진트리 순회
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 04_이진 트리 순회</h4></header>
+              <ul class="toc__menu"><li><a href="#이진트리의-순회">이진트리의 순회</a><ul><li><a href="#정의--전위순회-preorder-traversal">정의 : 전위순회 (preorder traversal)</a><ul><li><a href="#예시">예시</a></li></ul></li><li><a href="#정의--중위순회-inorder-traversal">정의 : 중위순회 (inorder traversal)</a><ul><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#정의--후위순회-postorder-traversal">정의 : 후위순회 (postorder traversal)</a><ul><li><a href="#예시-2">예시</a></li></ul></li><li><a href="#순회를-이용한-수식-표현">순회를 이용한 수식 표현</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="이진트리의-순회">이진트리의 순회</h1>
+
+<blockquote>
+  <p>트리를 구성하는 모든 노드를 한 번씩 방문하는 방법을 <strong>순회(traversal)</strong>라고 한다.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>트리는 다음과 같은 규칙을 따른다.</p>
+
+    <ol>
+      <li>
+        <p>항상 루트노드에서 시작한다.</p>
+      </li>
+      <li>
+        <p>노드의 데이터를 읽기 전에 노드가 존재하는지 먼저 탐색한다.</p>
+      </li>
+      <li>
+        <p>형제노드 중 왼쪽 노드를 먼저 탐색한다.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>순회하는 서브트리의 루트노드를 언제 방문하느냐에 따라 전위순회, 중위순회, 후위순회로 구분한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--전위순회-preorder-traversal">정의 : 전위순회 (preorder traversal)</h2>
+
+<blockquote>
+  <p>부모노드 - 왼쪽 자식노드 - 오른쪽 자식노드 순으로 탐색하는 순회 방식</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_23_01.png" width="400" /></p>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">노드</td>
+      <td style="text-align: center">$1$</td>
+      <td style="text-align: center">$2$</td>
+      <td style="text-align: center">$3$</td>
+      <td style="text-align: center">$4$</td>
+      <td style="text-align: center">$5$</td>
+      <td style="text-align: center">$6$</td>
+      <td style="text-align: center">$7$</td>
+      <td style="text-align: center">$8$</td>
+      <td style="text-align: center">$9$</td>
+      <td style="text-align: center">$10$</td>
+      <td style="text-align: center">$11$</td>
+      <td style="text-align: center">$12$</td>
+      <td style="text-align: center">$13$</td>
+      <td style="text-align: center">$14$</td>
+      <td>$15$</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">데이터</td>
+      <td style="text-align: center">$A$</td>
+      <td style="text-align: center">$B$</td>
+      <td style="text-align: center">$C$</td>
+      <td style="text-align: center">$D$</td>
+      <td style="text-align: center">$E$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$F$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td>$null$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<details>
+<summary>[자세히] 전위순회 과정</summary>
+<div>
+
+    <ol>
+      <li>루트노드 $1$ 탐색 - 데이터 존재 확인 및 방문 - 노드 $1$애 데이터 $A$ 읽기
+        <ul>
+          <li>$A$</li>
+        </ul>
+      </li>
+      <li>노드 $1$의 왼쪽 자식노드 $2$탐색 - 데이터 존재 확인 및 방문 - 노드 $2$에 데이터 읽기
+        <ul>
+          <li>$A - B$</li>
+        </ul>
+      </li>
+      <li>노드 $2$의 왼쪽 자식노드 $4$탐색 - 데이터 존재 확인 및 방문 - 노드 $4$에 데이터 읽기
+        <ul>
+          <li>$A - B - D$</li>
+        </ul>
+      </li>
+      <li>노드 $4$의 왼쪽 자식노드 $8$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 오른쪽 자식노드 $9$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 부모노드 $2$로 백트래킹</li>
+      <li>노드 $2$의 오른쪽 자식노드 $5$ 탐색 - 데이터 존재 확인 및 방문 - 노드 $5$에 데이터 $E$ 읽기
+        <ul>
+          <li>$A - B - D - E$</li>
+        </ul>
+      </li>
+      <li>노드 $5$의 왼쪽 자식노드 $10$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 오른쪽 자식노드 $11$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 부모노드 $2$로 백트래킹</li>
+      <li>노드 $2$의 부모노드 $1$로 백트래킹</li>
+      <li>노드 $1$의 오른쪽 자식노드 $3$ 탐색 - 데이터 존재 확인 및 방문 - 노드 $3$에 데이터 $C$ 읽기
+        <ul>
+          <li>$A - B - D - E - C$</li>
+        </ul>
+      </li>
+      <li>노드 $3$의 왼쪽 자식노드 $6$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $3$의 오른쪽 자식노드 $7$ 탐색 - 데이터 존재 확인 및 방문 - 노드 $7$에 데이터 $F$ 읽기
+        <ul>
+          <li>$A - B - D - E - C - F$</li>
+        </ul>
+      </li>
+      <li>노드 $7$의 왼쪽 자식노드 $14$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 오른쪽 자식노드 $15$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 부모노드 $3$으로 백트래킹</li>
+      <li>노드 $3$의 부모노드 $1$으로 백트래킹</li>
+      <li>순회종료</li>
+    </ol>
+
+  </div>
+</details>
+
+<blockquote>
+  <p>전위순회 결과는 $A - B - D - E - C - F$이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--중위순회-inorder-traversal">정의 : 중위순회 (inorder traversal)</h2>
+
+<blockquote>
+  <p>왼쪽 자식노드 - 부모노드 - 오른쪽 자식노드 순으로 탐색하는 순회 방식</p>
+</blockquote>
+
+<h3 id="예시-1">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_23_01.png" width="400" /></p>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">노드</td>
+      <td style="text-align: center">$1$</td>
+      <td style="text-align: center">$2$</td>
+      <td style="text-align: center">$3$</td>
+      <td style="text-align: center">$4$</td>
+      <td style="text-align: center">$5$</td>
+      <td style="text-align: center">$6$</td>
+      <td style="text-align: center">$7$</td>
+      <td style="text-align: center">$8$</td>
+      <td style="text-align: center">$9$</td>
+      <td style="text-align: center">$10$</td>
+      <td style="text-align: center">$11$</td>
+      <td style="text-align: center">$12$</td>
+      <td style="text-align: center">$13$</td>
+      <td style="text-align: center">$14$</td>
+      <td>$15$</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">데이터</td>
+      <td style="text-align: center">$A$</td>
+      <td style="text-align: center">$B$</td>
+      <td style="text-align: center">$C$</td>
+      <td style="text-align: center">$D$</td>
+      <td style="text-align: center">$E$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$F$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td>$null$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<details>
+<summary>[자세히] 중위순회 과정</summary>
+<div>
+
+    <ol>
+      <li>루트노드 $1$ 방문</li>
+      <li>노드 $1$의 왼쪽 자식노드 $2$탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $2$의 왼쪽 자식노드 $4$탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $4$의 왼쪽 자식노드 $8$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 데이터 $D$ 읽기
+        <ul>
+          <li>$D$</li>
+        </ul>
+      </li>
+      <li>노드 $4$의 오른쪽 자식노드 $9$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 부모노드 $2$로 백트래킹 - 노드 $2$의 데이터 $B$ 읽기
+        <ul>
+          <li>$D - B$</li>
+        </ul>
+      </li>
+      <li>노드 $2$의 오른쪽 자식노드 $5$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $5$의 왼쪽 자식노드 $10$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 데이터 $E$ 읽기
+        <ul>
+          <li>$D - B - E$</li>
+        </ul>
+      </li>
+      <li>노드 $5$의 오른쪽 자식노드 $11$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 부모노드 $2$로 백트래킹</li>
+      <li>노드 $2$의 부모노드 $1$로 백트래킹 - 노드 $1$의 데이터 $A$ 읽기
+        <ul>
+          <li>$D - B - E - A$</li>
+        </ul>
+      </li>
+      <li>노드 $1$의 오른쪽 자식노드 $3$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $3$의 왼쪽 자식노드 $6$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $3$의 데이터 $C$ 읽기
+        <ul>
+          <li>$D - B - E - A - C$</li>
+        </ul>
+      </li>
+      <li>노드 $3$의 오른쪽 자식노드 $7$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $7$의 왼쪽 자식노드 $14$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 데이터 $F$ 읽기
+        <ul>
+          <li>$D - B - E - A - C - F$</li>
+        </ul>
+      </li>
+      <li>노드 $7$의 오른쪽 자식노드 $15$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 부모노드 $3$으로 백트래킹</li>
+      <li>노드 $3$의 부모노드 $1$으로 백트래킹</li>
+      <li>순회종료</li>
+    </ol>
+
+  </div>
+</details>
+
+<blockquote>
+  <p>중위순회 결과는 $D - B - E - A - C - F$이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--후위순회-postorder-traversal">정의 : 후위순회 (postorder traversal)</h2>
+
+<blockquote>
+  <p>왼쪽 자식노드 - 오른쪽 자식노드 - 부모노드 순으로 탐색하는 순회 방식</p>
+</blockquote>
+
+<h3 id="예시-2">예시</h3>
+
+<p><img src="/assets/images/Math/dm/dm_example_23_01.png" width="400" /></p>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">노드</td>
+      <td style="text-align: center">$1$</td>
+      <td style="text-align: center">$2$</td>
+      <td style="text-align: center">$3$</td>
+      <td style="text-align: center">$4$</td>
+      <td style="text-align: center">$5$</td>
+      <td style="text-align: center">$6$</td>
+      <td style="text-align: center">$7$</td>
+      <td style="text-align: center">$8$</td>
+      <td style="text-align: center">$9$</td>
+      <td style="text-align: center">$10$</td>
+      <td style="text-align: center">$11$</td>
+      <td style="text-align: center">$12$</td>
+      <td style="text-align: center">$13$</td>
+      <td style="text-align: center">$14$</td>
+      <td>$15$</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">데이터</td>
+      <td style="text-align: center">$A$</td>
+      <td style="text-align: center">$B$</td>
+      <td style="text-align: center">$C$</td>
+      <td style="text-align: center">$D$</td>
+      <td style="text-align: center">$E$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$F$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td style="text-align: center">$null$</td>
+      <td>$null$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<details>
+<summary>[자세히] 후위순회 과정</summary>
+<div>
+
+    <ol>
+      <li>루트노드 $1$ 방문</li>
+      <li>노드 $1$의 왼쪽 자식노드 $2$탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $2$의 왼쪽 자식노드 $4$탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $4$의 왼쪽 자식노드 $8$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 오른쪽 자식노드 $9$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $4$의 데이터 읽기
+        <ul>
+          <li>$D$</li>
+        </ul>
+      </li>
+      <li>노드 $4$의 부모노드 $2$로 백트래킹</li>
+      <li>노드 $2$의 오른쪽 자식노드 $5$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $5$의 왼쪽 자식노드 $10$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 오른쪽 자식노드 $11$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $5$의 데이터 읽기
+        <ul>
+          <li>$D - E$</li>
+        </ul>
+      </li>
+      <li>노드 $5$의 부모노드 $2$로 백트래킹 - 노드 $2$의 데이터 $B$ 읽기
+        <ul>
+          <li>$D - E - B$</li>
+        </ul>
+      </li>
+      <li>노드 $2$의 부모노드 $1$로 백트래킹</li>
+      <li>노드 $1$의 오른쪽 자식노드 $3$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $3$의 왼쪽 자식노드 $6$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $3$의 오른쪽 자식노드 $7$ 탐색 - 데이터 존재 확인 및 방문</li>
+      <li>노드 $7$의 왼쪽 자식노드 $14$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 오른쪽 자식노드 $15$ 탐색 - 데이터 없음을 확인</li>
+      <li>노드 $7$의 데이터 읽기
+        <ul>
+          <li>$D - E - B - F$</li>
+        </ul>
+      </li>
+      <li>노드 $7$의 부모노드 $3$으로 백트래킹 - 노드 $3$의 데이터 $C$ 읽기
+        <ul>
+          <li>$D - E - B - F - C$</li>
+        </ul>
+      </li>
+      <li>노드 $3$의 부모노드 $1$으로 백트래킹 - 노드 $1$의 데이터 $A$ 읽기
+        <ul>
+          <li>$D - E - B - F - C - A$</li>
+        </ul>
+      </li>
+      <li>순회종료</li>
+    </ol>
+
+  </div>
+</details>
+
+<blockquote>
+  <p>후위순회 결과는 $D - E - B - F - C - A$이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="순회를-이용한-수식-표현">순회를 이용한 수식 표현</h2>
+
+<ul>
+  <li>
+    <p>트리의 순회는 컴퓨터에서 수식을 표기하고 이해하는 데 활용되기도 한다.</p>
+  </li>
+  <li>
+    <p>수식 $(a + b) \times (c - d)$ 는 다음과 같은 순서로 수행한다.</p>
+
+    <ol>
+      <li>
+        <p>변수 $a, b, c, d$에 값을 입력</p>
+      </li>
+      <li>
+        <p>$a + b$ 를 계산</p>
+      </li>
+      <li>
+        <p>$c - d$ 를 계산</p>
+      </li>
+      <li>
+        <p>$(a + b) \times (c - d)$ 를 계산</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>수식을 이진트리로 표현할 때는 가장 먼저 수행하는 작업을 리프노드에 위치, 가장 마지막은 루트노드에 위치시킨다.</p>
+  </li>
+  <li>
+    <p>위 순서와 같이 이진트리를 표현하면 다음 그림과 같다.</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_23_02.png" width="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>트리로 표현된 연산식을 전위순회, 중위순회, 후위순회의 방식으로 읽어낼 수 있다.</p>
+
+    <ul>
+      <li>
+        <p>전위순회 : $\times \ + \ a \ \ b \ - \ c \ \ d \ $</p>
+      </li>
+      <li>
+        <p>중위순회 : $a \  + \  b \  \times \  c \  - \  d \ $</p>
+      </li>
+      <li>
+        <p>후위순회 : $a \ \   b \  + \  c \ \   d \  - \  \times \ $</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-11">February 11, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-22/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 트리(Tree) : 03. 이진트리 구현</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-22/" class="pagination--pager" title="[이산수학] 트리(Tree) : 03. 이진트리 구현
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-22/" rel="permalink">[이산수학] 트리(Tree) : 03. 이진트리 구현
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이진트리의 구현
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-21/" rel="permalink">[이산수학] 트리(Tree) : 02. 이진트리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">이진트리 (binary tree)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-20/" rel="permalink">[이산수학] 트리(Tree) : 01. 트리의 개념
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리의 개념
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-19/" rel="permalink">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">오일러와 해밀턴
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
