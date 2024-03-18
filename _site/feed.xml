@@ -1,4 +1,538 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-17T23:19:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 04. 이진트리 순회</title><link href="http://localhost:4000/discrete%20mathematics/DM-23/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 04. 이진트리 순회" /><published>2024-02-10T00:00:00+09:00</published><updated>2024-02-11T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-23</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-23/"><![CDATA[<h1 id="이진트리의-순회">이진트리의 순회</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-18T22:28:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
+
+<h2 id="프림-알고리즘의-과정">프림 알고리즘의 과정</h2>
+
+<ol>
+  <li>
+    <p>$v$ 개의 정점을 포함하는 그래프 $G$ 에서 가중치가 가장 작은 변과 그 변에 연결된 정점을 노드로 선택한다.</p>
+
+    <ul>
+      <li>가중치가 같은 변이 $2$ 개 이상 있을 경우 임의로 하나를 선택한다.</li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>선택한 노드에 연결된 모든 변들 중 가중치가 가장 작은 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>가중치가 같은 변이 $2$ 개 이상 있을 경우 임의로 하나를 선택한다.</p>
+      </li>
+      <li>
+        <p>순환이 형성되는 경우에는 그 변을 선택하지 않는다.</p>
+      </li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>선택한 변이 $v - 1$ 개가 될 때까지 2번의 과정을 반복한다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>다음 그림과 같이 $6$ 개의 노드를 갖는 그래프 $G$ 를 프림 알고리즘의 규칙을 이용해 최소신장트리로 만드는 과정이다.</p>
+  </li>
+  <li>
+    <p>각 변에 부여된 가중치는 비용이다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_26_01.png" width="500" /> <img src="/assets/images/Math/dm/dm_example_26_02.png" width="350" /></p>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>가중치가 가장 작은 변인 노드 $A, C$ 를 연결하는 변과 해당 노드를 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $2$ 개</p>
+      </li>
+      <li>
+        <p>변 : $1$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_26_03.png" width="250" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>노드 $A, C$ 와 연결된 노드 중 ($B, D, E, F$) 가중치가 가장 작은 변인 노드 $A, D$ 를 연결한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $3$ 개</p>
+      </li>
+      <li>
+        <p>변 : $2$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_26_04.png" width="500" /> <img src="/assets/images/Math/dm/dm_example_26_05.png" width="250" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>노드 $A, C, D$ 와 연결된 노드 중 ($B, E, F$) 가중치가 가장 작은 변은 $12$ 로 $(C, B)$ 와 $(C, D)$ 가 있다.</p>
+
+    <ul>
+      <li>
+        <p>$(C, D)$ 를 연결할 경우 노드 $A, C, D$ 사이에 순환이 형성되므로 선택할 수 없다.</p>
+      </li>
+      <li>
+        <p>따라서 노드 $C, B$ 를 연결하는 변을 선택해 노드 $A, B, C, D$ 를 연결한다.</p>
+      </li>
+      <li>
+        <p>노드 : $4$ 개</p>
+      </li>
+      <li>
+        <p>변 : $3$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_26_06.png" width="500" /> <img src="/assets/images/Math/dm/dm_example_26_07.png" width="300" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>노드 $A, B, C, D$ 와 연결된 노드 중 ($E, F$) 가중치가 가장 작은 변인 노드 $(B, E)$ 를 연결한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $5$ 개</p>
+      </li>
+      <li>
+        <p>변 : $4$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_26_08.png" width="500" /> <img src="/assets/images/Math/dm/dm_example_26_09.png" width="300" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>노드 $A, B, C, D, E$ 와 연결된 변과 노드 중 가중치가 가장 작은 변인 노드 $(E, F)$ 를 연결한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $6$ 개</p>
+      </li>
+      <li>
+        <p>변 : $5$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_26_10.png" width="500" /> <img src="/assets/images/Math/dm/dm_example_26_11.png" width="330" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>최소신장트리의 변의 수 $(5)$ 가 노드 수 $- 1$ $(6 - 1)$ 이므로 실행을 종료한다.</p>
+  </li>
+  <li>
+    <p>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</p>
+  </li>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[프림 알고리즘 (Prim algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 06. 트리의 활용</title><link href="http://localhost:4000/discrete%20mathematics/DM-25/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 06. 트리의 활용" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-25</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-25/"><![CDATA[<h1 id="트리의-활용">트리의 활용</h1>
+
+<ul>
+  <li>
+    <p>트리는 그래프의 한 종류이다.</p>
+  </li>
+  <li>
+    <p>그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다.</p>
+  </li>
+  <li>
+    <p>그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다.</p>
+  </li>
+  <li>
+    <p>이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="최소신장트리">최소신장트리</h1>
+
+<h2 id="정의--신장트리-spanning-tree">정의 : 신장트리 (spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하는 트리 $T$</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>신장트리 $T$ 는 하나의 그래프 $G$ 에서 유도될 수 있는 다양한 형태의 트리로,<br />
+그래프를 구성하는 모든 정점은 루트노드가 될 수 있으며 부모노드와 자식노드를 연결하는 변을 그래프 $G$ 에도 포함되는 변이어야 한다.</p>
+  </li>
+  <li>
+    <p>다음 그림은 그래프 $G$ 에서 노드 $A$ 를 루트노드로 선택할 때 만들 수 있는 신장트리의 예이다.</p>
+  </li>
+  <li>
+    <p>그래프 $G$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="500" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>그래프 $G$ 에 대한 신장트리 $T$ 의 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /> $\qquad$ <img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이처럼 주어진 그래프에서 트리를 유도할 때 트리가 활용되는 목적에 따라 다양한 형태의 트리가 만들어질 수 있다.</p>
+  </li>
+  <li>
+    <p>특히 가중치그래프가 주어진 경우에는 각 노드를 탐색하는 비용이 최소가 되는 변들을 선택하여 트리를 구성할 수 있다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--최소신장트리-minimum-spanning-tree">정의 : 최소신장트리 (minimum spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하면서 노드 간의 비용을 최소로 하는 트리 $T$</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>그래프에서 최소 비용을 갖는 트리를 구성하는 대표적인 알고리즘으로 프림 알고리즘과 크루스칼 알고리즘이 있다.</p>
+  </li>
+  <li>
+    <p>프림 알고리즘과 크루스칼 알고리즘에 대한 자세한 설명은 다음 장인 6-1 과 6-2 에서 다루겠습니다.</p>
+
+    <ul>
+      <li>
+        <p>프림알고리즘 (링크 예정)</p>
+      </li>
+      <li>
+        <p>크루스칼 알고리즘 (링크 예정)</p>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 활용]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 05. 이진탐색트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-24/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 05. 이진탐색트리" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-24</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-24/"><![CDATA[<h1 id="이진탐색트리">이진탐색트리</h1>
+
+<ul>
+  <li>
+    <p><strong>탐색(search)</strong> : 수많은 데이터 중 원하는 데이터를 찾아가는 과정</p>
+  </li>
+  <li>
+    <p>탐색은 데이터의 정렬 방식이나 탐색 기준에 따라 그 방법이 달라진다.</p>
+  </li>
+  <li>
+    <p>어떤 기준 또는 <strong>키(key)</strong>를 정하고 그 키를 이용해 탐색해가는 방법을 이진탐색이라 한다.</p>
+  </li>
+  <li>
+    <p>이 탐색을 도와주는 트리를 <strong>이진탐색트리</strong>라고 한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--이진탐색-binary-search">정의 : 이진탐색 (binary search)</h2>
+
+<blockquote>
+  <p>탐색을 위한 일정 기준을 가지고 대상 데이터를 탐색하는 방법</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--이진탐색트리-binary-search-tree">정의 : 이진탐색트리 (binary search tree)</h2>
+
+<blockquote>
+  <p>노드로 표현되는 데이터에 대한 기준에 따라 노드의 위치를 탐색할 수 있는 트리</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>탐색을 위해 이진탐색트리를 구현하는 규칙은 다음과 같다.</p>
+
+    <ol>
+      <li>
+        <p>트리에서 탐색되는 모든 원소는 서로 다른 유일키를 갖는다.</p>
+      </li>
+      <li>
+        <p>왼쪽 서브트리에 있는 원소들의 키는 그 루트의 키보다 작거나 앞선 순서를 갖는다.</p>
+      </li>
+      <li>
+        <p>오른쪽 서브트리에 있는 원소들의 키는 그 루트의 키보다 크거나 뒤의 순서를 갖는다.</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>$15, 12, 13, 21, 18, 10, 24, 22, 7, 11, 25$ 가 주어질 때 이 값들을 탐색하기 위해 이진탐색트리로 구성해보자.</p>
+
+    <ol>
+      <li>
+        <p>$15$ 입력 : 루트노드</p>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_01.png" width="300" /></p>
+      </li>
+      <li>$12$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>루트노드($15$)의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_02.png" width="300" /></p>
+      </li>
+      <li>$13$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_03.png" width="300" /></p>
+      </li>
+      <li>$21$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_04.png" width="300" /></p>
+      </li>
+      <li>$18$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_05.png" width="300" /></p>
+      </li>
+      <li>$10$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리인 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_06.png" width="300" /></p>
+      </li>
+      <li>$24$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_07.png" width="300" /></p>
+      </li>
+      <li>$22$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $24$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$24$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_08.png" width="300" /></p>
+      </li>
+      <li>$7$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $10$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$10$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_09.png" width="300" /></p>
+      </li>
+      <li>$11$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $10$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$10$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_10.png" width="300" /></p>
+      </li>
+      <li>$25$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $24$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$24$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_11.png" width="300" /></p>
+      </li>
+    </ol>
+
+    <p><br /></p>
+
+    <ul>
+      <li>
+        <p>이렇게 완성된 이진탐색트리는 루트노드 $15$ 는 $15$ 보다 작은 값들로 구성된 왼쪽 서브트리, $15$ 보다 큰 값들로 구성된 오른쪽 서브트리를 갖는다.</p>
+      </li>
+      <li>
+        <p>그래서 $15$ 는 두 서브트리를 구분하는 유일키이다.</p>
+      </li>
+      <li>
+        <p>왼쪽 서브트리의 경우 서브트리의 루트노드인 $12$ 는 $12$ 보다 작은 값들로 구성된 왼쪽 서브트리와 $12$ 보다 큰 값들로 구성된 오른쪽 서브트리를 갖는다.</p>
+      </li>
+      <li>
+        <p>그러므로 $12$ 는 이 두 서브트리를 구분하는 유일키이고 $15$ 보다 작은 값들을 탐색할 수 있다.</p>
+      </li>
+      <li>
+        <p>반대로 $15$ 보다 큰 값들은 $21$ 이 유일키일 것이다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이진탐색트리에서 $18$ 을 탐색하는 과정</p>
+
+    <ol>
+      <li>$18$ 은 이 트리의 루트노드이면서 유일키인 $15$ 보다 크다.
+        <ul>
+          <li>$15$ 오른쪽 서브트리 탐색</li>
+        </ul>
+      </li>
+      <li>$18$ 은 오른쪽 서브트리의 루트노드이면서 유일키인 $21$ 보다 작다.
+        <ul>
+          <li>$21$ 의 왼쪽 서브트리 탐색</li>
+        </ul>
+      </li>
+      <li>
+        <p>$18$ 은 오른쪽 서브트리의 루트노드이다.</p>
+      </li>
+      <li>탐색을 종료</li>
+    </ol>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[이진탐색트리]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 04. 이진트리 순회</title><link href="http://localhost:4000/discrete%20mathematics/DM-23/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 04. 이진트리 순회" /><published>2024-02-10T00:00:00+09:00</published><updated>2024-02-11T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-23</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-23/"><![CDATA[<h1 id="이진트리의-순회">이진트리의 순회</h1>
 
 <blockquote>
   <p>트리를 구성하는 모든 노드를 한 번씩 방문하는 방법을 <strong>순회(traversal)</strong>라고 한다.</p>
@@ -2409,533 +2943,4 @@ $\qquad \qquad \qquad \qquad \qquad \ $오른쪽 자식노드의 인덱스 : $2n
     </ul>
 
   </div>
-</details>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 종류 그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다. 부분그래프와 신장부분그래프 정의 : 부분그래프 (subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$ 정의 : 신장부분그래프 (spanning subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$ 예시 다음 그래프 $G$ 가 다음과 같다. $G = (V, E)$ $V = ${$A, B, C, D$} $E = ${$(A, B), (A, D), (B, C), (B, D)$} 그래프 $G$ $G$ 의 부분그래프 $G$ 의 신장부분그래프 정의 : 동형그래프 (isomorphic graph) 그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$ 예시 동형그래프인 예와 아닌 예 그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다. $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$} 그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다. $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$ $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$ 그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다. 그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다. 연결그래프 정의 : 연결그래프 (connecteed graph) 그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프 정의 : 경로 (path) 그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길 길 (walk) 그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열 $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$ $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$ 예시 연결그래프인 예와 아닌 예 그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다. $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다. 그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다. 그래프 $B$ 는 연결그래프가 아니다. 평면그래프 정의 : 평면그래프(planar graph) 연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프 예시 평면그래프인 예와 아닌 예 그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다. 그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다. 그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다. 정리 : 오일러 공식 (Euler’s formula) 평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다. $v - e + s = 2$ 정규그래프와 완전그래프 정의 : 정규그래프 (regular graph : $k-$정규그래프) 그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프 $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$ 정의 : 완전그래프 (complete graph : $K_{n}$) 그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프 |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$ 예시 정규그래프와 완전그래프 예 두 그래프 모두 정규그래프이다. 두 그래프의 정점의 차수를 구하면 다음과 같다. 그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$ 그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$ 그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다. 그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다. 특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다. 그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다. 그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다. 이분그래프와 완전이분그래프 정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$)) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 정의 : 이분그래프(bipartite graph) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 예시 이분그래프, 완전이분그래프인 예와 아닌 예 그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다. 완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다. $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$ 그래프 $A$ 정점 $a$ $\rightarrow$ $b, d ,f$ 정점 $c$ $\rightarrow$ $b, d, f$ 정점 $d$ $\rightarrow$ $b, d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다. 그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다. 그래프 $B$ 정점 $a$ $\rightarrow$ $d ,f$ 정점 $c$ $\rightarrow$ $b, d$ 정점 $d$ $\rightarrow$ $d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다. 그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다. 그래프 $C$ 정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다. 따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 01.그래프의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-16/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 01.그래프의 개념" /><published>2024-01-22T00:00:00+09:00</published><updated>2024-01-22T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-16</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-16/"><![CDATA[<h1 id="그래프의-개념">그래프의 개념</h1>
-
-<ul>
-  <li>
-    <p>그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다.</p>
-  </li>
-  <li>
-    <p>그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="그래프의-정의와-표현">그래프의 정의와 표현</h1>
-
-<h2 id="정의--그래프-graph--g--v-e">정의 : 그래프 (graph : $G = (V, E)$)</h2>
-
-<blockquote>
-  <p>공집합이 아닌 <strong>정점(vertex, node)</strong>의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 <strong>변(edge)</strong>의 집합 $E$ 로 구성된 구조</p>
-</blockquote>
-
-<ul>
-  <li>$G = (V, E)$</li>
-  <li>$V =$ {$v_{1}, v_{2}, \cdots , v_{n}$}</li>
-  <li>
-    <p>$E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $  $1 \le i, j \le n$</p>
-  </li>
-  <li>
-    <p>정점 $v_{i}$ 와 $v_{j}$ 는 서로 <strong>인접(adjacent)</strong> 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다.</p>
-  </li>
-  <li>변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 <strong>근접(incident)</strong> 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다.</li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>
-    <p>위 정의에서 사용한 기호 표현의 의미는 다음과 같다.</p>
-  </li>
-  <li>$G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$</li>
-  <li>$V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$</li>
-  <li>$E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$<br />
-$\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p><img src="/assets/images/Math/dm/dm_example_16_01.png" /></p>
-
-    <ul>
-      <li>위 그래프를 수학적 기호로 표현하면 다음과 같다.</li>
-    </ul>
-
-    <ol>
-      <li>
-        <p>그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다.</p>
-      </li>
-      <li>
-        <p>집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다.</p>
-      </li>
-      <li>
-        <p>집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다.</p>
-        <ul>
-          <li>$e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$</li>
-        </ul>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <p>루프 (loop)</p>
-
-    <ul>
-      <li>
-        <p>위 그림 변 $e_{3}$ 과 같은 변을 <strong>루프(loop)</strong> 라고 한다.</p>
-      </li>
-      <li>
-        <p>루프는 하나의 정점에만 인접하는 변이다.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="그래프의-형태">그래프의 형태</h1>
-
-<h2 id="정의--단순-그래프-simple-graph">정의 : 단순 그래프 (simple graph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프</p>
-</blockquote>
-
-<h2 id="정의--다중-그래프-multi-graph">정의 : 다중 그래프 (multi-graph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프</p>
-</blockquote>
-
-<ul>
-  <li><img src="/assets/images/Math/dm/dm_example_16_02.png" /></li>
-</ul>
-
-<h2 id="정의--방향-그래프-directed-graph--g--v-e">정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$)</h2>
-
-<blockquote>
-  <p>그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프</p>
-</blockquote>
-
-<ul>
-  <li>$G = &lt;V, E&gt;$</li>
-  <li>$V =$ {$v_{1}, v_{2}, \cdots , v_{n}$}</li>
-  <li>
-    <p>$E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $  $1 \le i, j \le n$</p>
-  </li>
-  <li><img src="/assets/images/Math/dm/dm_example_16_03.png" /></li>
-</ul>
-
-<h2 id="정의--가중치-그래프-weighted-graph">정의 : 가중치 그래프 (weighted graph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기</p>
-  </li>
-  <li>
-    <p><img src="/assets/images/Math/dm/dm_example_16_04.png" /></p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="그래프의-차수">그래프의 차수</h1>
-
-<ul>
-  <li>
-    <p>그래프는 정점과 변으로 구성된다.</p>
-  </li>
-  <li>
-    <p>그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다.</p>
-  </li>
-</ul>
-
-<h2 id="정의--차수-degree--dv">정의 : 차수 (degree : $d(v)$)</h2>
-
-<blockquote>
-  <p>정점 v 에 근접하는 변의 개수</p>
-</blockquote>
-
-<ul>
-  <li>방향 그래프에 대하여,
-    <ul>
-      <li>외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수</li>
-      <li>내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>
-    <p>다음 그림의 외차수, 내차수를 구해보자.</p>
-  </li>
-  <li>
-    <p><img src="/assets/images/Math/dm/dm_example_16_05.png" /></p>
-  </li>
-</ul>
-
-<details>
-<summary>정답</summary>
-
-$d(out)(a) = 1, \quad d(in)(a) = 0$  
-<br /><br />
-
-$d(out)(b) = 2, \quad d(in)(b) = 1$  
-<br /><br />
-
-$d(out)(c) = 1, \quad d(in)(c) = 2$  
-<br /><br />
-
-$d(out)(d) = 1, \quad d(in)(d) = 3$  
-<br /><br />
-
-$d(out)(e) = 2, \quad d(in)(e) = 1$
-
-</details>
-
-<p><br /></p>
-
-<h2 id="정리--차수에-대한-정리">정리 : 차수에 대한 정리</h2>
-
-<ul>
-  <li>
-    <p>그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다.</p>
-
-    <ul>
-      <li>$\sum_{v \in V}{d(v)} = $$2$|$E$|</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 개념 그래프는 정점과 변으로 표현되기 때문에 정점에 대한 정보와 변에 대한 정보를 정의함으로써 그래프를 정의하고 표현한다. 그래프는 보통 그림 형태로 표현하지만, 집합 표현과 같은 수학적 기호로 표현할 수 있다. 그래프의 정의와 표현 정의 : 그래프 (graph : $G = (V, E)$) 공집합이 아닌 정점(vertex, node)의 집합 $V$ 와 서로 다른 정점의 쌍 $(v_{i}, v_{j})$ 를 연결하는 변(edge)의 집합 $E$ 로 구성된 구조 $G = (V, E)$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$(v_{i}, v_{j}), \cdots$}, $\ $ $1 \le i, j \le n$ 정점 $v_{i}$ 와 $v_{j}$ 는 서로 인접(adjacent) 한다 : 정점 $v_{i}$ 와 $v_{j}$ 를 연결하는 변이 존재한다. 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 에 근접(incident) 한다 : 변 $e_{k}$ 는 정점 $v_{i}$ 와 $v_{j}$ 를 연결한다. 예시 위 정의에서 사용한 기호 표현의 의미는 다음과 같다. $G = (V, E)$ : 정점의 집합 $V$ 와 변의 집합 $E$ 로 구성되는 그래프 $G$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} : 그래프 $G$ 를 구성하는 정점의 집합 $V$ $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} : 그래프 $G$ 를 구성하는 변의 집합 $E$ $\ \ \ =$ {$(v_{i}, v_{j}), \cdots$} : 변의 집합 $E$ 의 각 원소가 근접하는 정점의 쌍 위 그래프를 수학적 기호로 표현하면 다음과 같다. 그래프 $G$ 는 정점의 집합 $V$ 와 변의 집합 $E$로 구성된다. 집합 $V$ 는 정점 $v_{1}, v_{2}, v_{3}, v_{4}$ 로 구성된다. 집합 $E$ 는 변 $e_{1}, e_{2}, e_{3}$ 로 구성되며 각 변에 대한 정점의 쌍은 다음과 같다. $e_{1} = (v_{1}, v_{2})$ 또는 $(v_{2}, v_{1})$, $e_{2} = (v_{1}, v_{3})$ 또는 $(v_{3}, v_{1})$, $e_{3} = (v_{3}, v_{3})$ 루프 (loop) 위 그림 변 $e_{3}$ 과 같은 변을 루프(loop) 라고 한다. 루프는 하나의 정점에만 인접하는 변이다. 그래프의 형태 정의 : 단순 그래프 (simple graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 오직 하나의 변이 있는 그래프 정의 : 다중 그래프 (multi-graph) 그래프 $G = (V, E)$ 에서 임의의 두 정점 사이에 두 개 이상의 변이 있는 그래프 정의 : 방향 그래프 (directed graph : $G = &lt;V, E&gt;$) 그래프를 구성하는 정점 사이에 순서가 존재하여 화살표를 이용해 순서대로 정점을 연결하여 표현하는 그래프 $G = &lt;V, E&gt;$ $V =$ {$v_{1}, v_{2}, \cdots , v_{n}$} $E =$ {$e_{1}, e_{2}, \cdots, e_{n}$} $=$ {$&lt;v_{i}, v_{j}&gt;, \cdots$}, $\ $ $1 \le i, j \le n$ 정의 : 가중치 그래프 (weighted graph) 그래프 $G = (V,E)$ 를 구성하는 각 변에 가중치가 부여된 그래프 $W = [v_{i}, v_{j}]$ : 두 정점 $v_{i}$ 와 $v_{j}$ 에 근접하는 변에 부여된 가중치 표기 그래프의 차수 그래프는 정점과 변으로 구성된다. 그러므로 각 정점에 근접하는 변의 개수는 그래프에 대한 다양한 판단을 하는 주요 기준이 된다. 정의 : 차수 (degree : $d(v)$) 정점 v 에 근접하는 변의 개수 방향 그래프에 대하여, 외차수 (out-degree : $d_{out}(v)$) : 정점 $v$ 를 시작점으로 하는 화살표의 개수 / 진출 차수 내차수 (in-degree : $d_{in}(v)$) : 정점 $v$ 를 끝점으로 하는 화살표의 개수 / 진입 차수 예시 다음 그림의 외차수, 내차수를 구해보자. 정답 $d(out)(a) = 1, \quad d(in)(a) = 0$ $d(out)(b) = 2, \quad d(in)(b) = 1$ $d(out)(c) = 1, \quad d(in)(c) = 2$ $d(out)(d) = 1, \quad d(in)(d) = 3$ $d(out)(e) = 2, \quad d(in)(e) = 1$ 정리 : 차수에 대한 정리 그래프 $G = (V,E)$ 에서 모든 정점의 차수의 합은 변의 개수의 2배이다. $\sum_{v \in V}{d(v)} = $$2$|$E$| 그래프 $G = (V,E)$ 에서 차수가 홀수인 정점의 개수는 짝수이다.]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 04.함수의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-15/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 04.함수의 종류" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-15</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-15/"><![CDATA[<h1 id="함수의-종류">함수의 종류</h1>
-
-<h1 id="항등함수-identity-function--i_a">항등함수 (identity function : $I_{A}$)</h1>
-
-<h2 id="정의">정의</h2>
-
-<blockquote>
-  <p>집합 $A$ 에 대한 함수  $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계</p>
-</blockquote>
-
-<h2 id="항등함수의-조건">항등함수의 조건</h2>
-
-<blockquote>
-  <p>항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다.</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_01.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="역함수-inverse-function--f-1">역함수 (inverse function : $f^{-1}$)</h1>
-
-<h2 id="정의-1">정의</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계</p>
-</blockquote>
-
-<blockquote>
-  <p>$a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 )</p>
-</blockquote>
-
-<ul>
-  <li>가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수
-<br /></li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>
-    <p>전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다.</p>
-  </li>
-  <li>
-    <p>$f : ${$1,2,3$} $\rightarrow$ {$a,b,c$}
-<br /></p>
-  </li>
-  <li>
-    <p>$f = ${$(1,a), (2,b), (3,c)$}</p>
-
-    <ul>
-      <li>함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다.</li>
-      <li>$f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>$f^{-1} =$ {$(a,1), (b,2), (c,3)$}</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="항등함수와-역함수의-관계">항등함수와 역함수의 관계</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다.</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$f^{-1} \circ f = I_{A}$
-<br /></p>
-  </li>
-  <li>
-    <p>$f \circ f^{-1} = I_{B}$</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="합성함수의-역함수">합성함수의 역함수</h2>
-
-<blockquote>
-  <p>전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다.</p>
-</blockquote>
-
-<ul>
-  <li>$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="상수함수-constant-function">상수함수 (constant function)</h1>
-
-<h2 id="정의-2">정의</h2>
-
-<blockquote>
-  <p>함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계</p>
-</blockquote>
-
-<ul>
-  <li>$\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_02.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="특성함수-characteristic-fuction--f_a">특성함수 (characteristic fuction : $f_{A}$)</h1>
-
-<ul>
-  <li>
-    <p>관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수</p>
-  </li>
-  <li>
-    <p>조건에 맞는 원소이면 1, 아니면 0으로 출력</p>
-  </li>
-  <li>
-    <p>특성함수의 공역은 두 개의 원소 1과 0으로 구성</p>
-  </li>
-</ul>
-
-<h2 id="정의-3">정의</h2>
-
-<blockquote>
-  <p>전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$f_{A}(x) = 
-\begin{cases}
-1, \ x \in A 일 \ 때 \\<br />
-0, \ x \notin A 일 \ 때
-\end{cases}$</li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="바닥함수와-천장함수">바닥함수와 천장함수</h1>
-
-<h2 id="바닥함수-floor-function---x--최대정수함수greatest-integer-function">바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function)</h2>
-
-<blockquote>
-  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$\lfloor\ x \ \rfloor = n  \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$</li>
-</ul>
-
-<h3 id="예시-3">예시</h3>
-
-<ul>
-  <li>
-    <p>$\lfloor \ -3.54 \ \rfloor$</p>
-
-    <ul>
-      <li>$-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>바닥함수 그래프</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_03.png" /></p>
-
-<p><br /></p>
-
-<h2 id="천장함수-ceiling-function---x---최소정수함수least-interger-function">천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function)</h2>
-
-<blockquote>
-  <p>$x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>$\lceil\ x \ \rceil = n  \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$</li>
-</ul>
-
-<h3 id="예시-4">예시</h3>
-
-<ul>
-  <li>
-    <p>$\lceil \ -3.54 \ \rceil$</p>
-
-    <ul>
-      <li>$-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다.</li>
-    </ul>
-  </li>
-  <li>
-    <p>천장함수</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_15_04.png" /></p>
-
-<p><br /><br /><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 종류 항등함수 (identity function : $I_{A}$) 정의 집합 $A$ 에 대한 함수 $f: A \rightarrow A$ 가 $f(a) = a$ 로 정의되는 관계 항등함수의 조건 항등함수가 성립하려면 함수의 정의역, 공역, 치역 집합이 모두 상등이어야 한다. 예시 역함수 (inverse function : $f^{-1}$) 정의 전단사함수 $f: A \rightarrow B$ 에 대해 $B \rightarrow A$ 로 대응되는 관계 $a \in A, b \in B$ 에 대해 $f(a) = b$ 일 때, $f^{-1}(b) = a \;$ ($(f(a)) :$ 가역함수, $f^{-1}(b) : $역함수 ) 가역함수 (invertible function) : 전단사함수로 역함수가 존재하는 함수 예시 전단사함수인 경우, 함수 $f$ 의 공역이 함수 $f^{-1}$ 의 정의역이 되더라도 항상 $f^{-1}$ 가 함수이므로 역함수를 구할 수 있다. $f : ${$1,2,3$} $\rightarrow$ {$a,b,c$} $f = ${$(1,a), (2,b), (3,c)$} 함수 $f$ 의 공역인 집합 {$a, b, c$} 는 역함수 $f^{-1}$ 의 정의역이다. $f^{-1}$ 의 모든 정의역 원소는 $f^{-1}$ 의 공역의 원소와 하나씩 대응하므로 역함수 $f^{-1}$ 를 구할 수 있다. $f^{-1} =$ {$(a,1), (b,2), (c,3)$} 항등함수와 역함수의 관계 전단사함수 $f: A \rightarrow B$ 에 대하여 다음이 성립한다. $f^{-1} \circ f = I_{A}$ $f \circ f^{-1} = I_{B}$ 합성함수의 역함수 전단사함수 $f: A \rightarrow B$, $g: B \rightarrow C$ 에 대하여 다음이 성립한다. $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$ 상수함수 (constant function) 정의 함수 $f: A \rightarrow B$ 에서 집합 $A$ 의 모든 원소가 집합 $B$ 의 원소 하나에만 대응하는 관계 $\forall \ a \in A, \; \exists b \in B$ 에 대해 $f(a) = b$ 예시 특성함수 (characteristic fuction : $f_{A}$) 관계행렬처럼 어떤 집합의 조건에 맞는 원소의 존재 유무를 판별하는 함수 조건에 맞는 원소이면 1, 아니면 0으로 출력 특성함수의 공역은 두 개의 원소 1과 0으로 구성 정의 전체집합 $U$ 의 부분집합인 $A$ 에 대하여 다음과 같은 출력을 갖는 함수 $f_{A}(x) = \begin{cases} 1, \ x \in A 일 \ 때 \\ 0, \ x \notin A 일 \ 때 \end{cases}$ 바닥함수와 천장함수 바닥함수 (floor function : $[ x ]$), 최대정수함수(greatest integer function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 작거나 같은 정수 중 가장 큰 정수를 구하는 함수 $\lfloor\ x \ \rfloor = n \ \Leftrightarrow \ n \le x &lt; n + 1, \; n \in Z$ 예시 $\lfloor \ -3.54 \ \rfloor$ $-3.54$ 보다 작거나 같은 정수 : $-4, -5, -6, \cdots$ 중 가장 큰 정수인 $-4$ 이다. 바닥함수 그래프 천장함수 (ceiling function : $[ x ]$) , 최소정수함수(least interger function) $x \in \mathbb{R}$ 에 대해 $x$ 보다 크거나 같은 정수 중 가장 작은 정수를 구하는 함수 $\lceil\ x \ \rceil = n \ \Leftrightarrow \ n - 1 &lt; x \le n, \; n \in Z$ 예시 $\lceil \ -3.54 \ \rceil$ $-3.54$ 보다 큰 정수 : $-3, -2, -1, \cdots$ 중 가장 작은 정수인 $-3$ 이다. 천장함수]]></summary></entry><entry><title type="html">[이산수학] 함수(Function) : 02.함수의 성질</title><link href="http://localhost:4000/discrete%20mathematics/DM-13/" rel="alternate" type="text/html" title="[이산수학] 함수(Function) : 02.함수의 성질" /><published>2023-12-23T00:00:00+09:00</published><updated>2023-12-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-13</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-13/"><![CDATA[<h1 id="함수의-성질">함수의 성질</h1>
-
-<blockquote>
-  <p>함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다.</p>
-</blockquote>
-
-<blockquote>
-  <p>함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다.</p>
-</blockquote>
-
-<h1 id="단사함수-일대일-함수-injective-function-injection-one-to-one-function">단사함수, 일대일 함수 (injective function, injection, one-to-one function)</h1>
-
-<h2 id="정의">정의</h2>
-
-<blockquote>
-  <p>함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $\le$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $\le$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$dom(f)$| $\le$ |$ran(f)$|</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다.</p>
-</blockquote>
-
-<h3 id="단사함수의-조건">단사함수의 조건</h3>
-
-<ul>
-  <li>
-    <p>공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다.</p>
-  </li>
-  <li>
-    <p>정의역과 치역의 원소 개수가 같아야 한다.</p>
-  </li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_01.png" /></p>
-
-<p><br /><br /></p>
-
-<h2 id="정의-1">정의</h2>
-
-<blockquote>
-  <p>함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $\ge$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다.</p>
-</blockquote>
-
-<h3 id="전사함수의-조건">전사함수의 조건</h3>
-
-<ul>
-  <li>
-    <p>정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다.</p>
-  </li>
-  <li>
-    <p>공역과 치역의 원소 개수가 같다.</p>
-  </li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_02.png" /></p>
-
-<p><br /><br /></p>
-
-<h1 id="전단사함수-일대일-대응-함수-bijecive-function-bijection-one-to-one-correspodence">전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence)</h1>
-
-<h2 id="정의-2">정의</h2>
-
-<blockquote>
-  <p>단사함수이면서 전사 함수인 함수</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>|$dom(f)$| $=$ |$codom(f)$|</p>
-  </li>
-  <li>
-    <p>|$ran(f)$| $=$ |$codom(f)$|</p>
-  </li>
-</ul>
-
-<h3 id="전단사함수의-조건">전단사함수의 조건</h3>
-
-<blockquote>
-  <p>정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다.</p>
-</blockquote>
-
-<ul>
-  <li>정의역, 공역, 치역의 원소 개수가 모두 같다.</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<p><img src="/assets/images/Math/dm/dm_example_13_03.png" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[함수의 성질 함수의 입력과 출력의 대응 형태에 따라 함수의 성질이 결정된다. 함수는 정의역과 공역의 대응 관계에 따라서 단사함수, 전사함수, 전단사함수로 구분한다. 단사함수, 일대일 함수 (injective function, injection, one-to-one function) 정의 함수 $f : X \rightarrow Y$ 가 있을 때, 임의의 두 정의역 원소 $x_{1}, x_{2} \in X$ 에 대하여 $x_{1} \neq x_{2}$ 이면 $f(x_{1}) \neq f(x_{2})$ 인 함수 |$dom(f)$| $\le$ |$codom(f)$| |$ran(f)$| $\le$ |$codom(f)$| |$dom(f)$| $\le$ |$ran(f)$| 정의역의 모든 원소가 각각 서로 다른 상을 가질 때, 즉 서로 다른 공역 원소와 대응할 때 그 함수를 단사함수라고 한다. 단사함수의 조건 공역의 원소 개수가 정의역의 원소 개수나 치역의 원소 개수보다 많거나 같아야 한다. 정의역과 치역의 원소 개수가 같아야 한다. 예시 정의 함수 $f: X \rightarrow Y$ 가 있을 때, 모든 공역 원소 $y \in Y$ 에 대하여 $f(x) = y$ 인 정의역 원소 $x \in X$ 가 적어도 하나 이상 존재하는 함수 |$dom(f)$| $\ge$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전사함수는 공역의 모든 원소가 하나 이상의 정의역 원소와 대응하는 함수이다. 전사함수의 조건 정의역의 원소 개수가 공역의 원소 개수보다 같거나 많다. 공역과 치역의 원소 개수가 같다. 예시 전단사함수, 일대일 대응 함수 (bijecive function, bijection, one-to-one correspodence) 정의 단사함수이면서 전사 함수인 함수 |$dom(f)$| $=$ |$codom(f)$| |$ran(f)$| $=$ |$codom(f)$| 전단사함수의 조건 정의역의 원소 개수와 공역의 원소 개수가 같으면서, 서로 다른 정의역 원소가 서로 다른 공역 원소와 대응해야 한다. 정의역, 공역, 치역의 원소 개수가 모두 같다. 예시]]></summary></entry></feed>
+</details>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 종류 그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다. 부분그래프와 신장부분그래프 정의 : 부분그래프 (subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$ 정의 : 신장부분그래프 (spanning subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$ 예시 다음 그래프 $G$ 가 다음과 같다. $G = (V, E)$ $V = ${$A, B, C, D$} $E = ${$(A, B), (A, D), (B, C), (B, D)$} 그래프 $G$ $G$ 의 부분그래프 $G$ 의 신장부분그래프 정의 : 동형그래프 (isomorphic graph) 그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$ 예시 동형그래프인 예와 아닌 예 그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다. $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$} 그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다. $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$ $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$ 그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다. 그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다. 연결그래프 정의 : 연결그래프 (connecteed graph) 그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프 정의 : 경로 (path) 그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길 길 (walk) 그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열 $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$ $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$ 예시 연결그래프인 예와 아닌 예 그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다. $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다. 그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다. 그래프 $B$ 는 연결그래프가 아니다. 평면그래프 정의 : 평면그래프(planar graph) 연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프 예시 평면그래프인 예와 아닌 예 그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다. 그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다. 그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다. 정리 : 오일러 공식 (Euler’s formula) 평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다. $v - e + s = 2$ 정규그래프와 완전그래프 정의 : 정규그래프 (regular graph : $k-$정규그래프) 그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프 $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$ 정의 : 완전그래프 (complete graph : $K_{n}$) 그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프 |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$ 예시 정규그래프와 완전그래프 예 두 그래프 모두 정규그래프이다. 두 그래프의 정점의 차수를 구하면 다음과 같다. 그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$ 그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$ 그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다. 그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다. 특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다. 그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다. 그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다. 이분그래프와 완전이분그래프 정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$)) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 정의 : 이분그래프(bipartite graph) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 예시 이분그래프, 완전이분그래프인 예와 아닌 예 그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다. 완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다. $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$ 그래프 $A$ 정점 $a$ $\rightarrow$ $b, d ,f$ 정점 $c$ $\rightarrow$ $b, d, f$ 정점 $d$ $\rightarrow$ $b, d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다. 그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다. 그래프 $B$ 정점 $a$ $\rightarrow$ $d ,f$ 정점 $c$ $\rightarrow$ $b, d$ 정점 $d$ $\rightarrow$ $d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다. 그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다. 그래프 $C$ 정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다. 따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.]]></summary></entry></feed>

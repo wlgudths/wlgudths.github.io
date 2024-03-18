@@ -202,4 +202,22 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-23/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 05. 이진탐색트리",
+        "excerpt":"이진탐색트리 탐색(search) : 수많은 데이터 중 원하는 데이터를 찾아가는 과정 탐색은 데이터의 정렬 방식이나 탐색 기준에 따라 그 방법이 달라진다. 어떤 기준 또는 키(key)를 정하고 그 키를 이용해 탐색해가는 방법을 이진탐색이라 한다. 이 탐색을 도와주는 트리를 이진탐색트리라고 한다. 정의 : 이진탐색 (binary search) 탐색을 위한 일정 기준을 가지고 대상 데이터를...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-24/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 06. 트리의 활용",
+        "excerpt":"트리의 활용 트리는 그래프의 한 종류이다. 그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다. 그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다. 이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다. 최소신장트리...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-25/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 07. 프림 알고리즘",
+        "excerpt":"프림 알고리즘 (Prim algorithm) 프림 알고리즘의 과정 $v$ 개의 정점을 포함하는 그래프 $G$ 에서 가중치가 가장 작은 변과 그 변에 연결된 정점을 노드로 선택한다. 가중치가 같은 변이 $2$ 개 이상 있을 경우 임의로 하나를 선택한다. 선택한 노드에 연결된 모든 변들 중 가중치가 가장 작은 변을 선택한다. 가중치가 같은 변이 $2$...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-26/",
+        "teaser": null
       }]
