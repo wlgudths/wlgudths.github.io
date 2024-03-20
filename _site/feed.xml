@@ -1,4 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-18T22:28:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-21T00:21:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-27/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-27</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-27/"><![CDATA[<h1 id="크루스칼-알고리즘-kruskal-algorithm">크루스칼 알고리즘 (Kruskal algorithm)</h1>
+
+<h2 id="크루스칼-알고리즘의-실행-규칙은-다음과-같다">크루스칼 알고리즘의 실행 규칙은 다음과 같다.</h2>
+
+<ol>
+  <li>
+    <p>노드 수가 $v$ 개인 그래프에서 가중치가 가장 작은 변을 차례로 선택한다.</p>
+  </li>
+  <li>
+    <p>가중치가 같은 변은 모두 선택한다.</p>
+  </li>
+  <li>
+    <p>노드 사시에 순환이 형성되는 경우 그 변을 선택하지 않는다.</p>
+  </li>
+  <li>
+    <p>선택된 변이 $v - 1$ 개가 되면 종료한다.</p>
+  </li>
+</ol>
+
+<p>다음 그림의 노드가 $6$ 개인 그래프 $G$ 를 크루스칼 알고리즘을 이용해 최소신장트리로 만들기 위해 각 변의 가중치를 정리하면 다음 표와 같다.</p>
+
+<p><img src="/assets/images/Math/dm/dm_example_26_01.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_01.png" width="400" /></p>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>표에서 가중치가 가장 작은 변인 노드 $A, C$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $2$ 개</p>
+      </li>
+      <li>
+        <p>변 : $1$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_02.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_03.png" width="400" /></p>
+  </li>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변인 노드 $A, D$ 를 연결하는 변과 노드 $E, F$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $5$ 개</p>
+      </li>
+      <li>
+        <p>변 : $3$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_04.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_05.png" width="400" /></p>
+  </li>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변은 노드 $B, C$ 를 연결하는 변과 노드 $C, D$ 를 연결하는 변이다.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>노드 $C, D$ 를 연결하는 변은 노드 $A, C, D$ 사이에 순환을 형성하므로 선택하지 않는다.</p>
+  </li>
+  <li>
+    <p>그러므로 노드 $B, C$를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $6$ 개</p>
+      </li>
+      <li>
+        <p>변 : $4$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_06.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_07.png" width="400" /></p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변인 노드 $B, E$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $6$ 개</p>
+      </li>
+      <li>
+        <p>변 : $5$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_08.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_09.png" width="400" /></p>
+  </li>
+  <li>
+    <p>최소신장트리의 변의 수가 노드 수 - 1 이므로 실행을 종료한다. (변의 수 : $5$, 노드 수 - 1 : $6 - 1$)</p>
+  </li>
+</ol>
+
+<ul>
+  <li>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[크루스칼 알고리즘 (Kruskal algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 06. 트리의 활용</title><link href="http://localhost:4000/discrete%20mathematics/DM-25/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 06. 트리의 활용" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-25</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-25/"><![CDATA[<h1 id="트리의-활용">트리의 활용</h1>
+
+<ul>
+  <li>
+    <p>트리는 그래프의 한 종류이다.</p>
+  </li>
+  <li>
+    <p>그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다.</p>
+  </li>
+  <li>
+    <p>그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다.</p>
+  </li>
+  <li>
+    <p>이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="최소신장트리">최소신장트리</h1>
+
+<h2 id="정의--신장트리-spanning-tree">정의 : 신장트리 (spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하는 트리 $T$</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>신장트리 $T$ 는 하나의 그래프 $G$ 에서 유도될 수 있는 다양한 형태의 트리로,<br />
+그래프를 구성하는 모든 정점은 루트노드가 될 수 있으며 부모노드와 자식노드를 연결하는 변을 그래프 $G$ 에도 포함되는 변이어야 한다.</p>
+  </li>
+  <li>
+    <p>다음 그림은 그래프 $G$ 에서 노드 $A$ 를 루트노드로 선택할 때 만들 수 있는 신장트리의 예이다.</p>
+  </li>
+  <li>
+    <p>그래프 $G$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="500" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>그래프 $G$ 에 대한 신장트리 $T$ 의 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /> $\qquad$ <img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이처럼 주어진 그래프에서 트리를 유도할 때 트리가 활용되는 목적에 따라 다양한 형태의 트리가 만들어질 수 있다.</p>
+  </li>
+  <li>
+    <p>특히 가중치그래프가 주어진 경우에는 각 노드를 탐색하는 비용이 최소가 되는 변들을 선택하여 트리를 구성할 수 있다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--최소신장트리-minimum-spanning-tree">정의 : 최소신장트리 (minimum spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하면서 노드 간의 비용을 최소로 하는 트리 $T$</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>그래프에서 최소 비용을 갖는 트리를 구성하는 대표적인 알고리즘으로 프림 알고리즘과 크루스칼 알고리즘이 있다.</p>
+  </li>
+  <li>
+    <p>프림 알고리즘과 크루스칼 알고리즘에 대한 자세한 설명은 다음 장인 6-1 과 6-2 에서 다루겠습니다.</p>
+
+    <ul>
+      <li>
+        <p>프림알고리즘 (링크 예정)</p>
+      </li>
+      <li>
+        <p>크루스칼 알고리즘 (링크 예정)</p>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 활용]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
 
 <h2 id="프림-알고리즘의-과정">프림 알고리즘의 과정</h2>
 
@@ -141,94 +329,7 @@
   <li>
     <p>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</p>
   </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[프림 알고리즘 (Prim algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 06. 트리의 활용</title><link href="http://localhost:4000/discrete%20mathematics/DM-25/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 06. 트리의 활용" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-25</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-25/"><![CDATA[<h1 id="트리의-활용">트리의 활용</h1>
-
-<ul>
-  <li>
-    <p>트리는 그래프의 한 종류이다.</p>
-  </li>
-  <li>
-    <p>그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다.</p>
-  </li>
-  <li>
-    <p>그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다.</p>
-  </li>
-  <li>
-    <p>이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="최소신장트리">최소신장트리</h1>
-
-<h2 id="정의--신장트리-spanning-tree">정의 : 신장트리 (spanning tree)</h2>
-
-<blockquote>
-  <p>그래프 $G$ 의 모든 정점을 노드로 포함하는 트리 $T$</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>
-    <p>신장트리 $T$ 는 하나의 그래프 $G$ 에서 유도될 수 있는 다양한 형태의 트리로,<br />
-그래프를 구성하는 모든 정점은 루트노드가 될 수 있으며 부모노드와 자식노드를 연결하는 변을 그래프 $G$ 에도 포함되는 변이어야 한다.</p>
-  </li>
-  <li>
-    <p>다음 그림은 그래프 $G$ 에서 노드 $A$ 를 루트노드로 선택할 때 만들 수 있는 신장트리의 예이다.</p>
-  </li>
-  <li>
-    <p>그래프 $G$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="500" /></p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>그래프 $G$ 에 대한 신장트리 $T$ 의 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /> $\qquad$ <img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>이처럼 주어진 그래프에서 트리를 유도할 때 트리가 활용되는 목적에 따라 다양한 형태의 트리가 만들어질 수 있다.</p>
-  </li>
-  <li>
-    <p>특히 가중치그래프가 주어진 경우에는 각 노드를 탐색하는 비용이 최소가 되는 변들을 선택하여 트리를 구성할 수 있다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="정의--최소신장트리-minimum-spanning-tree">정의 : 최소신장트리 (minimum spanning tree)</h2>
-
-<blockquote>
-  <p>그래프 $G$ 의 모든 정점을 노드로 포함하면서 노드 간의 비용을 최소로 하는 트리 $T$</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>그래프에서 최소 비용을 갖는 트리를 구성하는 대표적인 알고리즘으로 프림 알고리즘과 크루스칼 알고리즘이 있다.</p>
-  </li>
-  <li>
-    <p>프림 알고리즘과 크루스칼 알고리즘에 대한 자세한 설명은 다음 장인 6-1 과 6-2 에서 다루겠습니다.</p>
-
-    <ul>
-      <li>
-        <p>프림알고리즘 (링크 예정)</p>
-      </li>
-      <li>
-        <p>크루스칼 알고리즘 (링크 예정)</p>
-      </li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 활용]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 05. 이진탐색트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-24/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 05. 이진탐색트리" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-24</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-24/"><![CDATA[<h1 id="이진탐색트리">이진탐색트리</h1>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[프림 알고리즘 (Prim algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 05. 이진탐색트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-24/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 05. 이진탐색트리" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-24</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-24/"><![CDATA[<h1 id="이진탐색트리">이진탐색트리</h1>
 
 <ul>
   <li>
@@ -2603,344 +2704,4 @@ $\qquad \qquad \qquad \qquad \qquad \ $오른쪽 자식노드의 인덱스 : $2n
 
     <p><img src="/assets/images/Math/dm/dm_example_18_07.png" /></p>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 02.그래프의 종류</title><link href="http://localhost:4000/discrete%20mathematics/DM-17/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 02.그래프의 종류" /><published>2024-01-23T00:00:00+09:00</published><updated>2024-01-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-17</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-17/"><![CDATA[<h1 id="그래프의-종류">그래프의 종류</h1>
-
-<ul>
-  <li>그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다.</li>
-</ul>
-
-<h1 id="부분그래프와-신장부분그래프">부분그래프와 신장부분그래프</h1>
-
-<h2 id="정의--부분그래프-subgraph">정의 : 부분그래프 (subgraph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$</p>
-</blockquote>
-
-<h2 id="정의--신장부분그래프-spanning-subgraph">정의 : 신장부분그래프 (spanning subgraph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>
-    <p>다음 그래프 $G$ 가 다음과 같다.</p>
-
-    <p>$G = (V, E)$<br />
-  $V = ${$A, B, C, D$}<br />
-  $E = ${$(A, B), (A, D), (B, C), (B, D)$}</p>
-  </li>
-  <li>
-    <p>그래프 $G$<br />
-  <img src="/assets/images/Math/dm/dm_example_17_01.png" /></p>
-  </li>
-  <li>
-    <p>$G$ 의 부분그래프<br />
-  <img src="/assets/images/Math/dm/dm_example_17_02.png" /></p>
-  </li>
-  <li>
-    <p>$G$ 의 신장부분그래프<br />
-  <img src="/assets/images/Math/dm/dm_example_17_03.png" /></p>
-  </li>
-</ul>
-
-<h2 id="정의--동형그래프-isomorphic-graph">정의 : 동형그래프 (isomorphic graph)</h2>
-
-<blockquote>
-  <p>그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$</p>
-</blockquote>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>동형그래프인 예와 아닌 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_17_04.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다.</p>
-
-    <ul>
-      <li>
-        <p>$A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}</p>
-      </li>
-      <li>
-        <p>$B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$}</p>
-      </li>
-      <li>
-        <p>$C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$}</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다.</p>
-
-    <ul>
-      <li>
-        <p>$V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$</p>
-      </li>
-      <li>
-        <p>$E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다.</p>
-  </li>
-  <li>
-    <p>그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다.</p>
-  </li>
-</ul>
-
-<h1 id="연결그래프">연결그래프</h1>
-
-<h2 id="정의--연결그래프-connecteed-graph">정의 : 연결그래프 (connecteed graph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프</p>
-</blockquote>
-
-<h2 id="정의--경로-path">정의 : 경로 (path)</h2>
-
-<blockquote>
-  <p>그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길</p>
-</blockquote>
-
-<ul>
-  <li>길 (walk)</li>
-</ul>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열</p>
-</blockquote>
-
-<ul>
-  <li>$v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$</li>
-  <li>$v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<ul>
-  <li>연결그래프인 예와 아닌 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_17_05.png" /></p>
-
-<ul>
-  <li>그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다.
-    <ul>
-      <li>$a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다.
-<br /></li>
-    </ul>
-  </li>
-  <li>그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다.
-    <ul>
-      <li>그래프 $B$ 는 연결그래프가 아니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="평면그래프">평면그래프</h1>
-
-<h2 id="정의--평면그래프planar-graph">정의 : 평면그래프(planar graph)</h2>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프</p>
-</blockquote>
-
-<h3 id="예시-3">예시</h3>
-
-<ul>
-  <li>평면그래프인 예와 아닌 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_17_06.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다.</p>
-  </li>
-  <li>
-    <p>그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다.</p>
-  </li>
-  <li>
-    <p>그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다.</p>
-  </li>
-</ul>
-
-<h2 id="정리--오일러-공식-eulers-formula">정리 : 오일러 공식 (Euler’s formula)</h2>
-
-<blockquote>
-  <p>평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다.</p>
-</blockquote>
-
-<ul>
-  <li>$v - e + s = 2$</li>
-</ul>
-
-<h1 id="정규그래프와-완전그래프">정규그래프와 완전그래프</h1>
-
-<h2 id="정의--정규그래프-regular-graph--k-정규그래프">정의 : 정규그래프 (regular graph : $k-$정규그래프)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프</p>
-</blockquote>
-
-<ul>
-  <li>$V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$</li>
-</ul>
-
-<h2 id="정의--완전그래프-complete-graph--k_n">정의 : 완전그래프 (complete graph : $K_{n}$)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프</p>
-</blockquote>
-
-<ul>
-  <li>|$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$</li>
-</ul>
-
-<h3 id="예시-4">예시</h3>
-
-<ul>
-  <li>정규그래프와 완전그래프 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_17_07.png" /></p>
-
-<ul>
-  <li>
-    <p>두 그래프 모두 정규그래프이다.</p>
-  </li>
-  <li>
-    <p>두 그래프의 정점의 차수를 구하면 다음과 같다.</p>
-
-    <ul>
-      <li>
-        <p>그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$</p>
-      </li>
-      <li>
-        <p>그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다.</p>
-  </li>
-  <li>
-    <p>그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 <strong>완전그래프</strong>라고한다.</p>
-  </li>
-  <li>
-    <p>그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다.</p>
-  </li>
-  <li>
-    <p>그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다.</p>
-  </li>
-</ul>
-
-<h1 id="이분그래프와-완전이분그래프">이분그래프와 완전이분그래프</h1>
-
-<h2 id="정의--완전이분그래프complete-bipartite-graph--k_mn--v_1-m-v_2--n">정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$))</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 <span style="color:red"><strong>모든</strong></span> 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프</p>
-</blockquote>
-
-<h2 id="정의--이분그래프bipartite-graph">정의 : 이분그래프(bipartite graph)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 <span style="color:red"><strong>어떤</strong></span> 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프</p>
-</blockquote>
-
-<h3 id="예시-5">예시</h3>
-
-<ul>
-  <li>이분그래프, 완전이분그래프인 예와 아닌 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_17_08.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다.</p>
-  </li>
-  <li>
-    <p>완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다.</p>
-
-    <p>$V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$</p>
-  </li>
-</ul>
-
-<details>
-<summary>그래프 $A$</summary>
-<div>
-
-    <ul>
-      <li>정점 $a$ $\rightarrow$ $b, d ,f$</li>
-      <li>정점 $c$ $\rightarrow$ $b, d, f$</li>
-      <li>
-        <p>정점 $d$ $\rightarrow$ $b, d, f$</p>
-      </li>
-      <li>
-        <p>$V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다.</p>
-      </li>
-      <li>그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다.</li>
-    </ul>
-
-  </div>
-</details>
-
-<p><br /></p>
-
-<details>
-<summary>그래프 $B$</summary>
-<div>
-
-    <ul>
-      <li>정점 $a$ $\rightarrow$ $d ,f$</li>
-      <li>정점 $c$ $\rightarrow$ $b, d$</li>
-      <li>
-        <p>정점 $d$ $\rightarrow$ $d, f$</p>
-      </li>
-      <li>
-        <p>$V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다.</p>
-      </li>
-      <li>그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다.</li>
-    </ul>
-
-  </div>
-</details>
-
-<p><br /></p>
-
-<details>
-<summary>그래프 $C$</summary>
-<div>
-
-    <ul>
-      <li>
-        <p>정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다.</p>
-      </li>
-      <li>
-        <p>따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.</p>
-      </li>
-    </ul>
-
-  </div>
-</details>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 종류 그래프는 정점과 변이 어떻게 구성되는지에 따라 종류를 구분한다. 부분그래프와 신장부분그래프 정의 : 부분그래프 (subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ \subseteq V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 $G \ne G’$ 인 그래프 $G’ = (V’, E’)$ 정의 : 신장부분그래프 (spanning subgraph) 그래프 $G = (V, E)$ 에 대하여, $V’ = V$ 이고 $E’ \subseteq E$ 인 정점과 변으로 구성된 그래프 $G’ = (V’, E’)$ 예시 다음 그래프 $G$ 가 다음과 같다. $G = (V, E)$ $V = ${$A, B, C, D$} $E = ${$(A, B), (A, D), (B, C), (B, D)$} 그래프 $G$ $G$ 의 부분그래프 $G$ 의 신장부분그래프 정의 : 동형그래프 (isomorphic graph) 그래프 $G_{1} = (V_{1}, E_{1})$ 과 $\ G_{2} = (V_{2}, E_{2})$ 에 대한 함수 $f : V_{1} \rightarrow V_{2} \ $ 가 $u, v \in V_{1}$ 에 대하여 $(u,v) \in E_{1}$ 이면 $(f(u), f(v)) \in E_{2}$ 를 만족하는 전단사함수일 때, 두 그래프 $G_{1}$ 과 $\ G_{2}$ 예시 동형그래프인 예와 아닌 예 그래프 $A, B, C$ 각각의 정점의 집합 $V_{A}, V_{B}, V_{C}$ 와 변 집합 $E_{A}, E_{B}, E_{C}$ 는 다음과 같다. $A = (V_{A}, E_{A})$, $\ V_{A} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $B = (V_{B}, E_{B})$, $\ V_{B} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, c), (a, d), (b, c), (b, d), (c, d)$} $C = (V_{C}, E_{C})$, $\ V_{C} = ${$a, b, c, d$}, $\ E_{A} = $ {$(a, b), (a, d), (b, c), (b, d), (c, d)$} 그래프 $A, B, C$ 의 정점 집합과 변 집합 사이의 상등 관계는 다음과 같다. $V_{A} = V_{B}, \quad V_{A} = V_{C}, \quad V_{B} = V_{C}$ $E_{A} = E_{B}, \quad E_{A} \neq E_{C}, \quad E_{B} \neq E_{C}$ 그래프 $A$ 와 $B$ 는 정점 집합 $V$ 와 변 집합 $E$ 가 모두 상등이므로 그래프 $A$ 와 $B$ 는 동형그래프이다. 그래프 $C$ 는 변 집합 $E$ 가 상등이 아니므로 그래프 $C$ 는 그래프 $A$ 나 $B$ 와 동형그래프가 아니다. 연결그래프 정의 : 연결그래프 (connecteed graph) 그래프 $G = (V, E)$ 에 포함되는 임의의 정점 $u, v$ 사이에 경로가 있는 그래프 정의 : 경로 (path) 그래프 $G= (V, E)$ 에 포함된 임의의 정점 $u, v$ 사이에 가능한 길 중에서 같은 변을 두 번 이상 포함하지 않는 길 길 (walk) 그래프 $G = (V, E)$ 에서 정점 $v_{i}$ 와 $v_{i+1}$ 에 근접하는 변을 $e_{i}$ 라고 할 때, $v_{1}$ 에서 시작하여 $v_{k} \ (k &gt; 1, \ k \in N)$ 에 도착하는 정점과 변의 나열 $v_{1}, e_{1}, v_{2}, e_{2}, \cdots , v_{k-1}, e_{k-1}, v_{k}$ $v_{1} \rightarrow v_{2} \rightarrow \cdots \rightarrow v_{k-1}, v_{k}$ 예시 연결그래프인 예와 아닌 예 그래프 $A$ 는 모든 정점 사이에 경로가 존재하므로 연결그래프이다. $a$ 와 $d$ 사이에 $a \rightarrow d$, $\ a \rightarrow b \rightarrow d$, $\ a \rightarrow c \rightarrow b \rightarrow d$ 와 같은 경로가 있다. 그래프 $B$ 는 정점 $a, b, c$ 와 정점 $e, f$ 사이에 경로가 전혀 없다. 그래프 $B$ 는 연결그래프가 아니다. 평면그래프 정의 : 평면그래프(planar graph) 연결그래프 $G = (V, E)$ 를 평면에 그릴 때 정점이 아닌 위치에서는 어떤 변도 교차하지 않도록 그릴 수 있는 그래프 예시 평면그래프인 예와 아닌 예 그래프 $A$ 는 모든 변이 정점이 아닌 위치에서는 교차하지 않으므로 평면그래프이다. 그래프 $B$ 는 변 $(a, d)$ 와 변 $(b, c)$ 가 정점이 아닌 위치에서 교차하고 있으나, 두 변 중 하나를 이동하여 그린 동형그래프(그래프$A$)가 평면그래프이기 때문에 그래프 $B$ 도 평면그래프이다. 그래프 $C$ 는 변 $(a, f)$, $(c, d)$, $(b, e)$ 가 정점이 아닌 위치에서 교차하고 있고, 위치를 이동해도 정점이 아닌 위치에서 교차할 수 있으므로 평면그래프가 아니다. 정리 : 오일러 공식 (Euler’s formula) 평면그래프 $G$ 에서 정점의 수를 $v$, 변의 수를 $e$, 영역의 수를 $s$ 라고 할 때, 다음 오일러 공식이 성립된다. $v - e + s = 2$ 정규그래프와 완전그래프 정의 : 정규그래프 (regular graph : $k-$정규그래프) 그래프 $G = (V, E)$ 내에 있는 모든 정점의 차수가 $k$ 로 같은 그래프 $V = $ {$v_{1}, v_{2}, \cdots , v_{n}$} 일 때, $d(v_{1}) = d(v_{2})= \cdots = d(v_{n}) = k$ 정의 : 완전그래프 (complete graph : $K_{n}$) 그래프 $G = (V, E)$ 내에 있는 모든 정점 사이에 변이 존재하는 그래프 |$V$| $= n$ 일 때, $\ \ d(v_{i}) = n - 1, \ \ 1 \le i \le n$ 예시 정규그래프와 완전그래프 예 두 그래프 모두 정규그래프이다. 두 그래프의 정점의 차수를 구하면 다음과 같다. 그래프 $A$ : $d(a) = 2, d(b) = 2, d(c) = 2, d(d) = 2$ 그래프 $B$ : $d(a) = 3, d(b) = 3, d(c) = 3, d(d) = 3$ 그래프를 구성하는 모든 정점의 차수가 $k$ 인 정규그래프를 $k-$정규그래프라고 표기한다. 그래프 $A$ 는 $2-$정규그래프이고 그래프 $B$ 는 $3-$정규그래프이다. 특히 그래프 $B$ 는 그래프에 포함된 모든 정점이 다른 정점과 연결되는데, 이러한 그래프를 완전그래프라고한다. 그래프 $B$ 를 보면 |$V_{B}$| $= 4$ 이고 모든 정점의 차수는 $d_{B}(v_{i}) = $|$V_{B}$| $- 1 = 3$ 임을 확인할 수 있다. 그러므로 그래프 $B$ 는 $3-$정규그래프이면서 완전그래프 $K_{4}$ 이다. 이분그래프와 완전이분그래프 정의 : 완전이분그래프(complete bipartite graph : $K_{m,n} \ ($|$V_{1}$|$= m$, |$V_{2}$| $= n$)) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 모든 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 정의 : 이분그래프(bipartite graph) 그래프 $G = (V, E)$ 에서 정점 집합 $\ V$ 가 $\ V = V_{1} \cup V_{2}$ 와 $\ V_{1} \cap V_{2} = \varnothing$ 을 만족하는 두 집합 $V_{1}$ 과 $V_{2}$ 로 분리되고, 그래프의 어떤 변이 $V_{1}$ 의 한 정점에서 $V_{2}$ 의 기울기 정점으로 연결되는 그래프 예시 이분그래프, 완전이분그래프인 예와 아닌 예 그래프 $A, B, C$ 는 모두 6개의 정점 $V = $ {$a, b, c, d, e, f$} 로 구성된다. 완전이분그래프와 이분그래프를 판별하기 위해 인접하지 않는 정점끼리 같은 집합으로 구성하여 각 그래프의 정점 집합 $V$ 를 분할하면 다음과 같다. $V = $ {$V_{1}, V_{2}$} $ = $ {{$a, c, e$}, {$b, d, f$}} $(V_{1} \cup V_{2} = V, \ V_{1} \cap V_{2} = \varnothing)$ 그래프 $A$ 정점 $a$ $\rightarrow$ $b, d ,f$ 정점 $c$ $\rightarrow$ $b, d, f$ 정점 $d$ $\rightarrow$ $b, d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 모든 정점과 근접하는 변을 갖는다. 그러므로 그래프 $A$ 는 완전이분그래프이고 $K_{3,3}$ 로 표기한다. 그래프 $B$ 정점 $a$ $\rightarrow$ $d ,f$ 정점 $c$ $\rightarrow$ $b, d$ 정점 $d$ $\rightarrow$ $d, f$ $V_{1}$ 의 모든 정점이 각각 $V_{2}$ 의 일부 정점과 근접하는 변을 갖는다. 그러므로 그래프 $B$ 는 완전이분그래프는 아니고 이분그래프이다. 그래프 $C$ 정점 집합 $V_{1}$ 에 포함되는 정점 $a$ 와 $c$ 또는 정점 $c$ 와 $e$ 사이에 근접하는 변이 존재한다. 따라서 그래프 $C$ 는 완전이분그래프도, 이분그래프도 아니다.]]></summary></entry></feed>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry></feed>

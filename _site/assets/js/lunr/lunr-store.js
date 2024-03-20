@@ -220,4 +220,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-26/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘",
+        "excerpt":"크루스칼 알고리즘 (Kruskal algorithm) 크루스칼 알고리즘의 실행 규칙은 다음과 같다. 노드 수가 $v$ 개인 그래프에서 가중치가 가장 작은 변을 차례로 선택한다. 가중치가 같은 변은 모두 선택한다. 노드 사시에 순환이 형성되는 경우 그 변을 선택하지 않는다. 선택된 변이 $v - 1$ 개가 되면 종료한다. 다음 그림의 노드가 $6$ 개인 그래프 $G$...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-27/",
+        "teaser": null
       }]
