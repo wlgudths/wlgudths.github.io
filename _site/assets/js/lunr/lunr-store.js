@@ -226,4 +226,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-27/",
         "teaser": null
+      },{
+        "title": "[이산수학] 트리(Tree) : 09. 허프만 알고리즘",
+        "excerpt":"허프만 알고리즘 컴퓨터에서 문자 데이터를 표현할 때 7 비트의 ASCII코드를 사용한다. 컴퓨터에서 별다른 조치 없이 문자열을 저장한다면, 문자의 발생 빈도와 상관없이 각 문자는 언제다 동일한 길이의 비트를 사용한다. 그러므로 하나의 파일 내에서 문자 수만큼 비트 수가 늘어난다. 즉, 파일 안에 문자가 10개 있으면 70비트, 20개 있으면 140비트를 차지한다. 만약 문자의...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-28/",
+        "teaser": null
       }]

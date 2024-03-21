@@ -1,192 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-21T00:21:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-27/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-27</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-27/"><![CDATA[<h1 id="크루스칼-알고리즘-kruskal-algorithm">크루스칼 알고리즘 (Kruskal algorithm)</h1>
-
-<h2 id="크루스칼-알고리즘의-실행-규칙은-다음과-같다">크루스칼 알고리즘의 실행 규칙은 다음과 같다.</h2>
-
-<ol>
-  <li>
-    <p>노드 수가 $v$ 개인 그래프에서 가중치가 가장 작은 변을 차례로 선택한다.</p>
-  </li>
-  <li>
-    <p>가중치가 같은 변은 모두 선택한다.</p>
-  </li>
-  <li>
-    <p>노드 사시에 순환이 형성되는 경우 그 변을 선택하지 않는다.</p>
-  </li>
-  <li>
-    <p>선택된 변이 $v - 1$ 개가 되면 종료한다.</p>
-  </li>
-</ol>
-
-<p>다음 그림의 노드가 $6$ 개인 그래프 $G$ 를 크루스칼 알고리즘을 이용해 최소신장트리로 만들기 위해 각 변의 가중치를 정리하면 다음 표와 같다.</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_26_01.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_01.png" width="400" /></p>
-
-<p><br /></p>
-
-<ol>
-  <li>
-    <p>표에서 가중치가 가장 작은 변인 노드 $A, C$ 를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $2$ 개</p>
-      </li>
-      <li>
-        <p>변 : $1$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_02.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_03.png" width="400" /></p>
-  </li>
-  <li>
-    <p>남은 변 중 가중치가 가장 작은 변인 노드 $A, D$ 를 연결하는 변과 노드 $E, F$ 를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $5$ 개</p>
-      </li>
-      <li>
-        <p>변 : $3$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_04.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_05.png" width="400" /></p>
-  </li>
-  <li>
-    <p>남은 변 중 가중치가 가장 작은 변은 노드 $B, C$ 를 연결하는 변과 노드 $C, D$ 를 연결하는 변이다.</p>
-  </li>
-</ol>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-21T14:31:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 09. 허프만 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-28/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-28</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-28/"><![CDATA[<h1 id="허프만-알고리즘">허프만 알고리즘</h1>
 
 <ul>
   <li>
-    <p>노드 $C, D$ 를 연결하는 변은 노드 $A, C, D$ 사이에 순환을 형성하므로 선택하지 않는다.</p>
+    <p>컴퓨터에서 문자 데이터를 표현할 때 7 비트의 ASCII코드를 사용한다.</p>
   </li>
   <li>
-    <p>그러므로 노드 $B, C$를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $6$ 개</p>
-      </li>
-      <li>
-        <p>변 : $4$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_06.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_07.png" width="400" /></p>
+    <p>컴퓨터에서 별다른 조치 없이 문자열을 저장한다면, 문자의 발생 빈도와 상관없이 각 문자는 언제다 동일한 길이의 비트를 사용한다.</p>
+  </li>
+  <li>
+    <p>그러므로 하나의 파일 내에서 문자 수만큼  비트 수가 늘어난다.</p>
+  </li>
+  <li>
+    <p>즉, 파일 안에 문자가 10개 있으면 70비트, 20개 있으면 140비트를 차지한다.</p>
+  </li>
+  <li>
+    <p>만약 문자의 발생 빈도에 따라 할당하는 비트 수를 조절한다면 차지하는 메모리 공간을 줄일 수 있지 않을까?</p>
+  </li>
+  <li>
+    <p>다시 말해 파일 내에서 발생 빈도가 높은 문자에 적은 비트를 할당, 발생 빈도가 낮은 문자에 많은 비트를 할당한다면 파일의 용량을 줄일 수 있을 것이다.</p>
   </li>
 </ul>
-
-<ol>
-  <li>
-    <p>남은 변 중 가중치가 가장 작은 변인 노드 $B, E$ 를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $6$ 개</p>
-      </li>
-      <li>
-        <p>변 : $5$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_08.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_09.png" width="400" /></p>
-  </li>
-  <li>
-    <p>최소신장트리의 변의 수가 노드 수 - 1 이므로 실행을 종료한다. (변의 수 : $5$, 노드 수 - 1 : $6 - 1$)</p>
-  </li>
-</ol>
-
-<ul>
-  <li>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[크루스칼 알고리즘 (Kruskal algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 06. 트리의 활용</title><link href="http://localhost:4000/discrete%20mathematics/DM-25/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 06. 트리의 활용" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-25</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-25/"><![CDATA[<h1 id="트리의-활용">트리의 활용</h1>
-
-<ul>
-  <li>
-    <p>트리는 그래프의 한 종류이다.</p>
-  </li>
-  <li>
-    <p>그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다.</p>
-  </li>
-  <li>
-    <p>그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다.</p>
-  </li>
-  <li>
-    <p>이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다.</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="최소신장트리">최소신장트리</h1>
-
-<h2 id="정의--신장트리-spanning-tree">정의 : 신장트리 (spanning tree)</h2>
 
 <blockquote>
-  <p>그래프 $G$ 의 모든 정점을 노드로 포함하는 트리 $T$</p>
+  <p>이렇게 파일 크기를 줄이는 방법을 데이터 압축(data compression)이라고 한다.</p>
 </blockquote>
+
+<blockquote>
+  <p>이번 절에서는 대표적인 데이터 압축 방법인 허프만 알고리즘을 살펴본다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--허프만-알고리즘huffman-algorithm">정의 : 허프만 알고리즘(Huffman algorithm)</h2>
+
+<blockquote>
+  <p>발생 빈도가 높은 문자에서는 적은 비트를 할당하고 발생 빈도가 낮은 문자에는 많은 비트를 할당하는 알고리즘</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>발생 빈도가 가장 낮은 두 문자를 선택하여 하나의 이진트리를 생성한다.</p>
+
+    <ol>
+      <li>
+        <p>왼쪽 노드에 빈도 수가 낮은 문자를, 오른쪽 노드에 빈도 수가 높은 문자를 위치시킨다.</p>
+      </li>
+      <li>
+        <p>빈도 수가 같은 경우는 사전적으로 앞에 오는 문자를 왼쪽에 위치시킨다.</p>
+      </li>
+      <li>
+        <p>두 문자의 빈도 수의 합을 그 문자들의 부모노드로 한다.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>1번의 과정을 모든 문자가 하나의 이진트리로 묶일 때까지 반복한다.</p>
+  </li>
+  <li>
+    <p>생성된 이진트리의 왼쪽 노드에서는 $0$, 오른쪽 노드에는 $1$ 을 부여한다.</p>
+  </li>
+  <li>
+    <p>루트부터 해당 문자까지의 $0$ 또는 $1$ 을 순서대로 나열한다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
 
 <h3 id="예시">예시</h3>
 
-<ul>
-  <li>
-    <p>신장트리 $T$ 는 하나의 그래프 $G$ 에서 유도될 수 있는 다양한 형태의 트리로,<br />
-그래프를 구성하는 모든 정점은 루트노드가 될 수 있으며 부모노드와 자식노드를 연결하는 변을 그래프 $G$ 에도 포함되는 변이어야 한다.</p>
-  </li>
-  <li>
-    <p>다음 그림은 그래프 $G$ 에서 노드 $A$ 를 루트노드로 선택할 때 만들 수 있는 신장트리의 예이다.</p>
-  </li>
-  <li>
-    <p>그래프 $G$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="500" /></p>
-  </li>
-</ul>
-
 <p><br /></p>
 
 <ul>
-  <li>그래프 $G$ 에 대한 신장트리 $T$ 의 예</li>
+  <li>다음 문자의 빈도 수 표를 허프만 알고리즘을 이용해 압축해보자.</li>
 </ul>
 
-<p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /> $\qquad$ <img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /></p>
-
-<p><br /></p>
+<p><img src="/assets/images/Math/dm/dm_example_28_01.png" /></p>
 
 <ul>
-  <li>
-    <p>이처럼 주어진 그래프에서 트리를 유도할 때 트리가 활용되는 목적에 따라 다양한 형태의 트리가 만들어질 수 있다.</p>
-  </li>
-  <li>
-    <p>특히 가중치그래프가 주어진 경우에는 각 노드를 탐색하는 비용이 최소가 되는 변들을 선택하여 트리를 구성할 수 있다.</p>
-  </li>
+  <li>만약 문자들을 허프만 알고리즘을 통한 압축 없이 메모리에 저장하면 $(15 + 8 + 23 + 8 + 30 + 2 + 17 + 5 + 2) \times 7 = 770$ 비트가 필요할 것이다.</li>
 </ul>
 
-<p><br /></p>
+<hr />
 
-<h2 id="정의--최소신장트리-minimum-spanning-tree">정의 : 최소신장트리 (minimum spanning tree)</h2>
-
-<blockquote>
-  <p>그래프 $G$ 의 모든 정점을 노드로 포함하면서 노드 간의 비용을 최소로 하는 트리 $T$</p>
-</blockquote>
-
-<ul>
+<ol>
   <li>
-    <p>그래프에서 최소 비용을 갖는 트리를 구성하는 대표적인 알고리즘으로 프림 알고리즘과 크루스칼 알고리즘이 있다.</p>
-  </li>
-  <li>
-    <p>프림 알고리즘과 크루스칼 알고리즘에 대한 자세한 설명은 다음 장인 6-1 과 6-2 에서 다루겠습니다.</p>
+    <p>빈도 수가 가장 낮은 문자는 $o$ 와 $z$ 이다.</p>
 
     <ul>
-      <li>
-        <p>프림알고리즘 (링크 예정)</p>
-      </li>
-      <li>
-        <p>크루스칼 알고리즘 (링크 예정)</p>
-      </li>
+      <li>두 문자의 빈도 수가 같고 $o$ 가 $z$ 보다 사전적 순서가 앞이므로 $o$ 를 왼쪽 노드, $z$ 를 오른쪽 노드로 한다.</li>
     </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_02.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_03.png" /></p>
+
+    <p><br /></p>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 활용]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
+  <li>
+    <p>다음으로 빈도 수가 가장 낮은 문자는 1번에서 만든 $o/z$ 서브트리와 $u$ 이다.</p>
+
+    <ul>
+      <li>$u$ 의 빈도 수가 $o/z$ 서브트리보다 높으므로 오른쪽 노드로 한다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_04.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_05.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>다음으로 빈도 수가 낮은 문자는 $e$ 와 $j$ 이다.</p>
+
+    <ul>
+      <li>그러므로 2번에서 만든 $o/z/u$ 서브트리와 별도로 서브트리가 만들어진다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_06.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_07.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>다음으로 빈도 수가 낮은 문자는 $b$ 와 $o/z/u$ 서브트리이다.</p>
+
+    <ul>
+      <li>$b$의 빈도 수가 $o/z/u$ 서브트리보다 높으므로 오른쪽 노드에 위치시킨다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_08.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_09.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>다음으로 빈도 수가 낮은 문자는 $s$ 와 $e/j$ 서브트리이다.</p>
+
+    <ul>
+      <li>$e/j$ 서브트리의 빈도 수가 더 낮으므로 왼쪽 서브트리로 하고 $s$ 를 오른쪽 노드에 위치시킨다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_10.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_11.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>다음으로 빈도 수가 낮은 문자는 $g$ 와 $o/z/u/b$ 서브트리이다.</p>
+
+    <ul>
+      <li>$g$ 의 빈도 수가 더 낮으므로 왼쪽 노드에 위치시키고 $o/z/u/b$ 서브트리는 오른쪽 서브트리로 한다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_12.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_13.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>다음으로 빈도 수가 낮은 문자는 $l$ 과 $e/j/s$ 서브트리이다.</p>
+
+    <ul>
+      <li>$l$ 의 빈도 수가 더 낮으므로 $l$ 을 왼쪽 노드에 위치시키고, $e/j/s$ 서브트리를 오른쪽 서브트리로 한다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_14.png" width="500" />
+ <img src="/assets/images/Math/dm/dm_example_28_15.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>이제 두 서브트리를 하나의 루트노드로 연결한다.</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_16.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>각 서브트리마다 왼쪽 노드를 $0$ 을, 오른쪽 노드는 $1$ 을 부여한다.</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_17.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>9번의 결과를 이용해 각 문자에 코드를 부여한다.</p>
+
+    <ul>
+      <li>이러한 원리로 각 문자에 부여된 코드를 허프만 코드라고 하고 결과는 다음과 같다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_18.png" /></p>
+
+    <p><br /></p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>앞에서 압축 전에 주어진 빈도 수대로 메모리에 저장하면 $770$ 비트를 차지하는 것을 확인했다.</p>
+  </li>
+  <li>
+    <p>허프만 알고리즘을 이용해 구한 허프만 코드로 저장할 때 치지하는 메모리 공간은 거의 반으로 줄어든다.</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_28_19.png" /></p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>그러면 위에서 구한 허프만 코드를 이용해 문자열 $jguejozglbszesu$ 를 코드로 작성해보면 다음과 같다.</p>
+
+    <ul>
+      <li>$1101000101110011010100001000100100111110100111001110101$</li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>또한 허프만 코드만 주어질 경우 어떤 문자열로 구성되는지도 허프만 코드표ㅛ를 참고하며 문자를 찾을 수 있다.</p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[허프만 알고리즘]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
 
 <h2 id="프림-알고리즘의-과정">프림 알고리즘의 과정</h2>
 
@@ -329,7 +360,195 @@
   <li>
     <p>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</p>
   </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[프림 알고리즘 (Prim algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 05. 이진탐색트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-24/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 05. 이진탐색트리" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-24</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-24/"><![CDATA[<h1 id="이진탐색트리">이진탐색트리</h1>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[프림 알고리즘 (Prim algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 06. 트리의 활용</title><link href="http://localhost:4000/discrete%20mathematics/DM-25/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 06. 트리의 활용" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-25</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-25/"><![CDATA[<h1 id="트리의-활용">트리의 활용</h1>
+
+<ul>
+  <li>
+    <p>트리는 그래프의 한 종류이다.</p>
+  </li>
+  <li>
+    <p>그래프에서 공부한 깊이 우선 탐색 및 너비 우선 탐색 방법을 활용하거나 그래프의 신장부분그래프 개념과 최단 경로 문제를 트리에 적용하여 탐색할 수 있다.</p>
+  </li>
+  <li>
+    <p>그뿐 아니라 트리는 데이터를 압축하기 위한 방법으로 사용된다.</p>
+  </li>
+  <li>
+    <p>이 절에서는 트리 탐색의 새로운 방법인 최소신장트리와 데이터 압축 방법인 허프만 알고리즘을 알아본다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="최소신장트리">최소신장트리</h1>
+
+<h2 id="정의--신장트리-spanning-tree">정의 : 신장트리 (spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하는 트리 $T$</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>신장트리 $T$ 는 하나의 그래프 $G$ 에서 유도될 수 있는 다양한 형태의 트리로,<br />
+그래프를 구성하는 모든 정점은 루트노드가 될 수 있으며 부모노드와 자식노드를 연결하는 변을 그래프 $G$ 에도 포함되는 변이어야 한다.</p>
+  </li>
+  <li>
+    <p>다음 그림은 그래프 $G$ 에서 노드 $A$ 를 루트노드로 선택할 때 만들 수 있는 신장트리의 예이다.</p>
+  </li>
+  <li>
+    <p>그래프 $G$</p>
+
+    <p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="500" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>그래프 $G$ 에 대한 신장트리 $T$ 의 예</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /> $\qquad$ <img src="/assets/images/Math/dm/dm_example_25_01.png" width="350" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이처럼 주어진 그래프에서 트리를 유도할 때 트리가 활용되는 목적에 따라 다양한 형태의 트리가 만들어질 수 있다.</p>
+  </li>
+  <li>
+    <p>특히 가중치그래프가 주어진 경우에는 각 노드를 탐색하는 비용이 최소가 되는 변들을 선택하여 트리를 구성할 수 있다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--최소신장트리-minimum-spanning-tree">정의 : 최소신장트리 (minimum spanning tree)</h2>
+
+<blockquote>
+  <p>그래프 $G$ 의 모든 정점을 노드로 포함하면서 노드 간의 비용을 최소로 하는 트리 $T$</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>그래프에서 최소 비용을 갖는 트리를 구성하는 대표적인 알고리즘으로 프림 알고리즘과 크루스칼 알고리즘이 있다.</p>
+  </li>
+  <li>
+    <p>프림 알고리즘과 크루스칼 알고리즘에 대한 자세한 설명은 다음 장인 6-1 과 6-2 에서 다루겠습니다.</p>
+
+    <ul>
+      <li>
+        <p>프림알고리즘 (링크 예정)</p>
+      </li>
+      <li>
+        <p>크루스칼 알고리즘 (링크 예정)</p>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 활용]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-27/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-27</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-27/"><![CDATA[<h1 id="크루스칼-알고리즘-kruskal-algorithm">크루스칼 알고리즘 (Kruskal algorithm)</h1>
+
+<ul>
+  <li>크루스칼 알고리즘의 실행 규칙은 다음과 같다.</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>노드 수가 $v$ 개인 그래프에서 가중치가 가장 작은 변을 차례로 선택한다.</li>
+    <li>가중치가 같은 변은 모두 선택한다.</li>
+    <li>노드 사시에 순환이 형성되는 경우 그 변을 선택하지 않는다.</li>
+    <li>선택된 변이 $v - 1$ 개가 되면 종료한다.</li>
+  </ol>
+</blockquote>
+
+<p><br /></p>
+
+<ul>
+  <li>다음 그림의 노드가 $6$ 개인 그래프 $G$ 를 크루스칼 알고리즘을 이용해 최소신장트리로 만들기 위해 각 변의 가중치를 정리하면 다음 표와 같다.</li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_26_01.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_01.png" width="400" /></p>
+
+<p><br /></p>
+
+<ol>
+  <li>
+    <p>표에서 가중치가 가장 작은 변인 노드 $A, C$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $2$ 개</p>
+      </li>
+      <li>
+        <p>변 : $1$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_02.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_03.png" width="400" /></p>
+  </li>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변인 노드 $A, D$ 를 연결하는 변과 노드 $E, F$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $5$ 개</p>
+      </li>
+      <li>
+        <p>변 : $3$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_04.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_05.png" width="400" /></p>
+  </li>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변은 노드 $B, C$ 를 연결하는 변과 노드 $C, D$ 를 연결하는 변이다.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>노드 $C, D$ 를 연결하는 변은 노드 $A, C, D$ 사이에 순환을 형성하므로 선택하지 않는다.</p>
+  </li>
+  <li>
+    <p>그러므로 노드 $B, C$를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $6$ 개</p>
+      </li>
+      <li>
+        <p>변 : $4$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_06.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_07.png" width="400" /></p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>남은 변 중 가중치가 가장 작은 변인 노드 $B, E$ 를 연결하는 변을 선택한다.</p>
+
+    <ul>
+      <li>
+        <p>노드 : $6$ 개</p>
+      </li>
+      <li>
+        <p>변 : $5$ 개</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/images/Math/dm/dm_example_27_08.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_09.png" width="400" /></p>
+  </li>
+  <li>
+    <p>최소신장트리의 변의 수가 노드 수 - 1 이므로 실행을 종료한다. (변의 수 : $5$, 노드 수 - 1 : $6 - 1$)</p>
+  </li>
+</ol>
+
+<ul>
+  <li>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[크루스칼 알고리즘 (Kruskal algorithm)]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 05. 이진탐색트리</title><link href="http://localhost:4000/discrete%20mathematics/DM-24/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 05. 이진탐색트리" /><published>2024-02-12T00:00:00+09:00</published><updated>2024-02-12T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-24</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-24/"><![CDATA[<h1 id="이진탐색트리">이진탐색트리</h1>
 
 <ul>
   <li>
@@ -2629,79 +2848,4 @@ $\qquad \qquad \qquad \qquad \qquad \ $오른쪽 자식노드의 인덱스 : $2n
       <li>어떤 경로나 순환이든 정점 $b$ 를 두 번 포함하므로 해밑턴 경로나 순환이 모두 존재하지 않는다.</li>
     </ul>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[오일러와 해밀턴]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 03.그래프의 표현</title><link href="http://localhost:4000/discrete%20mathematics/DM-18/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 03.그래프의 표현" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-18</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-18/"><![CDATA[<h1 id="그래프의-표현">그래프의 표현</h1>
-
-<ul>
-  <li>지금까지 그래프는 수학적 기호와 그림으로 표현했지만, 그래프를 이용한 연산이나 데이터의 구조를 나타내기 위해 행렬이나 리스트 형태로 표현하기도 한다.</li>
-</ul>
-
-<h1 id="인접행렬">인접행렬</h1>
-
-<h2 id="정의--인접행렬-adjacency-matrix--a_g">정의 : 인접행렬 (adjacency matrix : $A_{G}$)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에서 |$V$| $= n$ 일 때, $n \times n$ 행렬 $A_{G} = [a_{ij}]$</p>
-</blockquote>
-
-<ul>
-  <li>$a_{ij} = 
-\begin{cases}
-해당\ 정점에\ 근접하는\ 변의\ 수, (v_{i}, v_{j}) \in E\\<br />
-\qquad \qquad \quad 0, \qquad \quad \quad \quad \quad \quad \ (v_{i}, v_{j}) \notin E
-\end{cases}$</li>
-</ul>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>그래프의 인접행렬 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_18_01.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_02.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_03.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $C$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_04.png" /></p>
-  </li>
-</ul>
-
-<h1 id="인접리스트">인접리스트</h1>
-
-<h2 id="정의--인접리스트-adjacency-list">정의 : 인접리스트 (adjacency list)</h2>
-
-<blockquote>
-  <p>그래프 $G = (V, E)$ 에 포함되는 각 정점에 인접하는 정점들을 연결리스트로 표현한 것</p>
-</blockquote>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>그래프의 인접리스트 표기</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_18_05.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_06.png" /></p>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_18_07.png" /></p>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[그래프의 표현]]></summary></entry></feed>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[오일러와 해밀턴]]></summary></entry></feed>
