@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘 | 느려도 괜찮아</title>
-<meta name="description" content="크루스칼 알고리즘 (Kruskal algorithm)">
+<!-- begin _includes/seo.html --><title>[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념 | 느려도 괜찮아</title>
+<meta name="description" content="부울대수">
 
 
   <meta name="author" content="지지형">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
-<meta property="og:title" content="[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘">
-<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-27/">
+<meta property="og:title" content="[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-29/">
 
 
-  <meta property="og:description" content="크루스칼 알고리즘 (Kruskal algorithm)">
-
-
-
+  <meta property="og:description" content="부울대수">
 
 
 
 
-  <meta property="article:published_time" content="2024-02-13T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-02-13T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-02-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-02-15T00:00:00+09:00">
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-27/">
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-29/">
 
 
 
@@ -361,16 +361,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘">
-    <meta itemprop="description" content="크루스칼 알고리즘 (Kruskal algorithm)">
-    <meta itemprop="datePublished" content="2024-02-13T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-02-13T00:00:00+09:00">
+    <meta itemprop="headline" content="[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념">
+    <meta itemprop="description" content="부울대수">
+    <meta itemprop="datePublished" content="2024-02-15T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-15T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/discrete%20mathematics/DM-27/" class="u-url" itemprop="url">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘
+            <a href="http://localhost:4000/discrete%20mathematics/DM-29/" class="u-url" itemprop="url">[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념
 </a>
           </h1>
           
@@ -387,7 +387,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
     
@@ -401,115 +401,388 @@
         
           <aside class="sidebar__right sticky">
             <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 08. 크루스칼 알고리즘</h4></header>
-              <ul class="toc__menu"><li><a href="#크루스칼-알고리즘-kruskal-algorithm">크루스칼 알고리즘 (Kruskal algorithm)</a></li></ul>
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 01. 부울대수의 개념</h4></header>
+              <ul class="toc__menu"><li><a href="#부울대수">부울대수</a></li><li><a href="#부울대수의-개념">부울대수의 개념</a><ul><li><a href="#정의--부울대수-boolean-algebra--논리대수-logic-algebra">정의 : 부울대수 (Boolean algebra) / 논리대수 (logic algebra)</a></li><li><a href="#정의--부울값-boolean-value">정의 : 부울값 (Boolean value)</a></li><li><a href="#정의--부울변수-boolean-variable">정의 : 부울변수 (Boolean variable)</a></li><li><a href="#정의--부울함수-boolean-function-n-차-부울함수--fx_1-x_2-cdots--x_n">정의 : 부울함수 (Boolean function, $n$ 차 부울함수 : $f(x_{1}, x_{2}, \cdots , x_{n})$)</a></li><li><a href="#정의--부울보수-boolean-complement--a-또는-bara">정의 : 부울보수 (Boolean complement : $A’$ 또는 $\bar{A}$)</a></li><li><a href="#정의--부울합-boolean-addition--a--b">정의 : 부울합 (Boolean addition : $A + B$)</a></li><li><a href="#정의--부울곱-boolean-mutiplication--a-cdot-b-또는-ab">정의 : 부울곱 (Boolean mutiplication : $A \cdot B$ 또는 $AB$)</a></li></ul></li><li><a href="#부울대수의-법칙">부울대수의 법칙</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="크루스칼-알고리즘-kruskal-algorithm">크루스칼 알고리즘 (Kruskal algorithm)</h1>
+        <h1 id="부울대수">부울대수</h1>
 
-<ul>
-  <li>크루스칼 알고리즘의 실행 규칙은 다음과 같다.</li>
-</ul>
+<p>컴퓨터 시스템은 0과 1로 표현되는 비트의 집합을 연산하는 방식으로 운영된다.</p>
+
+<p>그래서 컴퓨터 시스템을 구성하는 여러 물리 장치는 이러한 비트를 저장하고 연산하는 데 적합하도록 회로가 구성된다.</p>
+
+<p>컴퓨터 시스템이 연산하는 것을 함수로 표현하고 그 함수를 회로로 설계하기 위해서는 특별한 연산과 표현 방식이 필요하다.</p>
 
 <blockquote>
-  <ol>
-    <li>노드 수가 $v$ 개인 그래프에서 가중치가 가장 작은 변을 차례로 선택한다.</li>
-    <li>가중치가 같은 변은 모두 선택한다.</li>
-    <li>노드 사시에 순환이 형성되는 경우 그 변을 선택하지 않는다.</li>
-    <li>선택된 변이 $v - 1$ 개가 되면 종료한다.</li>
-  </ol>
+  <p>컴퓨터 시스템을 포함한 여러 디지털 장치의 회로를 분석하고 설계하기위해 회로의 기능을 함수로 표현하는 것을 <span style="background-color: #fff5b1">부울대수</span>라고 한다.</p>
 </blockquote>
 
 <p><br /></p>
 
+<h1 id="부울대수의-개념">부울대수의 개념</h1>
+
 <ul>
-  <li>다음 그림의 노드가 $6$ 개인 그래프 $G$ 를 크루스칼 알고리즘을 이용해 최소신장트리로 만들기 위해 각 변의 가중치를 정리하면 다음 표와 같다.</li>
+  <li>부울(Boolean)은 $0 / 1$ , 참($T$) / 거짓($F$), ON / OFF 와 같이 2진의 값을 표현하는 용어다.</li>
 </ul>
 
-<p><img src="/assets/images/Math/dm/dm_example_26_01.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_01.png" width="400" /></p>
+<h2 id="정의--부울대수-boolean-algebra--논리대수-logic-algebra">정의 : 부울대수 (Boolean algebra) / 논리대수 (logic algebra)</h2>
+
+<blockquote>
+  <p>2진의 값인 부울값(0 또는 1)을 이용해 논리 동작을 표현하는 대수</p>
+</blockquote>
+
+<ul>
+  <li>부울대수는 부울값, 부울변수, 부울 연산자를 이용해 부울함수로 회로의 동작을 형식화한다.</li>
+</ul>
+
+<h2 id="정의--부울값-boolean-value">정의 : 부울값 (Boolean value)</h2>
+
+<blockquote>
+  <p>디지털신호, $0$ 또는 $1$</p>
+</blockquote>
+
+<h2 id="정의--부울변수-boolean-variable">정의 : 부울변수 (Boolean variable)</h2>
+
+<blockquote>
+  <p>부울값을 받는 변수</p>
+</blockquote>
+
+<h2 id="정의--부울함수-boolean-function-n-차-부울함수--fx_1-x_2-cdots--x_n">정의 : 부울함수 (Boolean function, $n$ 차 부울함수 : $f(x_{1}, x_{2}, \cdots , x_{n})$)</h2>
+
+<blockquote>
+  <p>$n$ 개의 부울변수와 부울 연산자로 구성된 식</p>
+</blockquote>
+
+<ul>
+  <li>부울 연산자에는 부울보수, 부울합, 부울곱이 있다.</li>
+</ul>
+
+<h2 id="정의--부울보수-boolean-complement--a-또는-bara">정의 : 부울보수 (Boolean complement : $A’$ 또는 $\bar{A}$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 반전시키는 단항 연산자</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0’ = \bar{0} = 1$</p>
+  </li>
+  <li>
+    <p>$1’ = \bar{1} = 0$</p>
+  </li>
+</ul>
+
+<h2 id="정의--부울합-boolean-addition--a--b">정의 : 부울합 (Boolean addition : $A + B$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 더하는 이항 연산자<br />
+부울변수의 값 중 하나라도 1이면 그 결과는 1이 되는 연산</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0 + 0 = 0$</p>
+  </li>
+  <li>
+    <p>$0 + 1 = 1$</p>
+  </li>
+  <li>
+    <p>$1 + 0 = 1$</p>
+  </li>
+  <li>
+    <p>$1 + 1 = 1$</p>
+  </li>
+</ul>
+
+<h2 id="정의--부울곱-boolean-mutiplication--a-cdot-b-또는-ab">정의 : 부울곱 (Boolean mutiplication : $A \cdot B$ 또는 $AB$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 곱하는 이항 연산자<br />
+부울변수의 값이 모두 1인 경우에만 그 결과가 1이 되는 연산</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0 \cdot 0 = 0$</p>
+  </li>
+  <li>
+    <p>$0 \cdot 1 = 0$</p>
+  </li>
+  <li>
+    <p>$1 \cdot 0 = 0$</p>
+  </li>
+  <li>
+    <p>$1 \cdot 1 = 1$</p>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<ol>
-  <li>
-    <p>표에서 가중치가 가장 작은 변인 노드 $A, C$ 를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $2$ 개</p>
-      </li>
-      <li>
-        <p>변 : $1$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_02.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_03.png" width="400" /></p>
-  </li>
-  <li>
-    <p>남은 변 중 가중치가 가장 작은 변인 노드 $A, D$ 를 연결하는 변과 노드 $E, F$ 를 연결하는 변을 선택한다.</p>
-
-    <ul>
-      <li>
-        <p>노드 : $5$ 개</p>
-      </li>
-      <li>
-        <p>변 : $3$ 개</p>
-      </li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_04.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_05.png" width="400" /></p>
-  </li>
-  <li>
-    <p>남은 변 중 가중치가 가장 작은 변은 노드 $B, C$ 를 연결하는 변과 노드 $C, D$ 를 연결하는 변이다.</p>
-  </li>
-</ol>
-
 <ul>
   <li>
-    <p>노드 $C, D$ 를 연결하는 변은 노드 $A, C, D$ 사이에 순환을 형성하므로 선택하지 않는다.</p>
-  </li>
-  <li>
-    <p>그러므로 노드 $B, C$를 연결하는 변을 선택한다.</p>
+    <p>부울 연산자의 정의를 살펴보면 논리 연산자와 유사하다는 것을 알 수 있다.</p>
 
     <ul>
       <li>
-        <p>노드 : $6$ 개</p>
+        <p>부울보수는 논리 연산자의 부정 연산자($NOT$)</p>
       </li>
       <li>
-        <p>변 : $4$ 개</p>
+        <p>부울합은 논리합 연산자 ($OR$)</p>
+      </li>
+      <li>
+        <p>부울곱은 논리곱 연산자 ($AND$)</p>
       </li>
     </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_06.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_07.png" width="400" /></p>
   </li>
 </ul>
 
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>부울 연산자의 우선순위</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">우선순위</th>
+          <th style="text-align: center">연산자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">최고</td>
+          <td style="text-align: center">부울보수($’ / \bar{}$)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$\updownarrow$</td>
+          <td style="text-align: center">부울곱($\cdot$)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">최저</td>
+          <td style="text-align: center">부울합(+)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>부울변수로 구성된 부울함수는 입력한 값에 따라 출력되는 값이 달라질 수 있으므로 결과를 진리표로 확인한다.</p>
+  </li>
+  <li>
+    <p>2차 부울함수 $f(x,y) = xy + \bar{x}y$ 에 대하여 부울변수 $x, y$에 입력한 값에 따른 결과를 확인하는 진리표는 다음과 같다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">$x$</td>
+          <td style="text-align: center">$y$</td>
+          <td style="text-align: center">$\bar{x}$</td>
+          <td style="text-align: center">$xy$</td>
+          <td style="text-align: center">$\bar{x}y$</td>
+          <td style="text-align: center">$f(x, y) = xy + \bar{x}y$</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h1 id="부울대수의-법칙">부울대수의 법칙</h1>
+
 <ol>
   <li>
-    <p>남은 변 중 가중치가 가장 작은 변인 노드 $B, E$ 를 연결하는 변을 선택한다.</p>
+    <p><strong>멱등법칙</strong>(idempotent law)</p>
 
     <ul>
       <li>
-        <p>노드 : $6$ 개</p>
+        <p>$x + x = x$</p>
       </li>
       <li>
-        <p>변 : $5$ 개</p>
+        <p>$x \cdot x = x$</p>
       </li>
     </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_27_08.png" width="400" /> $\ \ $ <img src="/assets/images/Math/dm/dm_example_27_09.png" width="400" /></p>
   </li>
   <li>
-    <p>최소신장트리의 변의 수가 노드 수 - 1 이므로 실행을 종료한다. (변의 수 : $5$, 노드 수 - 1 : $6 - 1$)</p>
+    <p><strong>항등법칙</strong>(identity law)</p>
+
+    <ul>
+      <li>
+        <p>$x + 0 = x$</p>
+      </li>
+      <li>
+        <p>$x \cdot 1 = x$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>지배법칙</strong>(domination law)</p>
+
+    <ul>
+      <li>
+        <p>$x + 1 = 1$</p>
+      </li>
+      <li>
+        <p>$x \cdot 0 = 0$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>교환법칙</strong>(commutative law)</p>
+
+    <ul>
+      <li>
+        <p>$x + y = y + x$</p>
+      </li>
+      <li>
+        <p>$xy = yx$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>이중 보수법칙</strong>(double complement law)</p>
+
+    <ul>
+      <li>$\overline{\bar{(x)}}$</li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p><strong>보수법칙</strong>(complement law)</p>
+
+    <ul>
+      <li>
+        <p>$x + \bar{x} = 1$</p>
+      </li>
+      <li>
+        <p>$x \cdot \bar{x} = 0$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>결합법칙</strong>(associative law)</p>
+
+    <ul>
+      <li>
+        <p>$(x + y) + z = x + (y + z)$</p>
+      </li>
+      <li>
+        <p>$(xy)z = x(yz)$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>분배법칙</strong>(distributive law)</p>
+
+    <ul>
+      <li>
+        <p>$x \cdot (y + z) = xy + xz$</p>
+      </li>
+      <li>
+        <p>$x + yz = (x + y) \cdot (x + z)$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>드 모르간의 법칙</strong>(De Morgan’s law)</p>
+
+    <ul>
+      <li>
+        <p>$\overline{x + y} = \bar{x} \bar{y}$</p>
+      </li>
+      <li>
+        <p>$\overline{xy} = \bar{x} + \bar{y}$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>흡수법칙</strong>(absorption law)</p>
+
+    <ul>
+      <li>
+        <p>$x + xy = x$</p>
+      </li>
+      <li>
+        <p>$x(x + y) = x$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>1과 0의 법칙</strong></p>
+
+    <ul>
+      <li>
+        <p>$\bar{0} = 1$</p>
+      </li>
+      <li>
+        <p>$\bar{1} = 0$</p>
+      </li>
+    </ul>
   </li>
 </ol>
-
-<ul>
-  <li>완성된 최소신장트리의 가중치는 $9 + 10 + 12 + 13 + 10 = 54$ 이다.</li>
-</ul>
-
 
         
       </section>
@@ -536,7 +809,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-13">February 13, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-15">February 15, 2024</time></p>
 
       </footer>
 
@@ -545,10 +818,6 @@
       
 
 
-
-  
-
-  
 
   
   	
@@ -560,10 +829,10 @@
 
   <nav class="pagination_prev_next">
     
-      <a href="/discrete%20mathematics/DM-26/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 트리(Tree) : 07. 프림 알고리즘</a>
+      <a href="/discrete%20mathematics/DM-28/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 트리(Tree) : 09. 허프만 알고리즘</a>
     
     
-      <a href="/discrete%20mathematics/DM-28/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 트리(Tree) : 09. 허프만 알고리즘</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     
   </nav>
 
@@ -573,12 +842,11 @@
 <!-- 
   <nav class="pagination">
     
-      <a href="/discrete%20mathematics/DM-26/" class="pagination--pager" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘
+      <a href="/discrete%20mathematics/DM-28/" class="pagination--pager" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘
 ">이전</a>
     
     
-      <a href="/discrete%20mathematics/DM-28/" class="pagination--pager" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
  -->
@@ -593,47 +861,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/discrete%20mathematics/DM-29/" rel="permalink">[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">부울대수
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -670,6 +897,47 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">허프만 알고리즘
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-27/" rel="permalink">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">크루스칼 알고리즘 (Kruskal algorithm)
 
 </p>
   </article>

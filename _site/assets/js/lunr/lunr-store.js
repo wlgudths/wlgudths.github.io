@@ -232,4 +232,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-28/",
         "teaser": null
+      },{
+        "title": "[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념",
+        "excerpt":"부울대수 컴퓨터 시스템은 0과 1로 표현되는 비트의 집합을 연산하는 방식으로 운영된다. 그래서 컴퓨터 시스템을 구성하는 여러 물리 장치는 이러한 비트를 저장하고 연산하는 데 적합하도록 회로가 구성된다. 컴퓨터 시스템이 연산하는 것을 함수로 표현하고 그 함수를 회로로 설계하기 위해서는 특별한 연산과 표현 방식이 필요하다. 컴퓨터 시스템을 포함한 여러 디지털 장치의 회로를 분석하고...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-29/",
+        "teaser": null
       }]

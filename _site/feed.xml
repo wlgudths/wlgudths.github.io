@@ -1,4 +1,379 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-21T14:31:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 트리(Tree) : 09. 허프만 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-28/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-28</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-28/"><![CDATA[<h1 id="허프만-알고리즘">허프만 알고리즘</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-22T14:47:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-29/" rel="alternate" type="text/html" title="[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-29</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-29/"><![CDATA[<h1 id="부울대수">부울대수</h1>
+
+<p>컴퓨터 시스템은 0과 1로 표현되는 비트의 집합을 연산하는 방식으로 운영된다.</p>
+
+<p>그래서 컴퓨터 시스템을 구성하는 여러 물리 장치는 이러한 비트를 저장하고 연산하는 데 적합하도록 회로가 구성된다.</p>
+
+<p>컴퓨터 시스템이 연산하는 것을 함수로 표현하고 그 함수를 회로로 설계하기 위해서는 특별한 연산과 표현 방식이 필요하다.</p>
+
+<blockquote>
+  <p>컴퓨터 시스템을 포함한 여러 디지털 장치의 회로를 분석하고 설계하기위해 회로의 기능을 함수로 표현하는 것을 <span style="background-color: #fff5b1">부울대수</span>라고 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="부울대수의-개념">부울대수의 개념</h1>
+
+<ul>
+  <li>부울(Boolean)은 $0 / 1$ , 참($T$) / 거짓($F$), ON / OFF 와 같이 2진의 값을 표현하는 용어다.</li>
+</ul>
+
+<h2 id="정의--부울대수-boolean-algebra--논리대수-logic-algebra">정의 : 부울대수 (Boolean algebra) / 논리대수 (logic algebra)</h2>
+
+<blockquote>
+  <p>2진의 값인 부울값(0 또는 1)을 이용해 논리 동작을 표현하는 대수</p>
+</blockquote>
+
+<ul>
+  <li>부울대수는 부울값, 부울변수, 부울 연산자를 이용해 부울함수로 회로의 동작을 형식화한다.</li>
+</ul>
+
+<h2 id="정의--부울값-boolean-value">정의 : 부울값 (Boolean value)</h2>
+
+<blockquote>
+  <p>디지털신호, $0$ 또는 $1$</p>
+</blockquote>
+
+<h2 id="정의--부울변수-boolean-variable">정의 : 부울변수 (Boolean variable)</h2>
+
+<blockquote>
+  <p>부울값을 받는 변수</p>
+</blockquote>
+
+<h2 id="정의--부울함수-boolean-function-n-차-부울함수--fx_1-x_2-cdots--x_n">정의 : 부울함수 (Boolean function, $n$ 차 부울함수 : $f(x_{1}, x_{2}, \cdots , x_{n})$)</h2>
+
+<blockquote>
+  <p>$n$ 개의 부울변수와 부울 연산자로 구성된 식</p>
+</blockquote>
+
+<ul>
+  <li>부울 연산자에는 부울보수, 부울합, 부울곱이 있다.</li>
+</ul>
+
+<h2 id="정의--부울보수-boolean-complement--a-또는-bara">정의 : 부울보수 (Boolean complement : $A’$ 또는 $\bar{A}$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 반전시키는 단항 연산자</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0’ = \bar{0} = 1$</p>
+  </li>
+  <li>
+    <p>$1’ = \bar{1} = 0$</p>
+  </li>
+</ul>
+
+<h2 id="정의--부울합-boolean-addition--a--b">정의 : 부울합 (Boolean addition : $A + B$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 더하는 이항 연산자<br />
+부울변수의 값 중 하나라도 1이면 그 결과는 1이 되는 연산</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0 + 0 = 0$</p>
+  </li>
+  <li>
+    <p>$0 + 1 = 1$</p>
+  </li>
+  <li>
+    <p>$1 + 0 = 1$</p>
+  </li>
+  <li>
+    <p>$1 + 1 = 1$</p>
+  </li>
+</ul>
+
+<h2 id="정의--부울곱-boolean-mutiplication--a-cdot-b-또는-ab">정의 : 부울곱 (Boolean mutiplication : $A \cdot B$ 또는 $AB$)</h2>
+
+<blockquote>
+  <p>부울변수의 값을 곱하는 이항 연산자<br />
+부울변수의 값이 모두 1인 경우에만 그 결과가 1이 되는 연산</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$0 \cdot 0 = 0$</p>
+  </li>
+  <li>
+    <p>$0 \cdot 1 = 0$</p>
+  </li>
+  <li>
+    <p>$1 \cdot 0 = 0$</p>
+  </li>
+  <li>
+    <p>$1 \cdot 1 = 1$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>부울 연산자의 정의를 살펴보면 논리 연산자와 유사하다는 것을 알 수 있다.</p>
+
+    <ul>
+      <li>
+        <p>부울보수는 논리 연산자의 부정 연산자($NOT$)</p>
+      </li>
+      <li>
+        <p>부울합은 논리합 연산자 ($OR$)</p>
+      </li>
+      <li>
+        <p>부울곱은 논리곱 연산자 ($AND$)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>부울 연산자의 우선순위</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">우선순위</th>
+          <th style="text-align: center">연산자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">최고</td>
+          <td style="text-align: center">부울보수($’ / \bar{}$)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">$\updownarrow$</td>
+          <td style="text-align: center">부울곱($\cdot$)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">최저</td>
+          <td style="text-align: center">부울합(+)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>부울변수로 구성된 부울함수는 입력한 값에 따라 출력되는 값이 달라질 수 있으므로 결과를 진리표로 확인한다.</p>
+  </li>
+  <li>
+    <p>2차 부울함수 $f(x,y) = xy + \bar{x}y$ 에 대하여 부울변수 $x, y$에 입력한 값에 따른 결과를 확인하는 진리표는 다음과 같다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th style="text-align: center"> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">$x$</td>
+          <td style="text-align: center">$y$</td>
+          <td style="text-align: center">$\bar{x}$</td>
+          <td style="text-align: center">$xy$</td>
+          <td style="text-align: center">$\bar{x}y$</td>
+          <td style="text-align: center">$f(x, y) = xy + \bar{x}y$</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center"> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><br />
+<br /></p>
+
+<h1 id="부울대수의-법칙">부울대수의 법칙</h1>
+
+<ol>
+  <li>
+    <p><strong>멱등법칙</strong>(idempotent law)</p>
+
+    <ul>
+      <li>
+        <p>$x + x = x$</p>
+      </li>
+      <li>
+        <p>$x \cdot x = x$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>항등법칙</strong>(identity law)</p>
+
+    <ul>
+      <li>
+        <p>$x + 0 = x$</p>
+      </li>
+      <li>
+        <p>$x \cdot 1 = x$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>지배법칙</strong>(domination law)</p>
+
+    <ul>
+      <li>
+        <p>$x + 1 = 1$</p>
+      </li>
+      <li>
+        <p>$x \cdot 0 = 0$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>교환법칙</strong>(commutative law)</p>
+
+    <ul>
+      <li>
+        <p>$x + y = y + x$</p>
+      </li>
+      <li>
+        <p>$xy = yx$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>이중 보수법칙</strong>(double complement law)</p>
+
+    <ul>
+      <li>$\overline{\bar{(x)}}$</li>
+    </ul>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p><strong>보수법칙</strong>(complement law)</p>
+
+    <ul>
+      <li>
+        <p>$x + \bar{x} = 1$</p>
+      </li>
+      <li>
+        <p>$x \cdot \bar{x} = 0$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>결합법칙</strong>(associative law)</p>
+
+    <ul>
+      <li>
+        <p>$(x + y) + z = x + (y + z)$</p>
+      </li>
+      <li>
+        <p>$(xy)z = x(yz)$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>분배법칙</strong>(distributive law)</p>
+
+    <ul>
+      <li>
+        <p>$x \cdot (y + z) = xy + xz$</p>
+      </li>
+      <li>
+        <p>$x + yz = (x + y) \cdot (x + z)$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>드 모르간의 법칙</strong>(De Morgan’s law)</p>
+
+    <ul>
+      <li>
+        <p>$\overline{x + y} = \bar{x} \bar{y}$</p>
+      </li>
+      <li>
+        <p>$\overline{xy} = \bar{x} + \bar{y}$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>흡수법칙</strong>(absorption law)</p>
+
+    <ul>
+      <li>
+        <p>$x + xy = x$</p>
+      </li>
+      <li>
+        <p>$x(x + y) = x$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>1과 0의 법칙</strong></p>
+
+    <ul>
+      <li>
+        <p>$\bar{0} = 1$</p>
+      </li>
+      <li>
+        <p>$\bar{1} = 0$</p>
+      </li>
+    </ul>
+  </li>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울대수]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 09. 허프만 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-28/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-28</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-28/"><![CDATA[<h1 id="허프만-알고리즘">허프만 알고리즘</h1>
 
 <ul>
   <li>
@@ -215,7 +590,7 @@
     <p><br /></p>
   </li>
   <li>
-    <p>또한 허프만 코드만 주어질 경우 어떤 문자열로 구성되는지도 허프만 코드표ㅛ를 참고하며 문자를 찾을 수 있다.</p>
+    <p>또한 허프만 코드만 주어질 경우 어떤 문자열로 구성되는지도 허프만 코드표를 참고하며 문자를 찾을 수 있다.</p>
   </li>
 </ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[허프만 알고리즘]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 07. 프림 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-26/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 07. 프림 알고리즘" /><published>2024-02-13T00:00:00+09:00</published><updated>2024-02-13T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-26</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-26/"><![CDATA[<h1 id="프림-알고리즘-prim-algorithm">프림 알고리즘 (Prim algorithm)</h1>
 
@@ -2571,281 +2946,4 @@ $\qquad \qquad \qquad \qquad \qquad \ $오른쪽 자식노드의 인덱스 : $2n
   </li>
 </ul>
 
-<p><img src="/assets/images/Math/dm/dm_example_20_18.png" width="200" /> <img src="/assets/images/Math/dm/dm_example_20_19.png" width="200" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 개념]]></summary></entry><entry><title type="html">[이산수학] 그래프(Graph) : 04.오일러와 해밀턴</title><link href="http://localhost:4000/discrete%20mathematics/DM-19/" rel="alternate" type="text/html" title="[이산수학] 그래프(Graph) : 04.오일러와 해밀턴" /><published>2024-01-27T00:00:00+09:00</published><updated>2024-01-27T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-19</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-19/"><![CDATA[<h1 id="오일러와-해밀턴">오일러와 해밀턴</h1>
-
-<ul>
-  <li>
-    <p>네트워크의 신호 흐름이나 인공지능의 지식 연결, 하드웨어의 회로 등에서 신호나 지식의 흐름을 어떻게 구성하느냐는 시스템의 성능을 결정하는 주요한 기준 중 하나이다.</p>
-  </li>
-  <li>
-    <p>이러한 신호나 지식의 흐름을 계획하기 위해 그래프의 경로나 순환 개념을 응용할 수 있다.</p>
-  </li>
-  <li>
-    <p>그래프에서 경로나 순환을 찾는 대표적인 방법으로 수학자 레온하르트 오일러와 윌리엄 로언 해밀턴이 제안한 이론이 있다.</p>
-  </li>
-</ul>
-
-<h2 id="정의--순환-cycle--회로-circuit">정의 : 순환 (cycle) / 회로 (circuit)</h2>
-
-<blockquote>
-  <p>연결그래프에서 시작하는 정점과 끝나는 정점이 같은 경로</p>
-</blockquote>
-
-<h2 id="정의--길이-length">정의 : 길이 (length)</h2>
-
-<blockquote>
-  <p>경로 또는 순환을 구성하는 변의 수</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>길, 경로, 순환의 예</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_19_01.png" /></p>
-
-<ul>
-  <li>
-    <p>정점 $a$ 에서 시작하는 길의 몇 가지 예</p>
-
-    <ol>
-      <li>
-        <p>$a - c - d -f$</p>
-      </li>
-      <li>
-        <p>$a - e - c - d - b - f$</p>
-      </li>
-      <li>
-        <p>$a - c - e - a$</p>
-      </li>
-      <li>
-        <p>$a - e - c - a$</p>
-      </li>
-      <li>
-        <p>$a - c - d - b - f - d - c - a$</p>
-      </li>
-    </ol>
-  </li>
-  <li>1번과 2번은 정점 $a$ 에서 정점 $f$ 까지의 길로 두 번 이상 중복되어 지나는 변이 없다.
-    <ul>
-      <li>정점 $a$ 에서 정점 $f$ 까지의 경로</li>
-    </ul>
-  </li>
-  <li>3번과 4번은 정점 $a$ 에서 시작하여 정점 $a$ 로 끝나는 길로 두번 이상 중복되어 지나는 변이 없고, 시작한 정점으로 다시 돌아오는 길이다.
-    <ul>
-      <li>정점 $a$ 에서 시작하는 순환</li>
-    </ul>
-  </li>
-  <li>
-    <p>5번은 정점 $a$ 에서 시작하여 정점 $a$ 로 끝나지만, 변 $(c, d)$ 가 두 번 반복되므로 경로도 순환도 아닌 길이다.</p>
-  </li>
-  <li>경로와 순환의 길이
-    <ol>
-      <li>
-        <p>$a - c - d -f : (a,c), (c,d), (d,f) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
-      </li>
-      <li>
-        <p>$a - e - c - d - b - f : (a,e), (e,c), (c,d), (d,b), (b,f) \rightarrow $ 변 $5$ 개, 길이 : $5$</p>
-      </li>
-      <li>
-        <p>$a - c - e - a : (a,c), (c,e), (e,a) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
-      </li>
-      <li>
-        <p>$a - e - c - a : (a,e), (e,c), (c,a) \rightarrow $ 변 $3$ 개, 길이 : $3$</p>
-      </li>
-    </ol>
-  </li>
-</ul>
-
-<p><br /><br /></p>
-
-<h1 id="오일러-그래프">오일러 그래프</h1>
-
-<ul>
-  <li>각 지역을 연결하는 길을 한 번씩만 거쳐서 모든 지역을 돌아보고 원래 위치로 돌아오는 문제를 해결하기 위해 오일러 이론을 제안했다.</li>
-</ul>
-
-<h2 id="정의--오일러-경로-eulerian-path">정의 : 오일러 경로 (Eulerian path)</h2>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 변을 꼭 한 번씩만 지나는 경로</p>
-</blockquote>
-
-<h2 id="정의--오일러-순환-eulerian-cycle--오일러-회로-eulerian-circuit">정의 : 오일러 순환 (Eulerian cycle) / 오일러 회로 (Eulerian circuit)</h2>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 변을 꼭 한번씩만 지나 다시 정점 $v$ 로 돌아오는 경로</p>
-</blockquote>
-
-<ul>
-  <li>오일러 그래프 (Eulerian graph) : 오일러 순환을 가지는 그래프</li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<ul>
-  <li>
-    <p>오일러 경로와 오일러 순환은 그래프에 포함된 모든 변을 반드시 한 번씩 지나야 한다.</p>
-  </li>
-  <li>
-    <p>그러므로 그래프에 따라 오일러 경로나 오일러 순환이 존재할 수도 있고 존재하지 않을 수도 있다.</p>
-  </li>
-  <li>
-    <p>오일러 경로, 오일러 순환이 있는 예와 없는 예</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_19_02.png" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <ul>
-      <li>
-        <p>오일러 경로는 있지만 오일러 순환은 없다.</p>
-      </li>
-      <li>
-        <p>그래프 $A$ 에 포함된 오일러 경로</p>
-
-        <ul>
-          <li>$a - b - d - c - a - d \ $ / $\ a - b - d - a - c - d\ $ / $\ a - c - d - b - a - d\ $ / $\cdots$</li>
-          <li>$d - a - b - d - c - a \ $ / $\ d - a - c - d - b - a\ $ / $\ d - b - a - c - d - a\ $ / $\cdots$</li>
-        </ul>
-      </li>
-      <li>
-        <p>정점 $c$ 나 $b$ 를 시작점이나 끝점으로 하면 오일려 경로를 찾을 수 없다.</p>
-      </li>
-      <li>
-        <p>반면, 그래프 $A$ 에서는 순환은 최소 1개의 변을 두 번씩 지나야 하므로 오일러 순환은 존재하지 않는다.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <ul>
-      <li>
-        <p>오일러 순환과 오일러 경로를 모두 찾을 수 있다.</p>
-      </li>
-      <li>
-        <p>그래프 $B$ 의 정점 $a$ 에서 시작하는 오일러 순환은 다음과 같다.</p>
-
-        <ul>
-          <li>$a - b - e - c - d - e - a \ $ / $\ a - b - e - d - c - e - a$</li>
-          <li>$a - e - c - d - e - b - a \ $ / $\ a - e - d - c - e - b - a$</li>
-        </ul>
-      </li>
-      <li>
-        <p>이 순환들은 그래프 $B$ 의 정점 $e$ 를 두 번씩 지나지만 모든 변을 한 번씩 지나므로 오일러 순환이다.</p>
-      </li>
-      <li>
-        <p>따라서 그래프 $B$ 는 오일러 그래프이다.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $C$</p>
-
-    <ul>
-      <li>경로는 최소 하나의 변을 지나지 않고, 순환은 최소 2개의 변을 두 번 지나므로 오일러 경로와 순환이 존재하지 않는다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="정리--오일러-그래프에-대한-정리">정리 : 오일러 그래프에 대한 정리</h2>
-
-<ul>
-  <li>주어진 그래프에 오일러 경로나 오일러 순환이 존재하는지를 판별하는 데 정점의 차수를 활용할 수 있다.</li>
-</ul>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 모든 정점의 차수가 짝수인 것과 오일러 그래프는 서로 필요충분조건이다.</p>
-</blockquote>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 정점 중 차수가 홀수인 정점의 수가 0 또는 2개인 것과 그래프에 오일러 경로가 존재하는 것은 서로 필요충분조건이다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="해밀턴-그래프">해밀턴 그래프</h1>
-
-<h2 id="정의--해밀턴-경로-hamiltonian-path">정의 : 해밀턴 경로 (Hamiltonian path)</h2>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 모든 정점을 한 번씩만 지나는 경로</p>
-</blockquote>
-
-<h2 id="정의--해밀턴-순환-hamiltonian-cycle--해밀턴-회로-hamiltonian-circuit">정의 : 해밀턴 순환 (Hamiltonian cycle) / 해밀턴 회로 (Hamiltonian circuit)</h2>
-
-<blockquote>
-  <p>연결그래프 $G = (V, E)$ 의 임의의 정점 $v$ 에서 시작하여 모든 정점을 딱 한 번씩만 지나 정점 $v$ 로 다시 돌아오는 경로</p>
-</blockquote>
-
-<ul>
-  <li>해밀턴 그래프 (Hamiltonian graph) : 해밀턴 순환을 갖는 그래프</li>
-</ul>
-
-<h3 id="예시-2">예시</h3>
-
-<ul>
-  <li>
-    <p>오일러 경로, 순환과는 다르게 해밀턴 경로, 순환은 같은 변을 몇 번 지나든, 혹은 지나지 않든 상관없이 모든 정점을 반드시 한 번씩만 지나면 된다.</p>
-  </li>
-  <li>
-    <p>해밀턴 경로, 해밀턴 순환이 있는 예와 없는 예</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_19_03.png" /></p>
-
-<ul>
-  <li>
-    <p>그래프 $A$</p>
-
-    <ul>
-      <li>
-        <p>해밀턴 경로와 순환이 모두 존재하는 그래프이다.</p>
-      </li>
-      <li>
-        <p>정점 $a$ 에서 시작하는 해밀턴 경로와 해밀턴 순환</p>
-
-        <ul>
-          <li>
-            <p>해밀턴 경로 : $a - d - b - e - c - f\ $ / $\ a - d - b - f - c - e\ $ / $\ a - e - c - f - b - d\ $</p>
-          </li>
-          <li>
-            <p>해밀턴 순환 : $\ a - d - b - f - c - e - a\ $  / $\ a - e - c - f - b - d - a$</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $B$</p>
-
-    <ul>
-      <li>
-        <p>해밀턴 경로가 존재한다.</p>
-
-        <ul>
-          <li>해밀턴 경로 : $b - c - a - d\ $ / $\ c - b - a - d\ $  / $\ d - a - c - b\ $ / $\ d - a - b - c\ $</li>
-        </ul>
-      </li>
-      <li>
-        <p>어떤 정점에서 시작하는 순환이든지 정점 $a$ 를 두 번은 지나야 하므로 해밀턴 순환은 존재하지 않는다.</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그래프 $C$</p>
-
-    <ul>
-      <li>어떤 경로나 순환이든 정점 $b$ 를 두 번 포함하므로 해밑턴 경로나 순환이 모두 존재하지 않는다.</li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[오일러와 해밀턴]]></summary></entry></feed>
+<p><img src="/assets/images/Math/dm/dm_example_20_18.png" width="200" /> <img src="/assets/images/Math/dm/dm_example_20_19.png" width="200" /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[트리의 개념]]></summary></entry></feed>
