@@ -238,4 +238,16 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-29/",
         "teaser": null
+      },{
+        "title": "[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현",
+        "excerpt":"부울함수의 표현 부울함수는 $n$ 개의 부울변수와 부울 연산자로 구성되어있다. 부울변수에 $2$ 진의 값 $0$ 또는 $1$ 이 입력되고 출력되는 식이다. 부울함수는 디지털 논리회로를 수식적으로 표현하여 논리회로를 설계하는 데 활용된다. 이 부울함수를 최소항 또는 최대항으로 구성된 정규식으로 표준화하면 설계의 활용도를 더욱 높일 수 있다. 정규식 이해를 위한 몇 가지 용어 정의...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-30/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트",
+        "excerpt":"논리 게이트 건물을 짓기 위해 설계도가 필요하듯이, 디지털 회로를 만들기 위해서는 정확한 연산 과정을 표현하는 논리회로가 필요하다. 연산 과정은 이전 장에서 배운 부울함수를 이용해 정의하며 이를 논리회로로 표현할 때 논리 게이트를 이용한다. 용어 정리 게이트 (Gate) : 정보 흐름의 허용 및 저지를 결정하는 단자 또는 소자 논리 소자 (Logic Element)...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-31/",
+        "teaser": null
       }]

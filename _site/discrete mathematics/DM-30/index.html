@@ -1,0 +1,898 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현 | 느려도 괜찮아</title>
+<meta name="description" content="부울함수의 표현">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-30/">
+
+
+  <meta property="og:description" content="부울함수의 표현">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-02-20T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-02-20T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-30/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">42</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (31)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (9)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현">
+    <meta itemprop="description" content="부울함수의 표현">
+    <meta itemprop="datePublished" content="2024-02-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-20T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-30/" class="u-url" itemprop="url">[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 02. 부울함수의 표현</h4></header>
+              <ul class="toc__menu"><li><a href="#부울함수의-표현">부울함수의 표현</a></li><li><a href="#정규식-이해를-위한-몇-가지-용어">정규식 이해를 위한 몇 가지 용어</a><ul><li><a href="#정의--리터럴-literal">정의 : 리터럴 (literal)</a><ul><li><a href="#예시">예시</a></li></ul></li><li><a href="#정의--정규형-normal-form">정의 : 정규형 (normal form)</a><ul><li><a href="#예시-1">예시</a></li></ul></li><li><a href="#정의--최소항-minterm">정의 : 최소항 (minterm)</a></li><li><a href="#정의--최대항-maxterm">정의 : 최대항 (maxterm)</a><ul><li><a href="#예시-2">예시</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="부울함수의-표현">부울함수의 표현</h1>
+
+<p>부울함수는 $n$ 개의 부울변수와 부울 연산자로 구성되어있다.</p>
+
+<p>부울변수에 $2$ 진의 값 $0$ 또는 $1$ 이 입력되고 출력되는 식이다.</p>
+
+<blockquote>
+  <p>부울함수는 디지털 논리회로를 수식적으로 표현하여 논리회로를 설계하는 데 활용된다.</p>
+</blockquote>
+
+<ul>
+  <li>이 부울함수를 최소항 또는 최대항으로 구성된 정규식으로 표준화하면 설계의 활용도를 더욱 높일 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="정규식-이해를-위한-몇-가지-용어">정규식 이해를 위한 몇 가지 용어</h1>
+
+<h2 id="정의--리터럴-literal">정의 : 리터럴 (literal)</h2>
+
+<blockquote>
+  <p>부울변수와 부울보수 연산을 한 부울변수 모두를 일컫는 말</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<p>부울함수 $f(x, y)$는 부울변수 $x, y$ 로 구성되는 2차 부울함수로 $x,y$ 외에 $\bar{x}$ 와 $\bar{y}$ 가 리터럴이 될 수 있다.</p>
+
+<blockquote>
+  <p>그러므로 $n$개의 부울변수로 구성되는 $n$차 부울함수에서 사용할 수 있는 리터럴은 $2n$ 개다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>$f(x, y) = \bar{x} + y$</p>
+
+    <ul>
+      <li>
+        <p>2차 부울함수의 경우 사용가능한 리터럴이 $x, y, \bar{x}, \bar{y}$ 로 4개가 있다.</p>
+      </li>
+      <li>
+        <p>이 중 $\bar{x}, y$ 가 이 부울함수의 리터럴로 사용되었다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--정규형-normal-form">정의 : 정규형 (normal form)</h2>
+
+<blockquote>
+  <p>부울함수를 구성하는 항을 부울합이나 부울곱으로 나타낸 함수 형태</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>논리합 정규형 (DNF, Disjunctive Normal Form)</p>
+
+    <ul>
+      <li>부울곱으로 연산된 항을 부울합으로 연산하는 함수 형태</li>
+    </ul>
+  </li>
+  <li>
+    <p>논리곱 정규형 (CNF, Conjunctive Normal Form)</p>
+
+    <ul>
+      <li>부울합으로 연산된 항을 부울곱으로 연산하는 함수 형태</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="예시-1">예시</h3>
+
+<ol>
+  <li>
+    <p>$f(x, y, z) = xy + \bar{x}yz + x\bar{y} + \bar{z}$</p>
+
+    <ul>
+      <li>
+        <p>리터럴을 부울곱으로 연산한 항들을 부울합으로 연결하여 표현한 것</p>
+      </li>
+      <li>
+        <p>DNF</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>$f(x, y, z) = (x + \bar{z})(\bar{x} + y + z)\bar{y}$</p>
+
+    <ul>
+      <li>
+        <p>리터럴을 부울합으로 연산한 항을 부울곱으로 연견하여 표현한 것</p>
+      </li>
+      <li>
+        <p>CNF</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="정의--최소항-minterm">정의 : 최소항 (minterm)</h2>
+
+<blockquote>
+  <p>DNF인 $n$차 부울함수 $f(x_{1}, x_{2}, \cdots , x_{n})$를 구성하는 항들 중에서 리터럴 $n$개의 부울곱으로 구성된 항</p>
+</blockquote>
+
+<h2 id="정의--최대항-maxterm">정의 : 최대항 (maxterm)</h2>
+
+<blockquote>
+  <p>CNF인 $n$차 부울함수 $f(x_{1}, x_{2}, \cdots , x_{n})$를 구성하는 항들 중에서 리터럴 $n$개의 부울합으로 구성된 항</p>
+</blockquote>
+
+<h3 id="예시-2">예시</h3>
+
+<p>$n$차 부울함수의 최소항이나 최대항을 구성하는 리터럴은 서로 다른 부울변수에 대한 것이어야 한다.</p>
+
+<ul>
+  <li>
+    <p>$xx, \ \ x\bar{x}, \ \ \bar{x}\bar{x}, \ \ x + x, \ \ x + \bar{x},\ \  \bar{x} + \bar{x} \ \rightarrow$ X</p>
+  </li>
+  <li>
+    <p>부울함수 $f(x, y)$ 를 구성할 수 있는 최소항과 최대항</p>
+
+    <ol>
+      <li>
+        <p>$xy, \ \ x\bar{y}, \ \ \bar{x}y, \ \ \bar{x}\bar{y}$</p>
+      </li>
+      <li>
+        <p>$x + y, \ \ x + \bar{y}, \ \ \bar{x} + y, \ \ \bar{x} + \bar{y}$</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>$n$차 부울함수에서 사용될 수 있는 최소항 또는 최대항의 개수는 $2^{n}$개 이다.</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-20">February 20, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-29/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-31/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-29/" class="pagination--pager" title="[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념
+">이전</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-31/" class="pagination--pager" title="[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트
+">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-31/" rel="permalink">[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">논리 게이트
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-29/" rel="permalink">[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">부울대수
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-28/" rel="permalink">[이산수학] 트리(Tree) : 09. 허프만 알고리즘
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">허프만 알고리즘
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-27/" rel="permalink">[이산수학] 트리(Tree) : 08. 크루스칼 알고리즘
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">크루스칼 알고리즘 (Kruskal algorithm)
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
