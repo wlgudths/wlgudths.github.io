@@ -250,4 +250,34 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-31/",
         "teaser": null
+      },{
+        "title": "[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙",
+        "excerpt":"합의 법칙과 곱의 법칙 경우의 수를 확인하는 가장 기본적인 방법은 발생 가능한 경우를 나열해 그 수를 세는 것이다. 한 가지 사건의 발생 가능성은 그 수를 세는 것은 간단하다. 하지만 두 개 이상의 사건이 발생 가능한 경우를 고려하는 것은 다음과 같은 상황에 따라 세는 방법이 달라진다. 각 사건이 별도로 발생하는지 서로...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-32/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 순열, 조합, 확률 : 02. 순열",
+        "excerpt":"순열 하나의 집합에서 둘 이상의 원소를 선택하는 경우의 수도 생각해볼 수 있다. 이러한 경우 서로 다른 두 개 이상의 원소를 선택하여 나열하는 경우를 생각해볼 수 도 있고, 같은 원소를 두 번 이상 선택하여 나열한 경우를 생각해볼 수도 있다. 어떠한 경우든 어떤 원소를 순서에 의미를 두고 나열하는 것을 순열이라고 한다. 정의...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-33/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 순열, 조합, 확률 : 03. 중복순열",
+        "excerpt":"중복순열 이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다. 그러나 선택했던 원소를 다시 선택하여 나열하는 방법도 있을 수 있다. 그러면 순열의 경우의 수도 달라질 것이다. 이러한 나열을 중복순열이라고 한다. 정의 : 중복순열 (permutation with repetition : $...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-34/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열",
+        "excerpt":"같은 원소를 나열하는 순열 순열과 중복순열은 숫자 카드나 단어를 구성하는 스펠링과 같은 순열의 대상이 되는 원소들이 모두 다르다는 전제가 있다. 그러나 순열의 대상이 되는 원소들이 같은 원소를 포함하는 경우도 있다. 예를 들어, banana 라는 단어는 다음과 같이 구성되어있다. $b \\rightarrow 1$ 번 $a \\rightarrow 3$ 번 $n \\rightarrow 2$ 번...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-35/",
+        "teaser": null
+      },{
+        "title": "[이산수학] 순열, 조합, 확률 : 05. 조합",
+        "excerpt":"조합 순열의 경우 나열에 순서에 의미를 부여한다. 그래서 순열의 예에서 $123$ 과 $213$ 은 서로 다른 나열로 판단했다. 하지만 나열의 순서에 의미를 두지 않는다면 $123$ 과 $213$ 은 같은 나열이 된다. 이렇게 순서에 의미를 두지 않는 나열을 조합이라고 한다. 정의 : 조합 (combination : $_{n} \\mathrm{C} _{r}$) 서로 다른 $n$...","categories": ["Discrete Mathematics"],
+        "tags": [],
+        "url": "/discrete%20mathematics/DM-36/",
+        "teaser": null
       }]

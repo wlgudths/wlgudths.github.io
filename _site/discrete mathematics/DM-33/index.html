@@ -1,0 +1,886 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 순열, 조합, 확률 : 02. 순열 | 느려도 괜찮아</title>
+<meta name="description" content="순열">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 순열, 조합, 확률 : 02. 순열">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-33/">
+
+
+  <meta property="og:description" content="순열">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-02-25T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-02-25T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-33/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">47</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (36)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (9)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 순열, 조합, 확률 : 02. 순열">
+    <meta itemprop="description" content="순열">
+    <meta itemprop="datePublished" content="2024-02-25T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-25T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-33/" class="u-url" itemprop="url">[이산수학] 순열, 조합, 확률 : 02. 순열
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 02. 순열</h4></header>
+              <ul class="toc__menu"><li><a href="#순열">순열</a><ul><li><a href="#정의--순열-permutation--_n-mathrmp-_r">정의 : 순열 (permutation : $_{n} \mathrm{P} _{r}$)</a><ul><li><a href="#예시">예시</a></li><li><a href="#예제">예제</a></li></ul></li><li><a href="#정리--순열에-관한-공식">정리 : 순열에 관한 공식</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="순열">순열</h1>
+
+<p>하나의 집합에서 둘 이상의 원소를 선택하는 경우의 수도 생각해볼 수 있다.</p>
+
+<p>이러한 경우 서로 다른 두 개 이상의 원소를 선택하여 나열하는 경우를 생각해볼 수 도 있고,</p>
+
+<p>같은 원소를 두 번 이상 선택하여 나열한 경우를 생각해볼 수도 있다.</p>
+
+<blockquote>
+  <p>어떠한 경우든 어떤 원소를 순서에 의미를 두고 나열하는 것을 순열이라고 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--순열-permutation--_n-mathrmp-_r">정의 : 순열 (permutation : $_{n} \mathrm{P} _{r}$)</h2>
+
+<blockquote>
+  <p>서로 다른 $n$ 개의 원소 중 중복하지 않고 $r$ 개를 선택하여 순서대로 나열한 것</p>
+</blockquote>
+
+<ul>
+  <li>순열의 수 : $_{n} \mathrm{P} _{r} = n \cdot (n - 1) \cdot (n - 2) \cdot \ \cdots \ \cdot (n - r + 1) \quad (n \in N, \ 0 \le r \le n)$</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>$1, 2, 3, 4$ 가 쓰여 있는 숫자 카드가 4장이 있다고 가정</p>
+  </li>
+  <li>
+    <p>카드 4장 중 서로 다른 숫자 카드 3장을 나열해 만들 수 있는 세 자릿수가 몇 새 인지를 구해보면 다음과 같다.</p>
+  </li>
+  <li>
+    <p>다음 도표는 백의 자리부터 선택한 경우를 도표로 나타낸 것이다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/dm/dm_example_33_01.png" width="700" /><img src="/assets/images/Math/dm/dm_example_33_02.png" width="700" /></p>
+
+<p><br /></p>
+
+<p>이 풀이를 위해 주어진 4장의 숫자 카드들 중 3장을 선택해야 한다.</p>
+
+<p>도표에서 알 수 있듯이 숫자 카드를 선택하는 과정에서 한 번 선택한 카드는 제외하고 남은 숫자 카드들 중에서 선택한다.</p>
+
+<p>즉, ‘서로 다른’ , ‘중복하지 않는’ 숫자의 나열이 된다.</p>
+
+<p>또한 각 자리마다 ‘백의 자리’, ‘십의 자리’, ‘일의 자리’와 같은 의미가 부여되고 3개의 숫자가 나열된다.</p>
+
+<blockquote>
+  <p>이처럼 ‘중복되지 않고’, ‘나열의 순서에 의미가 있는’ 나열을 순열이라고 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이 순열의 수는 나열된 각 자리에서 선택 가능한 원소의 수의 곱이라고 생각하면 된다.</p>
+  </li>
+  <li>
+    <p>위의 예시에서 각 자리에서 선택할 수 있는 원소의 수는 다음과 같다.</p>
+
+    <ul>
+      <li>
+        <p>백의 자리에서 선택할 수 있는 원소의 수 : $4$ 개</p>
+      </li>
+      <li>
+        <p>십의 자리에서 선택할 수 있는 원소의 수 : $3$ 개</p>
+      </li>
+      <li>
+        <p>일의 자리에서 선택할 수 있는 원소의 수 : $2$ 개</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>그러므로 $1, 2, 3, 4$ 가 쓰여진 숫자 카드들 중 서로 다른 3장의 카드를 선택해 나열할 수 있는 세 자릿수의 개수는 다음과 같다.</p>
+
+    <blockquote>
+      <p>$4 \times 3 \times 2 = _{4} \mathrm{P} _{3} = 24$</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="예제">예제</h3>
+
+<ol>
+  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
+직책을 겸임하지 않는다는 가정 하에<br />
+회장, 부회장, 총무를 각각 한 명씩 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지 인가?</li>
+</ol>
+
+<ul>
+  <li>
+    <p>회장으로 선출될 수 있는 회원 수는 $10$ 명</p>
+  </li>
+  <li>
+    <p>부회장으로 선출될 수 있는 회원 수는 $9$ 명</p>
+  </li>
+  <li>
+    <p>총무로 선출될 수 있는 회원 수는 $8$ 명</p>
+
+    <blockquote>
+      <p>$\therefore \ \ _{10} \mathrm{P} _{3} = 10 \times 9 \times 8 = 720$ 가지</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정리--순열에-관한-공식">정리 : 순열에 관한 공식</h2>
+
+<ol>
+  <li>
+    <p>$_{n} \mathrm{P} _{r} = n \cdot (n - 1) \cdot (n - 2) \cdot \ \ \cdots \ \ \cdot (n - r + 1) =$ $\frac{n!}{(n - r)!}$</p>
+  </li>
+  <li>
+    <p>$_{n} \mathrm{P} _{n} = n!$</p>
+  </li>
+  <li>
+    <p>$_{n} \mathrm{P} _{0} = \frac{n!}{(n - 0)!} = 1 \quad \bullet \ 0! = 1$</p>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-25">February 25, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-32/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-34/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 순열, 조합, 확률 : 03. 중복순열</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-32/" class="pagination--pager" title="[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙
+">이전</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-34/" class="pagination--pager" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열
+">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-36/" rel="permalink">[이산수학] 순열, 조합, 확률 : 05. 조합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">조합
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-35/" rel="permalink">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">같은 원소를 나열하는 순열
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-34/" rel="permalink">[이산수학] 순열, 조합, 확률 : 03. 중복순열
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">중복순열
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-32/" rel="permalink">[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">합의 법칙과 곱의 법칙
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
