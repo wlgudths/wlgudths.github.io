@@ -1,5 +1,5 @@
 ---
-title: "이산수학 정리"
+title: "이산수학"
 layout: archive
 permalink: categories/dm
 author_profile: true
