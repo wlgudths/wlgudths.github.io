@@ -280,4 +280,10 @@ var store = [{
         "tags": [],
         "url": "/discrete%20mathematics/DM-36/",
         "teaser": null
+      },{
+        "title": "[백준] 2164 : 카드2 (파이썬)",
+        "excerpt":"🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/2164 🤖 예제 입력 및 출력 📑 알고리즘 분류 자료 구조 큐 🧐 풀이 문제에서 주어진 조건을 deque를 활용하여 착실하게 풀었다. 먼저 $q$ 에 range 함수를 이용해 $1$ 부터 $N$ 까지의 숫자를 초기화했습니다. q에 요소가 하나 남을 때까지 반복하며 조건을 수행했습니다. popleft 를...","categories": ["BOJ"],
+        "tags": [],
+        "url": "/boj/BOJ-2164/",
+        "teaser": null
       }]
