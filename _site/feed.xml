@@ -1,4 +1,213 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-26T14:18:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-26T15:51:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 11404 : 플로이드 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-11404/" rel="alternate" type="text/html" title="[백준] 11404 : 플로이드 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-11404</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-11404/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p>🟡 <strong>골드 4</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<blockquote>
+  <p><a href="https://www.acmicpc.net/problem/11404">https://www.acmicpc.net/problem/11404</a></p>
+</blockquote>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_11404_1.png" />
+<br /></p>
+
+<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_11404_2.png" /></p>
+
+<p><br /></p>
+
+<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
+
+<ul>
+  <li>그래프 이론</li>
+  <li>최단 경로</li>
+  <li>프로이드-워셜</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-풀이">🧐 풀이</h1>
+
+<ul>
+  <li><span style="background-color:#fff5b1"> 이것이 코딩테스트다 with 파이썬 </span> 책을 참고하여 문제를 풀었습니다.</li>
+</ul>
+
+<h2 id="입력">입력</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 무한을 의미하는 값으로 10억을 설정
+</span><span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+
+<span class="c1"># 노드의 개수(도시) 및 간선의 개수(버스)를 입력받기
+</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</code></pre></div></div>
+
+<ul>
+  <li>버스 비용 $c$ 와 비교할 무한대 값입니다.
+    <ul>
+      <li>비용 ($c$) 의 최대값이 $100,000$ 이므로 $100,000$ 보다 큰 수로만 설정하면 됩니다.</li>
+    </ul>
+  </li>
+  <li>다음 도시의 개수와 버스의 개수 입력을 받습니다.</li>
+</ul>
+
+<h2 id="그래프-초기화">그래프 초기화</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2차원 리스트(그래프 표현)를 만들고, 모든 값을 무한으로 초기화
+</span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">col</span><span class="p">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># 각 간선에 대한 정보를 입력받아, 그 값으로 초기화
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="c1"># A도시에서 B도시로 가는 비용 C라고 설정
+</span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># 시작 도시와 도착 도시를 연결하는 노선은 하나가 아닐 수 있다.
+</span>    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># 비용이 더 낮은 것을 선택
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>모든 도시의 쌍 (A, B) 에 대해서 2차원 리스트로 만들고, 모든 값을 무한으로 초기화합니다.</p>
+
+    <p><img src="/assets/images/Coding_test/Boj/BOJ_11404_3.png" width="400" height="400" /></p>
+  </li>
+  <li>
+    <p>같은 도시 $A \rightarrow A$ 로 가는 비용은 $0$ 으로 초기화합니다.</p>
+
+    <p><img src="/assets/images/Coding_test/Boj/BOJ_11404_4.png" width="400" height="400" /></p>
+  </li>
+  <li>각 간선 ($A \rightarrow B$) 에 대한 정보를 입력받아, 그 값(비용)으로 초기화합니다.
+    <ul>
+      <li>A : a(row) , B : b(col), 비용 : c 으로 설정</li>
+    </ul>
+  </li>
+  <li>그리고 시작 도시와 도착 도시를 연결하는 노선이 하나가 아닐 수 있기에 더 적은 비용을 선택합니다.
+    <ul>
+      <li>도시 $1$ 에서 도시 $4$ 로 가는 비용 $1, 2$ 가 존재하여 비용 $1$ 를 선택</li>
+    </ul>
+
+    <p><img src="/assets/images/Coding_test/Boj/BOJ_11404_5.png" width="400" height="400" /></p>
+  </li>
+</ul>
+
+<h2 id="플로이드-워셜-알고리즘-수행">플로이드-워셜 알고리즘 수행</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 플로이드 워셜 알고리즘 수행
+</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">b</span><span class="p">])</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>해당 코드는 목적지는 같지만, 직통 버스와 환승 버스 중 더 비용이 적은(빠른) 것을 선택한다.</p>
+
+    <p><img src="/assets/images/Coding_test/Boj/BOJ_11404_6.png" width="400" height="400" /></p>
+
+    <ul>
+      <li>위 그래프와 같이 1번 도시는 3번에서 환승해서 5번 도시로 가는 것이 비용이 더 적다.</li>
+    </ul>
+
+    <p><img src="/assets/images/Coding_test/Boj/BOJ_11404_7.png" width="400" height="400" /></p>
+  </li>
+  <li>
+    <p>3중 반복문을 돌며 직통 버스와 환승 버스(k)를 비교하며 더 적은 비용으로 업데이트한다.</p>
+  </li>
+</ul>
+
+<h2 id="출력">출력</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 결과물 출력
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    
+        <span class="c1"># 만약 갈 수 없는 경우(무한인 경우) 0을 출력
+</span>        <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">INF</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+        <span class="c1"># 갈 수 있는 경우 비용 출력
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+    
+    <span class="c1"># 행마다 출력
+</span>    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>i에서 j로 갈 수 없는 경우, 즉 해당 도시로 가는 버스가 없는 경우 그 값은 INF 다.</p>
+  </li>
+  <li>
+    <p>문제의 요구대로 그 자리에는 0을 출력하고, 행(row) 마다 print()를 하며 줄 바꿈을 수행한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-전체-코드">📝 전체 코드</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 무한을 의미하는 값으로 10억을 설정
+</span><span class="n">INF</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+
+<span class="c1"># 노드의 개수(도시) 및 간선의 개수(버스)를 입력받기
+</span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="c1"># 2차원 리스트(그래프 표현)를 만들고, 모든 값을 무한으로 초기화
+</span><span class="n">graph</span> <span class="o">=</span> <span class="p">[[</span><span class="n">INF</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">col</span><span class="p">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># 각 간선에 대한 정보를 입력받아, 그 값으로 초기화
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="c1"># A도시에서 B도시로 가는 비용 C라고 설정
+</span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">())</span>
+    <span class="c1"># 시작 도시와 도착 도시를 연결하는 노선은 하나가 아닐 수 있다.
+</span>    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># 비용이 더 낮은 것을 선택
+</span>
+<span class="c1"># 플로이드 워셜 알고리즘 수행
+</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">graph</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">b</span><span class="p">])</span>
+
+<span class="c1"># 결과물 출력
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    
+        <span class="c1"># 만약 갈 수 없는 경우(무한인 경우) 0을 출력
+</span>        <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">INF</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+        <span class="c1"># 갈 수 있는 경우 비용 출력
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+    
+    <span class="c1"># 행마다 출력
+</span>    <span class="k">print</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="-리뷰">😳 리뷰</h1>
+
+<ul>
+  <li>
+    <p>$O(N^3)$ 으로 $N$ 이 $500$ 정도 되었으면 시간 제한이 되었을 것이다.</p>
+  </li>
+  <li>
+    <p>점화식 : $D_{ab} = min(D_{ab}, D_{ak} + D_{kb})$</p>
+  </li>
+  <li>
+    <p>해당 문제는 플로이드 워셜 알고리즘으로 풀 수 있었지만, 다익스트라 알고리즘으로도 풀어봐야겠다.</p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟡 골드 4]]></summary></entry><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 4</strong></p>
 </blockquote>
@@ -1542,223 +1751,4 @@
       </li>
     </ul>
   </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울대수]]></summary></entry><entry><title type="html">[이산수학] 트리(Tree) : 09. 허프만 알고리즘</title><link href="http://localhost:4000/discrete%20mathematics/DM-28/" rel="alternate" type="text/html" title="[이산수학] 트리(Tree) : 09. 허프만 알고리즘" /><published>2024-02-14T00:00:00+09:00</published><updated>2024-02-14T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-28</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-28/"><![CDATA[<h1 id="허프만-알고리즘">허프만 알고리즘</h1>
-
-<ul>
-  <li>
-    <p>컴퓨터에서 문자 데이터를 표현할 때 7 비트의 ASCII코드를 사용한다.</p>
-  </li>
-  <li>
-    <p>컴퓨터에서 별다른 조치 없이 문자열을 저장한다면, 문자의 발생 빈도와 상관없이 각 문자는 언제다 동일한 길이의 비트를 사용한다.</p>
-  </li>
-  <li>
-    <p>그러므로 하나의 파일 내에서 문자 수만큼  비트 수가 늘어난다.</p>
-  </li>
-  <li>
-    <p>즉, 파일 안에 문자가 10개 있으면 70비트, 20개 있으면 140비트를 차지한다.</p>
-  </li>
-  <li>
-    <p>만약 문자의 발생 빈도에 따라 할당하는 비트 수를 조절한다면 차지하는 메모리 공간을 줄일 수 있지 않을까?</p>
-  </li>
-  <li>
-    <p>다시 말해 파일 내에서 발생 빈도가 높은 문자에 적은 비트를 할당, 발생 빈도가 낮은 문자에 많은 비트를 할당한다면 파일의 용량을 줄일 수 있을 것이다.</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>이렇게 파일 크기를 줄이는 방법을 데이터 압축(data compression)이라고 한다.</p>
-</blockquote>
-
-<blockquote>
-  <p>이번 절에서는 대표적인 데이터 압축 방법인 허프만 알고리즘을 살펴본다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="정의--허프만-알고리즘huffman-algorithm">정의 : 허프만 알고리즘(Huffman algorithm)</h2>
-
-<blockquote>
-  <p>발생 빈도가 높은 문자에서는 적은 비트를 할당하고 발생 빈도가 낮은 문자에는 많은 비트를 할당하는 알고리즘</p>
-</blockquote>
-
-<ol>
-  <li>
-    <p>발생 빈도가 가장 낮은 두 문자를 선택하여 하나의 이진트리를 생성한다.</p>
-
-    <ol>
-      <li>
-        <p>왼쪽 노드에 빈도 수가 낮은 문자를, 오른쪽 노드에 빈도 수가 높은 문자를 위치시킨다.</p>
-      </li>
-      <li>
-        <p>빈도 수가 같은 경우는 사전적으로 앞에 오는 문자를 왼쪽에 위치시킨다.</p>
-      </li>
-      <li>
-        <p>두 문자의 빈도 수의 합을 그 문자들의 부모노드로 한다.</p>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <p>1번의 과정을 모든 문자가 하나의 이진트리로 묶일 때까지 반복한다.</p>
-  </li>
-  <li>
-    <p>생성된 이진트리의 왼쪽 노드에서는 $0$, 오른쪽 노드에는 $1$ 을 부여한다.</p>
-  </li>
-  <li>
-    <p>루트부터 해당 문자까지의 $0$ 또는 $1$ 을 순서대로 나열한다.</p>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p><br /></p>
-
-<ul>
-  <li>다음 문자의 빈도 수 표를 허프만 알고리즘을 이용해 압축해보자.</li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_28_01.png" /></p>
-
-<ul>
-  <li>만약 문자들을 허프만 알고리즘을 통한 압축 없이 메모리에 저장하면 $(15 + 8 + 23 + 8 + 30 + 2 + 17 + 5 + 2) \times 7 = 770$ 비트가 필요할 것이다.</li>
-</ul>
-
-<hr />
-
-<ol>
-  <li>
-    <p>빈도 수가 가장 낮은 문자는 $o$ 와 $z$ 이다.</p>
-
-    <ul>
-      <li>두 문자의 빈도 수가 같고 $o$ 가 $z$ 보다 사전적 순서가 앞이므로 $o$ 를 왼쪽 노드, $z$ 를 오른쪽 노드로 한다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_02.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_03.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 가장 낮은 문자는 1번에서 만든 $o/z$ 서브트리와 $u$ 이다.</p>
-
-    <ul>
-      <li>$u$ 의 빈도 수가 $o/z$ 서브트리보다 높으므로 오른쪽 노드로 한다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_04.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_05.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 낮은 문자는 $e$ 와 $j$ 이다.</p>
-
-    <ul>
-      <li>그러므로 2번에서 만든 $o/z/u$ 서브트리와 별도로 서브트리가 만들어진다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_06.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_07.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 낮은 문자는 $b$ 와 $o/z/u$ 서브트리이다.</p>
-
-    <ul>
-      <li>$b$의 빈도 수가 $o/z/u$ 서브트리보다 높으므로 오른쪽 노드에 위치시킨다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_08.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_09.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 낮은 문자는 $s$ 와 $e/j$ 서브트리이다.</p>
-
-    <ul>
-      <li>$e/j$ 서브트리의 빈도 수가 더 낮으므로 왼쪽 서브트리로 하고 $s$ 를 오른쪽 노드에 위치시킨다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_10.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_11.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 낮은 문자는 $g$ 와 $o/z/u/b$ 서브트리이다.</p>
-
-    <ul>
-      <li>$g$ 의 빈도 수가 더 낮으므로 왼쪽 노드에 위치시키고 $o/z/u/b$ 서브트리는 오른쪽 서브트리로 한다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_12.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_13.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>다음으로 빈도 수가 낮은 문자는 $l$ 과 $e/j/s$ 서브트리이다.</p>
-
-    <ul>
-      <li>$l$ 의 빈도 수가 더 낮으므로 $l$ 을 왼쪽 노드에 위치시키고, $e/j/s$ 서브트리를 오른쪽 서브트리로 한다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_14.png" width="500" />
- <img src="/assets/images/Math/dm/dm_example_28_15.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>이제 두 서브트리를 하나의 루트노드로 연결한다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_16.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>각 서브트리마다 왼쪽 노드를 $0$ 을, 오른쪽 노드는 $1$ 을 부여한다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_17.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>9번의 결과를 이용해 각 문자에 코드를 부여한다.</p>
-
-    <ul>
-      <li>이러한 원리로 각 문자에 부여된 코드를 허프만 코드라고 하고 결과는 다음과 같다.</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_18.png" /></p>
-
-    <p><br /></p>
-  </li>
-</ol>
-
-<ul>
-  <li>
-    <p>앞에서 압축 전에 주어진 빈도 수대로 메모리에 저장하면 $770$ 비트를 차지하는 것을 확인했다.</p>
-  </li>
-  <li>
-    <p>허프만 알고리즘을 이용해 구한 허프만 코드로 저장할 때 치지하는 메모리 공간은 거의 반으로 줄어든다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_28_19.png" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>그러면 위에서 구한 허프만 코드를 이용해 문자열 $jguejozglbszesu$ 를 코드로 작성해보면 다음과 같다.</p>
-
-    <ul>
-      <li>$1101000101110011010100001000100100111110100111001110101$</li>
-    </ul>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>또한 허프만 코드만 주어질 경우 어떤 문자열로 구성되는지도 허프만 코드표를 참고하며 문자를 찾을 수 있다.</p>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[허프만 알고리즘]]></summary></entry></feed>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울대수]]></summary></entry></feed>

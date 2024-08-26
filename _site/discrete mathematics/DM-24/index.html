@@ -1,0 +1,1088 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[이산수학] 트리(Tree) : 05. 이진탐색트리 | 느려도 괜찮아</title>
+<meta name="description" content="이진탐색트리">
+
+
+  <meta name="author" content="지지형">
+  
+  <meta property="article:author" content="지지형">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="느려도 괜찮아">
+<meta property="og:title" content="[이산수학] 트리(Tree) : 05. 이진탐색트리">
+<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-24/">
+
+
+  <meta property="og:description" content="이진탐색트리">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-02-12T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-02-12T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-24/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jee-Hyung Son",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="느려도 괜찮아 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          🐢 느려도 괜찮아
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile.jpeg" alt="지지형" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">지지형</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>From Physical education<br />to Computer vision</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">49</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/dm" class="">Discrete Mathematics (36)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Coding Test</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/boj" class="">백준 (11)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Python</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[이산수학] 트리(Tree) : 05. 이진탐색트리">
+    <meta itemprop="description" content="이진탐색트리">
+    <meta itemprop="datePublished" content="2024-02-12T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-02-12T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/discrete%20mathematics/DM-24/" class="u-url" itemprop="url">[이산수학] 트리(Tree) : 05. 이진탐색트리
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 05. 이진탐색트리</h4></header>
+              <ul class="toc__menu"><li><a href="#이진탐색트리">이진탐색트리</a><ul><li><a href="#정의--이진탐색-binary-search">정의 : 이진탐색 (binary search)</a></li><li><a href="#정의--이진탐색트리-binary-search-tree">정의 : 이진탐색트리 (binary search tree)</a><ul><li><a href="#예시">예시</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="이진탐색트리">이진탐색트리</h1>
+
+<ul>
+  <li>
+    <p><strong>탐색(search)</strong> : 수많은 데이터 중 원하는 데이터를 찾아가는 과정</p>
+  </li>
+  <li>
+    <p>탐색은 데이터의 정렬 방식이나 탐색 기준에 따라 그 방법이 달라진다.</p>
+  </li>
+  <li>
+    <p>어떤 기준 또는 <strong>키(key)</strong>를 정하고 그 키를 이용해 탐색해가는 방법을 이진탐색이라 한다.</p>
+  </li>
+  <li>
+    <p>이 탐색을 도와주는 트리를 <strong>이진탐색트리</strong>라고 한다.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정의--이진탐색-binary-search">정의 : 이진탐색 (binary search)</h2>
+
+<blockquote>
+  <p>탐색을 위한 일정 기준을 가지고 대상 데이터를 탐색하는 방법</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--이진탐색트리-binary-search-tree">정의 : 이진탐색트리 (binary search tree)</h2>
+
+<blockquote>
+  <p>노드로 표현되는 데이터에 대한 기준에 따라 노드의 위치를 탐색할 수 있는 트리</p>
+</blockquote>
+
+<h3 id="예시">예시</h3>
+
+<ul>
+  <li>
+    <p>탐색을 위해 이진탐색트리를 구현하는 규칙은 다음과 같다.</p>
+
+    <ol>
+      <li>
+        <p>트리에서 탐색되는 모든 원소는 서로 다른 유일키를 갖는다.</p>
+      </li>
+      <li>
+        <p>왼쪽 서브트리에 있는 원소들의 키는 그 루트의 키보다 작거나 앞선 순서를 갖는다.</p>
+      </li>
+      <li>
+        <p>오른쪽 서브트리에 있는 원소들의 키는 그 루트의 키보다 크거나 뒤의 순서를 갖는다.</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>$15, 12, 13, 21, 18, 10, 24, 22, 7, 11, 25$ 가 주어질 때 이 값들을 탐색하기 위해 이진탐색트리로 구성해보자.</p>
+
+    <ol>
+      <li>
+        <p>$15$ 입력 : 루트노드</p>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_01.png" width="300" /></p>
+      </li>
+      <li>$12$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>루트노드($15$)의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_02.png" width="300" /></p>
+      </li>
+      <li>$13$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_03.png" width="300" /></p>
+      </li>
+      <li>$21$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_04.png" width="300" /></p>
+      </li>
+      <li>$18$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드($15$) 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_05.png" width="300" /></p>
+      </li>
+      <li>$10$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리인 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_06.png" width="300" /></p>
+      </li>
+      <li>$24$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_07.png" width="300" /></p>
+      </li>
+      <li>$22$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $24$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$24$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_08.png" width="300" /></p>
+      </li>
+      <li>$7$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $10$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$10$ 의 왼쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_09.png" width="300" /></p>
+      </li>
+      <li>$11$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $12$ 보다 작다.</p>
+          </li>
+          <li>
+            <p>$12$ 의 왼쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>왼쪽 서브트리의 유일키인 $10$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$10$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_10.png" width="300" /></p>
+      </li>
+      <li>$25$ 입력
+        <ul>
+          <li>
+            <p>트리의 유일키인 루트노드 $15$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$15$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $21$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$21$ 의 오른쪽 서브트리 탐색</p>
+          </li>
+          <li>
+            <p>오른쪽 서브트리의 유일키인 $24$ 보다 크다.</p>
+          </li>
+          <li>
+            <p>$24$ 의 오른쪽 자식노드</p>
+          </li>
+        </ul>
+
+        <p><img src="/assets/images/Math/dm/dm_example_24_11.png" width="300" /></p>
+      </li>
+    </ol>
+
+    <p><br /></p>
+
+    <ul>
+      <li>
+        <p>이렇게 완성된 이진탐색트리는 루트노드 $15$ 는 $15$ 보다 작은 값들로 구성된 왼쪽 서브트리, $15$ 보다 큰 값들로 구성된 오른쪽 서브트리를 갖는다.</p>
+      </li>
+      <li>
+        <p>그래서 $15$ 는 두 서브트리를 구분하는 유일키이다.</p>
+      </li>
+      <li>
+        <p>왼쪽 서브트리의 경우 서브트리의 루트노드인 $12$ 는 $12$ 보다 작은 값들로 구성된 왼쪽 서브트리와 $12$ 보다 큰 값들로 구성된 오른쪽 서브트리를 갖는다.</p>
+      </li>
+      <li>
+        <p>그러므로 $12$ 는 이 두 서브트리를 구분하는 유일키이고 $15$ 보다 작은 값들을 탐색할 수 있다.</p>
+      </li>
+      <li>
+        <p>반대로 $15$ 보다 큰 값들은 $21$ 이 유일키일 것이다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>이진탐색트리에서 $18$ 을 탐색하는 과정</p>
+
+    <ol>
+      <li>$18$ 은 이 트리의 루트노드이면서 유일키인 $15$ 보다 크다.
+        <ul>
+          <li>$15$ 오른쪽 서브트리 탐색</li>
+        </ul>
+      </li>
+      <li>$18$ 은 오른쪽 서브트리의 루트노드이면서 유일키인 $21$ 보다 작다.
+        <ul>
+          <li>$21$ 의 왼쪽 서브트리 탐색</li>
+        </ul>
+      </li>
+      <li>
+        <p>$18$ 은 오른쪽 서브트리의 루트노드이다.</p>
+      </li>
+      <li>탐색을 종료</li>
+    </ol>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-12">February 12, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/discrete%20mathematics/DM-23/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 트리(Tree) : 04. 이진트리 순회</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-25/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 트리(Tree) : 06. 트리의 활용</a>
+    
+  </nav>
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/discrete%20mathematics/DM-23/" class="pagination--pager" title="[이산수학] 트리(Tree) : 04. 이진트리 순회
+">이전</a>
+    
+    
+      <a href="/discrete%20mathematics/DM-25/" class="pagination--pager" title="[이산수학] 트리(Tree) : 06. 트리의 활용
+">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-2164/" rel="permalink">[백준] 2164 : 카드2 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  ⚪️ 실버 4
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/boj/BOJ-11404/" rel="permalink">[백준] 11404 : 플로이드 (파이썬)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
+
+  🟡 골드 4
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-36/" rel="permalink">[이산수학] 순열, 조합, 확률 : 05. 조합
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">조합
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/discrete%20mathematics/DM-35/" rel="permalink">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">같은 원소를 나열하는 순열
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:sonji0988@gmail.com" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/wlgudths" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Jee-Hyung Son. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'wlgudths/comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
+
+  </body>
+</html>
