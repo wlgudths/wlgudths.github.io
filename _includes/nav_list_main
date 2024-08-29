@@ -8,16 +8,25 @@
             📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
       </li>
       <li>
-        <span class="nav__sub-title">Computer Science</span>
+        <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Discrete Mathematics" %}
-                        <li><a href="/categories/dm" class="">Discrete Mathematics ({{category[1].size}})</a></li>
+                        <li><a href="/categories/dm" class="">이산수학 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Linear Algebra" %}
+                        <li><a href="/categories/la" class="">선형대수학 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Coding Test</span>
+
+        <span class="nav__sub-title">코딩테스트</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Algorithm" %}
@@ -42,7 +51,7 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Python</span>
+        <span class="nav__sub-title">파이썬</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Python" %}

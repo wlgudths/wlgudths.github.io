@@ -189,6 +189,10 @@
 <lastmod>2024-02-26T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/linear%20algebra/DM-01/</loc>
+<lastmod>2024-08-24T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/boj/BOJ-11404/</loc>
 <lastmod>2024-08-26T00:00:00+09:00</lastmod>
 </url>
@@ -210,6 +214,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/dm</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/la</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/Programmers</loc>

@@ -281,6 +281,12 @@ var store = [{
         "url": "/discrete%20mathematics/DM-36/",
         "teaser": null
       },{
+        "title": "[선형대수] 1강",
+        "excerpt":"유튜브 링크   선형대수학      벡터 공간, 벡터, 선형 변환, 행렬, 연립 선형 방정식 등을 연구하는 대수학의 한 분야이다.         출처 : 위키피디아                  선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다.            결론적으로는 연립 일차방정식을 푸는 것을 목표로 합니다.              ","categories": ["Linear Algebra"],
+        "tags": [],
+        "url": "/linear%20algebra/DM-01/",
+        "teaser": null
+      },{
         "title": "[백준] 11404 : 플로이드 (파이썬)",
         "excerpt":"🔎 난이도 🟡 골드 4 ✏️ 문제 https://www.acmicpc.net/problem/11404 🤖 예제 입력 및 출력 📑 알고리즘 분류 그래프 이론 최단 경로 프로이드-워셜 🧐 풀이 이것이 코딩테스트다 with 파이썬 책을 참고하여 문제를 풀었습니다. 입력 # 무한을 의미하는 값으로 10억을 설정 INF = int(1e9) # 노드의 개수(도시) 및 간선의 개수(버스)를 입력받기 n =...","categories": ["BOJ"],
         "tags": [],

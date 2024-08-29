@@ -1,4 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-26T15:51:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 11404 : 플로이드 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-11404/" rel="alternate" type="text/html" title="[백준] 11404 : 플로이드 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-11404</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-11404/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-26T23:29:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<blockquote>
+  <p>⚪️ <strong>실버 4</strong></p>
+</blockquote>
+
+<h1 id="️-문제">✏️ 문제</h1>
+<blockquote>
+  <p><a href="https://www.acmicpc.net/problem/2164">https://www.acmicpc.net/problem/2164</a></p>
+</blockquote>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2164_1.png" />
+<br /></p>
+
+<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
+
+<p><img src="/assets/images/Coding_test/Boj/BOJ_2164_2.png" /></p>
+
+<p><br /></p>
+
+<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
+
+<ul>
+  <li>자료 구조</li>
+  <li>큐</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-풀이">🧐 풀이</h1>
+
+<ul>
+  <li>
+    <p>문제에서 주어진 조건을 <strong>deque</strong>를 활용하여 착실하게 풀었다.</p>
+
+    <ol>
+      <li>
+        <p>먼저 $q$ 에 range 함수를 이용해 $1$ 부터 $N$ 까지의 숫자를 초기화했습니다.</p>
+      </li>
+      <li>
+        <p>q에 요소가 하나 남을 때까지 반복하며 조건을 수행했습니다.</p>
+      </li>
+      <li>
+        <p>popleft 를 이용하여 맨 위 숫자 카드를 버립니다.</p>
+      </li>
+      <li>
+        <p>다음 append와 popleft 를 이용하여 다음 맨 위의 카드를 제일 아래로 옮깁니다.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>시간복잡도 : $O(N)$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="-내-풀이">📝 내 풀이</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># 맨 위의 카드 버리기
+</span>    <span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>
+    <span class="c1"># 제일 위에 있는 카드 아래로 옮기기
+</span>    <span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="-다른-사람-풀이">😳 다른 사람 풀이</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># O(logn)
+</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()),</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>  
+    <span class="n">m</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>문제의 패턴을 분석하여 최적화된 방식으로 해결했다.</p>
+  </li>
+  <li>
+    <p>2의 거듭제곱을 활용하여 시간복잡도가 $O(logN)$ 으로 줄일 수 있다.</p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry><entry><title type="html">[백준] 11404 : 플로이드 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-11404/" rel="alternate" type="text/html" title="[백준] 11404 : 플로이드 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-11404</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-11404/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>🟡 <strong>골드 4</strong></p>
 </blockquote>
@@ -207,97 +297,29 @@
   <li>
     <p>해당 문제는 플로이드 워셜 알고리즘으로 풀 수 있었지만, 다익스트라 알고리즘으로도 풀어봐야겠다.</p>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟡 골드 4]]></summary></entry><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟡 골드 4]]></summary></entry><entry><title type="html">[선형대수] 1강</title><link href="http://localhost:4000/linear%20algebra/DM-01/" rel="alternate" type="text/html" title="[선형대수] 1강" /><published>2024-08-24T00:00:00+09:00</published><updated>2024-08-24T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/DM-01</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/DM-01/"><![CDATA[<p><a href="https://www.youtube.com/watch?v=7vV2SF8DyQE&amp;list=PL_iJu012NOxdZDxoGsYidMf2_bERIQaP0&amp;index=1">유튜브 링크</a></p>
+
+<h1 id="선형대수학">선형대수학</h1>
+
 <blockquote>
-  <p>⚪️ <strong>실버 4</strong></p>
+  <p>벡터 공간, 벡터, 선형 변환, 행렬, 연립 선형 방정식 등을 연구하는 대수학의 한 분야이다.</p>
+  <ul>
+    <li><a href="https://ko.wikipedia.org/wiki/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98%ED%95%99">출처 : 위키피디아</a></li>
+  </ul>
 </blockquote>
 
-<h1 id="️-문제">✏️ 문제</h1>
-<blockquote>
-  <p><a href="https://www.acmicpc.net/problem/2164">https://www.acmicpc.net/problem/2164</a></p>
-</blockquote>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2164_1.png" />
-<br /></p>
-
-<h1 id="-예제-입력-및-출력">🤖 예제 입력 및 출력</h1>
-
-<p><img src="/assets/images/Coding_test/Boj/BOJ_2164_2.png" /></p>
-
 <p><br /></p>
-
-<h1 id="-알고리즘-분류">📑 알고리즘 분류</h1>
-
-<ul>
-  <li>자료 구조</li>
-  <li>큐</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-풀이">🧐 풀이</h1>
 
 <ul>
   <li>
-    <p>문제에서 주어진 조건을 <strong>deque</strong>를 활용하여 착실하게 풀었다.</p>
-
-    <ol>
-      <li>
-        <p>먼저 $q$ 에 range 함수를 이용해 $1$ 부터 $N$ 까지의 숫자를 초기화했습니다.</p>
-      </li>
-      <li>
-        <p>q에 요소가 하나 남을 때까지 반복하며 조건을 수행했습니다.</p>
-      </li>
-      <li>
-        <p>popleft 를 이용하여 맨 위 숫자 카드를 버립니다.</p>
-      </li>
-      <li>
-        <p>다음 append와 popleft 를 이용하여 다음 맨 위의 카드를 제일 아래로 옮깁니다.</p>
-      </li>
-    </ol>
+    <p>선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다.</p>
   </li>
   <li>
-    <p>시간복잡도 : $O(N)$</p>
+    <p>결론적으로는 연립 일차방정식을 푸는 것을 목표로 합니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_01.png" width="300" height="300" /></p>
   </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="-내-풀이">📝 내 풀이</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-
-<span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="c1"># 맨 위의 카드 버리기
-</span>    <span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>
-    <span class="c1"># 제일 위에 있는 카드 아래로 옮기기
-</span>    <span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">())</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="-다른-사람-풀이">😳 다른 사람 풀이</h1>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># O(logn)
-</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">()),</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>  
-    <span class="n">m</span> <span class="o">*=</span> <span class="mi">2</span>
-<span class="k">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ul>
-  <li>
-    <p>문제의 패턴을 분석하여 최적화된 방식으로 해결했다.</p>
-  </li>
-  <li>
-    <p>2의 거듭제곱을 활용하여 시간복잡도가 $O(logN)$ 으로 줄일 수 있다.</p>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 ⚪️ 실버 4]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 05. 조합</title><link href="http://localhost:4000/discrete%20mathematics/DM-36/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 05. 조합" /><published>2024-02-26T00:00:00+09:00</published><updated>2024-02-26T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-36</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-36/"><![CDATA[<h1 id="조합">조합</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[유튜브 링크]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 05. 조합</title><link href="http://localhost:4000/discrete%20mathematics/DM-36/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 05. 조합" /><published>2024-02-26T00:00:00+09:00</published><updated>2024-02-26T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-36</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-36/"><![CDATA[<h1 id="조합">조합</h1>
 
 <p>순열의 경우 나열에 순서에 의미를 부여한다.</p>
 
@@ -554,98 +576,7 @@
 
 <p align="center">$$\therefore \ _{10} \mathrm{C} _{5} \ \times \ _{5} \mathrm{C} _{5} \ \times  \frac{1}{2!} = 252 \times 1 \times \frac{1}{2} = 126 가지$$</p>
 
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 03. 중복순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-34/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-34</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-34/"><![CDATA[<h1 id="중복순열">중복순열</h1>
-
-<p>이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다.</p>
-
-<p>그러나 선택했던 원소를 다시 선택하여 나열하는 방법도 있을 수 있다.</p>
-
-<p>그러면 순열의 경우의 수도 달라질 것이다.</p>
-
-<blockquote>
-  <p>이러한 나열을 중복순열이라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="정의--중복순열-permutation-with-repetition---_n-prod-_r">정의 : 중복순열 (permutation with repetition : $ _{n} \prod{} _{r}$)</h2>
-
-<blockquote>
-  <p>서로 다른 $n$ 개의 원소 중 $r$ 개를 중복을 허용하며 선택하여 순서대로 나열한 것</p>
-</blockquote>
-
-<ul>
-  <li>중복순열의 수 : $_{n} \prod{} _{r} = n^{r} \quad (n \in N, \  0 \le r \le n)$</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p>이전 장에서 예로 들었던 $1,2,3,4$ 가 쓰여 있는 4장의 숫자 카드의 예로 중복순열을 이해해보자.</p>
-
-<p>순열은 이 $4$ 장의 카드들 중 서로 다른 숫자 카드 $3$ 장은 나열한 것이다.</p>
-
-<p>중복순열은 ‘서로 다른’ 이라는 전제가 필요 없다.</p>
-
-<p>이 $4$ 장의 숫자 카드들을 이용해 중복을 허용하며 만들 수 있는 세 자릿수가 몇개인가를 구해보면 다음과 같다.</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_34_01.png" width="500" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>위 그림과 마찬가지로 $211$ ~ $244$, $\ 311$ ~ $344$, $\ 411$ ~ $444$ 를 선택할 수 있다.</li>
-</ul>
-
-<p>이 풀이를 통해 알 수 있듯이 중복을 허용하기 위해 백의 자리에서 선택했던 숫자 카드를<br />
-다시 십의 자리의 선택 범위, 일의 자리의 선택 범위에도 포함시켜서 숫자들을 나열하여 중복순열의 결과를 얻는다.</p>
-
-<p>그러면 세 자릿수의 각 자리에서 선택할 수 있는 원소의 수는 모두 $4$ 개이므로 이 중복순열의 경우의 수는 다음과 같다.</p>
-
-<blockquote>
-  <p>$4 \times 4 \times 4 = 4^{3} = _{4} \prod{} _{3} = 64$ 개</p>
-</blockquote>
-
-<p><br /></p>
-
-<p>중복순열은 선택했던 원소를 다시 선택할 수 있기 때문에 원소의 수보다 더 많은 원소를 이용한 순열을 구할 수 있다.</p>
-
-<p>예를 들어 $1,2,3,4$ 가 쓰여 있는 $4$ 장의 숫자 카드를 이용해 여섯 자리수를 만들 수도 있다.</p>
-
-<p>십만 자리부터 일의 자리까지 $4$ 장의 카드를 모두 중복을 허용하며 사용할 수 있다.</p>
-
-<p>숫자 카드 $4$ 장으로 만들 수 있는 여섯 자릿수에 대한 경우의 수는 다음과 같다.</p>
-
-<ul>
-  <li>$_{4} \prod{} _{6} = 4^{6} = 4096$ 가지</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<ol>
-  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
-직책을 겸임할 수 있는 가정 하에<br />
-회장, 부회장, 총무를 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지인가?</li>
-</ol>
-
-<ul>
-  <li>
-    <p>회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>부회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>총무로 선출될 수 있는 회원 수 : $10$ 명</p>
-
-    <blockquote>
-      <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
-    </blockquote>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-35/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-35</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-35/"><![CDATA[<h1 id="같은-원소를-나열하는-순열">같은 원소를 나열하는 순열</h1>
+<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-35/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-35</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-35/"><![CDATA[<h1 id="같은-원소를-나열하는-순열">같은 원소를 나열하는 순열</h1>
 
 <p>순열과 중복순열은 숫자 카드나 단어를 구성하는 스펠링과 같은 순열의 대상이 되는 원소들이 모두 다르다는 전제가 있다.</p>
 
@@ -842,7 +773,98 @@
   <li>
     <p>$_{n} \mathrm{P} _{0} = \frac{n!}{(n - 0)!} = 1 \quad \bullet \ 0! = 1$</p>
   </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙</title><link href="http://localhost:4000/discrete%20mathematics/DM-32/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙" /><published>2024-02-23T00:00:00+09:00</published><updated>2024-02-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-32</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-32/"><![CDATA[<h1 id="합의-법칙과-곱의-법칙">합의 법칙과 곱의 법칙</h1>
+</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 03. 중복순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-34/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-34</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-34/"><![CDATA[<h1 id="중복순열">중복순열</h1>
+
+<p>이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다.</p>
+
+<p>그러나 선택했던 원소를 다시 선택하여 나열하는 방법도 있을 수 있다.</p>
+
+<p>그러면 순열의 경우의 수도 달라질 것이다.</p>
+
+<blockquote>
+  <p>이러한 나열을 중복순열이라고 한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정의--중복순열-permutation-with-repetition---_n-prod-_r">정의 : 중복순열 (permutation with repetition : $ _{n} \prod{} _{r}$)</h2>
+
+<blockquote>
+  <p>서로 다른 $n$ 개의 원소 중 $r$ 개를 중복을 허용하며 선택하여 순서대로 나열한 것</p>
+</blockquote>
+
+<ul>
+  <li>중복순열의 수 : $_{n} \prod{} _{r} = n^{r} \quad (n \in N, \  0 \le r \le n)$</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="예시">예시</h3>
+
+<p>이전 장에서 예로 들었던 $1,2,3,4$ 가 쓰여 있는 4장의 숫자 카드의 예로 중복순열을 이해해보자.</p>
+
+<p>순열은 이 $4$ 장의 카드들 중 서로 다른 숫자 카드 $3$ 장은 나열한 것이다.</p>
+
+<p>중복순열은 ‘서로 다른’ 이라는 전제가 필요 없다.</p>
+
+<p>이 $4$ 장의 숫자 카드들을 이용해 중복을 허용하며 만들 수 있는 세 자릿수가 몇개인가를 구해보면 다음과 같다.</p>
+
+<p><img src="/assets/images/Math/dm/dm_example_34_01.png" width="500" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>위 그림과 마찬가지로 $211$ ~ $244$, $\ 311$ ~ $344$, $\ 411$ ~ $444$ 를 선택할 수 있다.</li>
+</ul>
+
+<p>이 풀이를 통해 알 수 있듯이 중복을 허용하기 위해 백의 자리에서 선택했던 숫자 카드를<br />
+다시 십의 자리의 선택 범위, 일의 자리의 선택 범위에도 포함시켜서 숫자들을 나열하여 중복순열의 결과를 얻는다.</p>
+
+<p>그러면 세 자릿수의 각 자리에서 선택할 수 있는 원소의 수는 모두 $4$ 개이므로 이 중복순열의 경우의 수는 다음과 같다.</p>
+
+<blockquote>
+  <p>$4 \times 4 \times 4 = 4^{3} = _{4} \prod{} _{3} = 64$ 개</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>중복순열은 선택했던 원소를 다시 선택할 수 있기 때문에 원소의 수보다 더 많은 원소를 이용한 순열을 구할 수 있다.</p>
+
+<p>예를 들어 $1,2,3,4$ 가 쓰여 있는 $4$ 장의 숫자 카드를 이용해 여섯 자리수를 만들 수도 있다.</p>
+
+<p>십만 자리부터 일의 자리까지 $4$ 장의 카드를 모두 중복을 허용하며 사용할 수 있다.</p>
+
+<p>숫자 카드 $4$ 장으로 만들 수 있는 여섯 자릿수에 대한 경우의 수는 다음과 같다.</p>
+
+<ul>
+  <li>$_{4} \prod{} _{6} = 4^{6} = 4096$ 가지</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="예제">예제</h3>
+
+<ol>
+  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
+직책을 겸임할 수 있는 가정 하에<br />
+회장, 부회장, 총무를 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지인가?</li>
+</ol>
+
+<ul>
+  <li>
+    <p>회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
+  </li>
+  <li>
+    <p>부회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
+  </li>
+  <li>
+    <p>총무로 선출될 수 있는 회원 수 : $10$ 명</p>
+
+    <blockquote>
+      <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
+    </blockquote>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙</title><link href="http://localhost:4000/discrete%20mathematics/DM-32/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙" /><published>2024-02-23T00:00:00+09:00</published><updated>2024-02-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-32</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-32/"><![CDATA[<h1 id="합의-법칙과-곱의-법칙">합의 법칙과 곱의 법칙</h1>
 
 <p>경우의 수를 확인하는 가장 기본적인 방법은 발생 가능한 경우를 나열해 그 수를 세는 것이다.</p>
 
@@ -1376,379 +1398,4 @@
 
 <blockquote>
   <p>$n$차 부울함수에서 사용될 수 있는 최소항 또는 최대항의 개수는 $2^{n}$개 이다.</p>
-</blockquote>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울함수의 표현]]></summary></entry><entry><title type="html">[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념</title><link href="http://localhost:4000/discrete%20mathematics/DM-29/" rel="alternate" type="text/html" title="[이산수학] 부울대수(Boolean algebra) : 01. 부울대수의 개념" /><published>2024-02-15T00:00:00+09:00</published><updated>2024-02-15T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-29</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-29/"><![CDATA[<h1 id="부울대수">부울대수</h1>
-
-<p>컴퓨터 시스템은 0과 1로 표현되는 비트의 집합을 연산하는 방식으로 운영된다.</p>
-
-<p>그래서 컴퓨터 시스템을 구성하는 여러 물리 장치는 이러한 비트를 저장하고 연산하는 데 적합하도록 회로가 구성된다.</p>
-
-<p>컴퓨터 시스템이 연산하는 것을 함수로 표현하고 그 함수를 회로로 설계하기 위해서는 특별한 연산과 표현 방식이 필요하다.</p>
-
-<blockquote>
-  <p>컴퓨터 시스템을 포함한 여러 디지털 장치의 회로를 분석하고 설계하기위해 회로의 기능을 함수로 표현하는 것을 <span style="background-color: #fff5b1">부울대수</span>라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="부울대수의-개념">부울대수의 개념</h1>
-
-<ul>
-  <li>부울(Boolean)은 $0 / 1$ , 참($T$) / 거짓($F$), ON / OFF 와 같이 2진의 값을 표현하는 용어다.</li>
-</ul>
-
-<h2 id="정의--부울대수-boolean-algebra--논리대수-logic-algebra">정의 : 부울대수 (Boolean algebra) / 논리대수 (logic algebra)</h2>
-
-<blockquote>
-  <p>2진의 값인 부울값(0 또는 1)을 이용해 논리 동작을 표현하는 대수</p>
-</blockquote>
-
-<ul>
-  <li>부울대수는 부울값, 부울변수, 부울 연산자를 이용해 부울함수로 회로의 동작을 형식화한다.</li>
-</ul>
-
-<h2 id="정의--부울값-boolean-value">정의 : 부울값 (Boolean value)</h2>
-
-<blockquote>
-  <p>디지털신호, $0$ 또는 $1$</p>
-</blockquote>
-
-<h2 id="정의--부울변수-boolean-variable">정의 : 부울변수 (Boolean variable)</h2>
-
-<blockquote>
-  <p>부울값을 받는 변수</p>
-</blockquote>
-
-<h2 id="정의--부울함수-boolean-function-n-차-부울함수--fx_1-x_2-cdots--x_n">정의 : 부울함수 (Boolean function, $n$ 차 부울함수 : $f(x_{1}, x_{2}, \cdots , x_{n})$)</h2>
-
-<blockquote>
-  <p>$n$ 개의 부울변수와 부울 연산자로 구성된 식</p>
-</blockquote>
-
-<ul>
-  <li>부울 연산자에는 부울보수, 부울합, 부울곱이 있다.</li>
-</ul>
-
-<h2 id="정의--부울보수-boolean-complement--a-또는-bara">정의 : 부울보수 (Boolean complement : $A’$ 또는 $\bar{A}$)</h2>
-
-<blockquote>
-  <p>부울변수의 값을 반전시키는 단항 연산자</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$0’ = \bar{0} = 1$</p>
-  </li>
-  <li>
-    <p>$1’ = \bar{1} = 0$</p>
-  </li>
-</ul>
-
-<h2 id="정의--부울합-boolean-addition--a--b">정의 : 부울합 (Boolean addition : $A + B$)</h2>
-
-<blockquote>
-  <p>부울변수의 값을 더하는 이항 연산자<br />
-부울변수의 값 중 하나라도 1이면 그 결과는 1이 되는 연산</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$0 + 0 = 0$</p>
-  </li>
-  <li>
-    <p>$0 + 1 = 1$</p>
-  </li>
-  <li>
-    <p>$1 + 0 = 1$</p>
-  </li>
-  <li>
-    <p>$1 + 1 = 1$</p>
-  </li>
-</ul>
-
-<h2 id="정의--부울곱-boolean-mutiplication--a-cdot-b-또는-ab">정의 : 부울곱 (Boolean mutiplication : $A \cdot B$ 또는 $AB$)</h2>
-
-<blockquote>
-  <p>부울변수의 값을 곱하는 이항 연산자<br />
-부울변수의 값이 모두 1인 경우에만 그 결과가 1이 되는 연산</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p>$0 \cdot 0 = 0$</p>
-  </li>
-  <li>
-    <p>$0 \cdot 1 = 0$</p>
-  </li>
-  <li>
-    <p>$1 \cdot 0 = 0$</p>
-  </li>
-  <li>
-    <p>$1 \cdot 1 = 1$</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>부울 연산자의 정의를 살펴보면 논리 연산자와 유사하다는 것을 알 수 있다.</p>
-
-    <ul>
-      <li>
-        <p>부울보수는 논리 연산자의 부정 연산자($NOT$)</p>
-      </li>
-      <li>
-        <p>부울합은 논리합 연산자 ($OR$)</p>
-      </li>
-      <li>
-        <p>부울곱은 논리곱 연산자 ($AND$)</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>부울 연산자의 우선순위</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center">우선순위</th>
-          <th style="text-align: center">연산자</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">최고</td>
-          <td style="text-align: center">부울보수($’ / \bar{}$)</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">$\updownarrow$</td>
-          <td style="text-align: center">부울곱($\cdot$)</td>
-        </tr>
-        <tr>
-          <td style="text-align: center">최저</td>
-          <td style="text-align: center">부울합(+)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>부울변수로 구성된 부울함수는 입력한 값에 따라 출력되는 값이 달라질 수 있으므로 결과를 진리표로 확인한다.</p>
-  </li>
-  <li>
-    <p>2차 부울함수 $f(x,y) = xy + \bar{x}y$ 에 대하여 부울변수 $x, y$에 입력한 값에 따른 결과를 확인하는 진리표는 다음과 같다.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th style="text-align: center"> </th>
-          <th> </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: center">$x$</td>
-          <td style="text-align: center">$y$</td>
-          <td style="text-align: center">$\bar{x}$</td>
-          <td style="text-align: center">$xy$</td>
-          <td style="text-align: center">$\bar{x}y$</td>
-          <td style="text-align: center">$f(x, y) = xy + \bar{x}y$</td>
-          <td style="text-align: center"> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center"> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center"> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center"> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">0</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center"> </td>
-          <td> </td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
-
-<p><br />
-<br /></p>
-
-<h1 id="부울대수의-법칙">부울대수의 법칙</h1>
-
-<ol>
-  <li>
-    <p><strong>멱등법칙</strong>(idempotent law)</p>
-
-    <ul>
-      <li>
-        <p>$x + x = x$</p>
-      </li>
-      <li>
-        <p>$x \cdot x = x$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>항등법칙</strong>(identity law)</p>
-
-    <ul>
-      <li>
-        <p>$x + 0 = x$</p>
-      </li>
-      <li>
-        <p>$x \cdot 1 = x$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>지배법칙</strong>(domination law)</p>
-
-    <ul>
-      <li>
-        <p>$x + 1 = 1$</p>
-      </li>
-      <li>
-        <p>$x \cdot 0 = 0$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>교환법칙</strong>(commutative law)</p>
-
-    <ul>
-      <li>
-        <p>$x + y = y + x$</p>
-      </li>
-      <li>
-        <p>$xy = yx$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>이중 보수법칙</strong>(double complement law)</p>
-
-    <ul>
-      <li>$\overline{\bar{(x)}}$</li>
-    </ul>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p><strong>보수법칙</strong>(complement law)</p>
-
-    <ul>
-      <li>
-        <p>$x + \bar{x} = 1$</p>
-      </li>
-      <li>
-        <p>$x \cdot \bar{x} = 0$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>결합법칙</strong>(associative law)</p>
-
-    <ul>
-      <li>
-        <p>$(x + y) + z = x + (y + z)$</p>
-      </li>
-      <li>
-        <p>$(xy)z = x(yz)$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>분배법칙</strong>(distributive law)</p>
-
-    <ul>
-      <li>
-        <p>$x \cdot (y + z) = xy + xz$</p>
-      </li>
-      <li>
-        <p>$x + yz = (x + y) \cdot (x + z)$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>드 모르간의 법칙</strong>(De Morgan’s law)</p>
-
-    <ul>
-      <li>
-        <p>$\overline{x + y} = \bar{x} \bar{y}$</p>
-      </li>
-      <li>
-        <p>$\overline{xy} = \bar{x} + \bar{y}$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>흡수법칙</strong>(absorption law)</p>
-
-    <ul>
-      <li>
-        <p>$x + xy = x$</p>
-      </li>
-      <li>
-        <p>$x(x + y) = x$</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>1과 0의 법칙</strong></p>
-
-    <ul>
-      <li>
-        <p>$\bar{0} = 1$</p>
-      </li>
-      <li>
-        <p>$\bar{1} = 0$</p>
-      </li>
-    </ul>
-  </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울대수]]></summary></entry></feed>
+</blockquote>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울함수의 표현]]></summary></entry></feed>
