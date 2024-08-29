@@ -217,6 +217,10 @@
 <lastmod>2024-08-29T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/cv/CV_01/</loc>
+<lastmod>2024-08-29T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/shooting/test_01/</loc>
 <lastmod>2024-08-29T00:00:00+09:00</lastmod>
 </url>
@@ -260,6 +264,9 @@
 <loc>http://localhost:4000/categories/algorithm</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/CV</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
@@ -294,5 +301,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page11/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page12/</loc>
 </url>
 </urlset>

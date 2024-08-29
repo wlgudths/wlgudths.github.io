@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-29T22:46:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[테스트] : test</title><link href="http://localhost:4000/shooting/test_01/" rel="alternate" type="text/html" title="[테스트] : test" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/shooting/test_01</id><content type="html" xml:base="http://localhost:4000/shooting/test_01/"><![CDATA[<h1 id="테스트">테스트</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-29T23:33:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[테스트] : test</title><link href="http://localhost:4000/shooting/test_01/" rel="alternate" type="text/html" title="[테스트] : test" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/shooting/test_01</id><content type="html" xml:base="http://localhost:4000/shooting/test_01/"><![CDATA[<h1 id="테스트">테스트</h1>
 
 <ul>
   <li>테스트</li>
@@ -78,6 +78,20 @@
     <article class="archive-item">
         <div>
             <span>
+              <a href="/cv/CV_01/">Computer Vision</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.29
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
               <a href="/shooting/test_01/">[테스트] : test</a>
             </span>
             <small> 
@@ -97,7 +111,7 @@
 
 <h1 id="어려움과-해결-방안">어려움과 해결 방안</h1>
 
-<h1 id="다음-주-계획과-개선">다음 주 계획과 개선</h1>]]></content><author><name>지지형</name></author><category term="AI-Tech" /><summary type="html"><![CDATA[Overview]]></summary></entry><entry><title type="html">[선형대수] 4강</title><link href="http://localhost:4000/linear%20algebra/LA_04/" rel="alternate" type="text/html" title="[선형대수] 4강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_04</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_04/"><![CDATA[<h1 id="내적-dot-product">내적 (Dot Product)</h1>
+<h1 id="다음-주-계획과-개선">다음 주 계획과 개선</h1>]]></content><author><name>지지형</name></author><category term="AI-Tech" /><summary type="html"><![CDATA[Overview]]></summary></entry><entry><title type="html">Computer Vision</title><link href="http://localhost:4000/cv/CV_01/" rel="alternate" type="text/html" title="Computer Vision" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/cv/CV_01</id><content type="html" xml:base="http://localhost:4000/cv/CV_01/"><![CDATA[<h1 id="컴퓨터-비전-computer-vision">컴퓨터 비전 (Computer Vision)</h1>]]></content><author><name>지지형</name></author><category term="CV" /><summary type="html"><![CDATA[컴퓨터 비전 (Computer Vision)]]></summary></entry><entry><title type="html">[선형대수] 4강</title><link href="http://localhost:4000/linear%20algebra/LA_04/" rel="alternate" type="text/html" title="[선형대수] 4강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_04</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_04/"><![CDATA[<h1 id="내적-dot-product">내적 (Dot Product)</h1>
 
 <ul>
   <li>벡터 표기를 대문자로 하였지만, 소문자 볼드체로 생각하시면 되겠습니다. 😭</li>
@@ -1001,95 +1015,4 @@
 
 <p align="center">$$\therefore \ _{10} \mathrm{C} _{5} \ \times \ _{5} \mathrm{C} _{5} \ \times  \frac{1}{2!} = 252 \times 1 \times \frac{1}{2} = 126 가지$$</p>
 
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 03. 중복순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-34/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-34</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-34/"><![CDATA[<h1 id="중복순열">중복순열</h1>
-
-<p>이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다.</p>
-
-<p>그러나 선택했던 원소를 다시 선택하여 나열하는 방법도 있을 수 있다.</p>
-
-<p>그러면 순열의 경우의 수도 달라질 것이다.</p>
-
-<blockquote>
-  <p>이러한 나열을 중복순열이라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="정의--중복순열-permutation-with-repetition---_n-prod-_r">정의 : 중복순열 (permutation with repetition : $ _{n} \prod{} _{r}$)</h2>
-
-<blockquote>
-  <p>서로 다른 $n$ 개의 원소 중 $r$ 개를 중복을 허용하며 선택하여 순서대로 나열한 것</p>
-</blockquote>
-
-<ul>
-  <li>중복순열의 수 : $_{n} \prod{} _{r} = n^{r} \quad (n \in N, \  0 \le r \le n)$</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p>이전 장에서 예로 들었던 $1,2,3,4$ 가 쓰여 있는 4장의 숫자 카드의 예로 중복순열을 이해해보자.</p>
-
-<p>순열은 이 $4$ 장의 카드들 중 서로 다른 숫자 카드 $3$ 장은 나열한 것이다.</p>
-
-<p>중복순열은 ‘서로 다른’ 이라는 전제가 필요 없다.</p>
-
-<p>이 $4$ 장의 숫자 카드들을 이용해 중복을 허용하며 만들 수 있는 세 자릿수가 몇개인가를 구해보면 다음과 같다.</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_34_01.png" width="500" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>위 그림과 마찬가지로 $211$ ~ $244$, $\ 311$ ~ $344$, $\ 411$ ~ $444$ 를 선택할 수 있다.</li>
-</ul>
-
-<p>이 풀이를 통해 알 수 있듯이 중복을 허용하기 위해 백의 자리에서 선택했던 숫자 카드를<br />
-다시 십의 자리의 선택 범위, 일의 자리의 선택 범위에도 포함시켜서 숫자들을 나열하여 중복순열의 결과를 얻는다.</p>
-
-<p>그러면 세 자릿수의 각 자리에서 선택할 수 있는 원소의 수는 모두 $4$ 개이므로 이 중복순열의 경우의 수는 다음과 같다.</p>
-
-<blockquote>
-  <p>$4 \times 4 \times 4 = 4^{3} = _{4} \prod{} _{3} = 64$ 개</p>
-</blockquote>
-
-<p><br /></p>
-
-<p>중복순열은 선택했던 원소를 다시 선택할 수 있기 때문에 원소의 수보다 더 많은 원소를 이용한 순열을 구할 수 있다.</p>
-
-<p>예를 들어 $1,2,3,4$ 가 쓰여 있는 $4$ 장의 숫자 카드를 이용해 여섯 자리수를 만들 수도 있다.</p>
-
-<p>십만 자리부터 일의 자리까지 $4$ 장의 카드를 모두 중복을 허용하며 사용할 수 있다.</p>
-
-<p>숫자 카드 $4$ 장으로 만들 수 있는 여섯 자릿수에 대한 경우의 수는 다음과 같다.</p>
-
-<ul>
-  <li>$_{4} \prod{} _{6} = 4^{6} = 4096$ 가지</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<ol>
-  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
-직책을 겸임할 수 있는 가정 하에<br />
-회장, 부회장, 총무를 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지인가?</li>
-</ol>
-
-<ul>
-  <li>
-    <p>회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>부회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>총무로 선출될 수 있는 회원 수 : $10$ 명</p>
-
-    <blockquote>
-      <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
-    </blockquote>
-  </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry></feed>
+<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry></feed>
