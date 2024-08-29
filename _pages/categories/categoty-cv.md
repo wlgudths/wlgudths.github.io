@@ -8,6 +8,5 @@ sidebar_main: true
 
 <br>
 
-
-{% assign posts = site.categories.cv %}
+{% assign posts = site.categories.CV %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
