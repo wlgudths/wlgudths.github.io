@@ -282,9 +282,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[선형대수] 1강",
-        "excerpt":"유튜브 링크   선형대수학      벡터 공간, 벡터, 선형 변환, 행렬, 연립 선형 방정식 등을 연구하는 대수학의 한 분야이다.         출처 : 위키피디아                  선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다.            결론적으로는 연립 일차방정식을 푸는 것을 목표로 합니다.              ","categories": ["Linear Algebra"],
+        "excerpt":"유튜브 링크 선형대수학 벡터 공간, 벡터, 선형 변환, 행렬, 연립 선형 방정식 등을 연구하는 대수학의 한 분야이다. 출처 : 위키피디아 선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다. 결론적으로는 연립일차방정식을 푸는 것을 목표로 합니다. 위 방정식을 행렬과 벡터로 표기하면 다음과 같습니다. 행렬과 벡터의 성분, 내부 표기 방법 행렬 먼저 Matrix를 살펴보면...","categories": ["Linear Algebra"],
         "tags": [],
-        "url": "/linear%20algebra/DM-01/",
+        "url": "/linear%20algebra/LA_01/",
         "teaser": null
       },{
         "title": "[백준] 11404 : 플로이드 (파이썬)",
@@ -297,5 +297,29 @@ var store = [{
         "excerpt":"🔎 난이도 ⚪️ 실버 4 ✏️ 문제 https://www.acmicpc.net/problem/2164 🤖 예제 입력 및 출력 📑 알고리즘 분류 자료 구조 큐 🧐 풀이 문제에서 주어진 조건을 deque를 활용하여 착실하게 풀었다. 먼저 $q$ 에 range 함수를 이용해 $1$ 부터 $N$ 까지의 숫자를 초기화했습니다. q에 요소가 하나 남을 때까지 반복하며 조건을 수행했습니다. popleft 를...","categories": ["BOJ"],
         "tags": [],
         "url": "/boj/BOJ-2164/",
+        "teaser": null
+      },{
+        "title": "[선형대수] 2강",
+        "excerpt":"벡터란? 크기와 방향을 가진 양으로 정의할 수 있습니다. 좌표평면의 예시 벡터의 크기와 방향 $x, y$ 를 보면 무엇인가 떠오르지 않나요? 벡터의 크기는 피타고라스의 정리를 이용하여 구할 수 있습니다. 크기 $= \\sqrt{x^{2} + y^{2}}$ 좌표평면을 보시면 초록색 $\\theta$(각도)가 있습니다. 저희는 각도를 이용하여 방향을 구할 수도 있습니다. 즉, 벡터가 $x$축과 이루는 각도...","categories": ["Linear Algebra"],
+        "tags": [],
+        "url": "/linear%20algebra/LA_02/",
+        "teaser": null
+      },{
+        "title": "[선형대수] 3강",
+        "excerpt":"전치(Transpose)      전치의 개념은 이전에 정리했던 행렬의 종류에서 볼 수 있습니다.       전치행렬의 성질     ","categories": ["Linear Algebra"],
+        "tags": [],
+        "url": "/linear%20algebra/LA_03/",
+        "teaser": null
+      },{
+        "title": "[선형대수] 4강",
+        "excerpt":"내적 (Dot Product) 벡터 표기를 대문자로 하였지만, 소문자 볼드체로 생각하시면 되겠습니다. 😭 Inner Product, Dot Product Inner Product가 더 일반적인 개념입니다. Dot Product는 Scalar Product, 점곱이라고 불립니다. 일반적으로 유클리드 공간에서 실수 벡터의 내적을 지칭합니다. What’s 내적 두 벡터가 얼마나 닮았나!? 다시 말해, $B$ 벡터가 $A$ 벡터의 방향이 얼마나 유사한가? 를...","categories": ["Linear Algebra"],
+        "tags": [],
+        "url": "/linear%20algebra/LA_04/",
+        "teaser": null
+      },{
+        "title": "Test",
+        "excerpt":"테스트  ","categories": ["AI-Tech"],
+        "tags": [],
+        "url": "/ai-tech/AITECH_01/",
         "teaser": null
       }]

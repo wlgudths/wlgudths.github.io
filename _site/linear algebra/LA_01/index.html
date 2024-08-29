@@ -23,7 +23,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
 <meta property="og:title" content="[선형대수] 1강">
-<meta property="og:url" content="http://localhost:4000/linear%20algebra/DM-01/">
+<meta property="og:url" content="http://localhost:4000/linear%20algebra/LA_01/">
 
 
   <meta property="og:description" content="유튜브 링크">
@@ -43,7 +43,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/linear%20algebra/DM-01/">
+<link rel="canonical" href="http://localhost:4000/linear%20algebra/LA_01/">
 
 
 
@@ -264,7 +264,7 @@
   <label for="ac-toc">토글 메뉴</label>
   <ul class="nav__items" id="category_tag_menu">
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">50</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">Total</style> <span style="font-family:'Coming Soon';">54</style> <span style="font-family:'Cafe24Oneprettynight';"></style> 
       </li>
       <li>
         <span class="nav__sub-title">CS</span>
@@ -272,6 +272,8 @@
                 
                     
                         <li><a href="/categories/dm" class="">이산수학 (36)</a></li>
+                    
+                
                     
                 
                     
@@ -291,7 +293,9 @@
                     
                 
                     
-                        <li><a href="/categories/la" class="">선형대수학 (1)</a></li>
+                        <li><a href="/categories/la" class="">선형대수학 (4)</a></li>
+                    
+                
                     
                 
             </ul>
@@ -299,6 +303,8 @@
 
         <span class="nav__sub-title">코딩테스트</span>
             <ul>
+                
+                    
                 
                     
                 
@@ -322,6 +328,8 @@
                 
                     
                 
+                    
+                
             </ul>
 
             <ul>
@@ -332,6 +340,8 @@
                 
                     
                         <li><a href="/categories/Programmers" class="">프로그래머스 (2)</a></li>
+                    
+                
                     
                 
                     
@@ -349,7 +359,41 @@
                 
                     
                 
+                    
+                
             </ul>
+        
+        <span class="nav__sub-title">AI</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/AI-Tech" class="">AI-Tech (1)</a></li>
+                    
+                
+            </ul>
+
       </li>
   </ul>
 </nav>
@@ -370,7 +414,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/linear%20algebra/DM-01/" class="u-url" itemprop="url">[선형대수] 1강
+            <a href="http://localhost:4000/linear%20algebra/LA_01/" class="u-url" itemprop="url">[선형대수] 1강
 </a>
           </h1>
           
@@ -417,9 +461,88 @@
     <p>선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다.</p>
   </li>
   <li>
-    <p>결론적으로는 연립 일차방정식을 푸는 것을 목표로 합니다.</p>
+    <p>결론적으로는 연립일차방정식을 푸는 것을 목표로 합니다.</p>
 
     <p><img src="/assets/images/Math/la/la_01.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>위 방정식을 행렬과 벡터로 표기하면 다음과 같습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_02.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="행렬과-벡터의-성분-내부-표기-방법">행렬과 벡터의 성분, 내부 표기 방법</h2>
+
+<h3 id="행렬">행렬</h3>
+
+<ul>
+  <li>
+    <p>먼저 Matrix를 살펴보면 행렬은 행과 열, $(2 \times 2)$ 로 구성됩니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_03.png" width="300" height="300" /></p>
+
+    <ul>
+      <li>
+        <p>행 : Row</p>
+      </li>
+      <li>
+        <p>열 : Column</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>행렬의 구성요소는 다음과 같습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_04.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p><a href="https://wlgudths.github.io/discrete%20mathematics/DM-06/#%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84">행렬의 표현</a></p>
+  </li>
+</ul>
+
+<h3 id="벡터">벡터</h3>
+
+<ul>
+  <li>
+    <p>가로로 쌓여있는 경우 행 벡터를 나타내고, 세로로 쌓여있는 경우 열 벡터라고 합니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_05.png" width="300" height="300" /> <img src="/assets/images/Math/la/la_06.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="행렬과-벡터의-곱셈">행렬과 벡터의 곱셈</h2>
+
+<ul>
+  <li>
+    <p>우리는 행렬과 벡터로 표기한 연립일차방정식으로도 복귀할 수 있어야 한다.</p>
+  </li>
+  <li>
+    <p>사실 행렬과 벡터 사이에는 점 하나가 숨어있다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/la/la_07.png" width="300" height="300" /></p>
+
+<ul>
+  <li>
+    <p>행렬과 벡터의 곱셈을 통해 우리는 원래 식으로 돌아갈 수 있다.</p>
+
+    <p><img src="/assets/images/Math/la/la_08.png" width="300" height="300" /> <img src="/assets/images/Math/la/la_09.png" width="300" height="300" /></p>
+
+    <p><img src="/assets/images/Math/la/la_10.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p><a href="https://wlgudths.github.io/discrete%20mathematics/DM-07/">행렬의 연산</a></p>
   </li>
 </ul>
 
@@ -460,12 +583,27 @@
 
 
   
+
+  
+
+  
+
+  
   	
   	
   	
   	
   	
 
+
+  <nav class="pagination_prev_next">
+    
+      <a href="#" class="pagination_prev_next--pager disabled">첫 번째 글입니다</a>
+    
+    
+      <a href="/linear%20algebra/LA_02/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[선형대수] 2강</a>
+    
+  </nav>
 
 
 
@@ -503,7 +641,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/boj/BOJ-2164/" rel="permalink">[백준] 2164 : 카드2 (파이썬)
+        <a href="/ai-tech/AITECH_01/" rel="permalink">Test
 </a>
       
     </h2>
@@ -528,11 +666,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
-
-  ⚪️ 실버 4
-
-
+    <p class="archive__item-excerpt" itemprop="description">테스트
 </p>
   </article>
 </div>
@@ -547,7 +681,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/boj/BOJ-11404/" rel="permalink">[백준] 11404 : 플로이드 (파이썬)
+        <a href="/linear%20algebra/LA_04/" rel="permalink">[선형대수] 4강
 </a>
       
     </h2>
@@ -565,17 +699,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">🔎 난이도
-
-  🟡 골드 4
-
+    <p class="archive__item-excerpt" itemprop="description">내적 (Dot Product)
 
 </p>
   </article>
@@ -591,7 +722,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/discrete%20mathematics/DM-36/" rel="permalink">[이산수학] 순열, 조합, 확률 : 05. 조합
+        <a href="/linear%20algebra/LA_03/" rel="permalink">[선형대수] 3강
 </a>
       
     </h2>
@@ -609,14 +740,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">조합
+    <p class="archive__item-excerpt" itemprop="description">전치(Transpose)
 
 </p>
   </article>
@@ -632,7 +763,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/discrete%20mathematics/DM-35/" rel="permalink">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열
+        <a href="/linear%20algebra/LA_02/" rel="permalink">[선형대수] 2강
 </a>
       
     </h2>
@@ -650,14 +781,14 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">같은 원소를 나열하는 순열
+    <p class="archive__item-excerpt" itemprop="description">벡터란?
 
 </p>
   </article>

@@ -1,4 +1,251 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-26T23:29:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-29T13:31:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">Test</title><link href="http://localhost:4000/ai-tech/AITECH_01/" rel="alternate" type="text/html" title="Test" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/ai-tech/AITECH_01</id><content type="html" xml:base="http://localhost:4000/ai-tech/AITECH_01/"><![CDATA[<p>테스트</p>]]></content><author><name>지지형</name></author><category term="AI-Tech" /><summary type="html"><![CDATA[테스트]]></summary></entry><entry><title type="html">[선형대수] 3강</title><link href="http://localhost:4000/linear%20algebra/LA_03/" rel="alternate" type="text/html" title="[선형대수] 3강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_03</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_03/"><![CDATA[<h1 id="전치transpose">전치(Transpose)</h1>
+
+<ul>
+  <li>전치의 개념은 이전에 정리했던 <a href="https://wlgudths.github.io/discrete%20mathematics/DM-08/#%EC%A0%84%EC%B9%98%ED%96%89%EB%A0%AC-transpose-matrix--at">행렬의 종류</a>에서 볼 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="전치행렬의-성질">전치행렬의 성질</h2>
+
+<p><img src="/assets/images/Math/la/la_17.png" width="300" height="300" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[전치(Transpose)]]></summary></entry><entry><title type="html">[선형대수] 2강</title><link href="http://localhost:4000/linear%20algebra/LA_02/" rel="alternate" type="text/html" title="[선형대수] 2강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_02</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_02/"><![CDATA[<h1 id="벡터란">벡터란?</h1>
+
+<ul>
+  <li>
+    <p>크기와 방향을 가진 양으로 정의할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>좌표평면의 예시</p>
+
+    <p><img src="/assets/images/Math/la/la_11.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="벡터의-크기와-방향">벡터의 크기와 방향</h2>
+
+<p><img src="/assets/images/Math/la/la_12.png" width="400" height="400" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>$x, y$ 를 보면 무엇인가 떠오르지 않나요?</p>
+
+    <ul>
+      <li>
+        <p>벡터의 크기는 피타고라스의 정리를 이용하여 구할 수 있습니다.</p>
+      </li>
+      <li>
+        <p>크기 $= \sqrt{x^{2} + y^{2}}$</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>좌표평면을 보시면 초록색 $\theta$(각도)가 있습니다.</p>
+  </li>
+  <li>
+    <p>저희는 각도를 이용하여 방향을 구할 수도 있습니다.</p>
+  </li>
+  <li>
+    <p>즉, 벡터가 $x$축과 이루는 각도 $\theta$는 삼각함수를 사용하여 구할 수 있습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_12.png" width="300" height="200" /></p>
+
+    <ul>
+      <li>$tan$ 활용 $\rightarrow$ $\theta$에 대하여 식 정리</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/la/la_13.png" width="300" height="200" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="벡터의-덧셈-뺄셈-스칼라배">벡터의 덧셈, 뺄셈, 스칼라배</h2>
+
+<blockquote>
+  <p>각 요소를 덧셈, 뺄셈, 스칼라배를 해주면 된다.</p>
+</blockquote>
+
+<h3 id="시각화-덧셈">시각화 (덧셈)</h3>
+
+<p><img src="/assets/images/Math/la/la_14.png" width="300" height="300" /></p>
+
+<p><img src="/assets/images/Math/la/la_15.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<h3 id="중요한-사실">중요한 사실</h3>
+
+<blockquote>
+  <p>벡터의 연산을 활용하여 2차원 평면에 놓이는 벡터를 다 표현할 수 있다.</p>
+</blockquote>
+
+<p><img src="/assets/images/Math/la/la_16.png" width="300" height="200" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[벡터란?]]></summary></entry><entry><title type="html">[선형대수] 4강</title><link href="http://localhost:4000/linear%20algebra/LA_04/" rel="alternate" type="text/html" title="[선형대수] 4강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_04</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_04/"><![CDATA[<h1 id="내적-dot-product">내적 (Dot Product)</h1>
+
+<ul>
+  <li>벡터 표기를 대문자로 하였지만, 소문자 볼드체로 생각하시면 되겠습니다. 😭</li>
+</ul>
+
+<h2 id="inner-product-dot-product">Inner Product, Dot Product</h2>
+
+<ul>
+  <li>
+    <p>Inner Product가 더 일반적인 개념입니다.</p>
+  </li>
+  <li>
+    <p>Dot Product는 Scalar Product, 점곱이라고 불립니다.</p>
+  </li>
+  <li>
+    <p>일반적으로 유클리드 공간에서 실수 벡터의 내적을 지칭합니다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/la/la_25.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<h3 id="whats-내적">What’s 내적</h3>
+
+<ul>
+  <li>
+    <p>두 벡터가 얼마나 닮았나!?</p>
+  </li>
+  <li>
+    <p>다시 말해, $B$ 벡터가 $A$ 벡터의 방향이 얼마나 유사한가? 를 알아보는 것입니다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/la/la_19.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<h3 id="내적은-어떻게-구할-수-있을까">내적은 어떻게 구할 수 있을까?</h3>
+
+<ul>
+  <li>각 요소를 곱하고 더해주면 됩니다.</li>
+</ul>
+
+<p><img src="/assets/images/Math/la/la_20.png" width="300" height="300" /> <img src="/assets/images/Math/la/la_21.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>해당 식을 일반화 시키면 다음과 같이 표현할 수 있습니다.</p>
+
+    <ul>
+      <li>$AB = \sum_{k=1}^{n}{A_{k}B_{k}}$</li>
+    </ul>
+  </li>
+  <li>
+    <p>또한 내적은 이렇게 표현할 수도 있습니다.</p>
+
+    <ul>
+      <li>
+        <p>$||A||||B||\cos{\theta}$</p>
+      </li>
+      <li>
+        <p>$||A||$ : 절대값과 구분 짓는 벡터의 크기 표기법</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="내적은-정사영이다">내적은 정사영이다</h3>
+
+<p><img src="/assets/images/Math/la/la_22.png" width="300" height="300" /></p>
+
+<p><img src="/assets/images/Math/la/la_23.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<h2 id="코사인-유사도">코사인 유사도</h2>
+
+<blockquote>
+  <p>서로 다른 벡터가 얼마나 비슷한 방향을 가르키고 있는지 가늠하는 지표로 활용됩니다.</p>
+</blockquote>
+
+<p><img src="/assets/images/Math/la/la_24.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>$\theta$를 구하려면 $arccos(x)$ 함수(아크코사인)를 사용하면 됩니다.</li>
+</ul>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>$\theta$</th>
+      <th>벡터 $A$ 와 $B$의 관계</th>
+      <th>내적 값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$0$도</td>
+      <td>두 벡터의 방향이 완전히 일치</td>
+      <td>최댓값</td>
+    </tr>
+    <tr>
+      <td>$90$도</td>
+      <td>두 벡터가 직교인 상태</td>
+      <td>$0$</td>
+    </tr>
+    <tr>
+      <td>$180$도</td>
+      <td>두 벡터의 방향이 완전히 반대인 상태</td>
+      <td>최솟값</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="시각화">시각화</h3>
+
+<ul>
+  <li>
+    <p>$0$도</p>
+
+    <p><img src="/assets/images/Math/la/la_26.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p>$90$도</p>
+
+    <p><img src="/assets/images/Math/la/la_27.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p>$180$도</p>
+
+    <p><img src="/assets/images/Math/la/la_28.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="결론">결론</h1>
+
+<ul>
+  <li>
+    <p>벡터는 방향과 크기를 가진 양으로 정의할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>내적의 결과로 나오는 스칼라 값은 두 벡터의 방향과 크기에 대한 정보를 종합적으로 나타냅니다.</p>
+  </li>
+</ul>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[내적 (Dot Product)]]></summary></entry><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 4</strong></p>
 </blockquote>
@@ -297,7 +544,7 @@
   <li>
     <p>해당 문제는 플로이드 워셜 알고리즘으로 풀 수 있었지만, 다익스트라 알고리즘으로도 풀어봐야겠다.</p>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟡 골드 4]]></summary></entry><entry><title type="html">[선형대수] 1강</title><link href="http://localhost:4000/linear%20algebra/DM-01/" rel="alternate" type="text/html" title="[선형대수] 1강" /><published>2024-08-24T00:00:00+09:00</published><updated>2024-08-24T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/DM-01</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/DM-01/"><![CDATA[<p><a href="https://www.youtube.com/watch?v=7vV2SF8DyQE&amp;list=PL_iJu012NOxdZDxoGsYidMf2_bERIQaP0&amp;index=1">유튜브 링크</a></p>
+</ul>]]></content><author><name>지지형</name></author><category term="BOJ" /><summary type="html"><![CDATA[🔎 난이도 🟡 골드 4]]></summary></entry><entry><title type="html">[선형대수] 1강</title><link href="http://localhost:4000/linear%20algebra/LA_01/" rel="alternate" type="text/html" title="[선형대수] 1강" /><published>2024-08-24T00:00:00+09:00</published><updated>2024-08-24T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_01</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_01/"><![CDATA[<p><a href="https://www.youtube.com/watch?v=7vV2SF8DyQE&amp;list=PL_iJu012NOxdZDxoGsYidMf2_bERIQaP0&amp;index=1">유튜브 링크</a></p>
 
 <h1 id="선형대수학">선형대수학</h1>
 
@@ -315,9 +562,88 @@
     <p>선형대수학에서는 행렬과 벡터를 사용하여 선형 방정식을 해결합니다.</p>
   </li>
   <li>
-    <p>결론적으로는 연립 일차방정식을 푸는 것을 목표로 합니다.</p>
+    <p>결론적으로는 연립일차방정식을 푸는 것을 목표로 합니다.</p>
 
     <p><img src="/assets/images/Math/la/la_01.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>위 방정식을 행렬과 벡터로 표기하면 다음과 같습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_02.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="행렬과-벡터의-성분-내부-표기-방법">행렬과 벡터의 성분, 내부 표기 방법</h2>
+
+<h3 id="행렬">행렬</h3>
+
+<ul>
+  <li>
+    <p>먼저 Matrix를 살펴보면 행렬은 행과 열, $(2 \times 2)$ 로 구성됩니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_03.png" width="300" height="300" /></p>
+
+    <ul>
+      <li>
+        <p>행 : Row</p>
+      </li>
+      <li>
+        <p>열 : Column</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>행렬의 구성요소는 다음과 같습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_04.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p><a href="https://wlgudths.github.io/discrete%20mathematics/DM-06/#%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84">행렬의 표현</a></p>
+  </li>
+</ul>
+
+<h3 id="벡터">벡터</h3>
+
+<ul>
+  <li>
+    <p>가로로 쌓여있는 경우 행 벡터를 나타내고, 세로로 쌓여있는 경우 열 벡터라고 합니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_05.png" width="300" height="300" /> <img src="/assets/images/Math/la/la_06.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="행렬과-벡터의-곱셈">행렬과 벡터의 곱셈</h2>
+
+<ul>
+  <li>
+    <p>우리는 행렬과 벡터로 표기한 연립일차방정식으로도 복귀할 수 있어야 한다.</p>
+  </li>
+  <li>
+    <p>사실 행렬과 벡터 사이에는 점 하나가 숨어있다.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Math/la/la_07.png" width="300" height="300" /></p>
+
+<ul>
+  <li>
+    <p>행렬과 벡터의 곱셈을 통해 우리는 원래 식으로 돌아갈 수 있다.</p>
+
+    <p><img src="/assets/images/Math/la/la_08.png" width="300" height="300" /> <img src="/assets/images/Math/la/la_09.png" width="300" height="300" /></p>
+
+    <p><img src="/assets/images/Math/la/la_10.png" width="300" height="300" /></p>
+  </li>
+  <li>
+    <p><a href="https://wlgudths.github.io/discrete%20mathematics/DM-07/">행렬의 연산</a></p>
   </li>
 </ul>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[유튜브 링크]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 05. 조합</title><link href="http://localhost:4000/discrete%20mathematics/DM-36/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 05. 조합" /><published>2024-02-26T00:00:00+09:00</published><updated>2024-02-26T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-36</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-36/"><![CDATA[<h1 id="조합">조합</h1>
 
@@ -576,204 +902,7 @@
 
 <p align="center">$$\therefore \ _{10} \mathrm{C} _{5} \ \times \ _{5} \mathrm{C} _{5} \ \times  \frac{1}{2!} = 252 \times 1 \times \frac{1}{2} = 126 가지$$</p>
 
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-35/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-35</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-35/"><![CDATA[<h1 id="같은-원소를-나열하는-순열">같은 원소를 나열하는 순열</h1>
-
-<p>순열과 중복순열은 숫자 카드나 단어를 구성하는 스펠링과 같은 순열의 대상이 되는 원소들이 모두 다르다는 전제가 있다.</p>
-
-<p>그러나 순열의 대상이 되는 원소들이 같은 원소를 포함하는 경우도 있다.</p>
-
-<ul>
-  <li>
-    <p>예를 들어, <strong>banana</strong> 라는 단어는 다음과 같이 구성되어있다.</p>
-
-    <ul>
-      <li>
-        <p>$b \rightarrow 1$ 번</p>
-      </li>
-      <li>
-        <p>$a \rightarrow 3$ 번</p>
-      </li>
-      <li>
-        <p>$n \rightarrow 2$ 번</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>이렇게 같은 문자들이 포함된 원소들을 이용해 순열을 구한다면 구한 순열 중에는 같은 단어들이 포함될 수 있다.</p>
-
-<p>그러므로 순열의 대상에 같은 원소들이 포함되었을 때는 다음과 같이 순열을 구한다.</p>
-
-<p><br /></p>
-
-<h2 id="정의--같은-원소를-포함하는-집합에-대한-순열">정의 : 같은 원소를 포함하는 집합에 대한 순열</h2>
-
-<blockquote>
-  <p>$n$ 개의 원소 중에서 같은 원소들이 각각 $p$ 개, $q$ 개, $r$ 개, $\cdots$ , $s$ 개 있을 때, $n$ 개의 원소를 순서대로 나열한 것</p>
-</blockquote>
-
-<p align="center"> $$\frac{n!}{p! \times q! \times r! \times \ \cdots \ \times s!}$$ </p>
-
-<p align="center"> $$(p + q + r + \cdots + s = n)$$ </p>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p>$6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 가 쓰여져 있을 때 문자 카드 모두를 이용해 만들 수 있는 단어는 몇 개인지 구해보자.</p>
-
-<p>문자 카드 중 $a$ 는 $3$ 장 이므로 $a1, a2, a3$ 로 구분할 수 있다.</p>
-
-<p>또한 문자 카드 $n$ 도 마찬가지로 $2$ 장 이므로 $n1, n2$ 로 구분할 수 있다.</p>
-
-<p>이렇게 구분한 $6$ 개의 원소에서 $6$ 개를 선택하여 나열하는 것이므로 $_{6} \mathrm{P} _{6} = 6!$ 로 구할 수 있다.</p>
-
-<p><strong>그러나</strong> $a$ 를 $a1, a2, a3$ , $n$ 을 $n1, n2$ 로 구분은 했으나 $a1a2a3$, $\ a2a1a3$ 모두 $aaa$ 의 나열이 된다.</p>
-
-<p>그러므로 6개의 원소를 나열한 경우의 수에서 $a1, a2, a3$ $\ 3$ 장의 카드를 나열하는 경우의 수와 $n1, n2$ 를 나열하는 경우의 수를 제외해야 한다.</p>
-
-<p>즉, $ _{3} \mathrm{P} _{3} = 3!$ 과 $ _{2} \mathrm{P} _{2} = 2!$ 를 제외해야 한다.</p>
-
-<p>그러므로 $6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 를 모두 나열해 만들 수 있는 단어의 수는 다음과 같다.</p>
-
-<p align="center"> $$\frac{6!}{3! \times 2! \times 1!} = 60 가지$$</p>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<p>$10$ 장의 문자 카드에 $A$ 가 $4$ 장, $B$ 가 $3$ 장, $C$ 가 $2$ 장, $D$ 가 $1$ 장 있을 때,<br />
-주어진 카드 $10$ 장을 모두 이용해 만들 수 있는 단어의 수를 구하라.</p>
-
-<p align="center"> $$\frac{10!}{4! \times 3! \times 2! \times 1!} = \frac{10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}{4 \times 3 \times 2 \times 1 \times 3 \times 2 \times 1 \times 2 \times 1 \times 1} = 12600 개$$</p>
-
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[같은 원소를 나열하는 순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 02. 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-33/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 02. 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-33</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-33/"><![CDATA[<h1 id="순열">순열</h1>
-
-<p>하나의 집합에서 둘 이상의 원소를 선택하는 경우의 수도 생각해볼 수 있다.</p>
-
-<p>이러한 경우 서로 다른 두 개 이상의 원소를 선택하여 나열하는 경우를 생각해볼 수 도 있고,</p>
-
-<p>같은 원소를 두 번 이상 선택하여 나열한 경우를 생각해볼 수도 있다.</p>
-
-<blockquote>
-  <p>어떠한 경우든 어떤 원소를 순서에 의미를 두고 나열하는 것을 순열이라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="정의--순열-permutation--_n-mathrmp-_r">정의 : 순열 (permutation : $_{n} \mathrm{P} _{r}$)</h2>
-
-<blockquote>
-  <p>서로 다른 $n$ 개의 원소 중 중복하지 않고 $r$ 개를 선택하여 순서대로 나열한 것</p>
-</blockquote>
-
-<ul>
-  <li>순열의 수 : $_{n} \mathrm{P} _{r} = n \cdot (n - 1) \cdot (n - 2) \cdot \ \cdots \ \cdot (n - r + 1) \quad (n \in N, \ 0 \le r \le n)$</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>
-    <p>$1, 2, 3, 4$ 가 쓰여 있는 숫자 카드가 4장이 있다고 가정</p>
-  </li>
-  <li>
-    <p>카드 4장 중 서로 다른 숫자 카드 3장을 나열해 만들 수 있는 세 자릿수가 몇 새 인지를 구해보면 다음과 같다.</p>
-  </li>
-  <li>
-    <p>다음 도표는 백의 자리부터 선택한 경우를 도표로 나타낸 것이다.</p>
-  </li>
-</ul>
-
-<p><img src="/assets/images/Math/dm/dm_example_33_01.png" width="700" /><img src="/assets/images/Math/dm/dm_example_33_02.png" width="700" /></p>
-
-<p><br /></p>
-
-<p>이 풀이를 위해 주어진 4장의 숫자 카드들 중 3장을 선택해야 한다.</p>
-
-<p>도표에서 알 수 있듯이 숫자 카드를 선택하는 과정에서 한 번 선택한 카드는 제외하고 남은 숫자 카드들 중에서 선택한다.</p>
-
-<p>즉, ‘서로 다른’ , ‘중복하지 않는’ 숫자의 나열이 된다.</p>
-
-<p>또한 각 자리마다 ‘백의 자리’, ‘십의 자리’, ‘일의 자리’와 같은 의미가 부여되고 3개의 숫자가 나열된다.</p>
-
-<blockquote>
-  <p>이처럼 ‘중복되지 않고’, ‘나열의 순서에 의미가 있는’ 나열을 순열이라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>이 순열의 수는 나열된 각 자리에서 선택 가능한 원소의 수의 곱이라고 생각하면 된다.</p>
-  </li>
-  <li>
-    <p>위의 예시에서 각 자리에서 선택할 수 있는 원소의 수는 다음과 같다.</p>
-
-    <ul>
-      <li>
-        <p>백의 자리에서 선택할 수 있는 원소의 수 : $4$ 개</p>
-      </li>
-      <li>
-        <p>십의 자리에서 선택할 수 있는 원소의 수 : $3$ 개</p>
-      </li>
-      <li>
-        <p>일의 자리에서 선택할 수 있는 원소의 수 : $2$ 개</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>그러므로 $1, 2, 3, 4$ 가 쓰여진 숫자 카드들 중 서로 다른 3장의 카드를 선택해 나열할 수 있는 세 자릿수의 개수는 다음과 같다.</p>
-
-    <blockquote>
-      <p>$4 \times 3 \times 2 = _{4} \mathrm{P} _{3} = 24$</p>
-    </blockquote>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<ol>
-  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
-직책을 겸임하지 않는다는 가정 하에<br />
-회장, 부회장, 총무를 각각 한 명씩 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지 인가?</li>
-</ol>
-
-<ul>
-  <li>
-    <p>회장으로 선출될 수 있는 회원 수는 $10$ 명</p>
-  </li>
-  <li>
-    <p>부회장으로 선출될 수 있는 회원 수는 $9$ 명</p>
-  </li>
-  <li>
-    <p>총무로 선출될 수 있는 회원 수는 $8$ 명</p>
-
-    <blockquote>
-      <p>$\therefore \ \ _{10} \mathrm{P} _{3} = 10 \times 9 \times 8 = 720$ 가지</p>
-    </blockquote>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="정리--순열에-관한-공식">정리 : 순열에 관한 공식</h2>
-
-<ol>
-  <li>
-    <p>$_{n} \mathrm{P} _{r} = n \cdot (n - 1) \cdot (n - 2) \cdot \ \ \cdots \ \ \cdot (n - r + 1) =$ $\frac{n!}{(n - r)!}$</p>
-  </li>
-  <li>
-    <p>$_{n} \mathrm{P} _{n} = n!$</p>
-  </li>
-  <li>
-    <p>$_{n} \mathrm{P} _{0} = \frac{n!}{(n - 0)!} = 1 \quad \bullet \ 0! = 1$</p>
-  </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 03. 중복순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-34/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-34</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-34/"><![CDATA[<h1 id="중복순열">중복순열</h1>
+<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[조합]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 03. 중복순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-34/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 03. 중복순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-34</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-34/"><![CDATA[<h1 id="중복순열">중복순열</h1>
 
 <p>이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다.</p>
 
@@ -864,538 +993,75 @@
       <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
     </blockquote>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙</title><link href="http://localhost:4000/discrete%20mathematics/DM-32/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 01. 합의 법칙과 곱의 법칙" /><published>2024-02-23T00:00:00+09:00</published><updated>2024-02-23T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-32</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-32/"><![CDATA[<h1 id="합의-법칙과-곱의-법칙">합의 법칙과 곱의 법칙</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-35/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-35</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-35/"><![CDATA[<h1 id="같은-원소를-나열하는-순열">같은 원소를 나열하는 순열</h1>
 
-<p>경우의 수를 확인하는 가장 기본적인 방법은 발생 가능한 경우를 나열해 그 수를 세는 것이다.</p>
+<p>순열과 중복순열은 숫자 카드나 단어를 구성하는 스펠링과 같은 순열의 대상이 되는 원소들이 모두 다르다는 전제가 있다.</p>
 
-<p>한 가지 사건의 발생 가능성은 그 수를 세는 것은 간단하다.</p>
-
-<p>하지만 두 개 이상의 사건이 발생 가능한 경우를 고려하는 것은 다음과 같은 상황에 따라 세는 방법이 달라진다.</p>
+<p>그러나 순열의 대상이 되는 원소들이 같은 원소를 포함하는 경우도 있다.</p>
 
 <ul>
   <li>
-    <p>각 사건이 별도로 발생하는지</p>
-  </li>
-  <li>
-    <p>서로 연관되어 발생하는지</p>
+    <p>예를 들어, <strong>banana</strong> 라는 단어는 다음과 같이 구성되어있다.</p>
+
+    <ul>
+      <li>
+        <p>$b \rightarrow 1$ 번</p>
+      </li>
+      <li>
+        <p>$a \rightarrow 3$ 번</p>
+      </li>
+      <li>
+        <p>$n \rightarrow 2$ 번</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="예시">예시</h3>
+<p>이렇게 같은 문자들이 포함된 원소들을 이용해 순열을 구한다면 구한 순열 중에는 같은 단어들이 포함될 수 있다.</p>
 
-<p>두 서버 A와 B가 있다.</p>
-
-<ol>
-  <li>
-    <p>전혀 연관관계가 없음</p>
-
-    <ul>
-      <li>서버 A에 접속하는 접속자 수와 서버 B에 접속하는 접속자 수는 각기 다른 서버에 발생하는 사건이므로 별도의 사건이다.</li>
-    </ul>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>네트워크 계층에서 서버 B가 서버 A의 하위 서버인 경우</p>
-
-    <ul>
-      <li>서버 A에 접속하는 접속자 수는 서버 B의 접속자 수와 연관이 있다.</li>
-    </ul>
-
-    <p><br /></p>
-
-    <blockquote>
-      <p>둘 이상의 사건이 별도로 발생하는지, 연관되어 발생하는지에 따라 경우의 수를 구하는 방법은 달라진다.</p>
-    </blockquote>
-  </li>
-</ol>
+<p>그러므로 순열의 대상에 같은 원소들이 포함되었을 때는 다음과 같이 순열을 구한다.</p>
 
 <p><br /></p>
 
-<h2 id="정의--합의-법칙-rule-of-sum">정의 : 합의 법칙 (rule of sum)</h2>
+<h2 id="정의--같은-원소를-포함하는-집합에-대한-순열">정의 : 같은 원소를 포함하는 집합에 대한 순열</h2>
 
 <blockquote>
-  <p>두 사건 $A, B$의 경우의 수가 각각 $\left \vert A \right \vert = m$, $\left \vert B \right \vert = n$, $\left \vert A \cap B \right \vert = l$ 일 때, 사건 $A$ 또는 사건 $B$ 가 일어날 경우의 수</p>
+  <p>$n$ 개의 원소 중에서 같은 원소들이 각각 $p$ 개, $q$ 개, $r$ 개, $\cdots$ , $s$ 개 있을 때, $n$ 개의 원소를 순서대로 나열한 것</p>
 </blockquote>
 
-<ul>
-  <li>$\left \vert A \cup B \right \vert = \left \vert A \right \vert + \left \vert B \right \vert - \left \vert A \cap B \right \vert = m + n - l$</li>
-</ul>
+<p align="center"> $$\frac{n!}{p! \times q! \times r! \times \ \cdots \ \times s!}$$ </p>
+
+<p align="center"> $$(p + q + r + \cdots + s = n)$$ </p>
+
+<p><br /></p>
+
+<h3 id="예시">예시</h3>
+
+<p>$6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 가 쓰여져 있을 때 문자 카드 모두를 이용해 만들 수 있는 단어는 몇 개인지 구해보자.</p>
+
+<p>문자 카드 중 $a$ 는 $3$ 장 이므로 $a1, a2, a3$ 로 구분할 수 있다.</p>
+
+<p>또한 문자 카드 $n$ 도 마찬가지로 $2$ 장 이므로 $n1, n2$ 로 구분할 수 있다.</p>
+
+<p>이렇게 구분한 $6$ 개의 원소에서 $6$ 개를 선택하여 나열하는 것이므로 $_{6} \mathrm{P} _{6} = 6!$ 로 구할 수 있다.</p>
+
+<p><strong>그러나</strong> $a$ 를 $a1, a2, a3$ , $n$ 을 $n1, n2$ 로 구분은 했으나 $a1a2a3$, $\ a2a1a3$ 모두 $aaa$ 의 나열이 된다.</p>
+
+<p>그러므로 6개의 원소를 나열한 경우의 수에서 $a1, a2, a3$ $\ 3$ 장의 카드를 나열하는 경우의 수와 $n1, n2$ 를 나열하는 경우의 수를 제외해야 한다.</p>
+
+<p>즉, $ _{3} \mathrm{P} _{3} = 3!$ 과 $ _{2} \mathrm{P} _{2} = 2!$ 를 제외해야 한다.</p>
+
+<p>그러므로 $6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 를 모두 나열해 만들 수 있는 단어의 수는 다음과 같다.</p>
+
+<p align="center"> $$\frac{6!}{3! \times 2! \times 1!} = 60 가지$$</p>
 
 <p><br /></p>
 
 <h3 id="예제">예제</h3>
 
-<p><br /></p>
+<p>$10$ 장의 문자 카드에 $A$ 가 $4$ 장, $B$ 가 $3$ 장, $C$ 가 $2$ 장, $D$ 가 $1$ 장 있을 때,<br />
+주어진 카드 $10$ 장을 모두 이용해 만들 수 있는 단어의 수를 구하라.</p>
 
-<ol>
-  <li>
-    <p>식당에 빵 $7$가지, 우유 $3$가지, 주스 $3$가지, 과일 $5$가지가 있다.<br />
-종류에 상관없이 한 가지만 선택할 수 있다면 선택의 경우의 수는 총 몇 가지 인가?</p>
+<p align="center"> $$\frac{10!}{4! \times 3! \times 2! \times 1!} = \frac{10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}{4 \times 3 \times 2 \times 1 \times 3 \times 2 \times 1 \times 2 \times 1 \times 1} = 12600 개$$</p>
 
-    <ul>
-      <li>
-        <p>빵, 우유, 주스, 과일에 대한 집합과 기수는 다음과 같다.</p>
-
-        <ul>
-          <li>
-            <p>$A = $ {$a \vert a \in$ 빵}, $\ \left \vert A \right \vert = 7$</p>
-          </li>
-          <li>
-            <p>$B = $ {$b \vert b \in$ 우유}, $\ \left \vert B \right \vert = 3$</p>
-          </li>
-          <li>
-            <p>$C = $ {$c \vert c \in$ 주스}, $\ \left \vert C \right \vert = 3$</p>
-          </li>
-          <li>
-            <p>$D = $ {$d \vert d \in$ 과일}, $\ \left \vert D \right \vert = 5$</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>이 중 종류에 상관없이 한 가지만 선택할 수 있으므로 경우의 수는 다음과 같다.</p>
-
-        <blockquote>
-          <p>$\left \vert A \right \vert + \left \vert B \right \vert + \left \vert C \right \vert + \left \vert D \right \vert = 7 + 3 + 3 + 5 = 18$가지</p>
-        </blockquote>
-
-        <p><br /></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>어느 지역에 두 개의 서점 $A, B$가 있다.<br />
-서점 $A$ 에는 수학 관련 서적이 $20$ 가지 종류가 있고 이 중 $15$ 가지는 서점 $A$에서만 구매할 수 있다.<br />
-또한 서점 $B$에는 $18$ 가지 종류의 수학 관련 서적이 있으며 이 중 $13$ 가지는 서점 $B$에서만 구매할 수 있다.<br />
-그러면 두 서점에서 구매할 수 있는 수학 관련 서적의 종류는 모두 몇 가지 인가?</p>
-
-    <ul>
-      <li>
-        <p>서점 $A, B$에 대한 집합과 기수는 다음과 같다.</p>
-
-        <ul>
-          <li>
-            <p>$A = $ {$a \vert a \in $ 서점 $A$에서 보유한 수학 관련 서적의 종류}, $\ \left \vert A \right \vert = 20$</p>
-          </li>
-          <li>
-            <p>$B = $ {$b \vert b \in $ 서점 $B$에서 보유한 수학 관련 서적의 종류}, $\ \left \vert B \right \vert = 18$</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>각 서점에서만 구매할 수 있는 수학 관련 서적의 종류가 각각 $15$가지, $13$가지 이므로<br />
- 나머지 $5$가지는 서점 $A,B$ 모두에서 구매할 수 있다.</p>
-      </li>
-      <li>
-        <p>그러므로 $\left \vert A \cap B \right \vert = 5$ 이다.</p>
-      </li>
-      <li>
-        <p>이 두 서점에서 구매할 수 있는 수학 관력 서적의 종류는 다음과 같다.</p>
-
-        <blockquote>
-          <p>$\left \vert A \right \vert + \left \vert B \right \vert - \left \vert A \cap B \right \vert = 20 + 18 - 5 = 33$ 종류</p>
-        </blockquote>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<h2 id="정의--곱의-법칙-rule-of-product">정의 : 곱의 법칙 (rule of product)</h2>
-
-<blockquote>
-  <p>두 사건 $A, B$의 경우의 수가 각각 $\left \vert A \right \vert = m \ $, $\left \vert B \right \vert = n$ 일 때, 사건 $A$ 와 사건 $B$ 가 동시에 일어날 경우의 수</p>
-</blockquote>
-
-<ul>
-  <li>$\left \vert A \times B \right \vert = \left \vert A \right \vert \times \left \vert B \right \vert = m \times n$</li>
-</ul>
-
-<h3 id="예시-1">예시</h3>
-
-<p>어떤 사람이 키보드와 CPU를 구입한다면 키보드를 사는 사건과 CPU를 사는 사건이 동시에 일어난다.</p>
-
-<p>이런 경우에 대한 경우의 수는 곱의 법칙으로 구할 수 있다.</p>
-
-<p>만약 마음에 드는 키보드가 3종류, CPU가 4종류라면 다음과 같은 경우가 만들어 질 것이다.</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_32_01.png" width="400" /></p>
-
-<p><br /></p>
-
-<p>그러므로 3종류의 키보드 중 하나의 4종류의 CPU 중 하나를 선택하는 경우의 수는 다음과 같다.</p>
-
-<blockquote>
-  <p>$\left \vert A \times B \right \vert = \left \vert A \right \vert \times \left \vert B \right \vert = 3 \times 4 = 12$ 가지</p>
-</blockquote>
-
-<p><br /></p>
-
-<h3 id="예제-1">예제</h3>
-
-<ol>
-  <li>
-    <p>식당에 빵 $7$가지, 우유 $3$가지, 주스 $3$가지, 과일 $5$가지가 있다.<br />
-각 종류당 하나씩 선택하는 경우의 수는 총 몇 가지 인가?</p>
-
-    <ul>
-      <li>
-        <p>빵, 우유, 주스, 과일에 대한 집합과 기수는 다음과 같다.</p>
-
-        <ul>
-          <li>
-            <p>$A = $ {$a \vert a \in$ 빵}, $\ \left \vert A \right \vert = 7$</p>
-          </li>
-          <li>
-            <p>$B = $ {$b \vert b \in$ 우유}, $\ \left \vert B \right \vert = 3$</p>
-          </li>
-          <li>
-            <p>$C = $ {$c \vert c \in$ 주스}, $\ \left \vert C \right \vert = 3$</p>
-          </li>
-          <li>
-            <p>$D = $ {$d \vert d \in$ 과일}, $\ \left \vert D \right \vert = 5$</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>각 집합에서 하나씩 선택할 수 있으므로 경우의 수는 다음과 같다.</p>
-
-        <blockquote>
-          <p>$\left \vert A \right \vert \times \left \vert B \right \vert \times \left \vert C \right \vert \times \left \vert D \right \vert = 7 \times 3 \times 3 \times 5 = 315$ 가지</p>
-        </blockquote>
-      </li>
-    </ul>
-  </li>
-</ol>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[합의 법칙과 곱의 법칙]]></summary></entry><entry><title type="html">[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트</title><link href="http://localhost:4000/discrete%20mathematics/DM-31/" rel="alternate" type="text/html" title="[이산수학] 부울대수(Boolean algebra) : 03. 논리 게이트" /><published>2024-02-21T00:00:00+09:00</published><updated>2024-02-21T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-31</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-31/"><![CDATA[<h1 id="논리-게이트">논리 게이트</h1>
-
-<p>건물을 짓기 위해 설계도가 필요하듯이, 디지털 회로를 만들기 위해서는 정확한 연산 과정을 표현하는 논리회로가 필요하다.</p>
-
-<blockquote>
-  <p>연산 과정은 이전 장에서 배운 부울함수를 이용해 정의하며 이를 논리회로로 표현할 때 논리 게이트를 이용한다.</p>
-</blockquote>
-
-<h2 id="용어-정리">용어 정리</h2>
-
-<ol>
-  <li>
-    <p>게이트 (Gate) : 정보 흐름의 허용 및 저지를 결정하는 단자 또는 소자</p>
-  </li>
-  <li>
-    <p>논리 소자 (Logic Element) : 다수의 입력 논리값들로부터 새로운 논리 결과 값을 결정하는 소자</p>
-  </li>
-</ol>
-
-<h2 id="정의--논리-게이트-logic-gate">정의 : 논리 게이트 (logic gate)</h2>
-
-<blockquote>
-  <p>부울대수를 물리적 장치로 구현한 것</p>
-</blockquote>
-
-<h3 id="not-게이트">NOT 게이트</h3>
-
-<blockquote>
-  <p>하나의 입력을 받아 부울보수 연산 후 하나의 출력을 낸다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_01.png" /></p>
-
-<p><br /></p>
-
-<h3 id="and-게이트">AND 게이트</h3>
-
-<blockquote>
-  <p>두 개의 입력을 받아 부울곱 연산 후 하나의 출력을 낸다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_02.png" /></p>
-
-<p><br /></p>
-
-<h3 id="or-게이트">OR 게이트</h3>
-
-<blockquote>
-  <p>두 개의 입력을 받아 부울합 연산 후 하나의 출력을 낸다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_03.png" /></p>
-
-<p><br /></p>
-
-<h3 id="nand-게이트">NAND 게이트</h3>
-
-<blockquote>
-  <p>AND 게이트와 NOT 게이트를 결합한 논리소자이다.</p>
-</blockquote>
-
-<blockquote>
-  <p>두 개의 입력을 받아 부울곱 연산 후 부울보수한 결과를 출력한다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_04.png" /></p>
-
-<p><br /></p>
-
-<h3 id="nor-게이트">NOR 게이트</h3>
-
-<blockquote>
-  <p>OR 게이트와 NOT 게이트를 결합한 논리소자이다.</p>
-</blockquote>
-
-<blockquote>
-  <p>두 개의 입력을 받아 부울합 연산 후 부울보수한 결과를 출력한다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_05.png" /></p>
-
-<p><br /></p>
-
-<h3 id="xor-게이트">XOR 게이트</h3>
-
-<blockquote>
-  <p>eXclusive OR 연산자 $\oplus$ 에 대한 논리소자이다.</p>
-</blockquote>
-
-<blockquote>
-  <p>XOR은 다음과 같은 연산식을 표현하는 연산자이다.</p>
-</blockquote>
-
-<ul>
-  <li>$X \oplus Y = X’Y + XY’$</li>
-</ul>
-
-<blockquote>
-  <p>두 개의 같은 값을 입력하면 <strong>0</strong> 을, 다른 값을 입력하면 <strong>1</strong> 을 출력한다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_06.png" /></p>
-
-<p><br /></p>
-
-<h3 id="xnor-게이트">XNOR 게이트</h3>
-
-<blockquote>
-  <p>XOR 게이트와 NOT 게이트를 결합한 논리소자이다.</p>
-</blockquote>
-
-<blockquote>
-  <p>두 개의 입력을 받아 XOR 연산 후 부울보수한 결과를 출력한다.</p>
-</blockquote>
-
-<p>$X \odot Y = (X \odot Y)’ = (X’Y + XY’)’$<br />
-<br /></p>
-
-<p>$\quad \quad \quad = (X’Y)’ \cdot (XY’)’\quad \ $ ($\because$ 드 모르간의 법칙)<br />
-<br /></p>
-
-<p>$\quad \quad \quad = (X + Y’)(X’ + Y)$ ($\because$ 드 모르간의 법칙)<br />
-<br /></p>
-
-<p>$\quad \quad \quad = XX’ + XY + X’Y’ + Y’Y$ ($\because$ 분배법칙)<br />
-<br /></p>
-
-<p>$\quad \quad \quad = 0 + XY + X’Y’ + 0$ ($\because$ 보수법칙)<br />
-<br /></p>
-
-<p>$\quad \quad \quad = XY + X’Y’$ ($\because$ 항등법칙)</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_31_07.png" /></p>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<ul>
-  <li>부울함수 $f(x, y) = (x + \bar{y})(\bar{x} + y)$ 를 논리회로로 나타내보자.</li>
-</ul>
-
-<ol>
-  <li>
-    <p>괄호 안에 있는 각 변수 $x, y$에 대한 부울보수 연산을 게이트로 표시한다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_31_08.png" width="500" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>괄호 안의 각 리터럴들의 부울합 연산에 대한 게이트를 표시한다.<br />
-각 부울변수 $x, y$에 대한 리터럴의 입력선은 다음 그림과 같이 점을 이용해 연결선으로 표시할 수 있다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_31_09.png" width="600" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>부울합으로 연산한 두 최대항의 부울곱 연산에 대한 게이트를 표시하고 출력 $f$ 로 마무리한다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_31_10.png" width="700" /></p>
-
-    <p><br /></p>
-  </li>
-</ol>
-
-<ul>
-  <li>
-    <p>부울함수 $f(x, y) = (x + \bar{y})(\bar{x} + y)$ 를 부울대수법칙을 이용해 DNF로 표현한 뒤 논리회로로 나타내보자.</p>
-
-    <ul>
-      <li>$f(x, y) = (x + \bar{y})(\bar{x} + y)$<br />
-  $\qquad \quad = x\bar{x} + \bar{y}\bar{x} + xy + \bar{y}y \quad$ ($\because$ 분배법칙)<br />
-  $\qquad \quad = \ 0 + \bar{y}\bar{x} + xy + 0\  \quad \ \ $ ($\because$ 보수법칙)<br />
-  $\qquad \quad = \bar{y}\bar{x} + xy \qquad \qquad \quad \ $ ($\because$ 항등법칙)<br />
-  $\qquad \quad = \bar{x}\bar{y} + xy \qquad \qquad \quad \ $ ($\because$ 교환법칙)</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/dm/dm_example_31_11.png" width="700" /></p>
-
-    <p><br /></p>
-  </li>
-  <li>
-    <p>또한 $f(x, y) = \bar{x}\bar{y} + xy = x \odot y$ 이므로 다음과 같이 나타낼 수도 있다.</p>
-
-    <p><img src="/assets/images/Math/dm/dm_example_31_12.png" width="500" /></p>
-  </li>
-</ul>
-
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[논리 게이트]]></summary></entry><entry><title type="html">[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현</title><link href="http://localhost:4000/discrete%20mathematics/DM-30/" rel="alternate" type="text/html" title="[이산수학] 부울대수(Boolean algebra) : 02. 부울함수의 표현" /><published>2024-02-20T00:00:00+09:00</published><updated>2024-02-20T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-30</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-30/"><![CDATA[<h1 id="부울함수의-표현">부울함수의 표현</h1>
-
-<p>부울함수는 $n$ 개의 부울변수와 부울 연산자로 구성되어있다.</p>
-
-<p>부울변수에 $2$ 진의 값 $0$ 또는 $1$ 이 입력되고 출력되는 식이다.</p>
-
-<blockquote>
-  <p>부울함수는 디지털 논리회로를 수식적으로 표현하여 논리회로를 설계하는 데 활용된다.</p>
-</blockquote>
-
-<ul>
-  <li>이 부울함수를 최소항 또는 최대항으로 구성된 정규식으로 표준화하면 설계의 활용도를 더욱 높일 수 있다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="정규식-이해를-위한-몇-가지-용어">정규식 이해를 위한 몇 가지 용어</h1>
-
-<h2 id="정의--리터럴-literal">정의 : 리터럴 (literal)</h2>
-
-<blockquote>
-  <p>부울변수와 부울보수 연산을 한 부울변수 모두를 일컫는 말</p>
-</blockquote>
-
-<h3 id="예시">예시</h3>
-
-<p>부울함수 $f(x, y)$는 부울변수 $x, y$ 로 구성되는 2차 부울함수로 $x,y$ 외에 $\bar{x}$ 와 $\bar{y}$ 가 리터럴이 될 수 있다.</p>
-
-<blockquote>
-  <p>그러므로 $n$개의 부울변수로 구성되는 $n$차 부울함수에서 사용할 수 있는 리터럴은 $2n$ 개다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>$f(x, y) = \bar{x} + y$</p>
-
-    <ul>
-      <li>
-        <p>2차 부울함수의 경우 사용가능한 리터럴이 $x, y, \bar{x}, \bar{y}$ 로 4개가 있다.</p>
-      </li>
-      <li>
-        <p>이 중 $\bar{x}, y$ 가 이 부울함수의 리터럴로 사용되었다.</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="정의--정규형-normal-form">정의 : 정규형 (normal form)</h2>
-
-<blockquote>
-  <p>부울함수를 구성하는 항을 부울합이나 부울곱으로 나타낸 함수 형태</p>
-</blockquote>
-
-<ol>
-  <li>
-    <p>논리합 정규형 (DNF, Disjunctive Normal Form)</p>
-
-    <ul>
-      <li>부울곱으로 연산된 항을 부울합으로 연산하는 함수 형태</li>
-    </ul>
-  </li>
-  <li>
-    <p>논리곱 정규형 (CNF, Conjunctive Normal Form)</p>
-
-    <ul>
-      <li>부울합으로 연산된 항을 부울곱으로 연산하는 함수 형태</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="예시-1">예시</h3>
-
-<ol>
-  <li>
-    <p>$f(x, y, z) = xy + \bar{x}yz + x\bar{y} + \bar{z}$</p>
-
-    <ul>
-      <li>
-        <p>리터럴을 부울곱으로 연산한 항들을 부울합으로 연결하여 표현한 것</p>
-      </li>
-      <li>
-        <p>DNF</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>$f(x, y, z) = (x + \bar{z})(\bar{x} + y + z)\bar{y}$</p>
-
-    <ul>
-      <li>
-        <p>리터럴을 부울합으로 연산한 항을 부울곱으로 연견하여 표현한 것</p>
-      </li>
-      <li>
-        <p>CNF</p>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<h2 id="정의--최소항-minterm">정의 : 최소항 (minterm)</h2>
-
-<blockquote>
-  <p>DNF인 $n$차 부울함수 $f(x_{1}, x_{2}, \cdots , x_{n})$를 구성하는 항들 중에서 리터럴 $n$개의 부울곱으로 구성된 항</p>
-</blockquote>
-
-<h2 id="정의--최대항-maxterm">정의 : 최대항 (maxterm)</h2>
-
-<blockquote>
-  <p>CNF인 $n$차 부울함수 $f(x_{1}, x_{2}, \cdots , x_{n})$를 구성하는 항들 중에서 리터럴 $n$개의 부울합으로 구성된 항</p>
-</blockquote>
-
-<h3 id="예시-2">예시</h3>
-
-<p>$n$차 부울함수의 최소항이나 최대항을 구성하는 리터럴은 서로 다른 부울변수에 대한 것이어야 한다.</p>
-
-<ul>
-  <li>
-    <p>$xx, \ \ x\bar{x}, \ \ \bar{x}\bar{x}, \ \ x + x, \ \ x + \bar{x},\ \  \bar{x} + \bar{x} \ \rightarrow$ X</p>
-  </li>
-  <li>
-    <p>부울함수 $f(x, y)$ 를 구성할 수 있는 최소항과 최대항</p>
-
-    <ol>
-      <li>
-        <p>$xy, \ \ x\bar{y}, \ \ \bar{x}y, \ \ \bar{x}\bar{y}$</p>
-      </li>
-      <li>
-        <p>$x + y, \ \ x + \bar{y}, \ \ \bar{x} + y, \ \ \bar{x} + \bar{y}$</p>
-      </li>
-    </ol>
-  </li>
-</ul>
-
-<blockquote>
-  <p>$n$차 부울함수에서 사용될 수 있는 최소항 또는 최대항의 개수는 $2^{n}$개 이다.</p>
-</blockquote>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[부울함수의 표현]]></summary></entry></feed>
+<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[같은 원소를 나열하는 순열]]></summary></entry></feed>
