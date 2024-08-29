@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-29T13:41:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">Week 04 학습 정리 및 회고록</title><link href="http://localhost:4000/ai-tech/AITECH_01/" rel="alternate" type="text/html" title="Week 04 학습 정리 및 회고록" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/ai-tech/AITECH_01</id><content type="html" xml:base="http://localhost:4000/ai-tech/AITECH_01/"><![CDATA[<h1 id="overview">Overview</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-29T22:46:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">느려도 괜찮아</title><author><name>지지형</name></author><entry><title type="html">[테스트] : test</title><link href="http://localhost:4000/shooting/test_01/" rel="alternate" type="text/html" title="[테스트] : test" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/shooting/test_01</id><content type="html" xml:base="http://localhost:4000/shooting/test_01/"><![CDATA[<h1 id="테스트">테스트</h1>
+
+<ul>
+  <li>테스트</li>
+</ul>]]></content><author><name>지지형</name></author><category term="Shooting" /><summary type="html"><![CDATA[테스트]]></summary></entry><entry><title type="html">Week 04 학습 정리 및 회고록</title><link href="http://localhost:4000/ai-tech/AITECH_01/" rel="alternate" type="text/html" title="Week 04 학습 정리 및 회고록" /><published>2024-08-29T00:00:00+09:00</published><updated>2024-08-29T00:00:00+09:00</updated><id>http://localhost:4000/ai-tech/AITECH_01</id><content type="html" xml:base="http://localhost:4000/ai-tech/AITECH_01/"><![CDATA[<h1 id="overview">Overview</h1>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/boj/BOJ-2164/">[백준] 2164 : 카드2 (파이썬)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.26
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/boj/BOJ-11404/">[백준] 11404 : 플로이드 (파이썬)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.26
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/linear%20algebra/LA_04/">[선형대수] 4강</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.28
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/linear%20algebra/LA_03/">[선형대수] 3강</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.28
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/linear%20algebra/LA_02/">[선형대수] 2강</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.28
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/shooting/test_01/">[테스트] : test</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2024.08.29
+              
+            </small>
+        </div>
+      </article>
+</div>
+
+<p><br />
+<br /></p>
 
 <h1 id="주각-목표-달성-여부">주각 목표 달성 여부</h1>
 
@@ -6,97 +97,7 @@
 
 <h1 id="어려움과-해결-방안">어려움과 해결 방안</h1>
 
-<h1 id="다음-주-계획과-개선">다음 주 계획과 개선</h1>]]></content><author><name>지지형</name></author><category term="AI-Tech" /><summary type="html"><![CDATA[Overview]]></summary></entry><entry><title type="html">[선형대수] 3강</title><link href="http://localhost:4000/linear%20algebra/LA_03/" rel="alternate" type="text/html" title="[선형대수] 3강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_03</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_03/"><![CDATA[<h1 id="전치transpose">전치(Transpose)</h1>
-
-<ul>
-  <li>전치의 개념은 이전에 정리했던 <a href="https://wlgudths.github.io/discrete%20mathematics/DM-08/#%EC%A0%84%EC%B9%98%ED%96%89%EB%A0%AC-transpose-matrix--at">행렬의 종류</a>에서 볼 수 있습니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="전치행렬의-성질">전치행렬의 성질</h2>
-
-<p><img src="/assets/images/Math/la/la_17.png" width="300" height="300" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[전치(Transpose)]]></summary></entry><entry><title type="html">[선형대수] 2강</title><link href="http://localhost:4000/linear%20algebra/LA_02/" rel="alternate" type="text/html" title="[선형대수] 2강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_02</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_02/"><![CDATA[<h1 id="벡터란">벡터란?</h1>
-
-<ul>
-  <li>
-    <p>크기와 방향을 가진 양으로 정의할 수 있습니다.</p>
-  </li>
-  <li>
-    <p>좌표평면의 예시</p>
-
-    <p><img src="/assets/images/Math/la/la_11.png" width="300" height="300" /></p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="벡터의-크기와-방향">벡터의 크기와 방향</h2>
-
-<p><img src="/assets/images/Math/la/la_12.png" width="400" height="400" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>$x, y$ 를 보면 무엇인가 떠오르지 않나요?</p>
-
-    <ul>
-      <li>
-        <p>벡터의 크기는 피타고라스의 정리를 이용하여 구할 수 있습니다.</p>
-      </li>
-      <li>
-        <p>크기 $= \sqrt{x^{2} + y^{2}}$</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>
-    <p>좌표평면을 보시면 초록색 $\theta$(각도)가 있습니다.</p>
-  </li>
-  <li>
-    <p>저희는 각도를 이용하여 방향을 구할 수도 있습니다.</p>
-  </li>
-  <li>
-    <p>즉, 벡터가 $x$축과 이루는 각도 $\theta$는 삼각함수를 사용하여 구할 수 있습니다.</p>
-
-    <p><img src="/assets/images/Math/la/la_12.png" width="300" height="200" /></p>
-
-    <ul>
-      <li>$tan$ 활용 $\rightarrow$ $\theta$에 대하여 식 정리</li>
-    </ul>
-
-    <p><img src="/assets/images/Math/la/la_13.png" width="300" height="200" /></p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="벡터의-덧셈-뺄셈-스칼라배">벡터의 덧셈, 뺄셈, 스칼라배</h2>
-
-<blockquote>
-  <p>각 요소를 덧셈, 뺄셈, 스칼라배를 해주면 된다.</p>
-</blockquote>
-
-<h3 id="시각화-덧셈">시각화 (덧셈)</h3>
-
-<p><img src="/assets/images/Math/la/la_14.png" width="300" height="300" /></p>
-
-<p><img src="/assets/images/Math/la/la_15.png" width="300" height="300" /></p>
-
-<p><br /></p>
-
-<h3 id="중요한-사실">중요한 사실</h3>
-
-<blockquote>
-  <p>벡터의 연산을 활용하여 2차원 평면에 놓이는 벡터를 다 표현할 수 있다.</p>
-</blockquote>
-
-<p><img src="/assets/images/Math/la/la_16.png" width="300" height="200" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[벡터란?]]></summary></entry><entry><title type="html">[선형대수] 4강</title><link href="http://localhost:4000/linear%20algebra/LA_04/" rel="alternate" type="text/html" title="[선형대수] 4강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_04</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_04/"><![CDATA[<h1 id="내적-dot-product">내적 (Dot Product)</h1>
+<h1 id="다음-주-계획과-개선">다음 주 계획과 개선</h1>]]></content><author><name>지지형</name></author><category term="AI-Tech" /><summary type="html"><![CDATA[Overview]]></summary></entry><entry><title type="html">[선형대수] 4강</title><link href="http://localhost:4000/linear%20algebra/LA_04/" rel="alternate" type="text/html" title="[선형대수] 4강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_04</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_04/"><![CDATA[<h1 id="내적-dot-product">내적 (Dot Product)</h1>
 
 <ul>
   <li>벡터 표기를 대문자로 하였지만, 소문자 볼드체로 생각하시면 되겠습니다. 😭</li>
@@ -253,7 +254,97 @@
   <li>
     <p>내적의 결과로 나오는 스칼라 값은 두 벡터의 방향과 크기에 대한 정보를 종합적으로 나타냅니다.</p>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[내적 (Dot Product)]]></summary></entry><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
+</ul>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[내적 (Dot Product)]]></summary></entry><entry><title type="html">[선형대수] 2강</title><link href="http://localhost:4000/linear%20algebra/LA_02/" rel="alternate" type="text/html" title="[선형대수] 2강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_02</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_02/"><![CDATA[<h1 id="벡터란">벡터란?</h1>
+
+<ul>
+  <li>
+    <p>크기와 방향을 가진 양으로 정의할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>좌표평면의 예시</p>
+
+    <p><img src="/assets/images/Math/la/la_11.png" width="300" height="300" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="벡터의-크기와-방향">벡터의 크기와 방향</h2>
+
+<p><img src="/assets/images/Math/la/la_12.png" width="400" height="400" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>$x, y$ 를 보면 무엇인가 떠오르지 않나요?</p>
+
+    <ul>
+      <li>
+        <p>벡터의 크기는 피타고라스의 정리를 이용하여 구할 수 있습니다.</p>
+      </li>
+      <li>
+        <p>크기 $= \sqrt{x^{2} + y^{2}}$</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>좌표평면을 보시면 초록색 $\theta$(각도)가 있습니다.</p>
+  </li>
+  <li>
+    <p>저희는 각도를 이용하여 방향을 구할 수도 있습니다.</p>
+  </li>
+  <li>
+    <p>즉, 벡터가 $x$축과 이루는 각도 $\theta$는 삼각함수를 사용하여 구할 수 있습니다.</p>
+
+    <p><img src="/assets/images/Math/la/la_12.png" width="300" height="200" /></p>
+
+    <ul>
+      <li>$tan$ 활용 $\rightarrow$ $\theta$에 대하여 식 정리</li>
+    </ul>
+
+    <p><img src="/assets/images/Math/la/la_13.png" width="300" height="200" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="벡터의-덧셈-뺄셈-스칼라배">벡터의 덧셈, 뺄셈, 스칼라배</h2>
+
+<blockquote>
+  <p>각 요소를 덧셈, 뺄셈, 스칼라배를 해주면 된다.</p>
+</blockquote>
+
+<h3 id="시각화-덧셈">시각화 (덧셈)</h3>
+
+<p><img src="/assets/images/Math/la/la_14.png" width="300" height="300" /></p>
+
+<p><img src="/assets/images/Math/la/la_15.png" width="300" height="300" /></p>
+
+<p><br /></p>
+
+<h3 id="중요한-사실">중요한 사실</h3>
+
+<blockquote>
+  <p>벡터의 연산을 활용하여 2차원 평면에 놓이는 벡터를 다 표현할 수 있다.</p>
+</blockquote>
+
+<p><img src="/assets/images/Math/la/la_16.png" width="300" height="200" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[벡터란?]]></summary></entry><entry><title type="html">[선형대수] 3강</title><link href="http://localhost:4000/linear%20algebra/LA_03/" rel="alternate" type="text/html" title="[선형대수] 3강" /><published>2024-08-28T00:00:00+09:00</published><updated>2024-08-28T00:00:00+09:00</updated><id>http://localhost:4000/linear%20algebra/LA_03</id><content type="html" xml:base="http://localhost:4000/linear%20algebra/LA_03/"><![CDATA[<h1 id="전치transpose">전치(Transpose)</h1>
+
+<ul>
+  <li>전치의 개념은 이전에 정리했던 <a href="https://wlgudths.github.io/discrete%20mathematics/DM-08/#%EC%A0%84%EC%B9%98%ED%96%89%EB%A0%AC-transpose-matrix--at">행렬의 종류</a>에서 볼 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="전치행렬의-성질">전치행렬의 성질</h2>
+
+<p><img src="/assets/images/Math/la/la_17.png" width="300" height="300" /></p>]]></content><author><name>지지형</name></author><category term="Linear Algebra" /><summary type="html"><![CDATA[전치(Transpose)]]></summary></entry><entry><title type="html">[백준] 2164 : 카드2 (파이썬)</title><link href="http://localhost:4000/boj/BOJ-2164/" rel="alternate" type="text/html" title="[백준] 2164 : 카드2 (파이썬)" /><published>2024-08-26T00:00:00+09:00</published><updated>2024-08-26T00:00:00+09:00</updated><id>http://localhost:4000/boj/BOJ-2164</id><content type="html" xml:base="http://localhost:4000/boj/BOJ-2164/"><![CDATA[<h1 id="-난이도">🔎 난이도</h1>
 <blockquote>
   <p>⚪️ <strong>실버 4</strong></p>
 </blockquote>
@@ -1001,75 +1092,4 @@
       <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
     </blockquote>
   </li>
-</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry><entry><title type="html">[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</title><link href="http://localhost:4000/discrete%20mathematics/DM-35/" rel="alternate" type="text/html" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열" /><published>2024-02-25T00:00:00+09:00</published><updated>2024-02-25T00:00:00+09:00</updated><id>http://localhost:4000/discrete%20mathematics/DM-35</id><content type="html" xml:base="http://localhost:4000/discrete%20mathematics/DM-35/"><![CDATA[<h1 id="같은-원소를-나열하는-순열">같은 원소를 나열하는 순열</h1>
-
-<p>순열과 중복순열은 숫자 카드나 단어를 구성하는 스펠링과 같은 순열의 대상이 되는 원소들이 모두 다르다는 전제가 있다.</p>
-
-<p>그러나 순열의 대상이 되는 원소들이 같은 원소를 포함하는 경우도 있다.</p>
-
-<ul>
-  <li>
-    <p>예를 들어, <strong>banana</strong> 라는 단어는 다음과 같이 구성되어있다.</p>
-
-    <ul>
-      <li>
-        <p>$b \rightarrow 1$ 번</p>
-      </li>
-      <li>
-        <p>$a \rightarrow 3$ 번</p>
-      </li>
-      <li>
-        <p>$n \rightarrow 2$ 번</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>이렇게 같은 문자들이 포함된 원소들을 이용해 순열을 구한다면 구한 순열 중에는 같은 단어들이 포함될 수 있다.</p>
-
-<p>그러므로 순열의 대상에 같은 원소들이 포함되었을 때는 다음과 같이 순열을 구한다.</p>
-
-<p><br /></p>
-
-<h2 id="정의--같은-원소를-포함하는-집합에-대한-순열">정의 : 같은 원소를 포함하는 집합에 대한 순열</h2>
-
-<blockquote>
-  <p>$n$ 개의 원소 중에서 같은 원소들이 각각 $p$ 개, $q$ 개, $r$ 개, $\cdots$ , $s$ 개 있을 때, $n$ 개의 원소를 순서대로 나열한 것</p>
-</blockquote>
-
-<p align="center"> $$\frac{n!}{p! \times q! \times r! \times \ \cdots \ \times s!}$$ </p>
-
-<p align="center"> $$(p + q + r + \cdots + s = n)$$ </p>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p>$6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 가 쓰여져 있을 때 문자 카드 모두를 이용해 만들 수 있는 단어는 몇 개인지 구해보자.</p>
-
-<p>문자 카드 중 $a$ 는 $3$ 장 이므로 $a1, a2, a3$ 로 구분할 수 있다.</p>
-
-<p>또한 문자 카드 $n$ 도 마찬가지로 $2$ 장 이므로 $n1, n2$ 로 구분할 수 있다.</p>
-
-<p>이렇게 구분한 $6$ 개의 원소에서 $6$ 개를 선택하여 나열하는 것이므로 $_{6} \mathrm{P} _{6} = 6!$ 로 구할 수 있다.</p>
-
-<p><strong>그러나</strong> $a$ 를 $a1, a2, a3$ , $n$ 을 $n1, n2$ 로 구분은 했으나 $a1a2a3$, $\ a2a1a3$ 모두 $aaa$ 의 나열이 된다.</p>
-
-<p>그러므로 6개의 원소를 나열한 경우의 수에서 $a1, a2, a3$ $\ 3$ 장의 카드를 나열하는 경우의 수와 $n1, n2$ 를 나열하는 경우의 수를 제외해야 한다.</p>
-
-<p>즉, $ _{3} \mathrm{P} _{3} = 3!$ 과 $ _{2} \mathrm{P} _{2} = 2!$ 를 제외해야 한다.</p>
-
-<p>그러므로 $6$ 장의 문자 카드에 각각 $b, a, a, a, n, n$ 를 모두 나열해 만들 수 있는 단어의 수는 다음과 같다.</p>
-
-<p align="center"> $$\frac{6!}{3! \times 2! \times 1!} = 60 가지$$</p>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<p>$10$ 장의 문자 카드에 $A$ 가 $4$ 장, $B$ 가 $3$ 장, $C$ 가 $2$ 장, $D$ 가 $1$ 장 있을 때,<br />
-주어진 카드 $10$ 장을 모두 이용해 만들 수 있는 단어의 수를 구하라.</p>
-
-<p align="center"> $$\frac{10!}{4! \times 3! \times 2! \times 1!} = \frac{10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}{4 \times 3 \times 2 \times 1 \times 3 \times 2 \times 1 \times 2 \times 1 \times 1} = 12600 개$$</p>
-
-<p><br /></p>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[같은 원소를 나열하는 순열]]></summary></entry></feed>
+</ul>]]></content><author><name>지지형</name></author><category term="Discrete Mathematics" /><summary type="html"><![CDATA[중복순열]]></summary></entry></feed>

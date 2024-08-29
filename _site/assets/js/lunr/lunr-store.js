@@ -318,8 +318,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Week 04 학습 정리 및 회고록",
-        "excerpt":"Overview   주각 목표 달성 여부   학습 정리   어려움과 해결 방안   다음 주 계획과 개선  ","categories": ["AI-Tech"],
+        "excerpt":"Overview                                             [백준] 2164 : 카드2 (파이썬)                                            2024.08.26                                                                                         [백준] 11404 : 플로이드 (파이썬)                                            2024.08.26                                                                                         [선형대수] 4강                                            2024.08.28                                                                                         [선형대수] 3강                                            2024.08.28                                                                                         [선형대수] 2강                                            2024.08.28                                                                                         [테스트] : test                                            2024.08.29                                                     주각 목표 달성 여부   학습 정리   어려움과 해결 방안   다음 주 계획과 개선  ","categories": ["AI-Tech"],
         "tags": [],
         "url": "/ai-tech/AITECH_01/",
+        "teaser": null
+      },{
+        "title": "[테스트] : test",
+        "excerpt":"테스트      테스트  ","categories": ["Shooting"],
+        "tags": [],
+        "url": "/shooting/test_01/",
         "teaser": null
       }]

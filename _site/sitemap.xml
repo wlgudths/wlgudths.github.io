@@ -217,6 +217,10 @@
 <lastmod>2024-08-29T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/shooting/test_01/</loc>
+<lastmod>2024-08-29T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -239,6 +243,12 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/python</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/shooting</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/trouble</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/AI-Tech</loc>

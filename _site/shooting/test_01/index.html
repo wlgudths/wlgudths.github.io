@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[이산수학] 순열, 조합, 확률 : 03. 중복순열 | 느려도 괜찮아</title>
-<meta name="description" content="중복순열">
+<!-- begin _includes/seo.html --><title>[테스트] : test | 느려도 괜찮아</title>
+<meta name="description" content="테스트">
 
 
   <meta name="author" content="지지형">
@@ -22,28 +22,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="느려도 괜찮아">
-<meta property="og:title" content="[이산수학] 순열, 조합, 확률 : 03. 중복순열">
-<meta property="og:url" content="http://localhost:4000/discrete%20mathematics/DM-34/">
+<meta property="og:title" content="[테스트] : test">
+<meta property="og:url" content="http://localhost:4000/shooting/test_01/">
 
 
-  <meta property="og:description" content="중복순열">
-
-
-
+  <meta property="og:description" content="테스트">
 
 
 
 
-  <meta property="article:published_time" content="2024-02-25T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2024-02-25T00:00:00+09:00">
+  <meta property="article:published_time" content="2024-08-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2024-08-29T00:00:00+09:00">
 
 
 
 
-<link rel="canonical" href="http://localhost:4000/discrete%20mathematics/DM-34/">
+<link rel="canonical" href="http://localhost:4000/shooting/test_01/">
 
 
 
@@ -99,31 +99,6 @@
 <!-- end custom head snippets -->
 
 
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "AMS"
-          }
-        },
-        tex2jax: {
-        inlineMath: [ ['$', '$'] ],
-        displayMath: [ ['$$', '$$'] ],
-        processEscapes: true,
-      }
-    });
-    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-          alert("Math Processing Error: "+message[1]);
-        });
-    </script>
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
     
   </head>
 
@@ -482,242 +457,19 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[이산수학] 순열, 조합, 확률 : 03. 중복순열">
-    <meta itemprop="description" content="중복순열">
-    <meta itemprop="datePublished" content="2024-02-25T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2024-02-25T00:00:00+09:00">
+    <meta itemprop="headline" content="[테스트] : test">
+    <meta itemprop="description" content="테스트">
+    <meta itemprop="datePublished" content="2024-08-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2024-08-29T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/discrete%20mathematics/DM-34/" class="u-url" itemprop="url">[이산수학] 순열, 조합, 확률 : 03. 중복순열
+            <a href="http://localhost:4000/shooting/test_01/" class="u-url" itemprop="url">[테스트] : test
 </a>
           </h1>
           
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> [이산수학] 03. 중복순열</h4></header>
-              <ul class="toc__menu"><li><a href="#중복순열">중복순열</a><ul><li><a href="#정의--중복순열-permutation-with-repetition---_n-prod-_r">정의 : 중복순열 (permutation with repetition : $ _{n} \prod{} _{r}$)</a><ul><li><a href="#예시">예시</a></li><li><a href="#예제">예제</a></li></ul></li></ul></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h1 id="중복순열">중복순열</h1>
-
-<p>이전 장에서 다뤘던 순열의 경우 서로 다른 두 개의 원소를 순서에 의미를 두고 나열하는 것으로 한번 선택된 원소는 다시 선택하지 않는다.</p>
-
-<p>그러나 선택했던 원소를 다시 선택하여 나열하는 방법도 있을 수 있다.</p>
-
-<p>그러면 순열의 경우의 수도 달라질 것이다.</p>
-
-<blockquote>
-  <p>이러한 나열을 중복순열이라고 한다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<h2 id="정의--중복순열-permutation-with-repetition---_n-prod-_r">정의 : 중복순열 (permutation with repetition : $ _{n} \prod{} _{r}$)</h2>
-
-<blockquote>
-  <p>서로 다른 $n$ 개의 원소 중 $r$ 개를 중복을 허용하며 선택하여 순서대로 나열한 것</p>
-</blockquote>
-
-<ul>
-  <li>중복순열의 수 : $_{n} \prod{} _{r} = n^{r} \quad (n \in N, \  0 \le r \le n)$</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예시">예시</h3>
-
-<p>이전 장에서 예로 들었던 $1,2,3,4$ 가 쓰여 있는 4장의 숫자 카드의 예로 중복순열을 이해해보자.</p>
-
-<p>순열은 이 $4$ 장의 카드들 중 서로 다른 숫자 카드 $3$ 장은 나열한 것이다.</p>
-
-<p>중복순열은 ‘서로 다른’ 이라는 전제가 필요 없다.</p>
-
-<p>이 $4$ 장의 숫자 카드들을 이용해 중복을 허용하며 만들 수 있는 세 자릿수가 몇개인가를 구해보면 다음과 같다.</p>
-
-<p><img src="/assets/images/Math/dm/dm_example_34_01.png" width="500" /></p>
-
-<p><br /></p>
-
-<ul>
-  <li>위 그림과 마찬가지로 $211$ ~ $244$, $\ 311$ ~ $344$, $\ 411$ ~ $444$ 를 선택할 수 있다.</li>
-</ul>
-
-<p>이 풀이를 통해 알 수 있듯이 중복을 허용하기 위해 백의 자리에서 선택했던 숫자 카드를<br />
-다시 십의 자리의 선택 범위, 일의 자리의 선택 범위에도 포함시켜서 숫자들을 나열하여 중복순열의 결과를 얻는다.</p>
-
-<p>그러면 세 자릿수의 각 자리에서 선택할 수 있는 원소의 수는 모두 $4$ 개이므로 이 중복순열의 경우의 수는 다음과 같다.</p>
-
-<blockquote>
-  <p>$4 \times 4 \times 4 = 4^{3} = _{4} \prod{} _{3} = 64$ 개</p>
-</blockquote>
-
-<p><br /></p>
-
-<p>중복순열은 선택했던 원소를 다시 선택할 수 있기 때문에 원소의 수보다 더 많은 원소를 이용한 순열을 구할 수 있다.</p>
-
-<p>예를 들어 $1,2,3,4$ 가 쓰여 있는 $4$ 장의 숫자 카드를 이용해 여섯 자리수를 만들 수도 있다.</p>
-
-<p>십만 자리부터 일의 자리까지 $4$ 장의 카드를 모두 중복을 허용하며 사용할 수 있다.</p>
-
-<p>숫자 카드 $4$ 장으로 만들 수 있는 여섯 자릿수에 대한 경우의 수는 다음과 같다.</p>
-
-<ul>
-  <li>$_{4} \prod{} _{6} = 4^{6} = 4096$ 가지</li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="예제">예제</h3>
-
-<ol>
-  <li>회원이 $10$ 명인 모임에서 임원단을 뽑으려고 한다.<br />
-직책을 겸임할 수 있는 가정 하에<br />
-회장, 부회장, 총무를 차례로 선출한다고 하면 가능한 임원단의 수는 몇 가지인가?</li>
-</ol>
-
-<ul>
-  <li>
-    <p>회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>부회장으로 선출될 수 있는 회원 수 : $10$ 명</p>
-  </li>
-  <li>
-    <p>총무로 선출될 수 있는 회원 수 : $10$ 명</p>
-
-    <blockquote>
-      <p>$_{10} \prod{} _{3} = 10^{3} = 1000$ 가지</p>
-    </blockquote>
-  </li>
-</ul>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#discrete-mathematics" class="page__taxonomy-item p-category" rel="tag">Discrete Mathematics</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-02-25">February 25, 2024</time></p>
-
-      </footer>
-
-      
-
-      
-
-
-
-  
-
-  
-
-  
-  	
-  	
-  	
-  	
-  	
-
-
-  <nav class="pagination_prev_next">
-    
-      <a href="/discrete%20mathematics/DM-33/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>[이산수학] 순열, 조합, 확률 : 02. 순열</a>
-    
-    
-      <a href="/discrete%20mathematics/DM-35/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열</a>
-    
-  </nav>
-
-
-
-
-<!-- 
-  <nav class="pagination">
-    
-      <a href="/discrete%20mathematics/DM-33/" class="pagination--pager" title="[이산수학] 순열, 조합, 확률 : 02. 순열
-">이전</a>
-    
-    
-      <a href="/discrete%20mathematics/DM-35/" class="pagination--pager" title="[이산수학] 순열, 조합, 확률 : 04. 같은 원소를 나열하는 순열
-">다음</a>
-    
-  </nav>
- -->
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/shooting/test_01/" rel="permalink">[테스트] : test
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -738,12 +490,93 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">테스트
+        </header>
+      
 
-</p>
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 테스트</h4></header>
+              <ul class="toc__menu"><li><a href="#테스트">테스트</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="테스트">테스트</h1>
+
+<ul>
+  <li>테스트</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#shooting" class="page__taxonomy-item p-category" rel="tag">Shooting</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-08-29">August 29, 2024</time></p>
+
+      </footer>
+
+      
+
+      
+
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+
+
+
+<!-- 
+  <nav class="pagination">
+    
+      <a href="/ai-tech/AITECH_01/" class="pagination--pager" title="Week 04 학습 정리 및 회고록
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+ -->
+
+    </div>
+
+    
   </article>
-</div>
 
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -862,6 +695,47 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">전치(Transpose)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/linear%20algebra/LA_02/" rel="permalink">[선형대수] 2강
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">벡터란?
 
 </p>
   </article>
