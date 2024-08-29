@@ -63,7 +63,7 @@
         <span class="nav__sub-title">AI</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Python" %}
+                    {% if category[0] == "AI" %}
                         <li><a href="/categories/AI" class="">AI ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -72,7 +72,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AI-Tech" %}
-                        <li><a href="/categories/AI-Tech" class="">AI-Tech ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AI-Tech" class="">AI-Tech 7기({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

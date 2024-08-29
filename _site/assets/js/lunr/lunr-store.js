@@ -317,8 +317,8 @@ var store = [{
         "url": "/linear%20algebra/LA_04/",
         "teaser": null
       },{
-        "title": "Test",
-        "excerpt":"테스트  ","categories": ["AI-Tech"],
+        "title": "Week 04 학습 정리 및 회고록",
+        "excerpt":"Overview   주각 목표 달성 여부   학습 정리   어려움과 해결 방안   다음 주 계획과 개선  ","categories": ["AI-Tech"],
         "tags": [],
         "url": "/ai-tech/AITECH_01/",
         "teaser": null
