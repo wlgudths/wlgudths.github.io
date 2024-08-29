@@ -18,9 +18,9 @@ toc: false
 - Python
 
 ## 자격증
-### 외국어
-- TOEIC 905
-- OPIC  IH
+### 외국어 (만료)
+- ~~TOEIC 905~~
+- ~~OPIC  IH~~
 
 ### 데이터
 - 데이터분석 준전문가 (Adsp)
@@ -28,3 +28,5 @@ toc: false
 - 정보처리기사
 
 ## 활동
+
+- 네이버 AI-Tech 7기 ~ 
